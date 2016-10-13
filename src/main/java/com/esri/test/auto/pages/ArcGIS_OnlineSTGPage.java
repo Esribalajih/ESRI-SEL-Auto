@@ -6,7 +6,7 @@ import com.esri.test.auto.utils.Reporter;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**
- * This is the ArcGIS MainPage Page of IAM Application
+ * This is the ArcGIS Online Page of IAM Application
  * 
  * @author Udhayasundar S
  *
@@ -26,7 +26,7 @@ public class ArcGIS_OnlineSTGPage extends ESRIWrappers {
 			try {
 				System.out.println("verify user name: "
 						+ driver.findElement(By.xpath(prop.getProperty("arcGISOnlineStg.userName.xpath"))).getText());
-				verifyValuebyXpath(prop.getProperty("arcGISOnlineStg.userName.xpath"), userdata);
+				verifyValueByXpath(prop.getProperty("arcGISOnlineStg.userName.xpath"), userdata);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -36,7 +36,7 @@ public class ArcGIS_OnlineSTGPage extends ESRIWrappers {
 		// Verify the default : Sign in UserName
 		public ArcGIS_OnlineSTGPage verifyUserName(String userdata) throws Throwable {
 			try {
-				verifyValuebyXpath(prop.getProperty("arcGISOnlineStg.signInUserNm.xpath"), userdata);
+				verifyValueByXpath(prop.getProperty("arcGISOnlineStg.signInUserNm.xpath"), userdata);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -46,7 +46,7 @@ public class ArcGIS_OnlineSTGPage extends ESRIWrappers {
 		// Click the UserName
 		public ArcGIS_OnlineSTGPage clickLoggedUserName() throws Throwable {
 			try {
-				clickbyXpath(prop.getProperty("arcGISOnlineStg.userName.xpath"));
+				clickByXpath(prop.getProperty("arcGISOnlineStg.userName.xpath"));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -58,7 +58,7 @@ public class ArcGIS_OnlineSTGPage extends ESRIWrappers {
 			try {
 				System.out.println("verify user Full name: " + driver
 						.findElement(By.xpath(prop.getProperty("arcGISOnlineStg.userNameDropdown.xpath"))).getText());
-				verifyValuebyXpath(prop.getProperty("arcGISOnlineStg.userNameDropdown.xpath"), fullName);
+				verifyValueByXpath(prop.getProperty("arcGISOnlineStg.userNameDropdown.xpath"), fullName);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -70,7 +70,7 @@ public class ArcGIS_OnlineSTGPage extends ESRIWrappers {
 			try {
 				System.out.println("verify Signout button: "
 						+ driver.findElement(By.xpath(prop.getProperty("arcGISOnlineStg.signOutDropdown.xpath"))).getText());
-				clickbyXpath(prop.getProperty("arcGISOnlineStg.signOutDropdown.xpath"));
+				clickByXpath(prop.getProperty("arcGISOnlineStg.signOutDropdown.xpath"));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

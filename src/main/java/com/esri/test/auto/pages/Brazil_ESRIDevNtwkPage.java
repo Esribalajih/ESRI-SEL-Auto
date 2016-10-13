@@ -4,7 +4,7 @@ import com.esri.test.auto.utils.Reporter;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**
- * This is the Brazil ArcGIS Online Page of ESRI Distributor Application
+ * This is the Brazil Esri Developer Network Page of ESRI Distributor Application
  * 
  * @author Udhayasundar S
  *
@@ -31,7 +31,7 @@ public class Brazil_ESRIDevNtwkPage extends ESRIWrappers {
 	// verify Esri Developer Network label
 	public Brazil_ESRIDevNtwkPage verifyEsriDevNtwklbl(String data) throws Throwable {
 		try {
-			verifyValueWithNewLinebyXpath(prop.getProperty("disBzlArcGIS.EsriDevNetworkLbl.xpath"),data);
+			verifyValueWithNewLineByXpath(prop.getProperty("disBzlArcGIS.EsriDevNetworkLbl.xpath"),data);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -25,7 +25,7 @@ public class CreateAccountPage extends ESRIWrappers {
 	public CreateAccountPage enterFirstName(String userdata) throws Throwable {
 		waitForPageLoad(5);
 		try {
-			enterbyId(prop.getProperty("createAcc.firstName.Id"), userdata);
+			enterById(prop.getProperty("createAcc.firstName.Id"), userdata);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -35,7 +35,7 @@ public class CreateAccountPage extends ESRIWrappers {
 	// Enter the Last Name
 		public CreateAccountPage enterLastName(String userdata) throws Throwable {
 			try {
-				enterbyId(prop.getProperty("createAcc.lastName.Id"), userdata);
+				enterById(prop.getProperty("createAcc.lastName.Id"), userdata);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -45,7 +45,7 @@ public class CreateAccountPage extends ESRIWrappers {
 	// Enter the Password
 	public CreateAccountPage enterEmailAddr(String email) throws Throwable {
 		try {
-			enterbyId(prop.getProperty("createAcc.email.Id"), email);
+			enterById(prop.getProperty("createAcc.email.Id"), email);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -68,7 +68,7 @@ public class CreateAccountPage extends ESRIWrappers {
 			System.out.println("verify Full Message: "+ driver.findElement(By.xpath(prop.getProperty("createAcc.LoginSuccessmsg1.xpath"))).getText());
 			System.out.println("verify Full Message: "+ driver.findElement(By.xpath(prop.getProperty("createAcc.LoginSuccessmsg2.xpath"))).getText());
 			System.out.println("verify Full Message: "+ driver.findElement(By.id(prop.getProperty("createAcc.LoginSuccEmailLbl.id"))).getText());
-			VerifyTextbyClassName(prop.getProperty("homePage.userEmailDropdown.className"),fullName);
+			VerifyTextByClassName(prop.getProperty("homePage.userEmailDropdown.className"),fullName);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

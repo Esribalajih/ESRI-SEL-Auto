@@ -31,7 +31,7 @@ public class Brazil_ContatoPage extends ESRIWrappers {
 	// Verify Contato label 
 	public Brazil_ContatoPage verifyContatoPage(String data) throws Throwable {
 		try {
-			verifyValuebyXpath(prop.getProperty("disBrazilcont.contatolabel.xpath"), data);
+			verifyValueByXpath(prop.getProperty("disBrazilcont.contatolabel.xpath"), data);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

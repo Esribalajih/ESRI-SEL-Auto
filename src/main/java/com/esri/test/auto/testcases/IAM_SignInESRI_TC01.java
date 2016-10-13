@@ -9,8 +9,9 @@ import com.esri.test.auto.pages.HomePage;
 import com.esri.test.auto.pages.SigninPage;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
-/**This test case is to check the login functionality
- * @author balajih
+/**This test case is to validate the Login functionality of ESRI Application using ESRI Account
+ * 
+ * @author udhayasundar
  *
  */
 public class IAM_SignInESRI_TC01  extends ESRIWrappers {
@@ -24,18 +25,19 @@ public class IAM_SignInESRI_TC01  extends ESRIWrappers {
 	  }
 
 	  @Test(dataProvider="fetchdata")
-	  public void loginforSuccess(String username,String password,String userNm, String  userFullName, String email) throws Throwable{
+	  public void loginforSuccess(String ESRIActStgURL, String username,String password,String userNm, String  userFullName, String email) throws Throwable{
+		  
+		  openbrowser(ESRIActStgURL);
 		  new SigninPage()
 		  .enterUserName(username)
 		  .enterPassword(password)
 		  .clickSignin()
-//		   new HomePage()
-		   .verifyLoggedUserName(userNm)
-		   .clickLoggedUserName()
-		   .verifyUserFullName(userFullName)
-		   .verifyUserEmail(email)
-		   .clickSignoutBtn()
-		   .verifySignoutSuccess();
+     	  .verifyLoggedUserName(userNm)
+		  .clickLoggedUserName()
+		  .verifyUserFullName(userFullName)
+		  .verifyUserEmail(email)
+		  .clickSignoutBtn()
+		  .verifySignoutSuccess();
 	  }
 	  
 

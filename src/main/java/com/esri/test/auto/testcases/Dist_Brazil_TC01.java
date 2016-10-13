@@ -8,9 +8,9 @@ import com.esri.test.auto.pages.Brazil_SuporteImagemPage;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**
- * This test case is to check the login functionality
+ * This test case is to validating the Brazil ESRI happy path
  * 
- * @author balajih
+ * @author udhayasundar
  *
  */
 public class Dist_Brazil_TC01 extends ESRIWrappers {

@@ -25,7 +25,7 @@ public class Brazil_HomePage extends ESRIWrappers {
 	// click Produtos Tab
 	public Brazil_HomePage clickProdutos() throws Throwable {
 		try {
-			clickbyXpath(prop.getProperty("disBrazilHome.Produtoslink.xpath"));
+			clickByXpath(prop.getProperty("disBrazilHome.Produtoslink.xpath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -38,7 +38,7 @@ public class Brazil_HomePage extends ESRIWrappers {
 			WebDriverWait wait = new WebDriverWait(driver, 10);
 			wait.until(ExpectedConditions
 					.presenceOfElementLocated(By.xpath(prop.getProperty("disBrazilHome.PltfrmArcGISlbl.xpath"))));
-			verifyValuebyXpath(prop.getProperty("disBrazilHome.PltfrmArcGISlbl.xpath"), data);
+			verifyValueByXpath(prop.getProperty("disBrazilHome.PltfrmArcGISlbl.xpath"), data);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -48,7 +48,7 @@ public class Brazil_HomePage extends ESRIWrappers {
 	// click industies Tab
 	public Brazil_HomePage clickIndustries() throws Throwable {
 		try {
-			clickbyXpath(prop.getProperty("disBrazilHome.industrieslink.xpath"));
+			clickByXpath(prop.getProperty("disBrazilHome.industrieslink.xpath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -61,7 +61,7 @@ public class Brazil_HomePage extends ESRIWrappers {
 			WebDriverWait wait = new WebDriverWait(driver, 10);
 			wait.until(ExpectedConditions
 					.presenceOfElementLocated(By.xpath(prop.getProperty("disBrazilHome.Educalbl.xpath"))));
-			verifyValuebyXpath(prop.getProperty("disBrazilHome.Educalbl.xpath"), data);
+			verifyValueByXpath(prop.getProperty("disBrazilHome.Educalbl.xpath"), data);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -71,7 +71,7 @@ public class Brazil_HomePage extends ESRIWrappers {
 	// click suporte Tab
 	public Brazil_HomePage clickSuporte() throws Throwable {
 		try {
-			clickbyXpath(prop.getProperty("disBrazilHome.suportelink.xpath"));
+			clickByXpath(prop.getProperty("disBrazilHome.suportelink.xpath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -84,7 +84,7 @@ public class Brazil_HomePage extends ESRIWrappers {
 			WebDriverWait wait = new WebDriverWait(driver, 10);
 			wait.until(ExpectedConditions
 					.presenceOfElementLocated(By.xpath(prop.getProperty("disBrazilHome.suportelbl.xpath"))));
-			verifyValuebyXpath(prop.getProperty("disBrazilHome.suportelbl.xpath"), data);
+			verifyValueByXpath(prop.getProperty("disBrazilHome.suportelbl.xpath"), data);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -94,7 +94,7 @@ public class Brazil_HomePage extends ESRIWrappers {
 	// click institucional Tab
 	public Brazil_HomePage clickInstitucional() throws Throwable {
 		try {
-			clickbyXpath(prop.getProperty("disBrazilHome.sobrelink.xpath"));
+			clickByXpath(prop.getProperty("disBrazilHome.sobrelink.xpath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -107,7 +107,7 @@ public class Brazil_HomePage extends ESRIWrappers {
 			WebDriverWait wait = new WebDriverWait(driver, 10);
 			wait.until(ExpectedConditions
 					.presenceOfElementLocated(By.xpath(prop.getProperty("disBrazilHome.sobrelbl.xpath"))));
-			verifyValuebyXpath(prop.getProperty("disBrazilHome.sobrelbl.xpath"), data);
+			verifyValueByXpath(prop.getProperty("disBrazilHome.sobrelbl.xpath"), data);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -117,7 +117,7 @@ public class Brazil_HomePage extends ESRIWrappers {
 	// click 5 Desafios Tab
 	public Brazil_HomePage click5Desafios() throws Throwable {
 		try {
-			clickbyXpath(prop.getProperty("disBrazilHome.desafios05link.xpath"));
+			clickByXpath(prop.getProperty("disBrazilHome.desafios05link.xpath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -130,7 +130,7 @@ public class Brazil_HomePage extends ESRIWrappers {
 			WebDriverWait wait = new WebDriverWait(driver, 10);
 			wait.until(ExpectedConditions
 					.presenceOfElementLocated(By.xpath(prop.getProperty("disBrazilHome.5Desafioslbl.xpath"))));
-			verifyValuebyXpath(prop.getProperty("disBrazilHome.5Desafioslbl.xpath"), data);
+			verifyValueByXpath(prop.getProperty("disBrazilHome.5Desafioslbl.xpath"), data);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -140,7 +140,7 @@ public class Brazil_HomePage extends ESRIWrappers {
 	// click Contato Tab
 	public Brazil_ContatoPage clickContato() throws Throwable {
 		try {
-			clickbyXpath(prop.getProperty("disBrazilHome.contatolink.xpath"));
+			clickByXpath(prop.getProperty("disBrazilHome.contatolink.xpath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -150,7 +150,7 @@ public class Brazil_HomePage extends ESRIWrappers {
 	// click Plataforma ArcGIS Link
 	public Brazil_ArcGISPage clickPlataformaArcGIS() throws Throwable {
 		try {
-			clickbyXpath(prop.getProperty("disBrazilHome.PlataformaArcGISlink.xpath"));
+			clickByXpath(prop.getProperty("disBrazilHome.PlataformaArcGISlink.xpath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -160,7 +160,7 @@ public class Brazil_HomePage extends ESRIWrappers {
 	// click ArcGIS Desktop Link
 	public Brazil_ArcGISDesktopPage clickArcGISDesktop() throws Throwable {
 		try {
-			clickbyXpath(prop.getProperty("disBrazilHome.ArcGISDesktoplink.xpath"));
+			clickByXpath(prop.getProperty("disBrazilHome.ArcGISDesktoplink.xpath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -170,7 +170,7 @@ public class Brazil_HomePage extends ESRIWrappers {
 	// click ArcGIS Online link
 	public Brazil_ArcGISOnlinePage clickArcGISOnline() throws Throwable {
 		try {
-			clickbyXpath(prop.getProperty("disBrazilHome.ArcGISOnlinelink.xpath"));
+			clickByXpath(prop.getProperty("disBrazilHome.ArcGISOnlinelink.xpath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -180,7 +180,7 @@ public class Brazil_HomePage extends ESRIWrappers {
 	// click Location Analytics link
 	public Brazil_LocationAnalyticsPage clickLocationAnalytics() throws Throwable {
 		try {
-			clickbyXpath(prop.getProperty("disBrazilHome.LocationAnalyticslink.xpath"));
+			clickByXpath(prop.getProperty("disBrazilHome.LocationAnalyticslink.xpath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -190,7 +190,7 @@ public class Brazil_HomePage extends ESRIWrappers {
 	// click Desenvolvedores link
 	public Brazil_ESRIDevNtwkPage clickDesenvolvedores() throws Throwable {
 		try {
-			clickbyXpath(prop.getProperty("disBrazilHome.Desenvolvedoreslink.xpath"));
+			clickByXpath(prop.getProperty("disBrazilHome.Desenvolvedoreslink.xpath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -210,7 +210,7 @@ public class Brazil_HomePage extends ESRIWrappers {
 	// enter the data to search text box
 	public Brazil_HomePage enterSearchTextBox(String data) throws Throwable {
 		try {
-			enterbyId(prop.getProperty("disBrazilHome.searchTextBox.id"), data);
+			enterById(prop.getProperty("disBrazilHome.searchTextBox.id"), data);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -220,7 +220,7 @@ public class Brazil_HomePage extends ESRIWrappers {
 	// click Política de Privacidade footer icon link
 	public Brazil_ContatoPage clickContatoFooterLink() throws Throwable {
 		try {
-			clickbyXpath(prop.getProperty("disBrazilHome.contatiFooterlink.xpath"));
+			clickByXpath(prop.getProperty("disBrazilHome.contatiFooterlink.xpath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -230,7 +230,7 @@ public class Brazil_HomePage extends ESRIWrappers {
 	// click Política de Privacidade footer link
 		public Brazil_PoliticadePrivacidadePage clickPolDePriFooterLink() throws Throwable {
 			try {
-				clickbyXpath(prop.getProperty("disBrazilHome.PoliticadePrivacidadeFooterlink.xpath"));
+				clickByXpath(prop.getProperty("disBrazilHome.PoliticadePrivacidadeFooterlink.xpath"));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -241,7 +241,7 @@ public class Brazil_HomePage extends ESRIWrappers {
 		// click Academia GIS footer link
 		public Brazil_ArcGISOnlinePage clickAcademiaGISFooterLink() throws Throwable {
 			try {
-				clickbyXpath(prop.getProperty("disBrazilHome.AcademiaGISFooterlink.xpath"));
+				clickByXpath(prop.getProperty("disBrazilHome.AcademiaGISFooterlink.xpath"));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

@@ -4,7 +4,7 @@ import com.esri.test.auto.utils.Reporter;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**
- *  This is the Brazil ArcGIS Desktop Page of ESRI Distributor Application
+ *  This is the Finland ArcGIS for Developers Page of ESRI Distributor Application
  * 
  * @author Udhayasundar S
  *
@@ -32,11 +32,7 @@ public class Finland_ArcGISDeveloperPage extends ESRIWrappers {
 	// verify ArcGIS desktop label
 	public Finland_ArcGISDeveloperPage verifyArcGISDeveloperlbl(String data) throws Throwable {
 		try {
-			verifyValuebyXpath(prop.getProperty("disFinlandHome.ArcGISDeveloperLbl.xpath"), data);
-			driver.close();
-//			String currentWin = driver.getWindowHandles().toArray()[0];
-//			driver.switchTo().window(nameOrHandle);
-					
+			verifyValueByXpath(prop.getProperty("disFinlandHome.ArcGISDeveloperLbl.xpath"), data);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

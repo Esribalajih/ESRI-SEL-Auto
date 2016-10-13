@@ -1,12 +1,14 @@
 package com.esri.test.auto.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.esri.test.auto.utils.Reporter;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**
- * This is the ESRI Home Page of IAM Application
+ * This is the ESRI Home Page of IAM Application/ Distributor Test
  * 
  * @author udhayasundar
  *
@@ -17,7 +19,7 @@ public class HomePage extends ESRIWrappers {
 		if (!VerifyTitle("Esri - GIS Mapping Software, Solutions, Services, Map Apps, and Data")) {
 			Reporter.reportStep("This is not a Home page", "FAIL");
 		} else
-			System.out.println("Home page Launched Successfully");
+			System.out.println("ESRI Home page Launched Successfully");
 	}
 
 	// Verify the UserName
@@ -26,7 +28,7 @@ public class HomePage extends ESRIWrappers {
 			waitForPageLoad(15);
 			System.out.println("verify user name: "
 					+ driver.findElement(By.xpath(prop.getProperty("homepage.userName.xpath"))).getText());
-			verifyValuebyXpath(prop.getProperty("homepage.userName.xpath"), userdata);
+			verifyValueByXpath(prop.getProperty("homepage.userName.xpath"), userdata);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -36,7 +38,7 @@ public class HomePage extends ESRIWrappers {
 	// Verify the default : Sign in UserName
 	public HomePage verifyUserName(String userdata) throws Throwable {
 		try {
-			verifyValuebyXpath(prop.getProperty("homepage.signInUserNm.xpath"), userdata);
+			verifyValueByXpath(prop.getProperty("homepage.signInUserNm.xpath"), userdata);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -46,7 +48,7 @@ public class HomePage extends ESRIWrappers {
 	// Click the UserName
 	public HomePage clickLoggedUserName() throws Throwable {
 		try {
-			clickbyXpath(prop.getProperty("homepage.userName.xpath"));
+			clickByXpath(prop.getProperty("homepage.userName.xpath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -59,7 +61,7 @@ public class HomePage extends ESRIWrappers {
 			// mouseHoverById(prop.getProperty("homepage.userName.id"));
 			System.out.println("verify user Full name: " + driver
 					.findElement(By.className(prop.getProperty("homePage.userNameDropdown.className"))).getText());
-			VerifyTextbyClassName(prop.getProperty("homePage.userNameDropdown.className"), fullName);
+			VerifyTextByClassName(prop.getProperty("homePage.userNameDropdown.className"), fullName);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -71,7 +73,7 @@ public class HomePage extends ESRIWrappers {
 		try {
 			System.out.println("verify user Email: " + driver
 					.findElement(By.className(prop.getProperty("homePage.userEmailDropdown.className"))).getText());
-			VerifyTextbyClassName(prop.getProperty("homePage.userEmailDropdown.className"), fullName);
+			VerifyTextByClassName(prop.getProperty("homePage.userEmailDropdown.className"), fullName);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -83,7 +85,7 @@ public class HomePage extends ESRIWrappers {
 		try {
 			System.out.println("verify Signout button: "
 					+ driver.findElement(By.xpath(prop.getProperty("homePage.signOutDropdown.xpath"))).getText());
-			clickbyXpath(prop.getProperty("homePage.signOutDropdown.xpath"));
+			clickByXpath(prop.getProperty("homePage.signOutDropdown.xpath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -94,7 +96,7 @@ public class HomePage extends ESRIWrappers {
 	public HomePage verifyErrorMessage(String errorMessage) throws Throwable {
 		System.out.println(
 				"Error Message: " + driver.findElement(By.id(prop.getProperty("homePage.errorMessage.id"))).getText());
-		VerifyTextbyId(prop.getProperty("homePage.errorMessage.id"), errorMessage);
+		VerifyTextById(prop.getProperty("homePage.errorMessage.id"), errorMessage);
 		return this;
 	}
 
@@ -107,8 +109,31 @@ public class HomePage extends ESRIWrappers {
 
 	// click sign out button for error message (negative scenario)
 	public HomePage clickSignoutforFailure() throws Throwable {
-		clickbyXpath(prop.getProperty("homePage.signOutDropdown.xpath"));
+		clickByXpath(prop.getProperty("homePage.signOutDropdown.xpath"));
 		return this;
 	}
 
+	// Verify ArcGIS Platform label - Distributor Test
+		public HomePage verifyArcGISPlatformLabel(String data) throws Throwable {
+			try {
+				WebDriverWait wait = new WebDriverWait(driver, 10);
+				wait.until(ExpectedConditions
+						.presenceOfElementLocated(By.xpath(prop.getProperty("homePage.arcGISPlatformLabel.xpath"))));
+				verifyValueByXpath(prop.getProperty("homePage.arcGISPlatformLabel.xpath"), data);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return this;
+		}
+		
+		// click back button in browser
+		public Mexico_HomePage clickbsrBackBtn_MexicoHomePage() throws Throwable {
+			try {
+				clickBrowserBackButton();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return new Mexico_HomePage();
+		}
+	
 }

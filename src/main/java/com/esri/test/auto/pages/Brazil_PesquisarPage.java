@@ -5,7 +5,7 @@ import com.esri.test.auto.utils.Reporter;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**
- *  This is the Brazil ArcGIS Page of ESRI Distributor Application
+ *  This is the Brazil Pesquisar Page of ESRI Distributor Application
  * 
  * @author Udhayasundar S
  *
@@ -29,7 +29,7 @@ public class Brazil_PesquisarPage extends ESRIWrappers {
 		return new Brazil_HomePage();
 	}
 
-	// click Produtos Tab
+	// Verify result displaying of data for Search
 	public Brazil_PesquisarPage verifyResultsDisplaying() throws Throwable {
 		try {
 			checkElementIsDisplayed(prop.getProperty("disBrazilPes.FilterResults.xpath"));

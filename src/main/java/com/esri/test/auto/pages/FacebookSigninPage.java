@@ -28,7 +28,7 @@ public class FacebookSigninPage extends ESRIWrappers {
 		try {
 			// switchToWindow();
 			System.out.println("Window switched");
-			enterbyId(prop.getProperty("fbSignin.userName.id"), userdata);
+			enterById(prop.getProperty("fbSignin.userName.id"), userdata);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -38,7 +38,7 @@ public class FacebookSigninPage extends ESRIWrappers {
 	// Enter the Password
 	public FacebookSigninPage enterPassword(String pwd) throws Throwable {
 		try {
-			enterbyId(prop.getProperty("fbSignin.password.id"), pwd);
+			enterById(prop.getProperty("fbSignin.password.id"), pwd);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

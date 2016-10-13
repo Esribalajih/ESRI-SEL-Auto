@@ -15,8 +15,10 @@ import com.esri.test.auto.pages.HomePage;
 import com.esri.test.auto.pages.SigninPage;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
-/**This test case is to check the login functionality
- * @author balajih
+/**This test case is to validate the Login functionality of ESRI Application using FaceBook Account
+ * 
+ * 
+ * @author udhayasundar
  *
  */
 public class IAM_SigninFaceBook_TC02  extends ESRIWrappers {
@@ -31,7 +33,8 @@ public class IAM_SigninFaceBook_TC02  extends ESRIWrappers {
 	  }
 
 	  @Test(dataProvider="fetchdata")
-	  public void loginforSuccess(String username,String password,String firstname, String fullname,String email) throws Throwable{
+	  public void loginforSuccess(String ESRIActStgURL, String username,String password,String firstname, String fullname,String email) throws Throwable{
+		  openbrowser(ESRIActStgURL);
 		  new SigninPage()
 		  .clickFacebooklink()
 		  .enterUserName(username)

@@ -10,9 +10,9 @@ import com.esri.test.auto.pages.Finland_TukiPage;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**
- * This test case is to check the login functionality
+ * This test case is to validating the Finland ESRI happy path
  * 
- * @author balajih
+ * @author udhayasundar
  *
  */
 public class Dist_Finland_TC02 extends ESRIWrappers {
@@ -31,7 +31,7 @@ public class Dist_Finland_TC02 extends ESRIWrappers {
 		
 		openbrowser(FinlandHomeURL);
 		new Finland_HomePage()
-		/*.clickToimialat()
+		.clickToimialat()
 		.verifyToimialatList(Toimialat)
 		.clickTuotteet()
 		.verifyTuotteetList(Tuotteet)
@@ -54,16 +54,15 @@ public class Dist_Finland_TC02 extends ESRIWrappers {
 		.clickbsrBackBtn()
 		.clickArcGISForServer()
 		.verifyArcGISforServerlbl(ArcGISServer)
-		.clickbsrBackBtn()*/
-		.clickArcGISforDevelopers()
-		.verifyArcGISDeveloperlbl(ArcGISDevelopers)
 		.clickbsrBackBtn()
 		.clickGEOSECMAforArcGISlink()
 		.verifyGEOSEMAArcGISlbl(GEOSECMAArcGIS)
 		.clickbsrBackBtn()
 		.clickOtaYhteyttAFooterlink()
-		.verifyEsriFinlandOylbl(EsriFinlandOy);
-		
+		.verifyEsriFinlandOylbl(EsriFinlandOy)
+		.clickbsrBackBtn()
+		.clickArcGISforDevelopers()
+		.verifyArcGISDeveloperlbl(ArcGISDevelopers);
 		
 		openbrowser(FinlandSupportURL);
 		new Finland_TukiPage()

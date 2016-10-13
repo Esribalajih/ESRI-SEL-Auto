@@ -25,7 +25,7 @@ public class GoogleSigninPage extends ESRIWrappers {
 		waitForPageLoad(5);
 		try {
 			// switchToWindow();
-			enterbyId(prop.getProperty("gleSignin.userName.id"), userdata);
+			enterById(prop.getProperty("gleSignin.userName.id"), userdata);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -47,7 +47,7 @@ public class GoogleSigninPage extends ESRIWrappers {
 	public GoogleSigninPage enterPassword(String pwd) throws Throwable {
 		try {
 			waitForPageLoad(3);
-			enterbyId(prop.getProperty("gleSignin.password.id"), pwd);
+			enterById(prop.getProperty("gleSignin.password.id"), pwd);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -1,5 +1,6 @@
 package com.esri.test.auto.pages;
 
+import com.esri.test.auto.utils.Reporter;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**This is a ArcGISDesktop Free Trial Page
@@ -8,6 +9,33 @@ import com.esri.test.auto.wrappers.ESRIWrappers;
  */
 public class ArcGISforDesktopFreeTrialPage extends ESRIWrappers{
 	
+	public ArcGISforDesktopFreeTrialPage() throws Throwable{
+		if(!VerifyTitle("ArcGIS for Desktop | Free Trial"));
+		Reporter.reportStep("This is not a ArcGISDesktop Free Trial Page", "FAIL");
+	}
+	
+	public ArcGISforDesktopFreeTrialPage clickFreeTrialTab() throws Throwable{
+		clickByXpath(prop.getProperty("arcGISDesktopPage.subMenuFreeTriallink.xpath"));
+		return this;
+	}
+	
+	public ArcGISforDesktopFreeTrialPage verifyFreeTrialHdr(String FreeTrialHdr) throws Throwable{
+		VerifyTextByXpath(prop.getProperty("arcGISDesktopPage.freeTrialHdr.xpath"), FreeTrialHdr);
+		return this;
+	}
+	
+	/*public ArcGISforDesktopFreeTrialPage navigateToFrame() throws Throwable{
+		int iFrameSize = driver.findElementsByTagName("iframe").size();
+		for (int i=0;i<=iFrameSize;i++){
+			driver.switchTo().frame(i);
+		}
+		return this;
+	}*/
+	
+	public ArcGISforDesktopFreeTrialPage navigateToFrame() throws Throwable{
+		switchToFrameByXpath(prop.getProperty(""));
+		return this;
+	}
 	
 
 }

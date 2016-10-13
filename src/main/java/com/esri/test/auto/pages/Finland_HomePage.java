@@ -8,7 +8,7 @@ import com.esri.test.auto.utils.Reporter;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**
- * This is the Brazil Home Page of ESRI Distributor Application
+ * This is the Finland Home Page of ESRI Distributor Application
  * 
  * @author Udhayasundar S
  *
@@ -26,7 +26,7 @@ public class Finland_HomePage extends ESRIWrappers {
 	// click Toimialat Tab
 	public Finland_HomePage clickToimialat() throws Throwable {
 		try {
-			clickbyXpath(prop.getProperty("disFinlandHome.Toimialatlink.xpath"));
+			clickByXpath(prop.getProperty("disFinlandHome.Toimialatlink.xpath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -39,7 +39,7 @@ public class Finland_HomePage extends ESRIWrappers {
 			WebDriverWait wait = new WebDriverWait(driver, 10);
 			wait.until(ExpectedConditions
 					.presenceOfElementLocated(By.xpath(prop.getProperty("disFinlandHome.Liiketoimintalbl.xpath"))));
-			verifyValuebyXpath(prop.getProperty("disFinlandHome.Liiketoimintalbl.xpath"), data);
+			verifyValueByXpath(prop.getProperty("disFinlandHome.Liiketoimintalbl.xpath"), data);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -49,7 +49,7 @@ public class Finland_HomePage extends ESRIWrappers {
 	// click Tuotteet Tab
 	public Finland_HomePage clickTuotteet() throws Throwable {
 		try {
-			clickbyXpath(prop.getProperty("disFinlandHome.Tuotteetlink.xpath"));
+			clickByXpath(prop.getProperty("disFinlandHome.Tuotteetlink.xpath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -62,7 +62,7 @@ public class Finland_HomePage extends ESRIWrappers {
 			WebDriverWait wait = new WebDriverWait(driver, 10);
 			wait.until(ExpectedConditions
 					.presenceOfElementLocated(By.xpath(prop.getProperty("disFinlandHome.ArcGISPailbl.xpath"))));
-			verifyValuebyXpath(prop.getProperty("disFinlandHome.ArcGISPailbl.xpath"), data);
+			verifyValueByXpath(prop.getProperty("disFinlandHome.ArcGISPailbl.xpath"), data);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -72,7 +72,7 @@ public class Finland_HomePage extends ESRIWrappers {
 	// click Palvelut & Tuki Tab
 	public Finland_HomePage clickPalvelut_Tuki() throws Throwable {
 		try {
-			clickbyXpath(prop.getProperty("disFinlandHome.PalvelutTukilink.xpath"));
+			clickByXpath(prop.getProperty("disFinlandHome.PalvelutTukilink.xpath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -85,7 +85,7 @@ public class Finland_HomePage extends ESRIWrappers {
 			WebDriverWait wait = new WebDriverWait(driver, 10);
 			wait.until(ExpectedConditions
 					.presenceOfElementLocated(By.xpath(prop.getProperty("disFinlandHome.Palvelutlbl.xpath"))));
-			verifyValuebyXpath(prop.getProperty("disFinlandHome.Palvelutlbl.xpath"), data);
+			verifyValueByXpath(prop.getProperty("disFinlandHome.Palvelutlbl.xpath"), data);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -95,7 +95,7 @@ public class Finland_HomePage extends ESRIWrappers {
 	// click TutustuMeihin Tab
 	public Finland_HomePage clickTutustuMeihin() throws Throwable {
 		try {
-			clickbyXpath(prop.getProperty("disFinlandHome.Tutustumeihinlink.xpath"));
+			clickByXpath(prop.getProperty("disFinlandHome.Tutustumeihinlink.xpath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -108,7 +108,7 @@ public class Finland_HomePage extends ESRIWrappers {
 			WebDriverWait wait = new WebDriverWait(driver, 10);
 			wait.until(ExpectedConditions
 					.presenceOfElementLocated(By.xpath(prop.getProperty("disFinlandHome.EsriFinlandOylbl.xpath"))));
-			verifyValuebyXpath(prop.getProperty("disFinlandHome.EsriFinlandOylbl.xpath"), data);
+			verifyValueByXpath(prop.getProperty("disFinlandHome.EsriFinlandOylbl.xpath"), data);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -118,7 +118,7 @@ public class Finland_HomePage extends ESRIWrappers {
 	// click Rekrytointi Tab
 	public Finland_HomePage clickRekrytointi() throws Throwable {
 		try {
-			clickbyXpath(prop.getProperty("disFinlandHome.Rekrytointilink.xpath"));
+			clickByXpath(prop.getProperty("disFinlandHome.Rekrytointilink.xpath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -131,7 +131,7 @@ public class Finland_HomePage extends ESRIWrappers {
 			WebDriverWait wait = new WebDriverWait(driver, 10);
 			wait.until(ExpectedConditions
 					.presenceOfElementLocated(By.xpath(prop.getProperty("disFinlandHome.Rekrytointilbl.xpath"))));
-			verifyValuebyXpath(prop.getProperty("disFinlandHome.Rekrytointilbl.xpath"), data);
+			verifyValueByXpath(prop.getProperty("disFinlandHome.Rekrytointilbl.xpath"), data);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -141,7 +141,7 @@ public class Finland_HomePage extends ESRIWrappers {
 	// click Käyttäjille Tab
 	public Finland_HomePage clickKäyttäjille() throws Throwable {
 		try {
-			clickbyXpath(prop.getProperty("disFinlandHome.Kayttajillelink.xpath"));
+			clickByXpath(prop.getProperty("disFinlandHome.Kayttajillelink.xpath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -154,7 +154,7 @@ public class Finland_HomePage extends ESRIWrappers {
 				WebDriverWait wait = new WebDriverWait(driver, 10);
 				wait.until(ExpectedConditions
 						.presenceOfElementLocated(By.xpath(prop.getProperty("disFinlandHome.KayttajilleLbl.xpath"))));
-				verifyValuebyXpath(prop.getProperty("disFinlandHome.KayttajilleLbl.xpath"), data);
+				verifyValueByXpath(prop.getProperty("disFinlandHome.KayttajilleLbl.xpath"), data);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -165,7 +165,7 @@ public class Finland_HomePage extends ESRIWrappers {
 	// click ArcGIS-paikkatietoalusta Link
 	public Finland_ArcGISPlatformPage clickArcGISPaikkatietoalustaLink() throws Throwable {
 		try {
-			clickbyXpath(prop.getProperty("disFinlandHome.ArcGISPaikkatietoalustalink.xpath"));
+			clickByXpath(prop.getProperty("disFinlandHome.ArcGISPaikkatietoalustalink.xpath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -176,7 +176,7 @@ public class Finland_HomePage extends ESRIWrappers {
 	// click ArcGIS Online link
 		public Finland_ArcGISOnlinePage clickArcGISOnline() throws Throwable {
 			try {
-				clickbyXpath(prop.getProperty("disFinlandHome.ArcGISOnlinelink.xpath"));
+				clickByXpath(prop.getProperty("disFinlandHome.ArcGISOnlinelink.xpath"));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -186,7 +186,7 @@ public class Finland_HomePage extends ESRIWrappers {
 	// click ArcGIS Desktop Link
 	public Finland_ArcGISDesktopPage clickArcGISForDesktop() throws Throwable {
 		try {
-			clickbyXpath(prop.getProperty("disFinlandHome.ArcGISforDesktoplink.xpath"));
+			clickByXpath(prop.getProperty("disFinlandHome.ArcGISforDesktoplink.xpath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -198,7 +198,7 @@ public class Finland_HomePage extends ESRIWrappers {
 	// click ArcGIS For Server link
 	public finland_ArcGIServerPage clickArcGISForServer() throws Throwable {
 		try {
-			clickbyXpath(prop.getProperty("disFinlandHome.ArcGISforServerlink.xpath"));
+			clickByXpath(prop.getProperty("disFinlandHome.ArcGISforServerlink.xpath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -208,7 +208,7 @@ public class Finland_HomePage extends ESRIWrappers {
 	// click ArcGIS for Developers link
 	public Finland_ArcGISDeveloperPage clickArcGISforDevelopers() throws Throwable {
 		try {
-			clickbyXpath(prop.getProperty("disFinlandHome.ArcGISforDeveloperslink.xpath"));
+			clickByXpath(prop.getProperty("disFinlandHome.ArcGISforDeveloperslink.xpath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -218,7 +218,7 @@ public class Finland_HomePage extends ESRIWrappers {
 	// click GEOSECMA for ArcGIS link
 		public Finland_GEOSEMAArcGISPage clickGEOSECMAforArcGISlink() throws Throwable {
 			try {
-				clickbyXpath(prop.getProperty("disFinlandHome.GEOSECMAforArcGISlink.xpath"));
+				clickByXpath(prop.getProperty("disFinlandHome.GEOSECMAforArcGISlink.xpath"));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -229,7 +229,7 @@ public class Finland_HomePage extends ESRIWrappers {
 	// click Ota YhteyttA footer icon link
 	public Finland_YhteystiedotPage clickOtaYhteyttAFooterlink() throws Throwable {
 		try {
-			clickbyXpath(prop.getProperty("disFinlandHome.OtaYhteyttAFooterlink.xpath"));
+			clickByXpath(prop.getProperty("disFinlandHome.OtaYhteyttAFooterlink.xpath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -32,7 +32,7 @@ public class Brazil_ArcGISPage extends ESRIWrappers {
 	// click Produtos Tab
 	public Brazil_ArcGISPage verifyArGISPage(String data) throws Throwable {
 		try {
-			verifyValuebyXpath(prop.getProperty("disBzlArcGIS.PlataformaTab.xpath"), data);
+			verifyValueByXpath(prop.getProperty("disBzlArcGIS.PlataformaTab.xpath"), data);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

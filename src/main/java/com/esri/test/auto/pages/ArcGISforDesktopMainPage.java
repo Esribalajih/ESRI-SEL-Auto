@@ -60,12 +60,12 @@ public class ArcGISforDesktopMainPage extends ESRIWrappers{
 	}
 	
 	public ArcGISforDesktopPricingPage clickPricingTab() throws Throwable{
-		clickByXpath(prop.getProperty(""));
+		clickByXpath(prop.getProperty("arcGISDesktopPage.subMenuPricinglink.xpath"));
 		return new ArcGISforDesktopPricingPage();
 	}
 	
 	public ArcGISforDesktopSysRePage clickDesktopSysReTab() throws Throwable{
-		clickByXpath(prop.getProperty(""));
+		clickByXpath(prop.getProperty("arcGISDesktopPage.subMenuSysReqlink.xpath"));
 		return new ArcGISforDesktopSysRePage();
 	}
 	

@@ -4,7 +4,7 @@ import com.esri.test.auto.utils.Reporter;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**
- * This is the Brazil ArcGIS Online Page of ESRI Distributor Application
+ * This is the Finland ArcGIS Online Page of ESRI Distributor Application
  * 
  * @author Udhayasundar S
  *
@@ -31,7 +31,7 @@ public class Finland_ArcGISOnlinePage extends ESRIWrappers {
 	// verify ArcGIS online label
 	public Finland_ArcGISOnlinePage verifyArcGISOnlinelbl(String data) throws Throwable {
 		try {
-			verifyValuebyXpath(prop.getProperty("disFinlandHome.ArcGISonlineLbl.xpath"), data);
+			verifyValueByXpath(prop.getProperty("disFinlandHome.ArcGISonlineLbl.xpath"), data);
 			System.out.println(getTextByXpath(prop.getProperty("disFinlandHome.ArcGISonlineLbl.xpath")));
 		} catch (Exception e) {
 			e.printStackTrace();

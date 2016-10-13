@@ -31,7 +31,7 @@ public class Brazil_SuporteImagemPage extends ESRIWrappers {
 	// verify ArcGIS online label
 	public Brazil_SuporteImagemPage verifySuporteImagemlbl(String data) throws Throwable {
 		try {
-			verifyValuebyXpath(prop.getProperty("disBzlArcGIS.ArcGISDesktopLbl.xpath"), data);
+			verifyValueByXpath(prop.getProperty("disBzlArcGIS.ArcGISDesktopLbl.xpath"), data);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

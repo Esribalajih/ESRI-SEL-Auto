@@ -97,4 +97,9 @@ public class ArcGISforDesktopExtnPage extends ESRIWrappers{
 		clickByXpath(prop.getProperty("arcGISDesktopPage.arcGIDDesktopExtnPDF.xpath"));
 		return this;
 	}
+	
+	public ArcGISforDesktopMainPage clickMainTab() throws Throwable{
+		clickByXpath(prop.getProperty("arcGISDesktopPage.subMenuMainlink.xpath"));
+		return new ArcGISforDesktopMainPage();
+	}
 }

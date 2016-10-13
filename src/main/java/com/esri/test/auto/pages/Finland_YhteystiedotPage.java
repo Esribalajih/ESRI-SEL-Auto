@@ -4,7 +4,7 @@ import com.esri.test.auto.utils.Reporter;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**
- *  This is the Brazil ArcGIS Desktop Page of ESRI Distributor Application
+ *  This is the Finland Yhteystiedot Page of ESRI Distributor Application
  * 
  * @author Udhayasundar S
  *
@@ -12,7 +12,7 @@ import com.esri.test.auto.wrappers.ESRIWrappers;
 public class Finland_YhteystiedotPage extends ESRIWrappers {
 	public Finland_YhteystiedotPage() throws Throwable {
 		waitForPageLoad(15);
-		if (!VerifyTitle(" 	Yhteystiedot ")) {
+		if (!VerifyTitle("Yhteystiedot")) {
 			Reporter.reportStep("This is not a Yhteystiedot (Finland) page.", "FAIL");
 		} else
 			System.out.println("Finland Yhteystiedot page Launched Successfully");
@@ -31,7 +31,7 @@ public class Finland_YhteystiedotPage extends ESRIWrappers {
 	// verify Esri Finland Oy label
 	public Finland_YhteystiedotPage verifyEsriFinlandOylbl(String data) throws Throwable {
 		try {
-			verifyValuebyXpath(prop.getProperty("disFinlandHome.EsriFinlandOyLbl.xpath"), data);
+			verifyValueByXpath(prop.getProperty("disFinlandHome.EsriFinlandOyLbl.xpath"), data);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

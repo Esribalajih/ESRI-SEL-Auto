@@ -17,7 +17,7 @@ public class WhatsNewArcGISPage extends ESRIWrappers{
 			Reporter.reportStep("This is not a Whats New ArcGIS Page", "FAIL");
 		}
 	}
-	//Click Browser Back button to Navigate back to Previous Screen
+	//Click Browser Back button to Navigate back to the Previous Screen
 	public ArcGISforDesktopFeaturesPage clickBrowBackButton() throws Throwable{
 		clickBrowserBackButton();
 		return new ArcGISforDesktopFeaturesPage() ;

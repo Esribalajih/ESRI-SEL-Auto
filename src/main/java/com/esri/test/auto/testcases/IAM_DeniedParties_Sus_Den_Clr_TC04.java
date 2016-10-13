@@ -14,9 +14,9 @@ import com.esri.test.auto.pages.SigninPage;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**
- * This test case is to check the login functionality
+ * This test case is to check Denied Parties - Existing Account - Suspect > Denied > Cleared functionality
  * 
- * @author balajih
+ * @author udhayasundar
  *
  */
 public class IAM_DeniedParties_Sus_Den_Clr_TC04 extends ESRIWrappers {

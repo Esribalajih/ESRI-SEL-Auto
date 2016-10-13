@@ -24,7 +24,7 @@ public class ArcGIS_SignInPage extends ESRIWrappers {
 		waitForPageLoad(5);
 		try {
 			switchToFrameByID(prop.getProperty("arcGISSignIn.signInFrame.id"));
-			enterbyId(prop.getProperty("arcGISSignIn.userName.id"), userdata);
+			enterById(prop.getProperty("arcGISSignIn.userName.id"), userdata);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -35,7 +35,7 @@ public class ArcGIS_SignInPage extends ESRIWrappers {
 	// Enter the Password
 	public ArcGIS_SignInPage enterPassword(String pwd) throws Throwable {
 		try {
-			enterbyId(prop.getProperty("arcGISSignIn.password.id"), pwd);
+			enterById(prop.getProperty("arcGISSignIn.password.id"), pwd);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -58,7 +58,7 @@ public class ArcGIS_SignInPage extends ESRIWrappers {
 			waitForPageLoad(2);
 			switchToDefaultContent();
 			waitForPageLoad(2);
-			verifyValuebyXpath(prop.getProperty("arcGISSignIn.signInErrorMsg.xpath"), message);
+			verifyValueByXpath(prop.getProperty("arcGISSignIn.signInErrorMsg.xpath"), message);
 		}
 		catch(Exception e){
 			e.printStackTrace();

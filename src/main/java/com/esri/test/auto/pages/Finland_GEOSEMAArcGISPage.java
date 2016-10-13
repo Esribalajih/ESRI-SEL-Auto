@@ -4,7 +4,7 @@ import com.esri.test.auto.utils.Reporter;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**
- *  This is the Brazil ArcGIS Desktop Page of ESRI Distributor Application
+ *  This is the Finland GEOSECMA for ArcGIS Page of ESRI Distributor Application
  * 
  * @author Udhayasundar S
  *
@@ -31,7 +31,7 @@ public class Finland_GEOSEMAArcGISPage extends ESRIWrappers {
 	// verify GEOSEMA for ArcGIS label
 	public Finland_GEOSEMAArcGISPage verifyGEOSEMAArcGISlbl(String data) throws Throwable {
 		try {
-			verifyValueWithNewLinebyXpath(prop.getProperty("disFinlandHome.ArcGISGeoscemaLbl.xpath"), data);
+			verifyValueWithNewLineByXpath(prop.getProperty("disFinlandHome.ArcGISGeoscemaLbl.xpath"), data);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

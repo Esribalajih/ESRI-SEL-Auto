@@ -5,7 +5,7 @@ import com.esri.test.auto.utils.Reporter;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**
- *  This is the Brazil ArcGIS Page of ESRI Distributor Application
+ *  This is the Finland Tuki Page of ESRI Distributor Application
  * 
  * @author Udhayasundar S
  *
@@ -34,7 +34,7 @@ public class Finland_TukiPage extends ESRIWrappers {
 	// verify Tuki label
 		public Finland_TukiPage verifyTukilbl(String data) throws Throwable {
 			try {
-				verifyValuebyXpath(prop.getProperty("disFinlandHome.TukiLbl.xpath"), data);
+				verifyValueByXpath(prop.getProperty("disFinlandHome.TukiLbl.xpath"), data);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

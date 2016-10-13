@@ -10,6 +10,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -59,7 +61,6 @@ public class GenericWrappers implements WrappersInterface{
 		}
 
 	}
-
 
 	/**This method is to Invoke the Browser
 	 * @author balajih
@@ -927,6 +928,26 @@ public class GenericWrappers implements WrappersInterface{
 	}
 	
 	/**
+	 * This method is used to switch the frame with WebElement
+	 *
+	 * @author balajih 
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean switchToFrameByXpath(String data) throws Throwable{
+		boolean bReturn = false;
+		try {
+			driver.switchTo().frame(driver.findElement(By.xpath(data)));
+			Reporter.reportStep("Frame switched successfully", "PASS");
+			bReturn = true;
+		} catch (Exception e) {
+			Reporter.reportStep("Frame not switched successfully", "FAIL");
+		}
+		return bReturn;
+	}
+	
+	/**
 	 * This method is used to switch the frame with index value
 	 * 
 	 * @author Udhayasundar
@@ -999,7 +1020,35 @@ public class GenericWrappers implements WrappersInterface{
 		}
 		return currentWin;
 	}
+	
+	/**This method is used to Mouse hover on the element using windowHandles.
+	 * @author balajih
+	 * @param title 
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean switchWindowByTitle(String title)
+    {
 
+	  String currentWindow = driver.getWindowHandle();
+      List<String> availableWindows = new ArrayList<String>(driver.getWindowHandles());
+
+      for(String w : availableWindows)
+      {
+        if (w != currentWindow)
+        {
+          driver.switchTo().window(w);
+          if (driver.getTitle().equalsIgnoreCase(title))
+            return true;
+          else
+          {
+            driver.switchTo().window(currentWindow);
+          }
+        }
+      }
+      return false;
+    } 
+	
 	/**
 	 * This method is used to open a new URL
 	 * @author balajih
@@ -1185,7 +1234,13 @@ public class GenericWrappers implements WrappersInterface{
 		}
 		return rowCount;
 	}
-
+	
+	/**This Method will fetch the Table column Count by Xpath WebElement
+	 * 
+	 * @param xpathValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
 	public int getTableColcountByXpath(String xpathValue) throws Throwable {
 		int colCount=0;
 		try {
@@ -1226,7 +1281,7 @@ public class GenericWrappers implements WrappersInterface{
 	 * @param browserName - name of the webelement
 	 * @param capabilities
 	 */
-	//
+	
 	public void clearCookies(String browserName, DesiredCapabilities capabilities){
 		if(browserName.equalsIgnoreCase("firefox")||browserName.equalsIgnoreCase("Firefox")){
 			driver.manage().deleteAllCookies();
@@ -1834,10 +1889,10 @@ public class GenericWrappers implements WrappersInterface{
 		return bReturn;
 	}
 
+	
 	/**
 	 * This method is used to compare the value between the element and input data
 	 * if new line exist then it replace with space
-	 * 
 	 * @author Udhayasundar
 	 * @param xpathValue - name of the webelement
 	 * @param data - The Data to be sent to the WebElement
@@ -1861,6 +1916,31 @@ public class GenericWrappers implements WrappersInterface{
 		}
 		return bReturn;
 	}
+	
+	/**
+	 * This method will check the element is displaying or not using id
+	 * 
+	 * @author Udhayasundar
+	 * @param idValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean verifyValueById(String idValue, String data) throws Throwable {
+        boolean bReturn = false;
+        try {
+            String lblValue = getTextById(idValue).trim();
+            if (lblValue.equalsIgnoreCase(data)) {
+                Reporter.reportStep(lblValue + " label displaying successfully", "PASS");
+                bReturn = true;
+            } else {
+                Reporter.reportStep(data + " label is not displayed", "FAIL");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return bReturn;
+    }
 	
 	/**
 	 * This method will check the element is displaying or not using xpath
@@ -1912,7 +1992,7 @@ public class GenericWrappers implements WrappersInterface{
 	 * @return
 	 * @throws Throwable
 	 */
-	public String getTextByID(String idValue) throws Throwable {
+	public String getTextById(String idValue) throws Throwable {
 		String textValue = null;
 		try {
 			textValue = driver.findElement(By.id(idValue)).getText();
@@ -1947,7 +2027,7 @@ public class GenericWrappers implements WrappersInterface{
 	public boolean verifyMessageById(String idValue, String data) throws Throwable {
 		boolean bReturn = false;
 		try {
-			String lblValue = getTextByID(idValue).trim();
+			String lblValue = getTextById(idValue).trim();
 			if (lblValue.equalsIgnoreCase(data)) {
 				Reporter.reportStep(lblValue + " message displaying successfully", "PASS");
 				bReturn = true;
@@ -1999,8 +2079,7 @@ public class GenericWrappers implements WrappersInterface{
 			Reporter.reportStep("The text value is not received", "FAIL");
 		}
 	}
-
-
+	
 	/** This method is used to view the element using scrollbar
 	 * @author Sivaprakash
 	 * @param xpathValue - name of the webelement
@@ -2040,7 +2119,6 @@ public class GenericWrappers implements WrappersInterface{
 
 		try {
 			driver.quit();
-
 		} catch (Throwable e) {
 			Reporter.reportStep("The Browser" + driver.getCapabilities().getBrowserName()+ "could not be closed", "FAIL");
 			e.printStackTrace();

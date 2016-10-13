@@ -23,13 +23,13 @@ public class SigninPage extends ESRIWrappers {
 	// Enter the UserName
 	public SigninPage enterUserName(String userdata) throws Throwable {
 		switchToFrameByIndex(0);
-		enterbyId(prop.getProperty("Signin.username.Id"), userdata);
+		enterById(prop.getProperty("Signin.username.Id"), userdata);
 		return this;
 	}
 
 	// Enter the Password
 	public SigninPage enterPassword(String pwd) throws Throwable {
-		enterbyId(prop.getProperty("Signin.password.Id"), pwd);
+		enterById(prop.getProperty("Signin.password.Id"), pwd);
 		return this;
 	}
 
@@ -87,7 +87,7 @@ public class SigninPage extends ESRIWrappers {
 	public SigninPage verifyErrorMessage(String errorMessage) throws Throwable{
 		System.out.println("Error Message: "+driver.findElement(By.id(prop.getProperty("homePage.errorMessage.id"))).getText()+" status :"
 				+ driver.findElement(By.id(prop.getProperty("homePage.errorMessage.id"))).getText().equalsIgnoreCase(errorMessage));
-		VerifyTextbyId(prop.getProperty("homePage.errorMessage.id"), errorMessage);
+		VerifyTextById(prop.getProperty("homePage.errorMessage.id"), errorMessage);
 		return this;
 	}
 	

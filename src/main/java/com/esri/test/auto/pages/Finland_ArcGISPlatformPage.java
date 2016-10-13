@@ -4,7 +4,7 @@ import com.esri.test.auto.utils.Reporter;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**
- *  This is the Brazil ArcGIS Desktop Page of ESRI Distributor Application
+ *  This is the Finland ArcGIS Platform | Platform Page of ESRI Distributor Application
  * 
  * @author Udhayasundar S
  *
@@ -31,7 +31,7 @@ public class Finland_ArcGISPlatformPage extends ESRIWrappers {
 	// verify ArcGIS desktop label
 	public Finland_ArcGISPlatformPage verifyArcGISPlatformlbl(String data) throws Throwable {
 		try {
-			verifyValuebyXpath(prop.getProperty("disFinlandHome.ArcGISPlatformLbl.xpath"), data);
+			verifyValueByXpath(prop.getProperty("disFinlandHome.ArcGISPlatformLbl.xpath"), data);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

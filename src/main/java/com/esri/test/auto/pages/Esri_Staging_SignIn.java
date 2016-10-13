@@ -23,20 +23,20 @@ public class Esri_Staging_SignIn extends ESRIWrappers {
 	// Enter the UserName
 	public Esri_Staging_SignIn enterUserName(String userdata) throws Throwable {
 		//enterbyName(prop.getProperty("okta.userName.name"), userdata);
-		enterbyId(prop.getProperty("okta.userName.id"), userdata);
+		enterById(prop.getProperty("okta.userName.id"), userdata);
 		return this;
 	}
 
 	// Enter the Password
 	public Esri_Staging_SignIn enterPassword(String pwd) throws Throwable {
 		//enterbyName(prop.getProperty("okta.password.name"), pwd);
-		enterbyId(prop.getProperty("okta.password.id"), pwd);
+		enterById(prop.getProperty("okta.password.id"), pwd);
 		return this;
 	}
 
 	// Click Sign in button
 	public void clickSignin() throws Throwable {
-		clickbyClassName(prop.getProperty("okta.signInBtn.class"));
+		clickByClassName(prop.getProperty("okta.signInBtn.class"));
 //		return new CSAT_Staging();
 	}
 	

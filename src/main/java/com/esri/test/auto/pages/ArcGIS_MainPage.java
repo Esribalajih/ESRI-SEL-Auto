@@ -22,7 +22,7 @@ public class ArcGIS_MainPage extends ESRIWrappers {
 	// Click Sign in Link in ArcGIS Main Page
 	public ArcGIS_SignInPage clickSignInLink() throws Throwable {
 		try {
-			clickbyXpath(prop.getProperty("arcGISMain.SignInBtn.xpath"));
+			clickByXpath(prop.getProperty("arcGISMain.SignInBtn.xpath"));
 			} 
 		catch (Exception e) {
 			e.printStackTrace();

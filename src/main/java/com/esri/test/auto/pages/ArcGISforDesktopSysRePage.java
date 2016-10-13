@@ -32,5 +32,10 @@ public class ArcGISforDesktopSysRePage extends ESRIWrappers {
 		clickByXpath(prop.getProperty("arcGISDesktopPage.arcGISProSysReqDwnload.xpath"));
 		return this;
 	}
+	
+	public ArcGISforDesktopMainPage clickMainTab() throws Throwable{
+		clickByXpath(prop.getProperty("arcGISDesktopPage.subMenuMainlink.xpath"));
+		return new ArcGISforDesktopMainPage();
+	}
 
 }

@@ -31,7 +31,7 @@ public class Brazil_ArcGISDesktopPage extends ESRIWrappers {
 	// verify ArcGIS desktop label
 	public Brazil_ArcGISDesktopPage verifyArcGISDesktoplbl(String data) throws Throwable {
 		try {
-			verifyValuebyXpath(prop.getProperty("disBzlArcGIS.ArcGISDesktopLbl.xpath"), data);
+			verifyValueByXpath(prop.getProperty("disBzlArcGIS.ArcGISDesktopLbl.xpath"), data);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

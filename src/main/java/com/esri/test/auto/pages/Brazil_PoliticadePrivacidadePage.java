@@ -32,7 +32,7 @@ public class Brazil_PoliticadePrivacidadePage extends ESRIWrappers {
 	// verify the Politica de Privacidade label
 	public Brazil_PoliticadePrivacidadePage verifyPolDePriPage(String data) throws Throwable {
 		try {
-			verifyValuebyXpath(prop.getProperty("disBzlArcGIS.PoliticadePrivacidadeLbl.xpath"), data);
+			verifyValueByXpath(prop.getProperty("disBzlArcGIS.PoliticadePrivacidadeLbl.xpath"), data);
 			System.out.println(getTextByXpath(prop.getProperty("disBzlArcGIS.PoliticadePrivacidadeLbl.xpath")));
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -4,7 +4,7 @@ import com.esri.test.auto.utils.Reporter;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**
- * This is the Brazil ArcGIS Online Page of ESRI Distributor Application
+ * This is the Brazil Location Analytics Page of ESRI Distributor Application
  * 
  * @author Udhayasundar S
  *
@@ -31,7 +31,7 @@ public class Brazil_LocationAnalyticsPage extends ESRIWrappers {
 	// verify Location Analytics label
 	public Brazil_LocationAnalyticsPage verifyLocAnalyticslbl(String data) throws Throwable {
 		try {
-			verifyValuebyXpath(prop.getProperty("disBzlArcGIS.LocationAnalyticsLbl.xpath"), data);
+			verifyValueByXpath(prop.getProperty("disBzlArcGIS.LocationAnalyticsLbl.xpath"), data);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

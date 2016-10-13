@@ -37,7 +37,7 @@ public class OutLookEmail extends ESRIWrappers {
 	public OutLookEmail searchTextBox(String userdata) throws Throwable{
 		try{
 			waitForPageLoad(15);
-			enterbyClassName(prop.getProperty("outLook.searchTextBox.className"), userdata);
+			enterByClassName(prop.getProperty("outLook.searchTextBox.className"), userdata);
 		}
 		catch(Exception e){
 			e.printStackTrace();
@@ -48,7 +48,7 @@ public class OutLookEmail extends ESRIWrappers {
 	//Click the account activate email
 	public OutLookEmail clickEmail() throws Throwable{
 		try {
-			clickbyXpath(prop.getProperty("outLook.EsriAccountMail.xpath"));
+			clickByXpath(prop.getProperty("outLook.EsriAccountMail.xpath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -58,7 +58,7 @@ public class OutLookEmail extends ESRIWrappers {
 	//Click the Activate your account button in email
 	public OutLookEmail clickActivateAccountBtn() throws Throwable{
 		try {
-			clickbyXpath(prop.getProperty("outLook.EsriActiveyourAccountBtn.xpath"));
+			clickByXpath(prop.getProperty("outLook.EsriActiveyourAccountBtn.xpath"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

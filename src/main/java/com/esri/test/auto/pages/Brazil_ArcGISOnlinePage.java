@@ -31,8 +31,7 @@ public class Brazil_ArcGISOnlinePage extends ESRIWrappers {
 	// verify ArcGIS online label
 	public Brazil_ArcGISOnlinePage verifyArcGISOnlinelbl(String data) throws Throwable {
 		try {
-			verifyValuebyXpath(prop.getProperty("disBzlArcGIS.ArcGISDesktopLbl.xpath"), data);
-			System.out.println(getTextByXpath(prop.getProperty("disBzlArcGIS.ArcGISDesktopLbl.xpath")));
+			verifyValueByXpath(prop.getProperty("disBzlArcGIS.ArcGISDesktopLbl.xpath"), data);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

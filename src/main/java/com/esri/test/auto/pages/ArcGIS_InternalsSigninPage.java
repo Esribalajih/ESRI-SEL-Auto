@@ -23,7 +23,7 @@ public class ArcGIS_InternalsSigninPage extends ESRIWrappers {
 	public ArcGIS_InternalsSigninPage enterUserName(String userdata) throws Throwable {
 		waitForPageLoad(5);
 		try {
-			enterbyId(prop.getProperty("arcGISInt.userName.id"), userdata);
+			enterById(prop.getProperty("arcGISInt.userName.id"), userdata);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -33,7 +33,7 @@ public class ArcGIS_InternalsSigninPage extends ESRIWrappers {
 	// Enter the Password
 	public ArcGIS_InternalsSigninPage enterPassword(String pwd) throws Throwable {
 		try {
-			enterbyId(prop.getProperty("arcGISInt.password.id"), pwd);
+			enterById(prop.getProperty("arcGISInt.password.id"), pwd);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

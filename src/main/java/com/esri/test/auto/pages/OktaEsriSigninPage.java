@@ -23,7 +23,7 @@ public class OktaEsriSigninPage extends ESRIWrappers {
 	public OktaEsriSigninPage enterUserName(String userdata) throws Throwable {
 		waitForPageLoad(5);
 		try {
-			enterbyName(prop.getProperty("okta.userName.name"), userdata);
+			enterByName(prop.getProperty("okta.userName.name"), userdata);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -34,7 +34,7 @@ public class OktaEsriSigninPage extends ESRIWrappers {
 	// Enter the Password
 	public OktaEsriSigninPage enterPassword(String pwd) throws Throwable {
 		try {
-			enterbyName(prop.getProperty("okta.password.name"), pwd);
+			enterByName(prop.getProperty("okta.password.name"), pwd);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -44,7 +44,7 @@ public class OktaEsriSigninPage extends ESRIWrappers {
 	// Click Sign in button positive scenario and navigate to Home page
 	public HomePage clickEsriSignInBtn() throws Throwable {
 		try {
-			clickbyClassName(prop.getProperty("okta.signInBtn.class"));
+			clickByClassName(prop.getProperty("okta.signInBtn.class"));
 			} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -54,7 +54,7 @@ public class OktaEsriSigninPage extends ESRIWrappers {
 	// Click Sign in button positive scenario and navigate to CSAT Application
 	public CSAT_Staging clickEsriSignInBtnCSAT() throws Throwable {
 		try {
-			clickbyClassName(prop.getProperty("okta.signInBtn.class"));
+			clickByClassName(prop.getProperty("okta.signInBtn.class"));
 			} catch (Exception e) {
 			e.printStackTrace();
 		}

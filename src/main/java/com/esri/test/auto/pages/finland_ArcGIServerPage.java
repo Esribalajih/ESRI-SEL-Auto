@@ -4,7 +4,8 @@ import com.esri.test.auto.utils.Reporter;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**
- *  This is the Brazil ArcGIS Desktop Page of ESRI Distributor Application
+ *  This is the Finland ArcGIS for Server | GIS Web Server Software | Web Map Server
+ *   Page of ESRI Distributor Application
  * 
  * @author Udhayasundar S
  *
@@ -31,7 +32,7 @@ public class finland_ArcGIServerPage extends ESRIWrappers {
 	// verify ArcGIS desktop label
 	public finland_ArcGIServerPage verifyArcGISforServerlbl(String data) throws Throwable {
 		try {
-			verifyValuebyXpath(prop.getProperty("disFinlandHome.ArcGISServerLbl.xpath"), data);
+			verifyValueByXpath(prop.getProperty("disFinlandHome.ArcGISServerLbl.xpath"), data);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

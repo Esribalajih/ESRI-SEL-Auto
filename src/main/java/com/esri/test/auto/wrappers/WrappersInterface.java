@@ -6,6 +6,8 @@ package com.esri.test.auto.wrappers;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import org.openqa.selenium.remote.DesiredCapabilities;
+
 /**This is a Wrappers Interfaces used for Generic Wrappers Methods
  * @author balajih
  *
@@ -236,4 +238,643 @@ public interface WrappersInterface {
 	 * @throws Throwable
 	 */
 	public boolean selectByNameWithValue(String nameValue, String data) throws Throwable;
+	
+	/**This method is used to fetch the data from dropdown using select By Class Name attribute to locate
+	 * @author balajih
+	 * @param cnameValue - name of the webelement
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean selectByClassNamewithValue(String cnameValue, String data) throws Throwable;
+	
+	/**This method is used to fetch the data from dropdown using select By CSS Selector attribute to locate
+	 * @author balajih
+	 * @param idValue - name of the webelement
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable 
+	 */
+	public boolean selectByCssSelectorWithValue(String cssValue, String data) throws Throwable;
+	
+	/**This method is used to fetch the data from dropdown using select By Xpath attribute to locate
+	 * @author balajih
+	 * @param xpathValue - name of the webelement
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean selectByXpathWithValue(String xpathValue, String data) throws Throwable;
+	
+	/**This method is used to fetch the data from dropdown using select By visible text with Id attribute to locate
+	 * @author balajih
+	 * @param idValue - name of the webelement
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean selectByIdWithText(String idValue, String data) throws Throwable;
+	
+	/**This method is used to fetch the data from dropdown using select By visible text with Name attribute to locate
+	 * @author balajih
+	 * @param nameValue - name of the webelement
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean selectByNameWithText(String nameValue, String data) throws Throwable;
+	
+	/**This method is used to fetch the data from dropdown using select By visible text with Class Name attribute to locate
+	 * @author balajih
+	 * @param cnameValue - name of the webelement
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean selectByClassNamewithText(String cnameValue, String data) throws Throwable;
+	
+	/**This method is used to fetch the data from dropdown using select By visible text with CSS Selector attribute to locate
+	 * @author balajih
+	 * @param cssValue - name of the webelement
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean selectByCssSelectorWithText(String cssValue, String data) throws Throwable;
+	
+	/**This method is used to fetch the data from dropdown using select By visible text with Xpath attribute to locate
+	 * @author balajih
+	 * @param idValue - name of the webelement
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable 
+	 */
+	public boolean selectByXpathWithText(String xpathValue, String data) throws Throwable;
+	
+	/**This method is used to fetch the data from dropdown using select By visible text with tagName attribute to locate
+	 * @author balajih
+	 * @param tagNameValue - name of the webelement
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable 
+	 */
+	public boolean selectBytagName(String tagNameValue, String data) throws Throwable;
+	
+	/**This method is used to click OK button in Alert box
+	 * @author balajih
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean clickOkAlertBox() throws Throwable;
+	
+	/**This method is used to click CANCEL button in Alert box
+	 * @author balajih
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean clickCancelAlertBox() throws Throwable;
+	
+	/**This method is used to enter the value in the Alert box
+	 * @author balajih
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean enterValueAlertBox(String data) throws Throwable;
+	
+	/**This method is used to verify the text in the Alert box
+	 * @author balajih
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean VerifyTextAlertBox(String data) throws Throwable;
+	
+	/**This method is used to Mouse hover on the element using ID element.
+	 * @author balajih
+	 * @param idValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean mouseHoverById(String idValue) throws Throwable;
+	
+	/**
+	 * This method is used to switch the frame with id
+	 *
+	 * @author balajih & Udhay
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean switchToFrameByID(String data) throws Throwable;
+	
+	/**
+	 * This method is used to switch the frame with name
+	 *
+	 * @author balajih 
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean switchToFrameByName(String data) throws Throwable;
+	
+	/**
+	 * This method is used to switch the frame with index value
+	 * 
+	 * @author Udhayasundar
+	 * @param indexValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean switchToFrameByIndex(int indexValue) throws Throwable;
+	
+	/**This method is to Switch to Default Content from nested windows
+	 * @author balajih
+	 * @return
+	 */
+	public boolean switchToDefaultContent();
+	
+	/**
+	 * This method is used to sleep for the given seconds
+	 *
+	 * @author balajih
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public void waitForPageLoad(long seconds);
+	
+	/**
+	 * This method is used to switch the frame with id
+	 *
+	 * @author balajih
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public String switchToWindow() throws Throwable;
+	
+	/**
+	 * This method is used to open a new URL
+	 * @author balajih
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean openbrowser(String URL) throws Throwable;
+	
+	/**
+	 * This method will verify the fetched title is matching or not using the partial title.
+	 *
+	 * @author balajih
+	 * @param title - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean VerifyTitleEndsWith(String title) throws Throwable;
+	
+	/**
+	 * This method will enter the value using ClassName attribute in I/O device
+	 * @author Balajih & udayasundar
+	 * @param cnameValue - name of the webelement
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean enterkeysByClassName(String cnameValue, String data) throws Throwable;
+	
+	/**
+	 * This method will enter the value using Xpath attribute in I/O device
+	 * @author Balajih
+	 * @param xpathValue - name of the webelement
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean enterkeysByXpath(String xpathValue, String data) throws Throwable;
+	
+	/**
+	 * This method will enter the value using ID attribute in I/O device
+	 * @author Balajih
+	 * @param idValue - name of the webelement
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean enterkeysByID(String idValue, String data) throws Throwable;
+	
+	/**
+	 * This method will enter the value By handling Browser Authentication using I/O device
+	 *
+	 * @author Balajih & udayasundar
+	 * @param uName - The Data to be sent to the WebElement
+	 * @param pwd - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public void handlingBAuthUsingRobo(String uName, String pwd);
+	
+	/**
+	 * This method will verify the Web Table using Xpath
+	 * @author balajih
+	 * @param xpathValue - name of the webelement
+	 * @param rowNum - The Data to be sent to the WebElement
+	 * @param colNum - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public String verifyTablecellValueByXpath(String xpathValue, int rowNum, int colNum) throws Throwable ;
+	
+	/**This Method will fetch the Table row Count by Xpath WebElement
+	 * 
+	 * @param xpathValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public int getTableRowcountByXpath(String xpathValue) throws Throwable;
+	
+	/**This Method will fetch the Table column Count by Xpath WebElement
+	 * 
+	 * @param xpathValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public int getTableColcountByXpath(String xpathValue) throws Throwable;
+	
+	/**This Method is used to Kill the Browser drivers from task manager
+	 * @author balajih
+	 */
+	public void killAllDrivers();
+	
+	/**This method is to clear Cache & Cookies in a browser
+	 * @author balajih & Udhaysundar
+	 * @param browserName - name of the webelement
+	 * @param capabilities
+	 */
+	
+	public void clearCookies(String browserName, DesiredCapabilities capabilities);
+	
+	/**
+	 * This method will Upload the File from windows into Browser.
+	 * @author Mohamed
+	 * @param location - The Data to be sent to the WebElement
+	 * @param 
+	 * @return
+	 */
+	public void uploadFile(String location) throws Throwable;
+	
+	/**
+	 * This method is used to Mouse hover on the element using xpath element.
+	 * 
+	 * @author Udhayasundar
+	 * @param xpathValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean mouseHoverByXpath(String xpathValue) throws Throwable;
+	
+	/**
+	 * This method is used to Mouse hover on the element using CSS element.
+	 * 
+	 * @author Udhayasundar
+	 * @param cssValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean mouseHoverByCSS(String cssValue) throws Throwable;
+	
+	/**
+	 * This method is used to Mouse hover on the element using class name element.
+	 * 
+	 * @author Udhayasundar
+	 * @param classNameValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean mouseHoverByClassName(String classNameValue) throws Throwable;
+	
+	/**
+	 * This method is used to Mouse hover on the element using name element.
+	 * 
+	 * @author Udhayasundar
+	 * @param nameValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean mouseHoverByName(String nameValue) throws Throwable;
+	
+	/**
+	 * This method is used to Mouse hover on the element using LinkText element.
+	 * 
+	 * @author Udhayasundar
+	 * @param linkTextValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean mouseHoverByLinkText(String linkTextValue) throws Throwable;
+	
+	/**
+	 * This method is used to Mouse hover on the element using Partial Link Text element.
+	 * 
+	 * @author Udhayasundar
+	 * @param pLinkTextValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean mouseHoverByPLinkText(String pLinkTextValue) throws Throwable; 
+	
+	/**
+	 * This method is used to fetch the data from dropdown using select By Id
+	 * attribute to locate 
+	 * @author Udhayasundar
+	 * @param idValue - name of the webelement
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean selectByIdWithindex(String idValue, int data) throws Throwable;
+	
+	/**
+	 * This method is used to click the element By mouse hover using ID element.
+	 * 
+	 * @author Udhayasundar
+	 * @param idValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean mouseClickByID(String idValue) throws Throwable;
+	
+	/**
+	 * This method is used to click the element By mouse hover using className element.
+	 * 
+	 * @author Udhayasundar
+	 * @param classNameValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean mouseClickByClass(String classNameValue) throws Throwable;
+	
+	/**
+	 * This method is used to click the element By mouse hover using ID element.
+	 * 
+	 * @author Udhayasundar 
+	 * @param idValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean actionClickByID(String idValue) throws Throwable;
+	
+	/**
+	 * This method is used to click the element By mouse hover using className element.
+	 * 
+	 * @author Udhayasundar
+	 * @param classNameValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean actionClickByClass(String classNameValue) throws Throwable;
+	
+	/**
+	 * This method is used to context click the element By mouse hover using ID element.
+	 * 
+	 * @author Udhayasundar
+	 * @param idValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean mouseCntxtClickById(String idValue) throws Throwable;
+	
+	/**
+	 * This method is used to context click the element By mouse hover using ClassName element.
+	 * 
+	 * @author Udhayasundar
+	 * @param classNameValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean mouseCntxtClickByClass(String classNameValue) throws Throwable;
+	
+	/**
+	 * This method is used to context click the element By mouse hover using id element.
+	 * 
+	 * @author Udhayasundar
+	 * @param idValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean actioncnxtClickById(String idValue) throws Throwable;
+	
+	/**
+	 * This method is used to context click the element By mouse hover using class element.
+	 * 
+	 * @author Udhayasundar
+	 * @param classNameValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean actioncnxtClickByClass(String classNameValue) throws Throwable;
+	
+	/**
+	 * This method is used to double click the element By mouse hover using id element.
+	 * 
+	 * @author Udhayasundar
+	 * @param idValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean actiondbleClickById(String idValue) throws Throwable;
+	
+	/**
+	 * This method is used to double click the element By mouse hover using class name element.
+	 * 
+	 * @author Udhayasundar
+	 * @param classNameValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean actiondbleClickByClass(String classNameValue) throws Throwable;
+
+	/**
+	 * This method is used to double click the element By mouse hover using id element.
+	 * 
+	 * @author Udhayasundar
+	 * @param idValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean mousedbleClickById(String idValue) throws Throwable ;
+	
+	/**
+	 * This method is used to double click the element By mouse hover using class name element.
+	 * 
+	 * @author Udhayasundar
+	 * @param classNameValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean mousedbleClickByclass(String classNameValue) throws Throwable;
+	
+	/**
+	 * This method is used to drag and drop the element By Mouse hover using ID element.
+	 * 
+	 * @author Udhayasundar
+	 * @param idValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean DragAndDropById(String source, String target) throws Throwable;
+	
+	/**
+	 * This method is used to drag and drop the element By Mouse hover using classname element.
+	 * 
+	 * @author Udhayasundar
+	 * @param idValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean DragAndDropByclass(String source, String target) throws Throwable;
+	
+	/**
+	 * This method is used to send the keys By Mouse hover on the element using ID element.
+	 * 
+	 * @author Udhayasundar
+	 * @param idValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean actionMseSendKeysById(String idValue,String data) throws Throwable;
+	
+	/**
+	 * This method is used to send the keys By Mouse hover on the element using className element.
+	 * 
+	 * @author Udhayasundar
+	 * @param classNameValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean actionMseSendKeysByclass(String classNameValue,String data) throws Throwable;
+	
+	/**
+	 * This method is used to send the keys By Mouse hover on the element using ID element.
+	 * 
+	 * @author Udhayasundar
+	 * @param idValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean actionSendKeysById(String idValue,String data) throws Throwable;
+	
+	/**
+	 * This method is used to send the keys By Mouse hover on the element using className element.
+	 * 
+	 * @author Udhayasundar
+	 * @param classNameValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean actionSendKeysByclass(String classNameValue,String data) throws Throwable;
+	
+	/**
+	 * This method is used to compare the value between the element and input data
+	 * if new line exist then it replace with space
+	 * 
+	 * @author Udhayasundar
+	 * @param xpathValue - name of the webelement
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean verifyValueWithNewLineByXpath(String xpathValue, String data) throws Throwable;
+	
+	/**
+	 * This method is used to compare the value between the element and input data
+	 * if new line exist then it replace with space
+	 * 
+	 * @author Udhayasundar
+	 * @param xpathValue - name of the webelement
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean verifyValueByXpath(String xpathValue, String data) throws Throwable;
+	
+	/**
+	 * This method will check the element is displaying or not using xpath
+	 * 
+	 * @author Udhayasundar
+	 * @param xpathValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean checkElementIsDisplayed(String xpathValue) throws Throwable;
+	
+	/**
+	 * This method will return the web element Text using xpath
+	 * 
+	 * @author Udhayasundar
+	 * @param xpathValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public String getTextByXpath(String xpathValue) throws Throwable;
+	
+	/**
+	 * This method will return the web element Text using ID
+	 * 
+	 * @author Balajih
+	 * @param idValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public String getTextById(String idValue) throws Throwable;
+	
+	/** This method is used to click the element using Java script
+	 * @author udhayasundar
+	 * @param xpathValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public void clickByJavaScript(String xpathValue) throws Throwable;
+	
+	/** This method is used to compare the value between the element and input data
+	 * @author udhayasundar
+	 * @param idValue - name of the webelement
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean verifyMessageById(String idValue, String data) throws Throwable;
+	
+	/** This method is used to get text value using LinkText
+	 * @author Balajih & Sivaprakash
+	 * @param linkText - name of the webelement
+	 * @throws Throwable
+	 */
+	public String getTextUsingLinkText(String linkText) throws Throwable;
+	
+	/** This method is used to view the element using scrollbar
+	 * @author Sivaprakash
+	 * @param idValue - name of the webelement
+	 * @throws Throwable
+	 */
+	public void scrollIntoViewById(String idValue) throws Throwable;
+	
+	/** This method is used to view the element using scrollbar
+	 * @author Sivaprakash
+	 * @param xpathValue - name of the webelement
+	 * @throws Throwable
+	 */
+	public void scrollIntoViewByXpath(String xpathValue) throws Throwable;
+	
+	/**This method is to click on the Browser Back button
+	 * @author balajih
+	 * @throws Throwable
+	 */
+	public void clickBrowserBackButton() throws Throwable;
+	
+	/**This method is to quit the current Browser opened for testing
+	 * @author balajih
+	 * @throws Throwable
+	 */
+	public void quitBrowser() throws Throwable;
 }
