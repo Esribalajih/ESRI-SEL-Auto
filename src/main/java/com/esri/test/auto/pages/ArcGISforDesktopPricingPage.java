@@ -19,47 +19,47 @@ public class ArcGISforDesktopPricingPage extends ESRIWrappers{
 	}
 	
 	public ArcGISforDesktopPricingPage clickPricingTab() throws Throwable{
-		clickByXpath(prop.getProperty("arcGISDesktopPage.subMenuPricinglink.xpath"));
+		clickByXpath(prop.getProperty("arcGISDesktopPricingPage.subMenuPricinglink.xpath"));
 		return this;
 	}
 	
 	public ArcGISforDesktopPricingPage verifyPricingHdr(String PricingHdr) throws Throwable{
-		VerifyTextByXpath(prop.getProperty("arcGISDesktopPage.pricingHeader.xpath"), PricingHdr);
+		VerifyTextByXpath(prop.getProperty("arcGISDesktopPricingPage.pricingHeader.xpath"), PricingHdr);
 		return this;
 	}
 	
 	public ArcGISforDesktopPricingPage clickShowHideAllLink() throws Throwable{
-		clickByClassName(prop.getProperty("arcGISDesktopPage.showhideAlllink.class"));
+		clickByClassName(prop.getProperty("arcGISDesktopPricingPage.showhideAlllink.class"));
 		return this;
 	}
 	
 	public ArcGISforDesktopPricingPage clickBMEGILink() throws Throwable{
-		clickByXpath(prop.getProperty("arcGISDesktopPage.licenselvlBMEGIToggle.xpath"));
+		clickByXpath(prop.getProperty("arcGISDesktopPricingPage.licenselvlBMEGIToggle.xpath"));
 		return this;
 	}
 	
 	public ArcGISforDesktopPricingPage clickMEADMLink() throws Throwable{
-		clickByXpath(prop.getProperty("arcGISDesktopPage.licenselvlMEADMToggle.xpath"));
+		clickByXpath(prop.getProperty("arcGISDesktopPricingPage.licenselvlMEADMToggle.xpath"));
 		return this;
 	}
 	
 	public ArcGISforDesktopPricingPage clickAADCLink() throws Throwable{
-		clickByXpath(prop.getProperty("arcGISDesktopPage.licenselvlAADCToggle.xpath"));
+		clickByXpath(prop.getProperty("arcGISDesktopPricingPage.licenselvlAADCToggle.xpath"));
 		return this;
 	}
 	
 	public ArcGISforDesktopPricingPage clickWhitePaperDWNPDF() throws Throwable{
-		clickByXpath(prop.getProperty("arcGISDesktopPage.licenselvlWhitePaperDwnload.xpath"));
+		clickByXpath(prop.getProperty("arcGISDesktopPricingPage.licenselvlWhitePaperDwnload.xpath"));
 		return this;
 	}
 	
 	public ArcGISforDesktopPricingPage verifyProgramsandELAHdr(String ProELAHdr) throws Throwable{
-		VerifyTextByClassName(prop.getProperty("arcGISDesktopPage.programsandELAHdr.class"), ProELAHdr);
+		VerifyTextByClassName(prop.getProperty("arcGISDesktopPricingPage.programsandELAHdr.class"), ProELAHdr);
 		return this;
 	}
 	
 	public ArcGISforDesktopMainPage clickMainTab() throws Throwable{
-		clickByXpath(prop.getProperty("arcGISDesktopPage.subMenuMainlink.xpath"));
+		clickByXpath(prop.getProperty("arcGISDesktopMainPage.subMenuMainlink.xpath"));
 		return new ArcGISforDesktopMainPage();
 	}
 }

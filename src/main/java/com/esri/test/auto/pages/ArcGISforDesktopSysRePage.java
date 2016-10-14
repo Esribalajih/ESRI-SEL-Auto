@@ -15,26 +15,26 @@ public class ArcGISforDesktopSysRePage extends ESRIWrappers {
 	}
 	
 	public ArcGISforDesktopSysRePage clickSystemRequirementTab() throws Throwable{
-		clickByXpath(prop.getProperty("arcGISDesktopPage.sysreqHeader.xpath"));
+		clickByXpath(prop.getProperty("arcGISDesktopReqPage.sysreqHeader.xpath"));
 		return this;
 	}
 	
 	public ArcGISforDesktopSysRePage verifySysReqHdr(String data) throws Throwable{
-		VerifyTextByXpath(prop.getProperty("arcGISDesktopPage.sysreqHeader.xpath"), data);
+		VerifyTextByXpath(prop.getProperty("arcGISDesktopReqPage.sysreqHeader.xpath"), data);
 		return this;
 	}
 	
 	public ArcGISforDesktopSysRePage clickArcmapSysReqPDF() throws Throwable{
-		clickByXpath(prop.getProperty("arcGISDesktopPage.arcMapSysReqDwnload.xpath"));
+		clickByXpath(prop.getProperty("arcGISDesktopReqPage.arcMapSysReqDwnload.xpath"));
 		return this;
 	}
 	public ArcGISforDesktopSysRePage clickArcGISProSysReqPDF() throws Throwable{
-		clickByXpath(prop.getProperty("arcGISDesktopPage.arcGISProSysReqDwnload.xpath"));
+		clickByXpath(prop.getProperty("arcGISDesktopReqPage.arcGISProSysReqDwnload.xpath"));
 		return this;
 	}
 	
 	public ArcGISforDesktopMainPage clickMainTab() throws Throwable{
-		clickByXpath(prop.getProperty("arcGISDesktopPage.subMenuMainlink.xpath"));
+		clickByXpath(prop.getProperty("arcGISDesktopMainPage.subMenuMainlink.xpath"));
 		return new ArcGISforDesktopMainPage();
 	}
 

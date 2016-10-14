@@ -132,6 +132,16 @@ public interface WrappersInterface {
 	 */
 	public boolean VerifyTextByXpath(String xpathValue,String data) throws Throwable;
 	
+	/**
+	 * This method will check the element is displaying or not using id
+	 * 
+	 * @author Udhayasundar
+	 * @param idValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean verifyValueById(String idValue, String data) throws Throwable;
+	
 	/**This method will verify the entered value in text field using tagName attribute to locate
 	 * @author balajih
 	 * @param tagValue - name of the webelement
@@ -413,6 +423,14 @@ public interface WrappersInterface {
 	 * @throws Throwable
 	 */
 	public String switchToWindow() throws Throwable;
+	
+	/**This method is used to Mouse hover on the element using windowHandles.
+	 * @author balajih
+	 * @param title 
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean switchWindowByTitle(String title);
 	
 	/**
 	 * This method is used to open a new URL

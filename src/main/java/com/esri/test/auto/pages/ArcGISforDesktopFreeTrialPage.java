@@ -15,12 +15,12 @@ public class ArcGISforDesktopFreeTrialPage extends ESRIWrappers{
 	}
 	
 	public ArcGISforDesktopFreeTrialPage clickFreeTrialTab() throws Throwable{
-		clickByXpath(prop.getProperty("arcGISDesktopPage.subMenuFreeTriallink.xpath"));
+		clickByXpath(prop.getProperty("arcGISDesktopFreeTrialPage.subMenuFreeTriallink.xpath"));
 		return this;
 	}
 	
 	public ArcGISforDesktopFreeTrialPage verifyFreeTrialHdr(String FreeTrialHdr) throws Throwable{
-		VerifyTextByXpath(prop.getProperty("arcGISDesktopPage.freeTrialHdr.xpath"), FreeTrialHdr);
+		VerifyTextByXpath(prop.getProperty("arcGISDesktopFreeTrialPage.freeTrialHdr.xpath"), FreeTrialHdr);
 		return this;
 	}
 	

@@ -38,6 +38,7 @@ import com.esri.test.auto.utils.Reporter;
  *
  */
 public class GenericWrappers implements WrappersInterface{
+//public class GenericWrappers{
 
 	protected static RemoteWebDriver driver;
 	protected static Properties prop;
@@ -950,7 +951,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method is used to switch the frame with index value
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param indexValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1324,7 +1325,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method is used to Mouse hover on the element using xpath element.
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param xpathValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1345,7 +1346,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method is used to Mouse hover on the element using CSS element.
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param cssValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1366,7 +1367,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method is used to Mouse hover on the element using class name element.
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param classNameValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1387,7 +1388,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method is used to Mouse hover on the element using name element.
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param nameValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1408,7 +1409,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method is used to Mouse hover on the element using LinkText element.
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param linkTextValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1429,7 +1430,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method is used to Mouse hover on the element using Partial Link Text element.
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param pLinkTextValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1451,7 +1452,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method is used to fetch the data from dropdown using select By Id
 	 * attribute to locate 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param idValue - name of the webelement
 	 * @param data - The Data to be sent to the WebElement
 	 * @return
@@ -1475,7 +1476,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method is used to click the element By mouse hover using ID element.
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param idValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1497,7 +1498,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method is used to click the element By mouse hover using className element.
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param classNameValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1518,7 +1519,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method is used to click the element By mouse hover using ID element.
 	 * 
-	 * @author Udhayasundar 
+	 * @author Balajih 
 	 * @param idValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1539,7 +1540,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method is used to click the element By mouse hover using className element.
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param classNameValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1561,7 +1562,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method is used to context click the element By mouse hover using ID element.
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param idValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1582,7 +1583,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method is used to context click the element By mouse hover using ClassName element.
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param classNameValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1603,7 +1604,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method is used to context click the element By mouse hover using id element.
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param idValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1625,7 +1626,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method is used to context click the element By mouse hover using class element.
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param classNameValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1647,7 +1648,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method is used to double click the element By mouse hover using id element.
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param idValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1669,7 +1670,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method is used to double click the element By mouse hover using class name element.
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param classNameValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1691,7 +1692,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method is used to double click the element By mouse hover using id element.
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param idValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1712,7 +1713,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method is used to double click the element By mouse hover using class name element.
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param classNameValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1735,7 +1736,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method is used to drag and drop the element By Mouse hover using ID element.
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param idValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1757,7 +1758,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method is used to drag and drop the element By Mouse hover using classname element.
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param idValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1779,7 +1780,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method is used to send the keys By Mouse hover on the element using ID element.
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param idValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1800,7 +1801,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method is used to send the keys By Mouse hover on the element using className element.
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param classNameValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1821,7 +1822,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method is used to send the keys By Mouse hover on the element using ID element.
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param idValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1842,7 +1843,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method is used to send the keys By Mouse hover on the element using className element.
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param classNameValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1864,7 +1865,7 @@ public class GenericWrappers implements WrappersInterface{
 	 * This method is used to compare the value between the element and input data
 	 * if new line exist then it replace with space
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param xpathValue - name of the webelement
 	 * @param data - The Data to be sent to the WebElement
 	 * @return
@@ -1888,12 +1889,12 @@ public class GenericWrappers implements WrappersInterface{
 		}
 		return bReturn;
 	}
-
+	
 	
 	/**
 	 * This method is used to compare the value between the element and input data
 	 * if new line exist then it replace with space
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param xpathValue - name of the webelement
 	 * @param data - The Data to be sent to the WebElement
 	 * @return
@@ -1920,7 +1921,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method will check the element is displaying or not using id
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param idValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1945,7 +1946,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method will check the element is displaying or not using xpath
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param xpathValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1966,7 +1967,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method will return the web element Text using xpath
 	 * 
-	 * @author Udhayasundar
+	 * @author Balajih
 	 * @param xpathValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -2003,7 +2004,7 @@ public class GenericWrappers implements WrappersInterface{
 	}
 
 	/** This method is used to click the element using Java script
-	 * @author udhayasundar
+	 * @author Balajih
 	 * @param xpathValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -2018,7 +2019,7 @@ public class GenericWrappers implements WrappersInterface{
 
 
 	/** This method is used to compare the value between the element and input data
-	 * @author udhayasundar
+	 * @author Balajih
 	 * @param idValue - name of the webelement
 	 * @param data - The Data to be sent to the WebElement
 	 * @return
@@ -2043,7 +2044,7 @@ public class GenericWrappers implements WrappersInterface{
 
 
 	/** This method is used to get text value using LinkText
-	 * @author Balajih & Sivaprakash
+	 * @author Balajih & Balajih
 	 * @param linkText - name of the webelement
 	 * @throws Throwable
 	 */
@@ -2063,7 +2064,7 @@ public class GenericWrappers implements WrappersInterface{
 	}
 
 	/** This method is used to view the element using scrollbar
-	 * @author Sivaprakash
+	 * @author Balajih
 	 * @param idValue - name of the webelement
 	 * @throws Throwable
 	 */
@@ -2081,7 +2082,7 @@ public class GenericWrappers implements WrappersInterface{
 	}
 	
 	/** This method is used to view the element using scrollbar
-	 * @author Sivaprakash
+	 * @author Balajih
 	 * @param xpathValue - name of the webelement
 	 * @throws Throwable
 	 */
@@ -2095,6 +2096,285 @@ public class GenericWrappers implements WrappersInterface{
 			e.printStackTrace();
 			Reporter.reportStep("text value is not received", "FAIL");
 		}
+	}
+	
+	/**
+	 * This method will clear the contents of the text field
+	 * 
+	 * @author Balajih
+	 * @param xpathValue
+	 * @param data
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean clearContentByXpath(String xpathValue) throws Throwable {
+		boolean bReturn = false;
+		try {
+			driver.findElement(By.xpath(xpathValue)).clear();
+			Reporter.reportStep("Content cleared successfully", "PASS");
+			bReturn = true;
+		} catch (Throwable e) {
+			e.printStackTrace();
+			Reporter.reportStep("no content cleared", "FAIL");
+		}
+		return bReturn;
+	}
+	/**
+	 * This method will check whether the element is enabled on the screen.
+	 *  
+	 * @author Balajih
+	 * @param xpathValue
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean checkElementIsEnabledByXpath(String xpathValue) throws Throwable {
+		boolean bReturn = false;
+		try {
+			driver.findElement(By.xpath(xpathValue)).isEnabled();
+			Reporter.reportStep("Element is present and displayed on the screen", "PASS");
+			bReturn = true;
+		} catch (Throwable e) {
+			e.printStackTrace();
+			Reporter.reportStep("The button is not clicked successfuly", "FAIL");
+		}
+		return bReturn;
+	}
+	/**
+	 * This method is used to mouse release on the element 
+	 * 
+	 * @author Balajih
+	 * @param xpathValue
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean mouseReleaseByXpath(String xpathValue) throws Throwable {
+		boolean bReturn = false;
+		try {
+			new Actions(driver).release(driver.findElement(By.xpath(xpathValue)));
+			Reporter.reportStep("The mouse hover to the" + xpathValue + " element is successful", "PASS");
+			bReturn = true;
+		} catch (Throwable e) {
+			e.printStackTrace();
+			Reporter.reportStep("The mouse hover to the" + xpathValue + " element is not successful", "FAIL");
+		}
+		return bReturn;
+	}
+		/**
+	 * This method is used to get Title of the page.
+	 * 
+	 * @author Balajih
+	 * @return
+	 * @throws Throwable
+	 */	
+	public void getTitle() throws Throwable {
+		
+		try {
+			System.out.println("Title of the page is :" +driver.getTitle());
+			Reporter.reportStep("Title of the page is received successfully", "PASS");			
+		} catch (Exception e) {
+			e.printStackTrace();
+			Reporter.reportStep("Title of the page is not received successfully", "FAIL");
+		}
+		
+	}
+		/**
+	 * This method will check whether element is displayed.
+	 *  
+	 * @author Balajih
+	 * @param xpathValue
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean checkElementIsDisplayedByXpath(String xpathValue) throws Throwable {
+		boolean bReturn = false;
+		try {
+
+			driver.findElement(By.xpath(xpathValue)).isDisplayed();
+			Reporter.reportStep("Element is present and displayed on the screen", "PASS");
+			bReturn = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			Reporter.reportStep("The button is not clicked successfuly", "FAIL");
+		}
+		return bReturn;
+	}
+	/**
+	 * This method will check whether element is displayed.
+	 * 
+	 * @author Balajih
+	 * @param tagName
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean checkElementIsDisplayedByTagName(String tagName) throws Throwable {
+		boolean bReturn = false;
+		try {
+
+			driver.findElement(By.tagName(tagName)).isDisplayed();
+			Reporter.reportStep("Element is present and displayed on the screen", "PASS");
+			bReturn = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			Reporter.reportStep("The button is not clicked successfuly", "FAIL");
+		}
+		return bReturn;
+	}
+		/**
+	 * This method will check whether element is displayed.
+	 * 
+	 * @author Balajih
+	 * @param className
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean checkElementIsDisplayedByClassName(String className) throws Throwable {
+		boolean bReturn = false;
+		try {
+
+			driver.findElement(By.className(className)).isDisplayed();
+			Reporter.reportStep("Element is present and displayed on the screen", "PASS");
+			bReturn = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			Reporter.reportStep("The button is not clicked successfuly", "FAIL");
+		}
+		return bReturn;
+	}
+	/**
+	 * This method will check whether element is displayed.
+	 * 
+	 * @author Balajih
+	 * @param id
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean checkElementIsDisplayedById(String id) throws Throwable {
+		boolean bReturn = false;
+		try {
+
+			driver.findElement(By.id(id)).isDisplayed();
+			Reporter.reportStep("Element is present and displayed on the screen", "PASS");
+			bReturn = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			Reporter.reportStep("The button is not clicked successfuly", "FAIL");
+		}
+		return bReturn;
+	}
+	/**
+	 * This method will check whether element is displayed.
+	 * 
+	 * @author Balajih
+	 * @param linkText
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean checkElementIsDisplayedByLinkText(String linkText) throws Throwable {
+		boolean bReturn = false;
+		try {
+
+			driver.findElement(By.linkText(linkText)).isDisplayed();
+			Reporter.reportStep("Element is present and displayed on the screen", "PASS");
+			bReturn = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			Reporter.reportStep("The button is not clicked successfuly", "FAIL");
+		}
+		return bReturn;
+	}
+	/**
+	 * This method is used to wait till element is visible for a given time.
+	 * 
+	 * @author Balajih
+	 * @param xpathValue
+	 * @return
+	 * @throws Throwable
+	 */
+	public void waitTillElementVisibleByXpath(String xpathValue) {
+		try {
+			// waiting 20 seconds to detect the visibility of the element
+			WebDriverWait wait = new WebDriverWait(driver, 30);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathValue)));
+
+		} catch (Throwable e) {
+			e.printStackTrace();
+			System.err.println("Error while waiting for the element to be visible: " + e.getMessage());
+		}
+	}
+	/**
+	 * This method is used to switch to frame with xpath value
+	 * 
+	 * @author Balajih
+	 * @param xpathValue
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean switchToFrameByWebElement(String xpathValue) throws Throwable {
+		boolean bReturn = false;
+		try {
+			driver.switchTo().frame(driver.findElement(By.xpath(xpathValue)));
+			bReturn = true;
+		} catch (Exception e) {
+			Reporter.reportStep("Frame not switched successfully", "FAIL");
+		}
+		return bReturn;
+	}
+	/**
+	 * This method will return the web element Text 
+	 * 
+	 * @author Balajih
+	 * @param linkText
+	 * @return
+	 * @throws Throwable
+	 */
+	public String getTextByLinkText(String linkText) throws Throwable {
+		String textvalue = null;
+		try {
+
+			WebDriverWait wait = new WebDriverWait(driver, 30);
+			WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.linkText(linkText)));
+			textvalue = element.getText();
+			Reporter.reportStep("received text value ", "PASS");
+		} catch (Throwable e) {
+			e.printStackTrace();
+			Reporter.reportStep("text value is not received", "FAIL");
+		}
+		return textvalue;
+	}
+	/**
+	 * This method will return the web element Text 
+	 * 
+	 * @author Balajih
+	 * @param tagName
+	 * @return
+	 * @throws Throwable
+	 */
+	public String getTextByTagName(String tagName) throws Throwable {
+		String textvalue = null;
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, 30);
+			WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName(tagName)));
+			textvalue = element.getText();
+			Reporter.reportStep("received text value ", "PASS");
+		} catch (Throwable e) {
+			e.printStackTrace();
+			Reporter.reportStep("text value is not received", "FAIL");
+		}
+		return textvalue;
+	}
+	/**
+	 *  This method is used to click the element using Java script
+	 * @author Balajih
+	 * @param id
+	 * @return
+	 * @throws Throwable
+	 */
+	public void clickByJavaScriptId(String id) throws Throwable {
+
+		WebElement element = driver.findElement(By.id(id));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", element);
+
 	}
 
 	/**This method is to click on the Browser Back button
@@ -2124,5 +2404,4 @@ public class GenericWrappers implements WrappersInterface{
 			e.printStackTrace();
 		}
 	}
-
 }

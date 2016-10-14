@@ -18,13 +18,13 @@ public class EsriTrainingPage extends ESRIWrappers {
 
 	public EsriSpotlightPage spotLightDetails() throws Throwable {
 		waitForPageLoad(3);
-		clickbyCssSelector(prop.getProperty("Training.catalogSpotlightDetails.css"));
+		clickByCssSelector(prop.getProperty("Training.catalogSpotlightDetails.css"));
 		return new EsriSpotlightPage();
 	}
 
 	public EsriTrainingCardPage VerifyCard() throws Throwable {
 		waitForPageLoad(3);
-		clickbyXpath(prop.getProperty("Training.catalogFirstCardDetails.xpath"));
+		clickByXpath(prop.getProperty("Training.catalogFirstCardDetails.xpath"));
 		return new EsriTrainingCardPage();
 	}
 
