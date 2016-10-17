@@ -19,7 +19,7 @@ public class DataInputProvider  extends com.esri.test.auto.wrappers.GenericWrapp
 		String[][] data=null;
 		
 		try {
-			FileInputStream fis = new FileInputStream(new File("D:/DEV/ESRI_TEST/com.esri.test.automation/data/"+dataSheetName+".xlsx"));
+			FileInputStream fis = new FileInputStream(new File("./data/"+dataSheetName+".xlsx"));
 			XSSFWorkbook workbook = new XSSFWorkbook(fis);
 			XSSFSheet sheet = workbook.getSheetAt(0);
 			int rowCount = sheet.getLastRowNum();

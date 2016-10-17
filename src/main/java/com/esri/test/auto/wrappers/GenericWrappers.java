@@ -279,13 +279,13 @@ public class GenericWrappers implements WrappersInterface{
 		boolean bReturn = false;
 		try {
 			if(driver.findElement(By.id(idValue)).getText().equalsIgnoreCase(data)){
-				Reporter.reportStep("The data "+ data +" is entered successfully.", "PASS");
+				Reporter.reportStep("The data "+ data +" is Read successfully.", "PASS");
 				bReturn = true;
 			}
 		}  catch (NoSuchElementException e){
 			Reporter.reportStep("The data "+ data +" is not available to verify.", "FAIL");
 		} catch (Exception e) {
-			Reporter.reportStep("The data "+ data +" is not entered successfully.", "FAIL");
+			Reporter.reportStep("The data "+ data +" is not Read successfully.", "FAIL");
 		}	
 		return bReturn;
 	}
@@ -301,11 +301,11 @@ public class GenericWrappers implements WrappersInterface{
 		boolean bReturn = false;
 		try {
 			if(driver.findElement(By.name(nameValue)).getText().equalsIgnoreCase(data)){
-				Reporter.reportStep("The data "+ data +" is entered successfully.", "PASS");
+				Reporter.reportStep("The data "+ data +" is Read successfully.", "PASS");
 				bReturn = true;
 			}
 		} catch (Exception e) {
-			Reporter.reportStep("The data "+ data +" is not entered successfully.", "FAIL");
+			Reporter.reportStep("The data "+ data +" is not Read successfully.", "FAIL");
 		}	
 		return bReturn;
 	}
@@ -321,11 +321,11 @@ public class GenericWrappers implements WrappersInterface{
 		boolean bReturn = false;
 		try {
 			if(driver.findElement(By.className(cnameValue)).getText().equalsIgnoreCase(data)){
-				Reporter.reportStep("The data "+ data +" is entered successfully.", "PASS");
+				Reporter.reportStep("The data "+ data +" is Read successfully.", "PASS");
 				bReturn = true;
 			}
 		} catch (Exception e) {
-			Reporter.reportStep("The data "+ data +" is not entered successfully.", "FAIL");
+			Reporter.reportStep("The data "+ data +" is not Read successfully.", "FAIL");
 
 		}	
 		return bReturn;
@@ -342,11 +342,11 @@ public class GenericWrappers implements WrappersInterface{
 		boolean bReturn = false;
 		try {
 			if(driver.findElement(By.cssSelector(cssValue)).getText().equalsIgnoreCase(data)){
-				Reporter.reportStep("The data "+ data +" is entered successfully.", "PASS");
+				Reporter.reportStep("The data "+ data +" is Read successfully.", "PASS");
 				bReturn = true;
 			}
 		} catch (Exception e) {
-			Reporter.reportStep("The data "+ data +" is not entered successfully.", "FAIL");
+			Reporter.reportStep("The data "+ data +" is not Read successfully.", "FAIL");
 
 		}	
 		return bReturn;
@@ -363,12 +363,12 @@ public class GenericWrappers implements WrappersInterface{
 		boolean bReturn = false;
 		try {
 			if(driver.findElement(By.xpath(xpathValue)).getText().equalsIgnoreCase(data)){
-				Reporter.reportStep("The data "+ data +" is entered successfully.", "PASS");
+				Reporter.reportStep("The data "+ data +" is Read successfully.", "PASS");
 				bReturn = true;
 			}
 			else Reporter.reportStep("The data "+ data +" which is not matching correctly.", "FAIL");
 		} catch (Exception e) {
-			Reporter.reportStep("The data "+ data +" is not entered successfully.", "FAIL");
+			Reporter.reportStep("The data "+ data +" is not Read Successfully.", "FAIL");
 		}	
 		return bReturn;
 	}
@@ -384,12 +384,12 @@ public class GenericWrappers implements WrappersInterface{
 		boolean bReturn = false;
 		try {
 			if(driver.findElement(By.tagName(tagValue)).getText().equalsIgnoreCase(data)){
-				Reporter.reportStep("The data "+ data +" is entered successfully.", "PASS");
+				Reporter.reportStep("The data "+ data +" is Read successfully.", "PASS");
 				bReturn = true;
 			}
 			else Reporter.reportStep("The data "+ data +" which is not matching correctly.", "FAIL");
 		} catch (Exception e) {
-			Reporter.reportStep("The data "+ data +" is not entered successfully.", "FAIL");
+			Reporter.reportStep("The data "+ data +" is not Read successfully.", "FAIL");
 		}	
 		return bReturn;
 	}	

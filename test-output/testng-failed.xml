@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite thread-count="2" guice-stage="DEVELOPMENT" verbose="5" name="Failed suite [Suite]" parallel="tests">
+  <parameter name="browser" value="firefox"/>
+  <test name="ArcGISDesktop_Firefox(failed)" parallel="tests">
+    <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="com.esri.test.auto.testcases.Sample1">
+      <class name="com.esri.test.auto.testcases.ArcGISforDesktop_TC01">
         <methods>
+          <include name="arcgisforDesktop"/>
+          <include name="startTestcase"/>
           <include name="beforeSuite"/>
-          <include name="search"/>
+          <include name="afterSuite"/>
         </methods>
-      </class> <!-- com.esri.test.auto.testcases.Sample1 -->
+      </class> <!-- com.esri.test.auto.testcases.ArcGISforDesktop_TC01 -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- ArcGISDesktop_Firefox(failed) -->
+</suite> <!-- Failed suite [Suite] -->

@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/0/1</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Oct 11 18:38:18 IST 2016</td>
+<td>Started on:</td><td>Mon Oct 17 17:02:14 IST 2016</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (22 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (23 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,25 +67,24 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.esri.test.auto.testcases.Sample1.beforeMethod()'><b>beforeMethod</b><br>Test class: com.esri.test.auto.testcases.Sample1</td>
+<td title='com.esri.test.auto.testcases.ArcGISforDesktop_TC01.arcgisforDesktop()'><b>arcgisforDesktop</b><br>Test class: com.esri.test.auto.testcases.ArcGISforDesktop_TC01</td>
 <td><div><pre>org.testng.TestNGException: 
-Parameter &apos;browser&apos; is required by @Configuration on method beforeMethod but has not been marked @Optional or defined
-in C:\Users\balajih\AppData\Local\Temp\testng-eclipse--1489803977\testng-customsuite.xml
-	at org.testng.internal.Parameters.createParameters(Parameters.java:156)
-	at org.testng.internal.Parameters.createParameters(Parameters.java:363)
-	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:86)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:202)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:590)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:811)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1129)
+Method arcgisforDesktop requires 25 parameters but 0 were supplied in the @Test annotation.
+	at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:193)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:129)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:378)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:488)
+	at org.testng.internal.Invoker.handleParameters(Invoker.java:1240)
+	at org.testng.internal.Invoker.createParameters(Invoker.java:980)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1070)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
 	at org.testng.TestRunner.privateRun(TestRunner.java:746)
@@ -103,17 +102,16 @@ in C:\Users\balajih\AppData\Local\Temp\testng-eclipse--1489803977\testng-customs
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
-</pre></div><a href='#' onClick='toggleBox("stack-trace790067787", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace790067787'><pre>org.testng.TestNGException: 
-Parameter &apos;browser&apos; is required by @Configuration on method beforeMethod but has not been marked @Optional or defined
-in C:\Users\balajih\AppData\Local\Temp\testng-eclipse--1489803977\testng-customsuite.xml
-	at org.testng.internal.Parameters.createParameters(Parameters.java:156)
-	at org.testng.internal.Parameters.createParameters(Parameters.java:363)
-	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:86)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:202)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:590)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:811)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1129)
+</pre></div><a href='#' onClick='toggleBox("stack-trace652176954", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace652176954'><pre>org.testng.TestNGException: 
+Method arcgisforDesktop requires 25 parameters but 0 were supplied in the @Test annotation.
+	at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:193)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:129)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:378)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:488)
+	at org.testng.internal.Invoker.handleParameters(Invoker.java:1240)
+	at org.testng.internal.Invoker.createParameters(Invoker.java:980)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1070)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
 	at org.testng.TestRunner.privateRun(TestRunner.java:746)
@@ -133,33 +131,7 @@ in C:\Users\balajih\AppData\Local\Temp\testng-eclipse--1489803977\testng-customs
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
 </pre></div></td>
 <td>0</td>
-<td>com.esri.test.auto.testcases.Sample1@57536d79</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-skipped'>
-<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='com.esri.test.auto.testcases.Sample1.afterMethod()'><b>afterMethod</b><br>Test class: com.esri.test.auto.testcases.Sample1</td>
-<td></td>
-<td>0</td>
-<td>com.esri.test.auto.testcases.Sample1@57536d79</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-skipped'>
-<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='com.esri.test.auto.testcases.Sample1.search()'><b>search</b><br>Test class: com.esri.test.auto.testcases.Sample1</td>
-<td></td>
-<td>0</td>
-<td>com.esri.test.auto.testcases.Sample1@57536d79</td></tr>
+<td>com.esri.test.auto.testcases.ArcGISforDesktop_TC01@4a94ee4</td></tr>
 </table><p>
 </body>
 </html>

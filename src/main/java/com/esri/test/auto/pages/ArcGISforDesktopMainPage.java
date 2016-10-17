@@ -11,7 +11,7 @@ public class ArcGISforDesktopMainPage extends ESRIWrappers{
 	
 	public ArcGISforDesktopMainPage() throws Throwable{
 		if(!VerifyTitle("ArcGIS for Desktop"));
-		Reporter.reportStep("This is not a ArcGISDesktop Main Page", "FAIL");
+		Reporter.reportStep("This is not a ArcGIS for Desktop Main Page", "FAIL");
 	}
 	
 	public ArcGISforDesktopMainPage clickMainTab() throws Throwable{

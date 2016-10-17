@@ -88,5 +88,10 @@ public class ArcGISforDesktopFeaturesPage extends ESRIWrappers{
 		clickByXpath(prop.getProperty("arcGISDesktopFeaturesPage.MDLink.xpath"));
 		return new WhatsNewArcGISPage();
 	}
+	
+	public ArcGISforDesktopExtnPage clickExtensionsTab() throws Throwable{
+		clickByXpath(prop.getProperty("arcGISDesktopExtPage.subMenuExtensionslink.xpath"));
+		return new ArcGISforDesktopExtnPage();
+	}
 
 }

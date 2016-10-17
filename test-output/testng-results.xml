@@ -1,70 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="1" failed="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="22" started-at="2016-10-11T13:08:18Z" finished-at="2016-10-11T13:08:18Z">
+  <suite name="Suite" duration-ms="204924" started-at="2016-10-17T13:47:07Z" finished-at="2016-10-17T13:50:32Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="22" started-at="2016-10-11T13:08:18Z" finished-at="2016-10-11T13:08:18Z">
-      <class name="com.esri.test.auto.testcases.Sample1">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.esri.test.auto.testcases.Sample1@57536d79]" name="beforeSuite" is-config="true" duration-ms="172" started-at="2016-10-11T18:38:18Z" finished-at="2016-10-11T18:38:18Z">
+    <test name="ArcGISDesktop_Firefox" duration-ms="204924" started-at="2016-10-17T13:47:07Z" finished-at="2016-10-17T13:50:32Z">
+      <class name="com.esri.test.auto.testcases.ArcGISforDesktop_TC01">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.esri.test.auto.testcases.ArcGISforDesktop_TC01@731a74c]" name="beforeSuite" is-config="true" duration-ms="156" started-at="2016-10-17T19:17:07Z" finished-at="2016-10-17T19:17:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="FAIL" signature="beforeMethod(java.lang.String)[pri:0, instance:com.esri.test.auto.testcases.Sample1@57536d79]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2016-10-11T18:38:18Z" finished-at="2016-10-11T18:38:18Z">
-          <exception class="org.testng.TestNGException">
-            <message>
-              <![CDATA[
-Parameter 'browser' is required by @Configuration on method beforeMethod but has not been marked @Optional or defined
-in C:\Users\balajih\AppData\Local\Temp\testng-eclipse--1489803977\testng-customsuite.xml]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Parameter 'browser' is required by @Configuration on method beforeMethod but has not been marked @Optional or defined
-in C:\Users\balajih\AppData\Local\Temp\testng-eclipse--1489803977\testng-customsuite.xml
-	at org.testng.internal.Parameters.createParameters(Parameters.java:156)
-	at org.testng.internal.Parameters.createParameters(Parameters.java:363)
-	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:86)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:202)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:590)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:811)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1129)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:746)
-	at org.testng.TestRunner.run(TestRunner.java:600)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1264)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1189)
-	at org.testng.TestNG.runSuites(TestNG.java:1104)
-	at org.testng.TestNG.run(TestNG.java:1076)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+        <test-method status="PASS" signature="startTestcase()[pri:0, instance:com.esri.test.auto.testcases.ArcGISforDesktop_TC01@731a74c]" name="startTestcase" is-config="true" duration-ms="0" started-at="2016-10-17T19:17:07Z" finished-at="2016-10-17T19:17:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startTestcase -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.String)[pri:0, instance:com.esri.test.auto.testcases.ArcGISforDesktop_TC01@731a74c]" name="beforeMethod" is-config="true" duration-ms="20248" started-at="2016-10-17T19:17:08Z" finished-at="2016-10-17T19:17:28Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="SKIP" signature="search()[pri:0, instance:com.esri.test.auto.testcases.Sample1@57536d79]" name="search" duration-ms="1" started-at="2016-10-11T18:38:18Z" finished-at="2016-10-11T18:38:18Z">
+        <test-method status="PASS" signature="arcgisforDesktop(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.esri.test.auto.testcases.ArcGISforDesktop_TC01@731a74c]" name="arcgisforDesktop" duration-ms="183808" started-at="2016-10-17T19:17:28Z" data-provider="fetchdata" finished-at="2016-10-17T19:20:32Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://www.esri.com/software/arcgis/arcgis-for-desktop]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Professional GIS Authoring]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Create Smart Maps and Useful Apps]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Transform Your Data into Actionable Information]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Be a Trusted Source of Relevant Information]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[You Know It Is Science—Everyone Else Can Call It Secret Sauce]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Get the Answers That Your Organization Is Looking for]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Powerful Applications]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[ArcMap]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[ArcGIS Pro]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Key Features]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[Conduct Spatial Analysis]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Manage Your Data More Efficiently]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Explore a World of Content]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[Automate Advanced Workflows]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[Easily Create Maps]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Start Geocoding]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[Access Advanced Imagery]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[Give Your Clients What They Need]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[What's New in ArcGIS]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[Extensions]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[System Requirements]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Pricing]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[Programs and ELAs]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[What Do I Get with My
+Free ArcGIS Trial?]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- search -->
-        <test-method status="SKIP" signature="afterMethod()[pri:0, instance:com.esri.test.auto.testcases.Sample1@57536d79]" name="afterMethod" is-config="true" duration-ms="0" started-at="2016-10-11T18:38:18Z" finished-at="2016-10-11T18:38:18Z">
+        </test-method> <!-- arcgisforDesktop -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.esri.test.auto.testcases.ArcGISforDesktop_TC01@731a74c]" name="afterMethod" is-config="true" duration-ms="521" started-at="2016-10-17T19:20:32Z" finished-at="2016-10-17T19:20:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="SKIP" signature="afterSuite()[pri:0, instance:com.esri.test.auto.testcases.Sample1@57536d79]" name="afterSuite" is-config="true" duration-ms="0" started-at="2016-10-11T18:38:18Z" finished-at="2016-10-11T18:38:18Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.esri.test.auto.testcases.ArcGISforDesktop_TC01@731a74c]" name="afterSuite" is-config="true" duration-ms="188" started-at="2016-10-17T19:20:32Z" finished-at="2016-10-17T19:20:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- com.esri.test.auto.testcases.Sample1 -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- com.esri.test.auto.testcases.ArcGISforDesktop_TC01 -->
+    </test> <!-- ArcGISDesktop_Firefox -->
+  </suite> <!-- Suite -->
 </testng-results>

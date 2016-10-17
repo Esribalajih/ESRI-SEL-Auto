@@ -14,12 +14,8 @@ public class ArcGISforDesktopExtnPage extends ESRIWrappers{
 		Reporter.reportStep("This is not the ArcGISDesktop Extensions Page", "FAIL");
 	}
 
-	public ArcGISforDesktopExtnPage clickExtensionsTab() throws Throwable{
-		clickByXpath(prop.getProperty("arcGISDesktopExtPage.subMenuExtensionslink.xpath"));
-		return this;
-	}
-	public ArcGISforDesktopExtnPage verifyExtenHeader(String data) throws Throwable {
-		VerifyTextByXpath(prop.getProperty("arcGISDesktopExtPage.extensionHeader.xpath"), data);
+	public ArcGISforDesktopExtnPage verifyExtenHeader(String ExtnHdr) throws Throwable {
+		VerifyTextByXpath(prop.getProperty("arcGISDesktopExtPage.extensionHeader.xpath"), ExtnHdr);
 		return this;
 	}
 
@@ -96,6 +92,11 @@ public class ArcGISforDesktopExtnPage extends ESRIWrappers{
 	public ArcGISforDesktopExtnPage clickArcGISforDesktopExtnPDF() throws Throwable{
 		clickByXpath(prop.getProperty("arcGISDesktopExtPage.arcGIDDesktopExtnPDF.xpath"));
 		return this;
+	}
+	
+	public ArcGISforDesktopSysRePage clickDesktopSysReTab() throws Throwable{
+		clickByXpath(prop.getProperty("arcGISDesktopReqPage.subMenuSysReqlink.xpath"));
+		return new ArcGISforDesktopSysRePage();
 	}
 	
 	public ArcGISforDesktopMainPage clickMainTab() throws Throwable{
