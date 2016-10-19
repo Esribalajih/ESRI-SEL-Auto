@@ -24,7 +24,6 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -115,9 +114,16 @@ public class GenericWrappers implements WrappersInterface{
 			e.printStackTrace();
 		}
 	}
-
+	
+	/**This Method is to unload the used Objects from the Memory for efficient execution
+	 * @author balajih
+	 */
+	public void unloadObjects(){
+		prop = null;
+	}
+	
 	/**This method will enter the value as text field using Id attribute to locate
-	 * @author Balajih & udayasundar
+	 * @author Balajih 
 	 * @param idValue - name of the webelement
 	 * @param data - The Data to be sent to the WebElement
 	 * @return
@@ -139,7 +145,7 @@ public class GenericWrappers implements WrappersInterface{
 	}
 
 	/**This method will enter the value as text field using Name attribute to locate
-	 * @author Balajih & udayasundar
+	 * @author Balajih
 	 * @param nameValue - name of the webelement
 	 * @param data - The Data to be sent to the WebElement
 	 * @return
@@ -161,7 +167,7 @@ public class GenericWrappers implements WrappersInterface{
 	}
 
 	/**This method will enter the value as text field using ClassName attribute to locate
-	 * @author Balajih & udayasundar
+	 * @author Balajih
 	 * @param cnameValue - name of the webelement
 	 * @param data - The Data to be sent to the WebElement
 	 * @return
@@ -204,7 +210,7 @@ public class GenericWrappers implements WrappersInterface{
 	}
 
 	/**This method will enter the value as text field using Xpath attribute to locate
-	 * @author Balajih & udayasundar
+	 * @author Balajih
 	 * @param xpathValue - name of the webelement
 	 * @param data - The Data to be sent to the WebElement
 	 * @return
@@ -932,14 +938,14 @@ public class GenericWrappers implements WrappersInterface{
 	 * This method is used to switch the frame with WebElement
 	 *
 	 * @author balajih 
-	 * @param data - The Data to be sent to the WebElement
+	 * @param xpathValue - The Data to be sent to the WebElement
 	 * @return
 	 * @throws Throwable
 	 */
-	public boolean switchToFrameByXpath(String data) throws Throwable{
+	public boolean switchToFrameByXpath(String xpathValue) throws Throwable{
 		boolean bReturn = false;
 		try {
-			driver.switchTo().frame(driver.findElement(By.xpath(data)));
+			driver.switchTo().frame(driver.findElement(By.xpath(xpathValue)));
 			Reporter.reportStep("Frame switched successfully", "PASS");
 			bReturn = true;
 		} catch (Exception e) {
@@ -960,6 +966,25 @@ public class GenericWrappers implements WrappersInterface{
 		boolean bReturn = false;
 		try {
 			driver.switchTo().frame(indexValue);
+			bReturn = true;
+		} catch (Exception e) {
+			Reporter.reportStep("Frame not switched successfully", "FAIL");
+		}
+		return bReturn;
+	}
+	
+	/**
+	 * This method is used to switch to frame with CssSelector value
+	 * 
+	 * @author Balajih
+	 * @param CssSelectorValue
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean switchToFrameByWebElement(String CssSelectorValue) throws Throwable {
+		boolean bReturn = false;
+		try {
+			driver.switchTo().frame(driver.findElement(By.xpath(CssSelectorValue)));
 			bReturn = true;
 		} catch (Exception e) {
 			Reporter.reportStep("Frame not switched successfully", "FAIL");
@@ -1094,7 +1119,7 @@ public class GenericWrappers implements WrappersInterface{
 
 	/**
 	 * This method will enter the value using ClassName attribute in I/O device
-	 * @author Balajih & udayasundar
+	 * @author Balajih
 	 * @param cnameValue - name of the webelement
 	 * @param data - The Data to be sent to the WebElement
 	 * @return
@@ -1155,7 +1180,7 @@ public class GenericWrappers implements WrappersInterface{
 	/**
 	 * This method will enter the value By handling Browser Authentication using I/O device
 	 *
-	 * @author Balajih & udayasundar
+	 * @author Balajih
 	 * @param uName - The Data to be sent to the WebElement
 	 * @param pwd - The Data to be sent to the WebElement
 	 * @return
@@ -1169,7 +1194,7 @@ public class GenericWrappers implements WrappersInterface{
 			//create robot for keyboard operations
 			Robot rb = new Robot();
 
-			//Enter user name By ctrl-v
+			//Enter user name By ctrl-v Keyboard action
 			StringSelection username = new StringSelection(uName);
 			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(username, null);
 			rb.keyPress(KeyEvent.VK_CONTROL);
@@ -1182,7 +1207,7 @@ public class GenericWrappers implements WrappersInterface{
 			rb.keyRelease(KeyEvent.VK_TAB);
 			waitForPageLoad(2);
 
-			//Enter password By ctrl-v
+			//Enter password By ctrl-v Keyboard action
 			StringSelection passwd = new StringSelection(pwd);
 			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(passwd, null);
 			rb.keyPress(KeyEvent.VK_CONTROL);
@@ -1190,7 +1215,7 @@ public class GenericWrappers implements WrappersInterface{
 			rb.keyRelease(KeyEvent.VK_V);
 			rb.keyRelease(KeyEvent.VK_CONTROL);
 
-			//press enter
+			//press enter Keyboard action
 			rb.keyPress(KeyEvent.VK_ENTER);
 			rb.keyRelease(KeyEvent.VK_ENTER);
 
@@ -1222,7 +1247,7 @@ public class GenericWrappers implements WrappersInterface{
 	}
 	
 	/**This Method will fetch the Table row Count by Xpath WebElement
-	 * 
+	 * @author balajih
 	 * @param xpathValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1237,7 +1262,7 @@ public class GenericWrappers implements WrappersInterface{
 	}
 	
 	/**This Method will fetch the Table column Count by Xpath WebElement
-	 * 
+	 * @author balajih
 	 * @param xpathValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1278,7 +1303,7 @@ public class GenericWrappers implements WrappersInterface{
 	}
 
 	/**This method is to clear Cache & Cookies in a browser
-	 * @author balajih & Udhaysundar
+	 * @author Balajih
 	 * @param browserName - name of the webelement
 	 * @param capabilities
 	 */
@@ -1298,7 +1323,7 @@ public class GenericWrappers implements WrappersInterface{
 	
 	/**
 	 * This method will Upload the File from windows into Browser.
-	 * @author Mohamed
+	 * @author Balajih
 	 * @param location - The Data to be sent to the WebElement
 	 * @param 
 	 * @return
@@ -2301,24 +2326,8 @@ public class GenericWrappers implements WrappersInterface{
 			System.err.println("Error while waiting for the element to be visible: " + e.getMessage());
 		}
 	}
-	/**
-	 * This method is used to switch to frame with xpath value
-	 * 
-	 * @author Balajih
-	 * @param xpathValue
-	 * @return
-	 * @throws Throwable
-	 */
-	public boolean switchToFrameByWebElement(String xpathValue) throws Throwable {
-		boolean bReturn = false;
-		try {
-			driver.switchTo().frame(driver.findElement(By.xpath(xpathValue)));
-			bReturn = true;
-		} catch (Exception e) {
-			Reporter.reportStep("Frame not switched successfully", "FAIL");
-		}
-		return bReturn;
-	}
+	
+	
 	/**
 	 * This method will return the web element Text 
 	 * 

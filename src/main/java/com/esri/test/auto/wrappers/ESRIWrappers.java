@@ -47,6 +47,7 @@ public class ESRIWrappers extends GenericWrappers{
 
 	@AfterSuite
 	public void afterSuite() throws Throwable {
+		unloadObjects();
 		Reporter.endSuite();
 
 	}

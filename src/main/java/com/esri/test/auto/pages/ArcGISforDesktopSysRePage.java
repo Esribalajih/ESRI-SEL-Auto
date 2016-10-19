@@ -10,7 +10,7 @@ import com.esri.test.auto.wrappers.ESRIWrappers;
 public class ArcGISforDesktopSysRePage extends ESRIWrappers {
 	
 	public ArcGISforDesktopSysRePage() throws Throwable{
-		if(!VerifyTitle("ArcGIS for Desktop | System Requirements"));
+		if(!VerifyTitle("ArcGIS for Desktop | System Requirements"))
 		Reporter.reportStep("This is not a ArcGIS Desktop System Requirement Page", "FAIL");		
 	}
 	

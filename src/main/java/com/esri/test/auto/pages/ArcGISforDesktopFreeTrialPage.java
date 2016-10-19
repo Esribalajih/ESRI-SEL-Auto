@@ -10,7 +10,7 @@ import com.esri.test.auto.wrappers.ESRIWrappers;
 public class ArcGISforDesktopFreeTrialPage extends ESRIWrappers{
 	
 	public ArcGISforDesktopFreeTrialPage() throws Throwable{
-		if(!VerifyTitle("ArcGIS for Desktop | Free Trial"));
+		if(!VerifyTitle("ArcGIS for Desktop | Free Trial"))
 		Reporter.reportStep("This is not a ArcGISDesktop Free Trial Page", "FAIL");
 	}
 	
@@ -33,7 +33,8 @@ public class ArcGISforDesktopFreeTrialPage extends ESRIWrappers{
 	}*/
 	
 	public ArcGISforDesktopFreeTrialPage navigateToFrame() throws Throwable{
-		switchToFrameByXpath(prop.getProperty(""));
+		switchToFrameByIndex(0);
+		System.out.println("We are inside the Frame");
 		return this;
 	}
 	

@@ -15,8 +15,8 @@ public class ArcGISforDesktop_TC01 extends ESRIWrappers{
 	@Parameters({"browsers"})
 	@BeforeClass
 	public void startTestcase(){
-		dataSheetName="ArcGISDesktop";
-		testCaseName="ArcGIS for Desktop Page";
+		dataSheetName="ArcGISDesktop_TC01";
+		testCaseName="ArcGIS for Desktop Page_TC01";
 		testDescription="This is the testcase for Testing ArcGIS Desktop module - Positive Test scenario";
 	}
 	

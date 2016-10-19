@@ -10,7 +10,7 @@ import com.esri.test.auto.wrappers.ESRIWrappers;
 public class ArcGISforDesktopExtnPage extends ESRIWrappers{
 
 	public ArcGISforDesktopExtnPage() throws Throwable {
-		if(!VerifyTitle("ArcGIS for Desktop | Extensions"));
+		if(!VerifyTitle("ArcGIS for Desktop | Extensions"))
 		Reporter.reportStep("This is not the ArcGISDesktop Extensions Page", "FAIL");
 	}
 

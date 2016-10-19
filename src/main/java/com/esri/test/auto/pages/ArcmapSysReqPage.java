@@ -10,7 +10,7 @@ import com.esri.test.auto.wrappers.ESRIWrappers;
 public class ArcmapSysReqPage extends ESRIWrappers{
 	
 	public ArcmapSysReqPage() throws Throwable{
-		if(!VerifyTitle("ArcGIS 10.4.x for Desktop system requirements—ArcGIS Help | ArcGIS for Desktop"));
+		if(!VerifyTitle("ArcGIS 10.4.x for Desktop system requirements—ArcGIS Help | ArcGIS for Desktop"))
 		Reporter.reportStep("This is not the ArcGIS 10.4.x Page", "FAIL");
 	}
 

@@ -25,6 +25,11 @@ public interface WrappersInterface {
 	 */
 	public void loadObjects();
 	
+	/**This Method is to unload the used Objects from the Memory for efficient execution
+	 * @author balajih
+	 */
+	public void unloadObjects();
+	
 	/**This method will enter the value as text field using Id attribute to locate
 	 * @author Balajih
 	 * @param idValue - name of the webelement
@@ -397,6 +402,24 @@ public interface WrappersInterface {
 	 * @throws Throwable
 	 */
 	public boolean switchToFrameByIndex(int indexValue) throws Throwable;
+	
+	/**
+	 * This method is used to switch the frame with WebElement
+	 * @author balajih 
+	 * @param xpathValue - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean switchToFrameByXpath(String xpathValue) throws Throwable;
+	
+	/**
+	 * This method is used to switch to frame with CssSelector value
+	 * @author Balajih
+	 * @param CssSelectorValue
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean switchToFrameByWebElement(String CssSelectorValue) throws Throwable;
 	
 	/**This method is to Switch to Default Content from nested windows
 	 * @author balajih

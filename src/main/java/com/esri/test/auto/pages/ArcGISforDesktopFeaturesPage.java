@@ -10,7 +10,7 @@ import com.esri.test.auto.wrappers.ESRIWrappers;
 public class ArcGISforDesktopFeaturesPage extends ESRIWrappers{
 	
 	public ArcGISforDesktopFeaturesPage() throws Throwable{
-	if(!VerifyTitle("ArcGIS for Desktop | Key Features"));
+	if(!VerifyTitle("ArcGIS for Desktop | Key Features"))
 	Reporter.reportStep("This is not a ArcGIS Desktop Features Page", "FAIL");
 	}
 	
@@ -35,7 +35,7 @@ public class ArcGISforDesktopFeaturesPage extends ESRIWrappers{
 	}
 	
 	public ArcGISforDesktopFeaturesPage verifyFeaturesKeyHdr(String KeyFHdr) throws Throwable{
-		VerifyTextByXpath(prop.getProperty("arcGISDesktopFeaturesPage.KeyFHdr.xpath"), KeyFHdr);
+		VerifyTextByClassName(prop.getProperty("arcGISDesktopFeaturesPage.KeyFHdr.classname"), KeyFHdr);
 		return this;
 	}
 	

@@ -10,7 +10,7 @@ import com.esri.test.auto.wrappers.ESRIWrappers;
 public class ArcGISPROSysReqPage extends ESRIWrappers{
 	
 	public ArcGISPROSysReqPage() throws Throwable{
-		if(!VerifyTitle("ArcGIS Pro 1.3 system requirements—ArcGIS Pro | ArcGIS for Desktop"));
+		if(!VerifyTitle("ArcGIS Pro 1.3 system requirements—ArcGIS Pro | ArcGIS for Desktop"))
 		Reporter.reportStep("This is not the ArcGIS Pro 1.3 Page", "FAIL");
 	}
 	//Click Browser Back button to Navigate back to the Previous Screen
