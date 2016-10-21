@@ -907,6 +907,15 @@ public interface WrappersInterface {
 	 */
 	public void scrollIntoViewByXpath(String xpathValue) throws Throwable;
 	
+	/**This method will clear the contents of the text field
+	 * @author Balajih
+	 * @param xpathValue
+	 * @param data
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean clearContentByXpath(String xpathValue) throws Throwable;
+	
 	/**This method is to click on the Browser Back button
 	 * @author balajih
 	 * @throws Throwable

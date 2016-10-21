@@ -59,7 +59,7 @@ public class ArcGISforDesktopPricingPage extends ESRIWrappers{
 	}
 	
 	public ArcGISforDesktopFreeTrialPage clickFreeTrialLink() throws Throwable{
-		clickByXpath(prop.getProperty("arcGISDesktopFreeTrialPage.FreeTrial.xpath"));
+		clickByXpath(prop.getProperty("arcGISDesktopFreeTrialPage.subMenuFreeTriallink.xpath"));
 		return new ArcGISforDesktopFreeTrialPage();
 	}
 	

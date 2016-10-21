@@ -1886,10 +1886,8 @@ public class GenericWrappers implements WrappersInterface{
 		return bReturn;
 	}
 
-	/**
-	 * This method is used to compare the value between the element and input data
-	 * if new line exist then it replace with space
-	 * 
+	/**This method is used to compare the value between the element and input data
+	 * if new line exist then replace it with space
 	 * @author Balajih
 	 * @param xpathValue - name of the webelement
 	 * @param data - The Data to be sent to the WebElement
@@ -1915,9 +1913,35 @@ public class GenericWrappers implements WrappersInterface{
 		return bReturn;
 	}
 	
+	/**This method is used to compare the value between the element and input data
+	 * if Special Character exist then replace it with space
+	 * @author Balajih
+	 * @param xpathValue - name of the webelement
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean verifyValueWithSpecialCharacterByXpath(String xpathValue, String data) throws Throwable {
+		boolean bReturn = false;
+		try {
+			String lblValue = getTextByXpath(xpathValue).trim()
+					.replace("-", " ");
+			if (lblValue.equalsIgnoreCase(data)) {
+				Reporter.reportStep(lblValue + " label displaying successfully", "PASS");
+				bReturn=true;
+			} else {
+				Reporter.reportStep(data + " label is not displayed", "FAIL");
+				bReturn = false;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return bReturn;
+	}
 	
-	/**
-	 * This method is used to compare the value between the element and input data
+	
+	/**This method is used to compare the value between the element and input data
 	 * if new line exist then it replace with space
 	 * @author Balajih
 	 * @param xpathValue - name of the webelement
@@ -1943,9 +1967,7 @@ public class GenericWrappers implements WrappersInterface{
 		return bReturn;
 	}
 	
-	/**
-	 * This method will check the element is displaying or not using id
-	 * 
+	/**This method will check the element is displaying or not using id
 	 * @author Balajih
 	 * @param idValue - name of the webelement
 	 * @return
@@ -1968,9 +1990,7 @@ public class GenericWrappers implements WrappersInterface{
         return bReturn;
     }
 	
-	/**
-	 * This method will check the element is displaying or not using xpath
-	 * 
+	/**This method will check the element is displaying or not using xpath
 	 * @author Balajih
 	 * @param xpathValue - name of the webelement
 	 * @return
@@ -1989,9 +2009,7 @@ public class GenericWrappers implements WrappersInterface{
 		return bReturn;
 	}
 
-	/**
-	 * This method will return the web element Text using xpath
-	 * 
+	/**This method will return the web element Text using xpath
 	 * @author Balajih
 	 * @param xpathValue - name of the webelement
 	 * @return
@@ -2010,9 +2028,7 @@ public class GenericWrappers implements WrappersInterface{
 		return textValue;
 	}
 
-	/**
-	 * This method will return the web element Text using ID
-	 * 
+	/**This method will return the web element Text using ID
 	 * @author Balajih
 	 * @param idValue - name of the webelement
 	 * @return
@@ -2123,9 +2139,7 @@ public class GenericWrappers implements WrappersInterface{
 		}
 	}
 	
-	/**
-	 * This method will clear the contents of the text field
-	 * 
+	/**This method will clear the contents of the text field
 	 * @author Balajih
 	 * @param xpathValue
 	 * @param data
@@ -2144,9 +2158,8 @@ public class GenericWrappers implements WrappersInterface{
 		}
 		return bReturn;
 	}
-	/**
-	 * This method will check whether the element is enabled on the screen.
-	 *  
+	
+	/**This method will check whether the element is enabled on the screen.
 	 * @author Balajih
 	 * @param xpathValue
 	 * @return
@@ -2164,9 +2177,8 @@ public class GenericWrappers implements WrappersInterface{
 		}
 		return bReturn;
 	}
-	/**
-	 * This method is used to mouse release on the element 
-	 * 
+	
+	/**This method is used to mouse release on the element 
 	 * @author Balajih
 	 * @param xpathValue
 	 * @return
@@ -2184,9 +2196,8 @@ public class GenericWrappers implements WrappersInterface{
 		}
 		return bReturn;
 	}
-		/**
-	 * This method is used to get Title of the page.
-	 * 
+	
+	/**This method is used to get Title of the page.
 	 * @author Balajih
 	 * @return
 	 * @throws Throwable
@@ -2202,9 +2213,8 @@ public class GenericWrappers implements WrappersInterface{
 		}
 		
 	}
-		/**
-	 * This method will check whether element is displayed.
-	 *  
+	
+	/**This method will check whether element is displayed.
 	 * @author Balajih
 	 * @param xpathValue
 	 * @return
@@ -2223,9 +2233,8 @@ public class GenericWrappers implements WrappersInterface{
 		}
 		return bReturn;
 	}
-	/**
-	 * This method will check whether element is displayed.
-	 * 
+	
+	/**This method will check whether element is displayed.
 	 * @author Balajih
 	 * @param tagName
 	 * @return

@@ -20,7 +20,7 @@ public class ArcGISforDesktopFreeTrialPage extends ESRIWrappers{
 	}
 	
 	public ArcGISforDesktopFreeTrialPage verifyFreeTrialHdr(String FreeTrialHdr) throws Throwable{
-		VerifyTextByXpath(prop.getProperty("arcGISDesktopFreeTrialPage.freeTrialHdr.xpath"), FreeTrialHdr);
+		verifyValueWithNewLineByXpath(prop.getProperty("arcGISDesktopFreeTrialPage.freeTrialHdr.xpath"), FreeTrialHdr);
 		return this;
 	}
 	
@@ -38,5 +38,39 @@ public class ArcGISforDesktopFreeTrialPage extends ESRIWrappers{
 		return this;
 	}
 	
+	public ArcGISforDesktopFreeTrialPage enterFirstName(String fName) throws Throwable {
+		enterById(prop.getProperty("arcGISDesktopFreeTrialPage.freeTrialFirstname.id"), fName);
+		return this;
+	}
+	
+	public ArcGISforDesktopFreeTrialPage enterLastName(String lName) throws Throwable {
+		enterById(prop.getProperty("arcGISDesktopFreeTrialPage.freeTrialLastname.id"), lName);
+		return this;
+	}
+	
+	public ArcGISforDesktopFreeTrialPage enterEmailId(String emailId) throws Throwable {
+		enterById(prop.getProperty("arcGISDesktopFreeTrialPage.freeTrialEmail.id"), emailId);
+		return this;
+	}
+	
+	public ArcGISforDesktopFreeTrialPage enterConfirmEmailId(String ConfirmemailId) throws Throwable {
+		enterById(prop.getProperty("arcGISDesktopFreeTrialPage.freeTrialConfirmEmail.id"), ConfirmemailId);
+		return this;
+	}
+	
+	public ArcGISforDesktopFreeTrialPage selectIndustryDpDwn(String IndustryDpDwn) throws Throwable {
+		selectByIdWithText(prop.getProperty("arcGISDesktopFreeTrialPage.freeTrialIndustryDropDown.id"), IndustryDpDwn);
+		return this;
+	}
+	
+	public ArcGISforDesktopFreeTrialPage clickStartTrial() throws Throwable {
+		clickById(prop.getProperty("arcGISDesktopFreeTrialPage.freeTrialStartTrialbtn.id"));
+		return this;
+	}
+	
+	public ArcGISforDesktopFreeTrialPage verifyConfirmationTxt(String cmNotify) throws Throwable{
+		VerifyTextById(prop.getProperty("arcGISDesktopFreeTrialPage.ConfirmationEmailNf.id"), cmNotify);
+		return this;
+	}
 
 }
