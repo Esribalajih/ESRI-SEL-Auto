@@ -1,5 +1,7 @@
 package com.esri.test.auto.pages;
 
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import com.esri.test.auto.utils.Reporter;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 /**This is a ArcGISDesktop Main Page
@@ -49,13 +51,9 @@ public class ArcGISforDesktopMainPage extends ESRIWrappers{
 		return this;
 	}
 	
-	public ArcGISforDesktopFreeTrialPage clickFreeTrialLink() throws Throwable{
-		clickByXpath(prop.getProperty("arcGISDesktopFreeTrialPage.FreeTrial.xpath"));
-		return new ArcGISforDesktopFreeTrialPage();
-	}
-	
 	public ArcGISforDesktopFeaturesPage clickFeaturesTab() throws Throwable {
 		clickByXpath(prop.getProperty("arcGISDesktopFeaturesPage.subMenuFeatureslink.xpath"));
+		
 		return new ArcGISforDesktopFeaturesPage();
 	}
 	
@@ -67,6 +65,11 @@ public class ArcGISforDesktopMainPage extends ESRIWrappers{
 	public ArcGISforDesktopSysRePage clickDesktopSysReTab() throws Throwable{
 		clickByXpath(prop.getProperty("arcGISDesktopReqPage.subMenuSysReqlink.xpath"));
 		return new ArcGISforDesktopSysRePage();
+	}
+	
+	public ArcGISforDesktopFreeTrialPage clickFreeTrialLink() throws Throwable{
+		clickByXpath(prop.getProperty("arcGISDesktopFreeTrialPage.FreeTrial.xpath"));
+		return new ArcGISforDesktopFreeTrialPage();
 	}
 	
 }

@@ -419,7 +419,7 @@ public interface WrappersInterface {
 	 * @return
 	 * @throws Throwable
 	 */
-	public boolean switchToFrameByWebElement(String CssSelectorValue) throws Throwable;
+	public boolean switchToFrameByCssSelector(String CssSelectorValue) throws Throwable;
 	
 	/**This method is to Switch to Default Content from nested windows
 	 * @author balajih

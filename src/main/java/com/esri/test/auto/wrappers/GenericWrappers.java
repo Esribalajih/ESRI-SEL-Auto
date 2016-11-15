@@ -24,6 +24,7 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -411,6 +412,7 @@ public class GenericWrappers implements WrappersInterface{
 		try {
 			Reporter.reportStep("The Button is clicked successfully", "PASS");
 			driver.findElement(By.id(idValue)).click();
+			Reporter.reportStep("The Button is clicked successfully", "PASS");
 			bReturn = true;
 		} catch (Exception e) {
 			Reporter.reportStep("The Button is not clicked successfully", "FAIL");
@@ -429,6 +431,7 @@ public class GenericWrappers implements WrappersInterface{
 		try {
 			Reporter.reportStep("The Button is clicked successfully", "PASS");
 			driver.findElement(By.name(nameValue)).click();
+			Reporter.reportStep("The Button is clicked successfully", "PASS");
 			bReturn = true;
 		} catch (Exception e) {
 			Reporter.reportStep("The Button is not clicked successfully", "FAIL");
@@ -447,6 +450,7 @@ public class GenericWrappers implements WrappersInterface{
 		try {
 			Reporter.reportStep("The Button is clicked successfully", "PASS");
 			driver.findElement(By.className(cnameValue)).click();
+			Reporter.reportStep("The Button is clicked successfully", "PASS");
 			bReturn = true;
 		} catch (Exception e) {
 			Reporter.reportStep("The Button is not clicked successfully", "FAIL");
@@ -465,6 +469,7 @@ public class GenericWrappers implements WrappersInterface{
 		try {
 			Reporter.reportStep("The Button is clicked successfully", "PASS");
 			driver.findElement(By.cssSelector(cssValue)).click();
+			Reporter.reportStep("The Button is clicked successfully", "PASS");
 			bReturn = true;
 		} catch (Exception e) {
 			Reporter.reportStep("The Button is not clicked successfully", "FAIL");
@@ -483,6 +488,7 @@ public class GenericWrappers implements WrappersInterface{
 		try {
 			Reporter.reportStep("The Button is clicked successfully", "PASS");
 			driver.findElement(By.xpath(xpathValue)).click();
+			Reporter.reportStep("The Button is clicked successfully", "PASS");
 			bReturn = true;
 		} catch (Exception e) {
 			Reporter.reportStep("The Button is not clicked successfully", "FAIL");
@@ -935,7 +941,7 @@ public class GenericWrappers implements WrappersInterface{
 	}
 	
 	/**
-	 * This method is used to switch the frame with WebElement
+	 * This method is used to switch the frame with WebElement Xpath
 	 *
 	 * @author balajih 
 	 * @param xpathValue - The Data to be sent to the WebElement
@@ -954,9 +960,7 @@ public class GenericWrappers implements WrappersInterface{
 		return bReturn;
 	}
 	
-	/**
-	 * This method is used to switch the frame with index value
-	 * 
+	/**This method is used to switch the frame with index value
 	 * @author Balajih
 	 * @param indexValue - name of the webelement
 	 * @return
@@ -973,15 +977,13 @@ public class GenericWrappers implements WrappersInterface{
 		return bReturn;
 	}
 	
-	/**
-	 * This method is used to switch to frame with CssSelector value
-	 * 
+	/**This method is used to switch to frame with CssSelector value
 	 * @author Balajih
 	 * @param CssSelectorValue
 	 * @return
 	 * @throws Throwable
 	 */
-	public boolean switchToFrameByWebElement(String CssSelectorValue) throws Throwable {
+	public boolean switchToFrameByCssSelector(String CssSelectorValue) throws Throwable {
 		boolean bReturn = false;
 		try {
 			driver.switchTo().frame(driver.findElement(By.xpath(CssSelectorValue)));
@@ -1008,9 +1010,7 @@ public class GenericWrappers implements WrappersInterface{
 		return bReturn;
 	}
 
-	/**
-	 * This method is used to sleep for the given seconds
-	 *
+	/**This method is used to sleep for the given seconds
 	 * @author balajih
 	 * @param data - The Data to be sent to the WebElement
 	 * @return
@@ -1349,7 +1349,6 @@ public class GenericWrappers implements WrappersInterface{
 	
 	/**
 	 * This method is used to Mouse hover on the element using xpath element.
-	 * 
 	 * @author Balajih
 	 * @param xpathValue - name of the webelement
 	 * @return
@@ -1370,7 +1369,6 @@ public class GenericWrappers implements WrappersInterface{
 
 	/**
 	 * This method is used to Mouse hover on the element using CSS element.
-	 * 
 	 * @author Balajih
 	 * @param cssValue - name of the webelement
 	 * @return
@@ -1391,8 +1389,7 @@ public class GenericWrappers implements WrappersInterface{
 
 	/**
 	 * This method is used to Mouse hover on the element using class name element.
-	 * 
-	 * @author Balajih
+     * @author Balajih
 	 * @param classNameValue - name of the webelement
 	 * @return
 	 * @throws Throwable
@@ -1412,7 +1409,6 @@ public class GenericWrappers implements WrappersInterface{
 
 	/**
 	 * This method is used to Mouse hover on the element using name element.
-	 * 
 	 * @author Balajih
 	 * @param nameValue - name of the webelement
 	 * @return
@@ -1433,7 +1429,6 @@ public class GenericWrappers implements WrappersInterface{
 
 	/**
 	 * This method is used to Mouse hover on the element using LinkText element.
-	 * 
 	 * @author Balajih
 	 * @param linkTextValue - name of the webelement
 	 * @return
@@ -1454,7 +1449,6 @@ public class GenericWrappers implements WrappersInterface{
 
 	/**
 	 * This method is used to Mouse hover on the element using Partial Link Text element.
-	 * 
 	 * @author Balajih
 	 * @param pLinkTextValue - name of the webelement
 	 * @return
@@ -1500,7 +1494,6 @@ public class GenericWrappers implements WrappersInterface{
 
 	/**
 	 * This method is used to click the element By mouse hover using ID element.
-	 * 
 	 * @author Balajih
 	 * @param idValue - name of the webelement
 	 * @return
@@ -1522,7 +1515,6 @@ public class GenericWrappers implements WrappersInterface{
 
 	/**
 	 * This method is used to click the element By mouse hover using className element.
-	 * 
 	 * @author Balajih
 	 * @param classNameValue - name of the webelement
 	 * @return
@@ -1543,7 +1535,6 @@ public class GenericWrappers implements WrappersInterface{
 
 	/**
 	 * This method is used to click the element By mouse hover using ID element.
-	 * 
 	 * @author Balajih 
 	 * @param idValue - name of the webelement
 	 * @return
@@ -1564,7 +1555,6 @@ public class GenericWrappers implements WrappersInterface{
 
 	/**
 	 * This method is used to click the element By mouse hover using className element.
-	 * 
 	 * @author Balajih
 	 * @param classNameValue - name of the webelement
 	 * @return
@@ -1586,7 +1576,6 @@ public class GenericWrappers implements WrappersInterface{
 
 	/**
 	 * This method is used to context click the element By mouse hover using ID element.
-	 * 
 	 * @author Balajih
 	 * @param idValue - name of the webelement
 	 * @return
@@ -1607,7 +1596,6 @@ public class GenericWrappers implements WrappersInterface{
 
 	/**
 	 * This method is used to context click the element By mouse hover using ClassName element.
-	 * 
 	 * @author Balajih
 	 * @param classNameValue - name of the webelement
 	 * @return
@@ -1628,7 +1616,6 @@ public class GenericWrappers implements WrappersInterface{
 
 	/**
 	 * This method is used to context click the element By mouse hover using id element.
-	 * 
 	 * @author Balajih
 	 * @param idValue - name of the webelement
 	 * @return
@@ -1650,7 +1637,6 @@ public class GenericWrappers implements WrappersInterface{
 
 	/**
 	 * This method is used to context click the element By mouse hover using class element.
-	 * 
 	 * @author Balajih
 	 * @param classNameValue - name of the webelement
 	 * @return
@@ -1672,7 +1658,6 @@ public class GenericWrappers implements WrappersInterface{
 
 	/**
 	 * This method is used to double click the element By mouse hover using id element.
-	 * 
 	 * @author Balajih
 	 * @param idValue - name of the webelement
 	 * @return
@@ -1694,7 +1679,6 @@ public class GenericWrappers implements WrappersInterface{
 
 	/**
 	 * This method is used to double click the element By mouse hover using class name element.
-	 * 
 	 * @author Balajih
 	 * @param classNameValue - name of the webelement
 	 * @return
@@ -1716,7 +1700,6 @@ public class GenericWrappers implements WrappersInterface{
 
 	/**
 	 * This method is used to double click the element By mouse hover using id element.
-	 * 
 	 * @author Balajih
 	 * @param idValue - name of the webelement
 	 * @return
@@ -1737,7 +1720,6 @@ public class GenericWrappers implements WrappersInterface{
 
 	/**
 	 * This method is used to double click the element By mouse hover using class name element.
-	 * 
 	 * @author Balajih
 	 * @param classNameValue - name of the webelement
 	 * @return
@@ -1760,7 +1742,6 @@ public class GenericWrappers implements WrappersInterface{
 
 	/**
 	 * This method is used to drag and drop the element By Mouse hover using ID element.
-	 * 
 	 * @author Balajih
 	 * @param idValue - name of the webelement
 	 * @return
@@ -1782,7 +1763,6 @@ public class GenericWrappers implements WrappersInterface{
 
 	/**
 	 * This method is used to drag and drop the element By Mouse hover using classname element.
-	 * 
 	 * @author Balajih
 	 * @param idValue - name of the webelement
 	 * @return
@@ -1804,7 +1784,6 @@ public class GenericWrappers implements WrappersInterface{
 
 	/**
 	 * This method is used to send the keys By Mouse hover on the element using ID element.
-	 * 
 	 * @author Balajih
 	 * @param idValue - name of the webelement
 	 * @return
@@ -1825,7 +1804,6 @@ public class GenericWrappers implements WrappersInterface{
 
 	/**
 	 * This method is used to send the keys By Mouse hover on the element using className element.
-	 * 
 	 * @author Balajih
 	 * @param classNameValue - name of the webelement
 	 * @return
@@ -1846,7 +1824,6 @@ public class GenericWrappers implements WrappersInterface{
 
 	/**
 	 * This method is used to send the keys By Mouse hover on the element using ID element.
-	 * 
 	 * @author Balajih
 	 * @param idValue - name of the webelement
 	 * @return
@@ -1867,7 +1844,6 @@ public class GenericWrappers implements WrappersInterface{
 
 	/**
 	 * This method is used to send the keys By Mouse hover on the element using className element.
-	 * 
 	 * @author Balajih
 	 * @param classNameValue - name of the webelement
 	 * @return
@@ -2253,9 +2229,8 @@ public class GenericWrappers implements WrappersInterface{
 		}
 		return bReturn;
 	}
-		/**
-	 * This method will check whether element is displayed.
-	 * 
+
+	/** This method will check whether element is displayed.
 	 * @author Balajih
 	 * @param className
 	 * @return
@@ -2274,9 +2249,7 @@ public class GenericWrappers implements WrappersInterface{
 		}
 		return bReturn;
 	}
-	/**
-	 * This method will check whether element is displayed.
-	 * 
+	/**This method will check whether element is displayed.
 	 * @author Balajih
 	 * @param id
 	 * @return
@@ -2295,9 +2268,7 @@ public class GenericWrappers implements WrappersInterface{
 		}
 		return bReturn;
 	}
-	/**
-	 * This method will check whether element is displayed.
-	 * 
+	/**This method will check whether element is displayed.
 	 * @author Balajih
 	 * @param linkText
 	 * @return
@@ -2316,9 +2287,7 @@ public class GenericWrappers implements WrappersInterface{
 		}
 		return bReturn;
 	}
-	/**
-	 * This method is used to wait till element is visible for a given time.
-	 * 
+	/**This method is used to wait till element is visible for a given time.
 	 * @author Balajih
 	 * @param xpathValue
 	 * @return
@@ -2336,10 +2305,25 @@ public class GenericWrappers implements WrappersInterface{
 		}
 	}
 	
+	/**This method is used to wait till element is visible for a given time.
+	 * @author Balajih
+	 * @param xpathValue
+	 * @return
+	 * @throws Throwable
+	 */
+	public void waitTillTitleVisible(String title) {
+		try {
+			// waiting 20 seconds to detect the visibility of the element
+			WebDriverWait wait = new WebDriverWait(driver, 30);
+			wait.until(ExpectedConditions.titleContains(title));
+
+		} catch (Throwable e) {
+			e.printStackTrace();
+			System.err.println("Error while waiting for the element to be visible: " + e.getMessage());
+		}
+	}
 	
-	/**
-	 * This method will return the web element Text 
-	 * 
+	/**This method will return the web element Text
 	 * @author Balajih
 	 * @param linkText
 	 * @return
@@ -2359,9 +2343,8 @@ public class GenericWrappers implements WrappersInterface{
 		}
 		return textvalue;
 	}
-	/**
-	 * This method will return the web element Text 
-	 * 
+
+	/** This method will return the web element Text 
 	 * @author Balajih
 	 * @param tagName
 	 * @return
@@ -2380,8 +2363,7 @@ public class GenericWrappers implements WrappersInterface{
 		}
 		return textvalue;
 	}
-	/**
-	 *  This method is used to click the element using Java script
+	/** This method is used to click the element using Java script
 	 * @author Balajih
 	 * @param id
 	 * @return
