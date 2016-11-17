@@ -2020,7 +2020,7 @@ public class GenericWrappers implements WrappersInterface{
 		return textValue;
 	}
 
-	/** This method is used to click the element using Java script
+	/** This method is used to click the element using Java script using xpath
 	 * @author Balajih
 	 * @param xpathValue - name of the webelement
 	 * @return
@@ -2302,6 +2302,24 @@ public class GenericWrappers implements WrappersInterface{
 		} catch (Throwable e) {
 			e.printStackTrace();
 			System.err.println("Error while waiting for the element to be visible: " + e.getMessage());
+		}
+	}
+	
+	/**This method is used to wait till element is clickable for a given time.
+	 * @author Balajih
+	 * @param xpathValue
+	 * @return
+	 * @throws Throwable
+	 */
+	public void waitTillElementclickableByXpath(String xpathValue) {
+		try {
+			// waiting 20 seconds to detect the visibility of the element
+			WebDriverWait wait = new WebDriverWait(driver, 30);
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpathValue)));
+
+		} catch (Throwable e) {
+			e.printStackTrace();
+			System.err.println("Error while waiting for the element to be clickable: " + e.getMessage());
 		}
 	}
 	

@@ -927,4 +927,51 @@ public interface WrappersInterface {
 	 * @throws Throwable
 	 */
 	public void quitBrowser() throws Throwable;
+	
+	/**This method will check whether the element is enabled on the screen.
+	 * @author Balajih
+	 * @param xpathValue
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean checkElementIsEnabledByXpath(String xpathValue) throws Throwable;
+	
+	/**This method is used to mouse release on the element 
+	 * @author Balajih
+	 * @param xpathValue
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean mouseReleaseByXpath(String xpathValue) throws Throwable;
+	
+	/**This method is used to get Title of the page.
+	 * @author Balajih
+	 * @return
+	 * @throws Throwable
+	 */	
+	public void getTitle() throws Throwable;
+	
+	/**This method will check whether element is displayed.
+	 * @author Balajih
+	 * @param xpathValue
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean checkElementIsDisplayedByXpath(String xpathValue) throws Throwable;
+	
+	/**This method will check whether element is displayed.
+	 * @author Balajih
+	 * @param tagName
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean checkElementIsDisplayedByTagName(String tagName) throws Throwable;
+	
+	/** This method will check whether element is displayed.
+	 * @author Balajih
+	 * @param className
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean checkElementIsDisplayedByClassName(String className) throws Throwable;
 }
