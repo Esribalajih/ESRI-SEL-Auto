@@ -3,15 +3,15 @@ package com.esri.test.auto.pages;
 import com.esri.test.auto.utils.Reporter;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
-/**This is the Esri Career Facebook page
+/**This is the Esri Career Privacy Statement page
  * @author balajih
  *
  */
-public class EsriCareerFacebookPage extends ESRIWrappers{
+public class EsriCareerPrivacyStatePage extends ESRIWrappers{
 	
-	public EsriCareerFacebookPage() throws Throwable{
-		if (!VerifyTitle("Esri Student Connection | Facebook"))
-			Reporter.reportStep("This is not a Esri Career Facebook Page", "FAIL");
+	public EsriCareerPrivacyStatePage() throws Throwable{
+		if (!VerifyTitle("Legal Information | Esri Privacy Statement"))
+			Reporter.reportStep("This is not a Esri Privacy Statement Page", "FAIL");
 	}
 	
 	public EsriCareerMainPage switchbacktoParentWindow() throws Throwable{

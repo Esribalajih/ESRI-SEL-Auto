@@ -10,10 +10,13 @@ import com.esri.test.auto.wrappers.ESRIWrappers;
 public class EsriCareerLinkedInPage extends ESRIWrappers{
 	
 	public EsriCareerLinkedInPage() throws Throwable{
-		if(!VerifyTitle("Esri Careers"))
-			Reporter.reportStep("This is not a Esri Career Blog Page", "FAIL");
+		if(!VerifyTitle("Esri - Careers & Employment | LinkedIn"))
+			Reporter.reportStep("This is not a Esri Career LinkedIn Page", "FAIL");
 	}
 
-	
+	public EsriCareerMainPage switchbacktoParentWindow() throws Throwable{
+		switchToDefaultContent();
+		return new EsriCareerMainPage();
+	}
 	
 }

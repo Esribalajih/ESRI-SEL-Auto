@@ -14,6 +14,9 @@ public class EsriCareerBlogPage extends ESRIWrappers{
 			Reporter.reportStep("This is not a Esri Career Blog Page", "FAIL");
 	}
 
-	
+	public EsriCareerMainPage switchbacktoParentWindow() throws Throwable{
+		switchToDefaultContent();
+		return new EsriCareerMainPage();
+	}
 	
 }

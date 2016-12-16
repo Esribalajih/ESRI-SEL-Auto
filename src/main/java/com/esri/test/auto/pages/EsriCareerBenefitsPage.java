@@ -7,16 +7,16 @@ import com.esri.test.auto.wrappers.ESRIWrappers;
  * @author balajih
  *
  */
-public class EsriCareerFacebookPage extends ESRIWrappers{
+public class EsriCareerBenefitsPage extends ESRIWrappers{
 	
-	public EsriCareerFacebookPage() throws Throwable{
+	public EsriCareerBenefitsPage() throws Throwable{
 		if (!VerifyTitle("Esri Student Connection | Facebook"))
 			Reporter.reportStep("This is not a Esri Career Facebook Page", "FAIL");
 	}
 	
-	public EsriCareerMainPage switchbacktoParentWindow() throws Throwable{
+	public EsriCareerBenefitsPage switchbacktoParentWindow(){
 		switchToDefaultContent();
-		return new EsriCareerMainPage();
+		return this;
 	}
 
 }
