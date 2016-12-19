@@ -7,17 +7,17 @@ import com.esri.test.auto.wrappers.ESRIWrappers;
  * @author balajih
  *
  */
-public class EsriCareerMainPage extends ESRIWrappers {
+public class EsriCareerHomePage extends ESRIWrappers {
 
-	public EsriCareerMainPage() throws Throwable{
+	public EsriCareerHomePage() throws Throwable{
 		if(!VerifyTitle("Careers at Esri")){
 			Reporter.reportStep("this is not a Esri Career Page", "FAIL");
 		}
 	}
 
-	public EsriCareerMainPage verifyCareerMainHdr(String careerMHdr){
+	public EsriCareerHomePage verifyCareerMainHdr(String careerMHdr){
 		try {
-			VerifyTextByXpath(prop.getProperty("CareerMainPage.mainHdr.xpath"), careerMHdr);
+			VerifyTextByXpath(prop.getProperty("CareerHomePage.mainHdr.xpath"), careerMHdr);
 		} catch (Throwable e) {
 			e.printStackTrace();
 		}
@@ -25,80 +25,80 @@ public class EsriCareerMainPage extends ESRIWrappers {
 	}
 	
 	public EsriCareerJobDetailsPage clickComeJoinUS() throws Throwable{
-		clickByLinkText(prop.getProperty("CareerMainPage.ComeJoinHdr.linktext"));
+		clickByLinkText(prop.getProperty("CareerHomePage.ComeJoinHdr.linktext"));
 		return new EsriCareerJobDetailsPage();
 	}
 
-	public EsriCareerMainPage clickLogIn() throws Throwable{
-		clickByClassName(prop.getProperty("CareerMainPage.Login.classname"));
+	public EsriCareerHomePage clickLogIn() throws Throwable{
+		clickByClassName(prop.getProperty("CareerHomePage.Login.classname"));
 		return this;
 	}
-	public EsriCareerMainPage clickScrolltoExplore() throws Throwable{
-		clickByClassName(prop.getProperty("CareerMainPage.Scrolldown.classname"));
+	public EsriCareerHomePage clickScrolltoExplore() throws Throwable{
+		clickByClassName(prop.getProperty("CareerHomePage.Scrolldown.classname"));
 		return this;
 	}
 	//Navigation between the Photo slides
 
-	public EsriCareerMainPage clickleftsideButton() throws Throwable{
-		clickByClassName(prop.getProperty("CareerMainPage.leftslidebutton.classname"));
+	public EsriCareerHomePage clickleftsideButton() throws Throwable{
+		clickByClassName(prop.getProperty("CareerHomePage.leftslidebutton.classname"));
 		return this;
 	}
 
-	public EsriCareerMainPage clickrightsideButton() throws Throwable{
-		clickByClassName(prop.getProperty("CareerMainPage.rightslidebutton.classname"));
+	public EsriCareerHomePage clickrightsideButton() throws Throwable{
+		clickByClassName(prop.getProperty("CareerHomePage.rightslidebutton.classname"));
 		return this;
 	}
 	//Footer Menu Functionalities
 
-	public EsriCareerMainPage clickEsripolicyEEOlink() throws Throwable{
-		clickByLinkText(prop.getProperty("CareerMainPage.footerpolicy.linktext"));
+	public EsriCareerHomePage clickEsripolicyEEOlink() throws Throwable{
+		clickByLinkText(prop.getProperty("CareerHomePage.footerpolicy.linktext"));
 		return this;
 	}
 	
-	public EsriCareerMainPage clickAccomlink() throws Throwable{
-		clickByLinkText(prop.getProperty("CareerMainPage.footeraccom.linktext"));
+	public EsriCareerHomePage clickAccomlink() throws Throwable{
+		clickByLinkText(prop.getProperty("CareerHomePage.footeraccom.linktext"));
 		return this;
 	}
 	
 	public EsriCareerPrivacyStatePage clickPrivacylink() throws Throwable{
-		clickByLinkText(prop.getProperty("CareerMainPage.footerprivacy.linktext"));
+		clickByLinkText(prop.getProperty("CareerHomePage.footerprivacy.linktext"));
 		return new EsriCareerPrivacyStatePage();
 	}
 	
-	public EsriCareerMainPage clickLawPosterlink() throws Throwable{
-		clickByLinkText(prop.getProperty("CareerMainPage.footerlawposter.linktext"));
+	public EsriCareerHomePage clickLawPosterlink() throws Throwable{
+		clickByLinkText(prop.getProperty("CareerHomePage.footerlawposter.linktext"));
 		return this;
 	}
 
 	//Click Come Join Us Footer button
 
 	public EsriCareerJobDetailsPage clickComeJoinUSFooter() throws Throwable{
-		clickByLinkText(prop.getProperty("CareerMainPage.ComeJoinUsFooterbtn.classname"));
+		clickByLinkText(prop.getProperty("CareerHomePage.ComeJoinUsFooterbtn.classname"));
 		return new EsriCareerJobDetailsPage();
 	}
 	//Accessing Widgets Buttons
 	public EsriCareerBlogPage clickBlogButton() throws Throwable{
-		clickByXpath(prop.getProperty("CareerMainPage.bloglink.xpath"));
+		clickByXpath(prop.getProperty("CareerHomePage.bloglink.xpath"));
 		return new EsriCareerBlogPage();
 	}
 
 	public EsriCareerInstagramPage clickInstagramButton() throws Throwable{
-		clickByXpath(prop.getProperty("CareerMainPage.instagramlink.xpath"));
+		clickByXpath(prop.getProperty("CareerHomePage.instagramlink.xpath"));
 		return new EsriCareerInstagramPage();
 	}
 
 	public EsriCareerFacebookPage clickFacebookButton() throws Throwable{
-		clickByXpath(prop.getProperty("CareerMainPage.facebooklink.xpath"));
+		clickByXpath(prop.getProperty("CareerHomePage.facebooklink.xpath"));
 		return new EsriCareerFacebookPage();
 	}
 
 	public EsriCareerTwitterPage clickTwitterButton() throws Throwable{
-		clickByXpath(prop.getProperty("CareerMainPage.twitterlink.xpath"));
+		clickByXpath(prop.getProperty("CareerHomePage.twitterlink.xpath"));
 		return new EsriCareerTwitterPage();
 	}
 
 	public EsriCareerLinkedInPage clickLinkedInButton() throws Throwable{
-		clickByXpath(prop.getProperty("CareerMainPage.linkedinLink.xpath"));
+		clickByXpath(prop.getProperty("CareerHomePage.linkedinLink.xpath"));
 		return new EsriCareerLinkedInPage();
 	}
 
