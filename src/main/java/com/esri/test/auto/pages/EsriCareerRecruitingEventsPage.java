@@ -64,9 +64,9 @@ public class EsriCareerRecruitingEventsPage extends ESRIWrappers{
 		return new EsriCareerContactUsPage();
 	}
 	
-	public EsriCareerMainPage clickCareersHomeLink() throws Throwable{
+	public EsriCareerHomePage clickCareersHomeLink() throws Throwable{
 		clickByLinkText(prop.getProperty("CareerJobDetailsPage.Careershomelink.linktext"));
-		return new EsriCareerMainPage();
+		return new EsriCareerHomePage();
 	}
 	
 	public EsriCareerRecruitingEventsPage clickSharelink() throws Throwable{

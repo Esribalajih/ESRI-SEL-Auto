@@ -3,7 +3,7 @@ package com.esri.test.auto.pages;
 import com.esri.test.auto.utils.Reporter;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
-/**This is the Esri Career Blog Page
+/**This is the Esri Career LinkedIN Page
  * @author balajih
  *
  */
@@ -14,9 +14,9 @@ public class EsriCareerLinkedInPage extends ESRIWrappers{
 			Reporter.reportStep("This is not a Esri Career LinkedIn Page", "FAIL");
 	}
 
-	public EsriCareerMainPage switchbacktoParentWindow() throws Throwable{
+	public EsriCareerHomePage switchbacktoParentWindow() throws Throwable{
 		switchToDefaultContent();
-		return new EsriCareerMainPage();
+		return new EsriCareerHomePage();
 	}
 	
 }

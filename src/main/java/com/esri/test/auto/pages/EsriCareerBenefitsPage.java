@@ -3,7 +3,7 @@ package com.esri.test.auto.pages;
 import com.esri.test.auto.utils.Reporter;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
-/**This is the Esri Career Facebook page
+/**This is the Esri Career Benefits page
  * @author balajih
  *
  */

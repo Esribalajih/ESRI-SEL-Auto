@@ -10,8 +10,8 @@ import com.esri.test.auto.wrappers.ESRIWrappers;
 public class EsriCareerStudLoginPage extends ESRIWrappers{
 	
 	public EsriCareerStudLoginPage() throws Throwable{
-		if (!VerifyTitle("Esri Student Connection | Facebook"))
-			Reporter.reportStep("This is not a Esri Career Facebook Page", "FAIL");
+		if (!VerifyTitle("Careers Center - Welcome"))
+			Reporter.reportStep("This is not a Esri Career Center Page", "FAIL");
 	}
 	
 	public EsriCareerStudLoginPage switchbacktoParentWindow(){
