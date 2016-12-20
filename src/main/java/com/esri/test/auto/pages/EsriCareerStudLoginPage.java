@@ -14,9 +14,9 @@ public class EsriCareerStudLoginPage extends ESRIWrappers{
 			Reporter.reportStep("This is not a Esri Career Center Page", "FAIL");
 	}
 	
-	public EsriCareerStudLoginPage switchbacktoParentWindow(){
-		switchToDefaultContent();
-		return this;
+	public EsriCareerHomePage clickBwrBckBtn() throws Throwable{
+		clickBrowserBackButton();
+		return new EsriCareerHomePage();
 	}
 
 }

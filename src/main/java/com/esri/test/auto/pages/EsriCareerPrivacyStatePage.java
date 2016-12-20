@@ -14,8 +14,13 @@ public class EsriCareerPrivacyStatePage extends ESRIWrappers{
 			Reporter.reportStep("This is not a Esri Privacy Statement Page", "FAIL");
 	}
 	
-	public EsriCareerHomePage switchbacktoParentWindow() throws Throwable{
-		switchToDefaultContent();
+	public EsriCareerPrivacyStatePage verifyLegalinfoHdr(String LHdr) throws Throwable{
+		VerifyTextByXpath(prop.getProperty("CareerPrivacy.legalinfo.xpath"), LHdr);
+		return this;
+	}
+	
+	public EsriCareerHomePage clickBwrBckBtn() throws Throwable{
+		clickBrowserBackButton();
 		return new EsriCareerHomePage();
 	}
 

@@ -45,7 +45,7 @@ public class Brazil_HomePage extends ESRIWrappers {
 		return this;
 	}
 
-	// click industies Tab
+	// click industries Tab
 	public Brazil_HomePage clickIndustries() throws Throwable {
 		try {
 			clickByXpath(prop.getProperty("disBrazilHome.industrieslink.xpath"));
@@ -55,7 +55,7 @@ public class Brazil_HomePage extends ESRIWrappers {
 		return this;
 	}
 
-	// verify industies Tab list
+	// verify industries Tab list
 	public Brazil_HomePage verifyIndustriesList(String data) throws Throwable {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, 10);

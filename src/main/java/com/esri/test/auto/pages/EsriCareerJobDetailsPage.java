@@ -14,6 +14,11 @@ public class EsriCareerJobDetailsPage extends ESRIWrappers{
 		Reporter.reportStep("This is not a Esri Career Job Details Page", "FAIL");
 	}
 	
+	public EsriCareerJobDetailsPage verifyJobDetailsHdr(String JDHdr) throws Throwable{
+		VerifyTextByXpath(prop.getProperty("CareerJobDetailsPage.JobDetailsHeader.xpath"), JDHdr);
+		return this;
+	}
+	
 	public EsriCareerJobDetailsPage enterTextSearch(String Inputdata) throws Throwable{
 		enterByClassName(prop.getProperty("CareerJobDetailsPage.JobSearchInput.classname"),Inputdata);
 		return this;
@@ -48,10 +53,18 @@ public class EsriCareerJobDetailsPage extends ESRIWrappers{
 		selectByIdWithvalue(prop.getProperty("CareerJobDetailsPage.selectRedlandLoc.Id"),idValue);
 		return this;
 	}
-	
+	public EsriCareerMoreAboutEsriPage clickMoreAboutEsrilink() throws Throwable{
+		clickByLinkText(prop.getProperty("CareerJobDetailsPage.moreaboutEsri.linktext"));
+		return new EsriCareerMoreAboutEsriPage();
+	}
 	public EsriCareerRecruitingEventsPage clickRecruitingEventsLink() throws Throwable{
 		clickByLinkText(prop.getProperty("CareerJobDetailsPage.RecruitingEventslink.linktext"));
 		return new EsriCareerRecruitingEventsPage();
+	}
+	
+	public EsriCareerHomePage clickBwrBckBtn() throws Throwable{
+		clickBrowserBackButton();
+		return new EsriCareerHomePage();
 	}
 
 }

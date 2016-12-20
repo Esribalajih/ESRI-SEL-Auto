@@ -13,8 +13,8 @@ public class EsriCareerInstagramPage extends ESRIWrappers{
 		if (!VerifyTitle("Esri (@esrigram) • Instagram photos and videos"))
 			Reporter.reportStep("This is not a Esri Career Instagram Page", "FAIL");
 	}
-	public EsriCareerHomePage switchbacktoParentWindow() throws Throwable{
-		switchToDefaultContent();
+	public EsriCareerHomePage clickBwrBckBtn() throws Throwable{
+		clickBrowserBackButton();
 		return new EsriCareerHomePage();
 	}
 }

@@ -13,8 +13,8 @@ public class EsriCareerTwitterPage extends ESRIWrappers{
 		if (!VerifyTitle("Esri Careers (@EsriCareers) | Twitter"))
 			Reporter.reportStep("This is not a Esri Career Twitter Page", "FAIL");
 	}
-	public EsriCareerHomePage switchbacktoParentWindow() throws Throwable{
-		switchToDefaultContent();
+	public EsriCareerHomePage clickBwrBckBtn() throws Throwable{
+		clickBrowserBackButton();
 		return new EsriCareerHomePage();
 	}
 }

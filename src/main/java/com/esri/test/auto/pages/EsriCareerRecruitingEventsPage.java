@@ -74,9 +74,9 @@ public class EsriCareerRecruitingEventsPage extends ESRIWrappers{
 		return this;
 	}
 	
-	public EsriCareerRecruitingEventsPage switchbacktoParentWindow(){
-		switchToDefaultContent();
-		return this;
+	public EsriCareerHomePage clickBwrBckBtn() throws Throwable{
+		clickBrowserBackButton();
+		return new EsriCareerHomePage();
 	}
 
 }

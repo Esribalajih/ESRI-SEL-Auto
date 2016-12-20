@@ -29,9 +29,9 @@ public class EsriCareerHomePage extends ESRIWrappers {
 		return new EsriCareerJobDetailsPage();
 	}
 
-	public EsriCareerHomePage clickLogIn() throws Throwable{
+	public EsriCareerStudLoginPage clickLogIn() throws Throwable{
 		clickByClassName(prop.getProperty("CareerHomePage.Login.classname"));
-		return this;
+		return new EsriCareerStudLoginPage();
 	}
 	public EsriCareerHomePage clickScrolltoExplore() throws Throwable{
 		clickByClassName(prop.getProperty("CareerHomePage.Scrolldown.classname"));
@@ -68,6 +68,26 @@ public class EsriCareerHomePage extends ESRIWrappers {
 	public EsriCareerHomePage clickLawPosterlink() throws Throwable{
 		clickByLinkText(prop.getProperty("CareerHomePage.footerlawposter.linktext"));
 		return this;
+	}
+	
+	public EsriCareerInstagramPage clickFooterInstagramButton() throws Throwable{
+		clickByXpath(prop.getProperty("CareerHomePage.footerInstagramlink.xpath"));
+		return new EsriCareerInstagramPage();
+	}
+
+	public EsriCareerFacebookPage clickFooterFacebookButton() throws Throwable{
+		clickByXpath(prop.getProperty("CareerHomePage.footerFacebooklink.xpath"));
+		return new EsriCareerFacebookPage();
+	}
+
+	public EsriCareerTwitterPage clickFooterTwitterButton() throws Throwable{
+		clickByXpath(prop.getProperty("CareerHomePage.footerTwitterlink.xpath"));
+		return new EsriCareerTwitterPage();
+	}
+
+	public EsriCareerLinkedInPage clickFooterLinkedInButton() throws Throwable{
+		clickByXpath(prop.getProperty("CareerHomePage.footerLinkedInlink.xpath"));
+		return new EsriCareerLinkedInPage();
 	}
 
 	//Click Come Join Us Footer button

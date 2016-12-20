@@ -14,9 +14,9 @@ public class EsriCareerBenefitsPage extends ESRIWrappers{
 			Reporter.reportStep("This is not a Esri Career Facebook Page", "FAIL");
 	}
 	
-	public EsriCareerBenefitsPage switchbacktoParentWindow(){
-		switchToDefaultContent();
-		return this;
+	public EsriCareerHomePage clickBwrBckBtn() throws Throwable{
+		clickBrowserBackButton();
+		return new EsriCareerHomePage();
 	}
 
 }
