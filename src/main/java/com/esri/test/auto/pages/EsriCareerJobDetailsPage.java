@@ -18,6 +18,7 @@ public class EsriCareerJobDetailsPage extends ESRIWrappers{
 		VerifyTextByXpath(prop.getProperty("CareerJobDetailsPage.JobDetailsHeader.xpath"), JDHdr);
 		return this;
 	}
+	//Job Details Search Functionalities
 	
 	public EsriCareerJobDetailsPage enterTextSearch(String Inputdata) throws Throwable{
 		enterByClassName(prop.getProperty("CareerJobDetailsPage.JobSearchInput.classname"),Inputdata);
@@ -53,13 +54,88 @@ public class EsriCareerJobDetailsPage extends ESRIWrappers{
 		selectByIdWithvalue(prop.getProperty("CareerJobDetailsPage.selectRedlandLoc.Id"),idValue);
 		return this;
 	}
+	
+	public EsriCareerJDSearchResultsPage clickSearchResult() throws Throwable{
+		clickByXpath(prop.getProperty("CareerJobDetailsPage.clicksearchresult.xpath"));
+		return new EsriCareerJDSearchResultsPage();
+	}
+	
+	//Sub Menu links
+	
+	public EsriCareerRecruitingEventsPage clickRecruitingEventsLink() throws Throwable{
+		clickByLinkText(prop.getProperty("CareerJobDetailsPage.RecruitingEventslink.linktext"));
+		return new EsriCareerRecruitingEventsPage();
+	}
+	
+	public EsriCareerStudentGradsPage clickStudentsGradsSubMenulink() throws Throwable{
+		clickByLinkText(prop.getProperty("CareerJobDetailsPage.StudentsandGradslink.linktext"));
+		return new EsriCareerStudentGradsPage();
+	}
+	
+	public EsriCareerBenefitsPage clickBenefitsSubMenulink() throws Throwable{
+		clickByLinkText(prop.getProperty("CareerJobDetailsPage.Benefitslink.linktext"));
+		return new EsriCareerBenefitsPage();
+	}
+	
+	public EsriCareerLifeatEsriPage clickLifeatEsriSubMenulink() throws Throwable{
+		clickByLinkText(prop.getProperty("CareerJobDetailsPage.LifeatEsrilink.linktext"));
+		return new EsriCareerLifeatEsriPage();
+	}
+	
+	public EsriCareerStudLoginPage clickStudLoginSubMenulink() throws Throwable{
+		clickByLinkText(prop.getProperty("CareerJobDetailsPage.Loginlink.linktext"));
+		return new EsriCareerStudLoginPage();
+	}
+	
+	public EsriCareerContactUsPage clickContactusSubMenulink() throws Throwable{
+		clickByLinkText(prop.getProperty("CareerJobDetailsPage.Contactuslink.linktext"));
+		return new EsriCareerContactUsPage();
+	}
+	
+	public EsriCareerHomePage clickCareersHomeSubMenulink() throws Throwable{
+		clickByLinkText(prop.getProperty("CareerJobDetailsPage.Careershomelink.linktext"));
+		return new EsriCareerHomePage();
+	}
+	//Footer Widgets functionalities
+	
+	public EsriCareerJobDetailsPage verifyFooterHdr(String FooterHdr) throws Throwable{
+		VerifyTextByXpath(prop.getProperty("CareerJobDetailsPage.footerhdr.xpath"), FooterHdr);
+		return this;
+	}
+	
 	public EsriCareerMoreAboutEsriPage clickMoreAboutEsrilink() throws Throwable{
 		clickByLinkText(prop.getProperty("CareerJobDetailsPage.moreaboutEsri.linktext"));
 		return new EsriCareerMoreAboutEsriPage();
 	}
-	public EsriCareerRecruitingEventsPage clickRecruitingEventsLink() throws Throwable{
-		clickByLinkText(prop.getProperty("CareerJobDetailsPage.RecruitingEventslink.linktext"));
-		return new EsriCareerRecruitingEventsPage();
+	
+	public EsriCareerBlogPage clickFooterBlogButton() throws Throwable{
+		clickByXpath(prop.getProperty("CareerJobDetailsPage.footerbloglink.xpath"));
+		return new EsriCareerBlogPage();
+	}
+	
+	public EsriCareerInstagramPage clickFooterInstagramButton() throws Throwable{
+		clickByXpath(prop.getProperty("CareerJobDetailsPage.footerinstagramlink.xpath"));
+		return new EsriCareerInstagramPage();
+	}
+
+	public EsriCareerFacebookPage clickFooterFacebookButton() throws Throwable{
+		clickByXpath(prop.getProperty("CareerJobDetailsPage.footerfblink.xpath"));
+		return new EsriCareerFacebookPage();
+	}
+
+	public EsriCareerTwitterPage clickFooterTwitterButton() throws Throwable{
+		clickByXpath(prop.getProperty("CareerJobDetailsPage.footertwitterlink.xpath"));
+		return new EsriCareerTwitterPage();
+	}
+
+	public EsriCareerLinkedInPage clickFooterLinkedInButton() throws Throwable{
+		clickByXpath(prop.getProperty("CareerJobDetailsPage.footerlinkedinlink.xpath"));
+		return new EsriCareerLinkedInPage();
+	}
+	
+	public EsriCareerGlassDoorPage clickFooterGlassDoorButton() throws Throwable{
+		clickByXpath(prop.getProperty("CareerJobDetailsPage.footerglassdoorlink.xpath"));
+		return new EsriCareerGlassDoorPage();
 	}
 	
 	public EsriCareerHomePage clickBwrBckBtn() throws Throwable{

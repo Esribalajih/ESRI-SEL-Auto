@@ -14,15 +14,30 @@ public class EsriCareerRecruitingEventsPage extends ESRIWrappers{
 			Reporter.reportStep("This is not a Esri Recruiting Events Page", "FAIL");
 	}
 	
+	public EsriCareerRecruitingEventsPage verifyRecruitingEventsHdr(String REHeader) throws Throwable{
+		VerifyTextByXpath(prop.getProperty("EsriCareerRecruitingEventsPage"), REHeader);
+		return this;
+	}
+	
 	public EsriCareerRecruitingEventsPage clickAlphaSortlink() throws Throwable{
 		clickById(prop.getProperty("CareerRecruitingEventsPage.AlphabetsSortlink.id"));
 		return this;
 	}
 	
+	/*public EsriCareerRecruitingEventsPage clickASSearchResultslink() throws Throwable{
+		clickByXpath(prop.getProperty("CareerRecruitingEventsPage.ASSearchResultslink.xpath"));
+		return this;
+	}*/
+	
 	public EsriCareerRecruitingEventsPage clickDateSortlink() throws Throwable{
 		clickById(prop.getProperty("CareerRecruitingEventsPage.DateSortlink.id"));
 		return this;
 	}
+	
+	/*public EsriCareerRecruitingEventsPage clickDSSearchResultslink() throws Throwable{
+		clickByXpath(prop.getProperty("CareerRecruitingEventsPage.DSSearchResultslink.xpath"));
+		return this;
+	}*/
 	
 	public EsriCareerRecruitingEventsPage clickWhereWeHaveBeenlink() throws Throwable{
 		clickByLinkText(prop.getProperty("CareerRecruitingEventsPage.WhereWeHaveBeenlink.linktext"));
@@ -39,9 +54,9 @@ public class EsriCareerRecruitingEventsPage extends ESRIWrappers{
 		return new EsriCareerJobDetailsPage();
 	}
 	
-	public EsriCareerJobDetailsPage clickStudentsGradsLink() throws Throwable{
+	public EsriCareerStudentGradsPage clickStudentsGradsLink() throws Throwable{
 		clickByLinkText(prop.getProperty("CareerJobDetailsPage.StudentsandGradslink.linktext"));
-		return new EsriCareerJobDetailsPage();
+		return new EsriCareerStudentGradsPage();
 	}
 	
 	public EsriCareerBenefitsPage clickBenefitsLink() throws Throwable{
@@ -73,10 +88,6 @@ public class EsriCareerRecruitingEventsPage extends ESRIWrappers{
 		clickByLinkText(prop.getProperty("CareerJobDetailsPage.sharelink.classname"));
 		return this;
 	}
-	
-	public EsriCareerHomePage clickBwrBckBtn() throws Throwable{
-		clickBrowserBackButton();
-		return new EsriCareerHomePage();
-	}
+
 
 }

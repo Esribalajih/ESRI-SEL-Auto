@@ -22,7 +22,8 @@ public class EsriCareerHome_TC01 extends ESRIWrappers {
 	
 	@Test(dataProvider="fetchdata")
 	public void esriCareerHome(String EsriCareerURL, String careerMHdr, String JDHdr, String Inputdata, 
-			String jobCategory, String Location, String LHdr) throws Throwable{
+			String jobCategory, String Location, String LHdr, String REHeader, String StuHdr,
+			String JCitemdata) throws Throwable{
 		openbrowser(EsriCareerURL);
 		new EsriCareerHomePage()
 		.verifyCareerMainHdr(careerMHdr)
@@ -36,6 +37,12 @@ public class EsriCareerHome_TC01 extends ESRIWrappers {
 		.selectJobCategory(jobCategory)
 		.clickLocation()
 		.selectLocation(Location)
+		.clickSearchResult()
+		.clickApplyNowHdrlink()
+		.clickBwrBckBtn()
+		.clickApplyNowFtrlink()
+		.clickBwrBckBtn()
+		.clickSearchJobsSubMenulink()
 		.clickMoreAboutEsrilink()
 		.clickBwrBckBtn()
 		.clickBwrBckBtn()
@@ -66,6 +73,19 @@ public class EsriCareerHome_TC01 extends ESRIWrappers {
 		.verifyLegalinfoHdr(LHdr)
 		.clickBwrBckBtn()
 		.clickComeJoinUSFooter()
+		.clickRecruitingEventsLink()
+		.verifyRecruitingEventsHdr(REHeader)
+		.clickAlphaSortlink()
+		.clickDateSortlink()
+		.clickWhereWeHaveBeenlink()
+		.clickUpcomingEventslink()
+		.clickStudentsGradsLink()
+		.verifyStudentsGradHdr(StuHdr)
+		.clickByNewGradlink()
+		.clickByIntrnProgramlink()
+		.clickByStuAssistProgramlink()
+		.selectByjobCategory(JCitemdata)
+		.clickByJobListItem()
 		.
 		
 		
