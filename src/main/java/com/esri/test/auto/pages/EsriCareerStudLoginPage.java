@@ -14,6 +14,11 @@ public class EsriCareerStudLoginPage extends ESRIWrappers{
 			Reporter.reportStep("This is not a Esri Career Center Page", "FAIL");
 	}
 	
+	public EsriCareerLifeatEsriPage clickBwrBckBtnLifePage() throws Throwable{
+		clickBrowserBackButton();
+		return new EsriCareerLifeatEsriPage();
+	}
+	
 	public EsriCareerHomePage clickBwrBckBtn() throws Throwable{
 		clickBrowserBackButton();
 		return new EsriCareerHomePage();

@@ -15,15 +15,16 @@ public class EsriCareerHome_TC01 extends ESRIWrappers {
 	@Parameters({"browsers"})
 	@BeforeClass
 	public void startTestcase(){
-		dataSheetName="EsriCareer_TC01";
-		testCaseName="Esri Career Page_TC01";
+		dataSheetName="EsriCareersMain_TC02";
+		testCaseName="EsriCareersMain_TC02";
 		testDescription="This is the testcase for Testing Esri Career module - Positive Test scenario";
 	}
 	
 	@Test(dataProvider="fetchdata")
 	public void esriCareerHome(String EsriCareerURL, String careerMHdr, String JDHdr, String Inputdata, 
 			String jobCategory, String Location, String LHdr, String REHeader, String StuHdr,
-			String JCitemdata) throws Throwable{
+			String JCitemdata, String LifeHdr, String CHeader, String BText, String FName, String LName, 
+			String EmailID, String PhoneNo, String VConfNotific) throws Throwable{
 		openbrowser(EsriCareerURL);
 		new EsriCareerHomePage()
 		.verifyCareerMainHdr(careerMHdr)
@@ -45,6 +46,7 @@ public class EsriCareerHome_TC01 extends ESRIWrappers {
 		.clickSearchJobsSubMenulink()
 		.clickMoreAboutEsrilink()
 		.clickBwrBckBtn()
+		.clickBenefitsSubMenulink()
 		.clickBwrBckBtn()
 		.clickBlogButton()
 		.clickBwrBckBtn()
@@ -79,6 +81,7 @@ public class EsriCareerHome_TC01 extends ESRIWrappers {
 		.clickDateSortlink()
 		.clickWhereWeHaveBeenlink()
 		.clickUpcomingEventslink()
+		.clickBenefitsSubMenulink()
 		.clickStudentsGradsLink()
 		.verifyStudentsGradHdr(StuHdr)
 		.clickByNewGradlink()
@@ -86,7 +89,32 @@ public class EsriCareerHome_TC01 extends ESRIWrappers {
 		.clickByStuAssistProgramlink()
 		.selectByjobCategory(JCitemdata)
 		.clickByJobListItem()
-		.
+		.clickBenefitsSubMenulink()
+		.clickLifeatEsriSubMenulink()
+		.verifyLifeatEsriHdr(LifeHdr)
+		.clickFirstImageLink()
+		.clickSecondImageLink()
+		.clickThirdImageLink()
+		.clickFourthImageLink()
+		.clickFivthImageLink()
+		.clickSixthImageLink()
+		.clickBenefitsSubMenulink()
+		.clickStudLoginSubMenulink()
+		.clickBwrBckBtnLifePage()
+		.clickContactusSubMenulink()
+		.verifyContactUsHeader(CHeader)
+		.clickMyAppRadiobtn()
+		.enterBriefText(BText)
+		.enterFirstName(FName)
+		.enterLastName(LName)
+		.enterEmailID(EmailID)
+		.enterPhoneNo(PhoneNo)
+		.clickSendButton()
+		.verifyConfirmationNotification(VConfNotific)
+		.clickPrivacyStatementlink()
+		.clickContactUsBwrBckBtn()
+		.clickCareersHomeSubMenulink();
+		
 		
 		
 	}

@@ -48,7 +48,7 @@ public class Reporter extends com.esri.test.auto.wrappers.ESRIWrappers {
 	}
 		 
 		 public static void startResult(){
-			 extent = new ExtentReports("./reports/results.html",false);
+			 extent = new ExtentReports("./reports/results.html",true);
 			// extent.loadConfig(new File("./extent-config.xml"));
 			 }
 		 

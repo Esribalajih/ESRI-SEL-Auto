@@ -7,12 +7,12 @@
       <class name="com.esri.test.auto.testcases.ArcGISforDesktop_TC01"/>
     </classes>
   </test> 
-  <!-- <test name='ArcGISDesktop_chrome'>
+  <test name='ArcGISDesktop_chrome'>
     <parameter name="browser" value="chrome"/>
     <classes>
       <class name="com.esri.test.auto.testcases.ArcGISforDesktop_TC01"/>
     </classes>
-  </test> --> 
+  </test> 
   <!-- <test name='ArcGISDesktop_internet explorer'>
     <parameter name="browser" value="internet explorer"/>
     <classes>

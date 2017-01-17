@@ -18,6 +18,10 @@ public class EsriCareerPrivacyStatePage extends ESRIWrappers{
 		VerifyTextByXpath(prop.getProperty("CareerPrivacy.legalinfo.xpath"), LHdr);
 		return this;
 	}
+	public EsriCareerContactUsPage clickContactUsBwrBckBtn() throws Throwable{
+		clickBrowserBackButton();
+		return new EsriCareerContactUsPage();
+	}
 	
 	public EsriCareerHomePage clickBwrBckBtn() throws Throwable{
 		clickBrowserBackButton();

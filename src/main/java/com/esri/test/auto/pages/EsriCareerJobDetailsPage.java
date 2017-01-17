@@ -26,7 +26,8 @@ public class EsriCareerJobDetailsPage extends ESRIWrappers{
 	}
 	
 	public EsriCareerJobDetailsPage clickBySearchBtn() throws Throwable{
-		clickByLinkText(prop.getProperty("CareerJobDetailsPage.Searchbutton.linktext"));
+		waitForPageLoad(5);
+		clickByClassName(prop.getProperty("CareerJobDetailsPage.Searchbutton.classname"));
 		return this;
 	}
 		
@@ -72,9 +73,9 @@ public class EsriCareerJobDetailsPage extends ESRIWrappers{
 		return new EsriCareerStudentGradsPage();
 	}
 	
-	public EsriCareerBenefitsPage clickBenefitsSubMenulink() throws Throwable{
+	public EsriCareerJobDetailsPage clickBenefitsSubMenulink() throws Throwable{
 		clickByLinkText(prop.getProperty("CareerJobDetailsPage.Benefitslink.linktext"));
-		return new EsriCareerBenefitsPage();
+		return this;
 	}
 	
 	public EsriCareerLifeatEsriPage clickLifeatEsriSubMenulink() throws Throwable{

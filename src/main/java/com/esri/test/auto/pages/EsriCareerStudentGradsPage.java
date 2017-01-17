@@ -43,15 +43,22 @@ public class EsriCareerStudentGradsPage extends ESRIWrappers{
 		clickByLinkText(prop.getProperty("CareerStudentOppsPage.Joblistitem.xpath"));
 		return this;
 	}
-			
+	
+	public EsriCareerStudentGradsPage clickBenefitsSubMenulink() throws Throwable{
+		clickByLinkText(prop.getProperty("CareerJobDetailsPage.Benefitslink.linktext"));
+		return this;
+	}
+	
+	public EsriCareerLifeatEsriPage clickLifeatEsriSubMenulink() throws Throwable{
+		clickByLinkText(prop.getProperty("CareerJobDetailsPage.LifeatEsrilink.linktext"));
+		return new EsriCareerLifeatEsriPage();
+	}
+	
 	public EsriCareerJobDetailsPage clickbacktoCareerJobDetail() throws Throwable{
 		clickBrowserBackButton();
 		return new EsriCareerJobDetailsPage();
 	}
 	
-	public EsriCareerBenefitsPage clickBenefitsSubMenulink() throws Throwable{
-		clickByLinkText(prop.getProperty("CareerJobDetailsPage.Benefitslink.linktext"));
-		return new EsriCareerBenefitsPage();
-	}
-//Start working on Benefits Page flow
+	
+
 }
