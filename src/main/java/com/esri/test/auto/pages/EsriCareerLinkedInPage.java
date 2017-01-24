@@ -18,5 +18,5 @@ public class EsriCareerLinkedInPage extends ESRIWrappers{
 		clickBrowserBackButton();
 		return new EsriCareerHomePage();
 	}
-	
+
 }

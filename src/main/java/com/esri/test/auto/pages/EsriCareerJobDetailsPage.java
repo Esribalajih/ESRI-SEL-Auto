@@ -114,29 +114,29 @@ public class EsriCareerJobDetailsPage extends ESRIWrappers{
 		return new EsriCareerBlogPage();
 	}
 	
-	public EsriCareerInstagramPage clickFooterInstagramButton() throws Throwable{
+	public EsriInstagramPage clickFooterInstagramButton() throws Throwable{
 		clickByXpath(prop.getProperty("CareerJobDetailsPage.footerinstagramlink.xpath"));
-		return new EsriCareerInstagramPage();
+		return new EsriInstagramPage();
 	}
 
-	public EsriCareerFacebookPage clickFooterFacebookButton() throws Throwable{
+	public EsriFacebookPage clickFooterFacebookButton() throws Throwable{
 		clickByXpath(prop.getProperty("CareerJobDetailsPage.footerfblink.xpath"));
-		return new EsriCareerFacebookPage();
+		return new EsriFacebookPage();
 	}
 
-	public EsriCareerTwitterPage clickFooterTwitterButton() throws Throwable{
+	public EsriTwitterPage clickFooterTwitterButton() throws Throwable{
 		clickByXpath(prop.getProperty("CareerJobDetailsPage.footertwitterlink.xpath"));
-		return new EsriCareerTwitterPage();
+		return new EsriTwitterPage();
 	}
 
-	public EsriCareerLinkedInPage clickFooterLinkedInButton() throws Throwable{
+	public EsriLinkedInPage clickFooterLinkedInButton() throws Throwable{
 		clickByXpath(prop.getProperty("CareerJobDetailsPage.footerlinkedinlink.xpath"));
-		return new EsriCareerLinkedInPage();
+		return new EsriLinkedInPage();
 	}
 	
-	public EsriCareerGlassDoorPage clickFooterGlassDoorButton() throws Throwable{
+	public EsriGlassDoorPage clickFooterGlassDoorButton() throws Throwable{
 		clickByXpath(prop.getProperty("CareerJobDetailsPage.footerglassdoorlink.xpath"));
-		return new EsriCareerGlassDoorPage();
+		return new EsriGlassDoorPage();
 	}
 	
 	public EsriCareerHomePage clickBwrBckBtn() throws Throwable{

@@ -7,9 +7,9 @@ import com.esri.test.auto.wrappers.ESRIWrappers;
  * @author balajih
  *
  */
-public class EsriCareerGlassDoorPage extends ESRIWrappers{
+public class EsriGlassDoorPage extends ESRIWrappers{
 	
-	public EsriCareerGlassDoorPage() throws Throwable{
+	public EsriGlassDoorPage() throws Throwable{
 		if (!VerifyTitle("Working at Esri | Glassdoor.co.in"))
 			Reporter.reportStep("This is not a Esri Glass Door Web Page", "FAIL");
 	}
