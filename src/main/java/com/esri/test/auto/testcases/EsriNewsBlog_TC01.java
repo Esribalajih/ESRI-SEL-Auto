@@ -5,7 +5,6 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.esri.test.auto.pages.ESRI_NEWS_OverviewPage;
-import com.esri.test.auto.pages.EsriCareerHomePage;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**

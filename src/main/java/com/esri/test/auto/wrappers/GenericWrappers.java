@@ -199,7 +199,7 @@ public class GenericWrappers implements WrappersInterface{
 		boolean bReturn = false;
 		try {
 			driver.findElement(By.cssSelector(cssValue)).clear();
-			driver.findElement(By.cssSelector(cssValue)).sendKeys(data);
+			driver.findElement(By.cssSelector(cssValue)).sendKeys(String.valueOf(data));
 			Reporter.reportStep("The data "+ data +" is entered successfully.", "PASS");
 			bReturn = true;
 		} catch (NoSuchElementException e){
@@ -1042,7 +1042,7 @@ public class GenericWrappers implements WrappersInterface{
 			}
 			// bReturn = true;
 		} catch (Exception e) {
-			Reporter.reportStep("Winodw not switched successfully", "FAIL");
+			Reporter.reportStep("Window not switched successfully", "FAIL");
 		}
 		return currentWin;
 	}
@@ -1148,7 +1148,8 @@ public class GenericWrappers implements WrappersInterface{
 	public boolean enterkeysByXpath(String xpathValue, String data) throws Throwable {
 		boolean bReturn = false;
 		try {
-			driver.findElement(By.className(xpathValue)).sendKeys(Keys.ENTER);
+	  //	driver.findElement(By.className(xpathValue)).sendKeys(Keys.ENTER);
+		    driver.findElement(By.xpath(xpathValue)).sendKeys(data+Keys.ENTER);
 			Reporter.reportStep("The data "+ data +" is entered successfully.", "PASS");
 			bReturn = true;
 		} catch (Exception e) {
@@ -2295,7 +2296,7 @@ public class GenericWrappers implements WrappersInterface{
 	 */
 	public void waitTillElementVisibleByXpath(String xpathValue) {
 		try {
-			// waiting 20 seconds to detect the visibility of the element
+			// waiting 30 seconds to detect the visibility of the element
 			WebDriverWait wait = new WebDriverWait(driver, 30);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathValue)));
 
@@ -2316,6 +2317,60 @@ public class GenericWrappers implements WrappersInterface{
 			// waiting 20 seconds to detect the visibility of the element
 			WebDriverWait wait = new WebDriverWait(driver, 30);
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpathValue)));
+
+		} catch (Throwable e) {
+			e.printStackTrace();
+			System.err.println("Error while waiting for the element to be clickable: " + e.getMessage());
+		}
+	}
+	
+	/**This method is used to wait till element is clickable for a given time.
+	 * @author Balajih
+	 * @param idValue
+	 * @return
+	 * @throws Throwable
+	 */
+	public void waitTillElementclickableById(String idValue) {
+		try {
+			// waiting 20 seconds to detect the visibility of the element
+			WebDriverWait wait = new WebDriverWait(driver, 30);
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(idValue)));
+
+		} catch (Throwable e) {
+			e.printStackTrace();
+			System.err.println("Error while waiting for the element to be clickable: " + e.getMessage());
+		}
+	}
+	
+	/**This method is used to wait till element is visible for a given time.
+	 * @author Balajih
+	 * @param cssValue
+	 * @return
+	 * @throws Throwable
+	 */
+	public void waitTillElementVisibleByCssSelector(String cssValue) {
+		try {
+			// waiting 20 seconds to detect the visibility of the element
+			WebDriverWait wait = new WebDriverWait(driver, 30);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(cssValue)));
+
+		} catch (Throwable e) {
+			e.printStackTrace();
+			System.err.println("Error while waiting for the element to be visible: " + e.getMessage());
+		}
+	}
+	
+	/**This method is used to wait till element is clickable for a given time.
+	 * @author Balajih
+	 * @param cssValue
+	 * @return
+	 * @throws Throwable
+	 */
+	public void waitTillElementclickableByCssSelector(String cssValue) {
+		try {
+			// waiting 20 seconds to detect the visibility of the element
+			WebDriverWait wait = new WebDriverWait(driver, 30);
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(cssValue)));
 
 		} catch (Throwable e) {
 			e.printStackTrace();

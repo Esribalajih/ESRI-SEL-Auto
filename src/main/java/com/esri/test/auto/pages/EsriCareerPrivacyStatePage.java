@@ -27,5 +27,10 @@ public class EsriCareerPrivacyStatePage extends ESRIWrappers{
 		clickBrowserBackButton();
 		return new EsriCareerHomePage();
 	}
+	
+	public TestYourInsightAppMainPage clickContactUsInsightAppBwrBckBtn() throws Throwable{
+		clickBrowserBackButton();
+		return new TestYourInsightAppMainPage();
+	}
 
 }
