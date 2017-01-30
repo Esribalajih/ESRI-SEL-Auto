@@ -7,12 +7,14 @@
       <class name="com.esri.test.auto.testcases.EsriNewsBlog_TC01"/>
     </classes>
   </test> <!-- EsriNewsBlog_chrome -->
+  
   <!-- <test name="EsriNewsBlog_Firefox">
   <parameter name="browser" value="firefox"/>
     <classes>
       <class name="com.esri.test.auto.testcases.EsriNewsBlog_TC01"/>
     </classes>
   </test> EsriNewsBlog_Firefox -->
+  
  <!--  <test name="EsriNewsBlog_internet explorer">
   <parameter name="browser" value="internet explorer"/>
     <classes>

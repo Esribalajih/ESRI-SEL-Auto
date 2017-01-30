@@ -82,17 +82,31 @@ public class TestYourInsightAppMainPage extends ESRIWrappers{
 	}
 	
 	public TestYourInsightAppMainPage clickSeeResultsButton() throws Throwable{
-		waitTillElementclickableByCssSelector(prop.getProperty("InsightsAppPage.clickSeeResultsButton.cssselector"));
+		clickByCssSelector(prop.getProperty("InsightsAppPage.clickSeeResultsButton.cssselector"));
+		return this;
+	}
+	//Negative Testing ------
+	public TestYourInsightAppMainPage enterZipCodeText(String NegZipCode) throws Throwable{
+		waitForPageLoad(10);
+		enterByXpath(prop.getProperty("InsightsAppPage.enterZipcodeText.xpath"),NegZipCode);
 		return this;
 	}
 	
+	public TestYourInsightAppMainPage clickZipcodeSearchBtn() throws Throwable{
+		clickByXpath(prop.getProperty("InsightsAppPage.searchZipCodeBtn.xpath"));
+		return this;
+	}	
+	
+	//---------
 	public TestYourInsightAppMainPage clickDriveTime() throws Throwable{
-		waitTillElementclickableByXpath(prop.getProperty("InsightsAppPage.clickDriveTime.xpath"));
+		waitForPageLoad(10);
+		clickByXpath(prop.getProperty("InsightsAppPage.clickDriveTime.xpath"));
 		return this;
 	}
 	
 	public TestYourInsightAppMainPage clickRingBuffer() throws Throwable{
-		waitTillElementclickableByXpath(prop.getProperty("InsightsAppPage.clickRingBuffer.xpath"));
+		waitForPageLoad(10);
+		clickByXpath(prop.getProperty("InsightsAppPage.clickRingBuffer.xpath"));
 		return this;
 	}
 	
@@ -117,13 +131,15 @@ public class TestYourInsightAppMainPage extends ESRIWrappers{
 	}
 	
 	public TestYourInsightAppMainPage clickEmailCloseIcon() throws Throwable{
-		clickByXpath(prop.getProperty("InsightsAppPage.clickemailCloseButton.xpath"));
+		switchToDefaultContent();
+		//waitTillElementclickableByXpath(prop.getProperty("InsightsAppPage.clickemailCloseButton.xpath"));
 		return this;
 	}
 	
-	public EsriDataPage clickExploreEsriDatalink() throws Throwable {
+	public TestYourInsightAppMainPage clickExploreEsriDatalink() throws Throwable {
+		waitForPageLoad(5);
 		clickByLinkText(prop.getProperty("InsightsAppPage.clickexploreEsriDatalink.linktext"));
-		return new EsriDataPage();
+		return this;
 	}
 	
 	public TestYourInsightAppMainPage clickContactUsButton() throws Throwable {
@@ -132,7 +148,7 @@ public class TestYourInsightAppMainPage extends ESRIWrappers{
 	}
 	
 	//Switch to Contact US popup frame
-	public TestYourInsightAppMainPage switchtoContactUs() throws Throwable {
+	public TestYourInsightAppMainPage switchtoContactUsFrame() throws Throwable {
 		switchToFrameByXpath(prop.getProperty("InsightsAppPage.switchtoContactUsFrame.xpath"));
 		return this;
 	}
@@ -159,16 +175,19 @@ public class TestYourInsightAppMainPage extends ESRIWrappers{
 	
 	public TestYourInsightAppMainPage enterContactUSCompanyinput(String ContactUSComp) throws Throwable {
 		enterByXpath(prop.getProperty("InsightsAppPage.ContactUsCompanyRequiredtext.xpath"),ContactUSComp);
+		waitForPageLoad(3);
 		return this;
 	}
 	
-	public TestYourInsightAppMainPage selectContactUSCompany(int compSel) throws Throwable {
-		selectByIdWithindex(prop.getProperty("InsightsAppPage.ContactUsCompanyRequireddropdown1.id"),compSel);
+	public TestYourInsightAppMainPage selectContactUSCompany() throws Throwable {
+		waitForPageLoad(5);
+		clickByXpath(prop.getProperty("InsightsAppPage.ContactUsCompanyRequireddropdown1.xpath"));
 		return this;
 	}
 	
 	public TestYourInsightAppMainPage clickSubmitBtn() throws Throwable {
-		clickById(prop.getProperty("InsightsAppPage.ContactUsSubmitButton.id"));
+		waitForPageLoad(3);
+		clickByXpath(prop.getProperty("InsightsAppPage.ContactUsSubmitButton.xpath"));
 		return this;
 	}
 	
@@ -179,11 +198,17 @@ public class TestYourInsightAppMainPage extends ESRIWrappers{
 	
 	public EsriCareerPrivacyStatePage clickContactUSPrivacyPolicylink() throws Throwable {
 		clickByLinkText(prop.getProperty("InsightsAppPage.ContactUsPrivacyPolicy.linktext"));
+		waitForPageLoad(5);
 		return new EsriCareerPrivacyStatePage();
 	}
 	
 	public TestYourInsightAppMainPage clickContactUSCloseBtn() throws Throwable {
 		clickByXpath(prop.getProperty("InsightsAppPage.ContactUsclosebutton.xpath"));
+		return this;
+	}
+	
+	public TestYourInsightAppMainPage switchtoDefaultWindow() throws Throwable {
+		switchToDefaultContent();
 		return this;
 	}
 	

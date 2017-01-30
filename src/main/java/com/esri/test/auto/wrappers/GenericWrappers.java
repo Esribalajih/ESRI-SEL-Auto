@@ -1491,6 +1491,75 @@ public class GenericWrappers implements WrappersInterface{
 		}
 		return bReturn;
 	}
+	
+	/**
+	 * This method is used to fetch the data from dropdown using select By Xpath
+	 * attribute to locate 
+	 * @author Balajih
+	 * @param xpathValue - name of the webelement
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean selectByXpathWithindex(String xpathValue, int data) throws Throwable {
+		boolean bReturn = false;
+		try {
+			Select dropdown = new Select(driver.findElement(By.xpath(xpathValue)));
+			dropdown.selectByIndex(data);
+			Reporter.reportStep("The element with " + xpathValue + " is selected with value" + data + " successfully",
+					"PASS");
+			bReturn = true;
+		} catch (Exception e) {
+			Reporter.reportStep("The value " + data + " is not selected", "FAIL");
+		}
+		return bReturn;
+	}
+	
+	/**
+	 * This method is used to fetch the data from dropdown using select By CSS Selector
+	 * attribute to locate 
+	 * @author Balajih
+	 * @param CSSValue - name of the webelement
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean selectByCSSselectorWithindex(String CSSValue, int data) throws Throwable {
+		boolean bReturn = false;
+		try {
+			Select dropdown = new Select(driver.findElement(By.xpath(CSSValue)));
+			dropdown.selectByIndex(data);
+			Reporter.reportStep("The element with " + CSSValue + " is selected with value" + data + " successfully",
+					"PASS");
+			bReturn = true;
+		} catch (Exception e) {
+			Reporter.reportStep("The value " + data + " is not selected", "FAIL");
+		}
+		return bReturn;
+	}
+	
+	/**
+	 * This method is used to fetch the data from dropdown using select By Class Name
+	 * attribute to locate 
+	 * @author Balajih
+	 * @param classnameValue - name of the webelement
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean selectByClassnameWithindex(String classnameValue, int data) throws Throwable {
+		boolean bReturn = false;
+		try {
+			Select dropdown = new Select(driver.findElement(By.className(classnameValue)));
+			dropdown.selectByIndex(data);
+			Reporter.reportStep("The element with " + classnameValue + " is selected with value" + data + " successfully",
+					"PASS");
+			bReturn = true;
+		} catch (Exception e) {
+			Reporter.reportStep("The value " + data + " is not selected", "FAIL");
+		}
+		return bReturn;
+	}
 
 
 	/**
@@ -2294,15 +2363,17 @@ public class GenericWrappers implements WrappersInterface{
 	 * @return
 	 * @throws Throwable
 	 */
-	public void waitTillElementVisibleByXpath(String xpathValue) {
+	public void waitTillElementVisibleByXpath(String xpathValue) throws Throwable {
 		try {
 			// waiting 30 seconds to detect the visibility of the element
 			WebDriverWait wait = new WebDriverWait(driver, 30);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathValue)));
+			Reporter.reportStep("Element is present and displayed on the screen", "PASS");
 
 		} catch (Throwable e) {
 			e.printStackTrace();
 			System.err.println("Error while waiting for the element to be visible: " + e.getMessage());
+			Reporter.reportStep("Element is not present and not displayed on the screen", "FAIL");
 		}
 	}
 	
@@ -2312,15 +2383,17 @@ public class GenericWrappers implements WrappersInterface{
 	 * @return
 	 * @throws Throwable
 	 */
-	public void waitTillElementclickableByXpath(String xpathValue) {
+	public void waitTillElementclickableByXpath(String xpathValue) throws Throwable {
 		try {
 			// waiting 20 seconds to detect the visibility of the element
 			WebDriverWait wait = new WebDriverWait(driver, 30);
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpathValue)));
+			Reporter.reportStep("Element is present and clickable successfully", "PASS");
 
 		} catch (Throwable e) {
 			e.printStackTrace();
 			System.err.println("Error while waiting for the element to be clickable: " + e.getMessage());
+			Reporter.reportStep("Element is not present and not clickable successfully", "FAIL");
 		}
 	}
 	
@@ -2330,15 +2403,17 @@ public class GenericWrappers implements WrappersInterface{
 	 * @return
 	 * @throws Throwable
 	 */
-	public void waitTillElementclickableById(String idValue) {
+	public void waitTillElementclickableById(String idValue) throws Throwable {
 		try {
 			// waiting 20 seconds to detect the visibility of the element
 			WebDriverWait wait = new WebDriverWait(driver, 30);
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(idValue)));
+			wait.until(ExpectedConditions.elementToBeClickable(By.id(idValue)));
+			Reporter.reportStep("Element is present and clickable successfully", "PASS");
 
 		} catch (Throwable e) {
 			e.printStackTrace();
 			System.err.println("Error while waiting for the element to be clickable: " + e.getMessage());
+			Reporter.reportStep("Element is not present and not clickable successfully", "FAIL");
 		}
 	}
 	
@@ -2348,15 +2423,17 @@ public class GenericWrappers implements WrappersInterface{
 	 * @return
 	 * @throws Throwable
 	 */
-	public void waitTillElementVisibleByCssSelector(String cssValue) {
+	public void waitTillElementVisibleByCssSelector(String cssValue) throws Throwable {
 		try {
 			// waiting 20 seconds to detect the visibility of the element
 			WebDriverWait wait = new WebDriverWait(driver, 30);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(cssValue)));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(cssValue)));
+			Reporter.reportStep("Element is present and displayed on the screen", "PASS");
 
 		} catch (Throwable e) {
 			e.printStackTrace();
 			System.err.println("Error while waiting for the element to be visible: " + e.getMessage());
+			Reporter.reportStep("Element is not present and not displayed on the screen", "FAIL");
 		}
 	}
 	
@@ -2366,15 +2443,16 @@ public class GenericWrappers implements WrappersInterface{
 	 * @return
 	 * @throws Throwable
 	 */
-	public void waitTillElementclickableByCssSelector(String cssValue) {
+	public void waitTillElementclickableByCssSelector(String cssValue) throws Throwable {
 		try {
 			// waiting 20 seconds to detect the visibility of the element
 			WebDriverWait wait = new WebDriverWait(driver, 30);
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(cssValue)));
+			wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(cssValue)));
 
 		} catch (Throwable e) {
 			e.printStackTrace();
 			System.err.println("Error while waiting for the element to be clickable: " + e.getMessage());
+			Reporter.reportStep("Element is not present and not clickable successfully", "FAIL");
 		}
 	}
 	
@@ -2384,15 +2462,17 @@ public class GenericWrappers implements WrappersInterface{
 	 * @return
 	 * @throws Throwable
 	 */
-	public void waitTillTitleVisible(String title) {
+	public void waitTillTitleVisible(String title) throws Throwable {
 		try {
 			// waiting 20 seconds to detect the visibility of the element
 			WebDriverWait wait = new WebDriverWait(driver, 30);
 			wait.until(ExpectedConditions.titleContains(title));
+			Reporter.reportStep("Element is present and displayed on the screen", "PASS");
 
 		} catch (Throwable e) {
 			e.printStackTrace();
 			System.err.println("Error while waiting for the element to be visible: " + e.getMessage());
+			Reporter.reportStep("Element is not present and not displayed on the screen", "FAIL");
 		}
 	}
 	
@@ -2444,9 +2524,15 @@ public class GenericWrappers implements WrappersInterface{
 	 */
 	public void clickByJavaScriptId(String id) throws Throwable {
 
-		WebElement element = driver.findElement(By.id(id));
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click();", element);
+		try {
+			WebElement element = driver.findElement(By.id(id));
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click();", element);
+			Reporter.reportStep("Element is present and clickable successfully", "PASS");
+		} catch (Throwable e) {
+			e.printStackTrace();
+			Reporter.reportStep("Element is not present and not clickable successfully", "FAIL");
+		}
 
 	}
 

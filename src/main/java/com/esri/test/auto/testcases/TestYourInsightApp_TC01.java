@@ -16,13 +16,13 @@ public class TestYourInsightApp_TC01 extends ESRIWrappers {
 	public void startTestcase(){
 		dataSheetName="InsightApp_TC01";
 		testCaseName="Test Your Insight App_TC01";
-		testDescription="This is the testcase for Testing Insights Application module - Positive Test scenario";
+		testDescription="This is the testcase for Testing Insights Application module - Positive and Negative Test scenarios";
 	}
 	
 	@Test(dataProvider="fetchdata")
 	public void insightapp(String TestYourInsightAppURL, String popupHdr, String zipcodeLabel, String ZipCode, 
-			String ContactUSHdr, String ContactUSFname, String ContactUSLname, String ContactUSEmail, String ContactUSComp,
-			Integer compSel, String Tyou) throws Throwable{
+			String NegZipCode1, String NegZipCode2, String PosZipCode, String ContactUSHdr, String ContactUSFname, 
+			String ContactUSLname, String ContactUSEmail, String ContactUSComp,	String Tyou) throws Throwable{
 		openbrowser(TestYourInsightAppURL);
 		new TestYourInsightAppMainPage()
 		.clickExplorePopupDialog()
@@ -30,30 +30,34 @@ public class TestYourInsightApp_TC01 extends ESRIWrappers {
 		.clickStartExploring()
 		.verifyZipcodeLabel(zipcodeLabel)
 		.enterZipcode(ZipCode)
-		//.selectPopulationDensity()
-		//.selectMediaAge()
 		.clickSeeResultsButton()
+		.enterZipCodeText(NegZipCode1)
+		.clickZipcodeSearchBtn()
+		.enterZipCodeText(NegZipCode2)
+		.clickZipcodeSearchBtn()
+		.enterZipCodeText(PosZipCode)
+		.clickZipcodeSearchBtn()
 		.clickDriveTime()
 		.clickRingBuffer()
 		.clickFacebookbutton()
 		.clickTwitterbutton()
 		.clickLinkedINbutton()
-		.mousehoverEmailIcon()
-		.clickEmailCloseIcon()
 		.clickExploreEsriDatalink()
-		.clickBrowserBckBtntoInsightsPage()
 		.clickContactUsButton()
-		.switchtoContactUs()
+		.switchtoContactUsFrame()
+		.clickContactUSPrivacyPolicylink()
+		.clickContactUsInsightAppBwrBckBtn()
+		.clickContactUsButton()
+		.switchtoContactUsFrame()
 		.verifyContactUsHeader(ContactUSHdr)
 		.enterContactUSFirstName(ContactUSFname)
 		.enterContactUSLastName(ContactUSLname)
 		.enterContactUSEmail(ContactUSEmail)
 		.enterContactUSCompanyinput(ContactUSComp)
-		//.selectContactUSCompany(compSel)
+		.selectContactUSCompany()
 		.clickSubmitBtn()
 		.verifyContactUSThankyou(Tyou)
-		.clickContactUSPrivacyPolicylink()
-		.clickContactUsInsightAppBwrBckBtn()
+		.switchtoDefaultWindow()
 		.clickContactUSCloseBtn();
 		
 		
