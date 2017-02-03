@@ -11,12 +11,13 @@ public class ESRI_NEWS_ReleasePage extends ESRIWrappers{
 	
 	
 	public ESRI_NEWS_ReleasePage() throws Throwable{
+		waitForPageLoad(4);
 		if(!VerifyTitle("Press Releases"))
 		Reporter.reportStep("This is not a Esri News Press Releases Page", "FAIL");
 	}
 	
 	public ESRI_NEWS_ReleasePage verifyPageHeader(String RHdr) throws Throwable{
-		VerifyTextByXpath(prop.getProperty("NewsReleasePage.pressHeader.xpath"), RHdr);
+		VerifyTextByCssSelector(prop.getProperty("NewsReleasePage.pressHeader.cssselector"), RHdr);
 		return this;
 	}
 	

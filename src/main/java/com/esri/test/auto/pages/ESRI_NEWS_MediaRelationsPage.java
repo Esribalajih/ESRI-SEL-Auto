@@ -11,6 +11,7 @@ public class ESRI_NEWS_MediaRelationsPage extends ESRIWrappers{
 	
 	
 	public ESRI_NEWS_MediaRelationsPage() throws Throwable{
+		waitForPageLoad(3);
 		if(!VerifyTitle("Media Relations"))
 		Reporter.reportStep("This is not a Esri News Media Relations Page", "FAIL");
 	}
@@ -20,7 +21,7 @@ public class ESRI_NEWS_MediaRelationsPage extends ESRIWrappers{
 		return this;
 	}
 		
-	public ESRI_NEWS_OverviewPage clickBwrBckBtn() throws Throwable{
+	public ESRI_NEWS_OverviewPage clickBwrBckBtntoOverview() throws Throwable{
 		clickBrowserBackButton();
 		return new ESRI_NEWS_OverviewPage();
 	}

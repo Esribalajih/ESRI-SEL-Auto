@@ -11,12 +11,13 @@ public class ESRI_NEWS_IntheNewsPage extends ESRIWrappers{
 	
 	
 	public ESRI_NEWS_IntheNewsPage() throws Throwable{
+		waitForPageLoad(4);
 		if(!VerifyTitle("In the News"))
 		Reporter.reportStep("This is not a Esri News In the News Page", "FAIL");
 	}
 	
 	public ESRI_NEWS_IntheNewsPage verifyPageHeader(String InNewsHdr) throws Throwable{
-		VerifyTextByXpath(prop.getProperty("NewsIntheNewsPage.intheNewsHeader.xpath"), InNewsHdr);
+		VerifyTextByCssSelector(prop.getProperty("NewsReleasePage.intheNewsHeader.cssselector"), InNewsHdr);
 		return this;
 	}
 	

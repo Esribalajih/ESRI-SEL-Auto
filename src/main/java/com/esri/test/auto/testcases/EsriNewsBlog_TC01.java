@@ -39,19 +39,19 @@ public class EsriNewsBlog_TC01 extends ESRIWrappers {
 		.verifyFilterResultsCountDisplay(FilterIResult)
 		.clickPublicationsPageMenuLink()
 		.verifyPageHeader(PubHdr)
-		.clickArcNewsLink()
-		.clickBwrBckBtn()
-		.clickArcUserLink()
-		.clickBwrBckBtn()
-		.clickArcWatchLink()
-		.clickBwrBckBtn()
+		//.clickArcNewsLink()
+		//.clickBwrBckBtn()
+		//.clickArcUserLink()
+		//.clickBwrBckBtn()
+		//.clickArcWatchLink()
+		//.clickBwrBckBtn()
 		.clickEsriStoriesPageMenuLink()
 		.verifyPageHeader(EsriStoriesHdr)
 		.clickBlogsPageMenuLink()
 		.verifyPageHeader(BlogHdr)
 		.clickMediaRelationsPageMenuLink()
-		.verifyPageHeader(MRHdr)
-		.clickBwrBckBtn();
+		.verifyPageHeader(MRHdr);
+		//.clickBwrBckBtntoOverview();
 		
 		
 		

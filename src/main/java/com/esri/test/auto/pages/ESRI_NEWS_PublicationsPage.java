@@ -11,27 +11,28 @@ public class ESRI_NEWS_PublicationsPage extends ESRIWrappers{
 	
 	
 	public ESRI_NEWS_PublicationsPage() throws Throwable{
+		waitForPageLoad(4);
 		if(!VerifyTitle("Publications"))
 		Reporter.reportStep("This is not a Esri News Publications Page", "FAIL");
 	}
 	
 	public ESRI_NEWS_PublicationsPage verifyPageHeader(String PubHdr) throws Throwable{
-		VerifyTextByXpath(prop.getProperty("NewsReleasePage.pressHeader.xpath"), PubHdr);
+		VerifyTextByCssSelector(prop.getProperty("NewsPublicationsPage.publicationsHeader.cssselector"), PubHdr);
 		return this;
 	}
 	
 	public ESRI_NEWS_PublicationsArcNewsPage clickArcNewsLink() throws Throwable{
-		clickByXpath(prop.getProperty("NewsPublicationsPage.clickArcNewsCurrentIssue.xpath"));
+		clickByCssSelector(prop.getProperty("NewsPublicationsPage.clickArcNewsCurrentIssue.cssselector"));
 		return new ESRI_NEWS_PublicationsArcNewsPage();
 	}
 	
 	public ESRI_NEWS_PublicationsArcUserPage clickArcUserLink() throws Throwable{
-		clickByXpath(prop.getProperty("NewsPublicationsPage.clickArcUserCurrentIssue.xpath"));
+		clickByCssSelector(prop.getProperty("NewsPublicationsPage.clickArcUserCurrentIssue.cssselector"));
 		return new ESRI_NEWS_PublicationsArcUserPage();
 	}
 	
 	public ESRI_NEWS_PublicationsArcWatchPage clickArcWatchLink() throws Throwable{
-		clickByXpath(prop.getProperty("NewsPublicationsPage.clickArcWatchCurrentIssue.xpath"));
+		clickByCssSelector(prop.getProperty("NewsPublicationsPage.clickArcWatchCurrentIssue.cssselector"));
 		return new ESRI_NEWS_PublicationsArcWatchPage();
 	}
 	

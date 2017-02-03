@@ -11,6 +11,7 @@ public class ESRI_NEWS_BlogsPage extends ESRIWrappers{
 	
 	
 	public ESRI_NEWS_BlogsPage() throws Throwable{
+		waitForPageLoad(4);
 		if(!VerifyTitle("Blogs"))
 		Reporter.reportStep("This is not a Esri News Blogs Page", "FAIL");
 	}
