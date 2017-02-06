@@ -55,13 +55,13 @@ public class GoogleSigninPage extends ESRIWrappers {
 	}
 
 	// Click Sign in button
-	public HomePage clickSignInBtn() throws Throwable {
+	public Dist_HomePage clickSignInBtn() throws Throwable {
 		try {
 			clickById(prop.getProperty("gleSignin.signInBtn.id"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return new HomePage();
+		return new Dist_HomePage();
 	}
 
 }

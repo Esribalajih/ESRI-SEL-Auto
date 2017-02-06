@@ -3,19 +3,19 @@ package com.esri.test.auto.testcases;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import com.esri.test.auto.pages.Brazil_HomePage;
-import com.esri.test.auto.pages.Brazil_SuporteImagemPage;
-import com.esri.test.auto.pages.Finland_HomePage;
-import com.esri.test.auto.pages.Finland_TukiPage;
-import com.esri.test.auto.pages.Germany_HomePage;
-import com.esri.test.auto.pages.Germany_SupportPage;
-import com.esri.test.auto.pages.India_EsriIndTechSupportPage;
-import com.esri.test.auto.pages.India_HomePage;
-import com.esri.test.auto.pages.Ireland_HomePage;
-import com.esri.test.auto.pages.Ireland_TechSupportPage;
-import com.esri.test.auto.pages.Mexico_BuscarPage;
-import com.esri.test.auto.pages.Mexico_HomePage;
-import com.esri.test.auto.pages.Mexico_ServiciosPage;
+import com.esri.test.auto.pages.Dist_Brazil_HomePage;
+import com.esri.test.auto.pages.Dist_Brazil_SuporteImagemPage;
+import com.esri.test.auto.pages.Dist_Finland_HomePage;
+import com.esri.test.auto.pages.Dist_Finland_TukiPage;
+import com.esri.test.auto.pages.Dist_Germany_HomePage;
+import com.esri.test.auto.pages.Dist_Germany_SupportPage;
+import com.esri.test.auto.pages.Dist_India_EsriIndTechSupportPage;
+import com.esri.test.auto.pages.Dist_India_HomePage;
+import com.esri.test.auto.pages.Dist_Ireland_HomePage;
+import com.esri.test.auto.pages.Dist_Ireland_TechSupportPage;
+import com.esri.test.auto.pages.Dist_Mexico_BuscarPage;
+import com.esri.test.auto.pages.Dist_Mexico_HomePage;
+import com.esri.test.auto.pages.Dist_Mexico_ServiciosPage;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**
@@ -41,7 +41,7 @@ public class Dist_Mexico_TC06 extends ESRIWrappers {
 			String ServiciosySoluciones) throws Throwable {
 		
 		openbrowser(MexicoHomeURL);
-		new Mexico_HomePage()
+		new Dist_Mexico_HomePage()
 		.clickIProductoyGeotecnologíassTab()
 		.verifyProductosLink(Productos)
 		.clickServiciosySolucionesTab()
@@ -72,13 +72,13 @@ public class Dist_Mexico_TC06 extends ESRIWrappers {
 		
 		
 		openbrowser(MexicoSearchURL);
-		new Mexico_BuscarPage()
+		new Dist_Mexico_BuscarPage()
 		.enterValueSearchTextBox(Search)
 		.clickSearchIconBtn()
 		.verifyResultsDisplaying();
 		
 		openbrowser(MexicoSupportURL);
-		new Mexico_ServiciosPage()
+		new Dist_Mexico_ServiciosPage()
 		.verifyServiciosySolucioneslbl(ServiciosySoluciones);
 		
 		

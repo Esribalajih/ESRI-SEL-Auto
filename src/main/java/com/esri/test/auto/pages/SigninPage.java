@@ -34,9 +34,9 @@ public class SigninPage extends ESRIWrappers {
 	}
 
 	// Click Sign in button positive scenario
-	public HomePage clickSignin() throws Throwable {
+	public Dist_HomePage clickSignin() throws Throwable {
 		clickById(prop.getProperty("Signin.Signinbtn.Id"));
-		return new HomePage();
+		return new Dist_HomePage();
 	}
 	
 	// Click Sign in button positive scenario

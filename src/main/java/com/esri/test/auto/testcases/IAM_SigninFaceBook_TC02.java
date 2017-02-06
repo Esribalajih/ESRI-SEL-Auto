@@ -11,7 +11,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.esri.test.auto.pages.FacebookSigninPage;
-import com.esri.test.auto.pages.HomePage;
+import com.esri.test.auto.pages.Dist_HomePage;
 import com.esri.test.auto.pages.SigninPage;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 

@@ -3,8 +3,8 @@ package com.esri.test.auto.testcases;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import com.esri.test.auto.pages.Brazil_HomePage;
-import com.esri.test.auto.pages.Brazil_SuporteImagemPage;
+import com.esri.test.auto.pages.Dist_Brazil_HomePage;
+import com.esri.test.auto.pages.Dist_Brazil_SuporteImagemPage;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**
@@ -29,7 +29,7 @@ public class Dist_Brazil_TC01 extends ESRIWrappers {
 			String ArcGISOnline, String LocationAnalytics, String EsriDevNetwork, String Searchbox,
 			String PoliticadePrivacidade, String SuporteImagem, String BrazilSupportURL) throws Throwable {
 		openbrowser(BrazilHomeURL);
-		new Brazil_HomePage().clickProdutos().verifyProductosList(Produtos).clickIndustries()
+		new Dist_Brazil_HomePage().clickProdutos().verifyProductosList(Produtos).clickIndustries()
 				.verifyIndustriesList(Industrias).clickSuporte().verifySuporteList(Suporte).clickInstitucional()
 				.verifyInstitucionalList(Institucional).click5Desafios().verify5DesafiosList(Desafios).clickContato()
 				.verifyContatoPage(ContatoLabel).clickbsrBackBtn().clickPlataformaArcGIS()
@@ -47,7 +47,7 @@ public class Dist_Brazil_TC01 extends ESRIWrappers {
 		 */
 
 		openbrowser(BrazilSupportURL);
-		new Brazil_SuporteImagemPage().verifySuporteImagemlbl(SuporteImagem);
+		new Dist_Brazil_SuporteImagemPage().verifySuporteImagemlbl(SuporteImagem);
 
 	}
 

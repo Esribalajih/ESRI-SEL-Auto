@@ -3,12 +3,12 @@ package com.esri.test.auto.testcases;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import com.esri.test.auto.pages.Brazil_HomePage;
-import com.esri.test.auto.pages.Brazil_SuporteImagemPage;
-import com.esri.test.auto.pages.Finland_HomePage;
-import com.esri.test.auto.pages.Finland_TukiPage;
-import com.esri.test.auto.pages.Germany_HomePage;
-import com.esri.test.auto.pages.Germany_SupportPage;
+import com.esri.test.auto.pages.Dist_Brazil_HomePage;
+import com.esri.test.auto.pages.Dist_Brazil_SuporteImagemPage;
+import com.esri.test.auto.pages.Dist_Finland_HomePage;
+import com.esri.test.auto.pages.Dist_Finland_TukiPage;
+import com.esri.test.auto.pages.Dist_Germany_HomePage;
+import com.esri.test.auto.pages.Dist_Germany_SupportPage;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**
@@ -32,7 +32,7 @@ public class Dist_Germany_TC03 extends ESRIWrappers {
 				String SearchText, String Kontakt, String Rechtliches, String Impressum, String Datenschutz, String Support) throws Throwable {
 		
 		openbrowser(GermanyHomeURL);
-		new Germany_HomePage()
+		new Dist_Germany_HomePage()
 		.clickBranchen()
 		.verifyTelekommunikationList(Branchen)
 		.clickProdukte()
@@ -62,7 +62,7 @@ public class Dist_Germany_TC03 extends ESRIWrappers {
 		.verifyBranchenTabDisplaying();
 		
 		openbrowser(GermanySupportURL);
-		new Germany_SupportPage()
+		new Dist_Germany_SupportPage()
 		.verifySupportlbl(Support);
 		
 		

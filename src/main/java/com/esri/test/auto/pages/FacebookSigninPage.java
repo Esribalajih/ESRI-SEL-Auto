@@ -46,13 +46,13 @@ public class FacebookSigninPage extends ESRIWrappers {
 	}
 
 	// Click Sign in button
-	public HomePage clickLoginBtn() throws Throwable {
+	public Dist_HomePage clickLoginBtn() throws Throwable {
 		try {
 			clickByName(prop.getProperty("fbSignin.loginBtn.name"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return new HomePage();
+		return new Dist_HomePage();
 	}
 
 }

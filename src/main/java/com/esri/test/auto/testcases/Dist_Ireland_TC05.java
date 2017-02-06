@@ -3,16 +3,16 @@ package com.esri.test.auto.testcases;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import com.esri.test.auto.pages.Brazil_HomePage;
-import com.esri.test.auto.pages.Brazil_SuporteImagemPage;
-import com.esri.test.auto.pages.Finland_HomePage;
-import com.esri.test.auto.pages.Finland_TukiPage;
-import com.esri.test.auto.pages.Germany_HomePage;
-import com.esri.test.auto.pages.Germany_SupportPage;
-import com.esri.test.auto.pages.India_EsriIndTechSupportPage;
-import com.esri.test.auto.pages.India_HomePage;
-import com.esri.test.auto.pages.Ireland_HomePage;
-import com.esri.test.auto.pages.Ireland_TechSupportPage;
+import com.esri.test.auto.pages.Dist_Brazil_HomePage;
+import com.esri.test.auto.pages.Dist_Brazil_SuporteImagemPage;
+import com.esri.test.auto.pages.Dist_Finland_HomePage;
+import com.esri.test.auto.pages.Dist_Finland_TukiPage;
+import com.esri.test.auto.pages.Dist_Germany_HomePage;
+import com.esri.test.auto.pages.Dist_Germany_SupportPage;
+import com.esri.test.auto.pages.Dist_India_EsriIndTechSupportPage;
+import com.esri.test.auto.pages.Dist_India_HomePage;
+import com.esri.test.auto.pages.Dist_Ireland_HomePage;
+import com.esri.test.auto.pages.Dist_Ireland_TechSupportPage;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**
@@ -39,7 +39,7 @@ public class Dist_Ireland_TC05 extends ESRIWrappers {
 			throws Throwable {
 		
 		openbrowser(IrelandHomeURL);
-		new Ireland_HomePage()
+		new Dist_Ireland_HomePage()
 		.clickIndustriesTab()
 		.verifyGovernmentLabel(Industries)
 		.clickProductsTab()
@@ -83,7 +83,7 @@ public class Dist_Ireland_TC05 extends ESRIWrappers {
 		.clickbsrBackBtn();
 		
 		openbrowser(IrelandSupportURL);
-		new Ireland_TechSupportPage()
+		new Dist_Ireland_TechSupportPage()
 		.verifyTechnicalSupportlbl(TechnicalSupport);
 		
 		

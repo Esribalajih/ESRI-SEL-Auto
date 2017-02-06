@@ -3,14 +3,14 @@ package com.esri.test.auto.testcases;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import com.esri.test.auto.pages.Brazil_HomePage;
-import com.esri.test.auto.pages.Brazil_SuporteImagemPage;
-import com.esri.test.auto.pages.Finland_HomePage;
-import com.esri.test.auto.pages.Finland_TukiPage;
-import com.esri.test.auto.pages.Germany_HomePage;
-import com.esri.test.auto.pages.Germany_SupportPage;
-import com.esri.test.auto.pages.India_EsriIndTechSupportPage;
-import com.esri.test.auto.pages.India_HomePage;
+import com.esri.test.auto.pages.Dist_Brazil_HomePage;
+import com.esri.test.auto.pages.Dist_Brazil_SuporteImagemPage;
+import com.esri.test.auto.pages.Dist_Finland_HomePage;
+import com.esri.test.auto.pages.Dist_Finland_TukiPage;
+import com.esri.test.auto.pages.Dist_Germany_HomePage;
+import com.esri.test.auto.pages.Dist_Germany_SupportPage;
+import com.esri.test.auto.pages.Dist_India_EsriIndTechSupportPage;
+import com.esri.test.auto.pages.Dist_India_HomePage;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**
@@ -35,7 +35,7 @@ public class Dist_India_TC04 extends ESRIWrappers {
 			String ArcGISPro, String LocationAnalytics, String MarketingPlace ,String ArcGISDevelopers) throws Throwable {
 		
 		openbrowser(IndiaHomeURL);
-		new India_HomePage()
+		new Dist_India_HomePage()
 		.clickIndustriesTab()
 		.verifyIndustrieslbl(Industries)
 		.clickbsrBackBtn()
@@ -96,7 +96,7 @@ public class Dist_India_TC04 extends ESRIWrappers {
 		.clickbsrBackBtn();
 		
 		openbrowser(IndiaSupportURL);
-		new India_EsriIndTechSupportPage()
+		new Dist_India_EsriIndTechSupportPage()
 		.verifysupportlbl(Support);
 		
 		

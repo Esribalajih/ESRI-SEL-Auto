@@ -3,10 +3,10 @@ package com.esri.test.auto.testcases;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import com.esri.test.auto.pages.Brazil_HomePage;
-import com.esri.test.auto.pages.Brazil_SuporteImagemPage;
-import com.esri.test.auto.pages.Finland_HomePage;
-import com.esri.test.auto.pages.Finland_TukiPage;
+import com.esri.test.auto.pages.Dist_Brazil_HomePage;
+import com.esri.test.auto.pages.Dist_Brazil_SuporteImagemPage;
+import com.esri.test.auto.pages.Dist_Finland_HomePage;
+import com.esri.test.auto.pages.Dist_Finland_TukiPage;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**
@@ -30,7 +30,7 @@ public class Dist_Finland_TC02 extends ESRIWrappers {
 			, String ArcGISDesktop, String ArcGISServer, String ArcGISDevelopers, String GEOSECMAArcGIS, String EsriFinlandOy, String Tuki) throws Throwable {
 		
 		openbrowser(FinlandHomeURL);
-		new Finland_HomePage()
+		new Dist_Finland_HomePage()
 		.clickToimialat()
 		.verifyToimialatList(Toimialat)
 		.clickTuotteet()
@@ -65,7 +65,7 @@ public class Dist_Finland_TC02 extends ESRIWrappers {
 		.verifyArcGISDeveloperlbl(ArcGISDevelopers);
 		
 		openbrowser(FinlandSupportURL);
-		new Finland_TukiPage()
+		new Dist_Finland_TukiPage()
 		.verifyTukilbl(Tuki);
 	}
 
