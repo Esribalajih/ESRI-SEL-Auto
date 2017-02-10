@@ -33,14 +33,14 @@ public class Reporter extends com.esri.test.auto.wrappers.ESRIWrappers {
 		 long number = (long) Math.floor(Math.random()* 900000000L) + 10000000L;
 		 try {
 			 File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-			FileUtils.copyFile(srcFile, new File("./reports/images/"+number+".jpg"));
+			FileUtils.copyFile(srcFile, new File("./reports/images/"+number+".png"));
 		} catch (WebDriverException e) {
 			e.printStackTrace();
 		}
 			if(status.toUpperCase().equals("PASS")){
-				test.log(LogStatus.PASS, desc+test.addScreenCapture("./images/"+number+".jpg"));
+				test.log(LogStatus.PASS, desc+test.addScreenCapture("./images/"+number+".png"));
 			}else if(status.toUpperCase().equals("FAIL")){
-				test.log(LogStatus.FAIL, desc+test.addScreenCapture("./images/"+number+".jpg"));
+				test.log(LogStatus.FAIL, desc+test.addScreenCapture("./images/"+number+".png"));
 				//throw new RuntimeException("FAILED");
 			}else if(status.toUpperCase().equals("INFO")){
 				test.log(LogStatus.INFO, desc);
