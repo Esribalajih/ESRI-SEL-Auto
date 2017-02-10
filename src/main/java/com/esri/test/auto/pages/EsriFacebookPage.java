@@ -10,6 +10,7 @@ import com.esri.test.auto.wrappers.ESRIWrappers;
 public class EsriFacebookPage extends ESRIWrappers{
 	
 	public EsriFacebookPage() throws Throwable{
+		waitForPageLoad(3);
 		if (!VerifyTitle("Esri | Facebook"))
 			Reporter.reportStep("This is not a Esri Facebook Page", "FAIL");
 	}

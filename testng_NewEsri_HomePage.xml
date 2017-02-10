@@ -2,11 +2,32 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite" parallel="classes" verbose="5" thread-count="2">
     
-    <test name='NewESRI_Home_Chrome'>
+    <!--<test name='NewESRI_Home_Chrome'>
     <parameter name="browser" value="chrome"/>
     <classes>
    	 		<class name="com.esri.test.auto.testcases.NewEsriHome_TC01" />  
     </classes>
-    </test>
+    </test>-->
+    
+    <!-- <test name='NewESRI_Home_Firefox'>
+    <parameter name="browser" value="firefox"/>
+    <classes>
+   	 		<class name="com.esri.test.auto.testcases.NewEsriHome_TC01" />  
+    </classes>
+    </test> -->
+    
+    <test name='NewESRI_Home_Internet explorer'>
+    <parameter name="browser" value="internet explorer"/>
+    <classes>
+   	 		<class name="com.esri.test.auto.testcases.NewEsriHome_TC01" />  
+    </classes>
+    </test> 
+    
+     <test name='NewESRI_Home_Microsoft Edge'>
+    <parameter name="browser" value="microsoft edge"/>
+    <classes>
+   	 		<class name="com.esri.test.auto.testcases.NewEsriHome_TC01" />  
+    </classes>
+    </test> 
     
 </suite> 

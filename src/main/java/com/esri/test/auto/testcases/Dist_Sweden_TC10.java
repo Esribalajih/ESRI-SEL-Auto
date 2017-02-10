@@ -3,8 +3,8 @@ package com.esri.test.auto.testcases;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import com.esri.test.auto.pages.Sweden_HomePage;
-import com.esri.test.auto.pages.Sweden_SupportPage;
+import com.esri.test.auto.pages.Dist_Sweden_HomePage;
+import com.esri.test.auto.pages.Dist_Sweden_SupportPage;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**
@@ -29,7 +29,7 @@ public class Dist_Sweden_TC10 extends ESRIWrappers {
 			String Search, String Omcookies, String Kontaktaoss, String Support) throws Throwable {
 
 		openbrowser(SwedenHomeURL);
-		new Sweden_HomePage()
+		new Dist_Sweden_HomePage()
 		.clickOmOssTab()
 		.verifyOmEsriSverigeLink(OmOss)
 		.clickKunskapInsiktTab()
@@ -43,7 +43,7 @@ public class Dist_Sweden_TC10 extends ESRIWrappers {
 		.clickKontaktaOssFooterlink().verifyKontaktaOsslbl(Kontaktaoss).clickbsrBackBtn();
 		
 		openbrowser(SwedenSupportURL);
-		new Sweden_SupportPage()
+		new Dist_Sweden_SupportPage()
 		.verifySupportlbl(Support);
 		
 		

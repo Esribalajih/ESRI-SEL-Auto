@@ -10,8 +10,19 @@ import com.esri.test.auto.wrappers.ESRIWrappers;
 public class EsriRSSHomePage extends ESRIWrappers {
 
 	public EsriRSSHomePage() throws Throwable{
-		if(!VerifyTitle("Esri News Feed - powered by FeedBurner")){
-			Reporter.reportStep("this is not a Esri RSSHomePage Page", "FAIL");
+		waitForPageLoad(3);
+		String browser="firefox/internet";
+		if(browser.contains("chrome")){
+			if(!VerifyTitle("Esri News Feed - powered by FeedBurner")){
+				Reporter.reportStep("this is not a Esri RSSHomePage Page", "FAIL");
+			}
+		}
+		else{
+			if((browser.contains("firefox")||browser.contains("internet explorer"))){
+			if(!VerifyTitle("Esri News Feed")){
+				Reporter.reportStep("this is not a Esri RSSHomePage Page", "FAIL");
+			}
+			}
 		}
 	}
 

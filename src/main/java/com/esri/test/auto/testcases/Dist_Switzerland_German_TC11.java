@@ -4,8 +4,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import com.esri.test.auto.pages.Switzerland_German_HomePage;
-import com.esri.test.auto.pages.Switzerland_German_SupportPage;
+import com.esri.test.auto.pages.Dist_Switzerland_German_HomePage;
+import com.esri.test.auto.pages.Dist_Switzerland_German_SupportPage;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**
@@ -30,7 +30,7 @@ public class Dist_Switzerland_German_TC11 extends ESRIWrappers {
 			String Kontakt, String Lizenzbedingungen, String Impressum, String Datenschutz) throws Throwable {
 
 		openbrowser(SwitzHomeURL);
-		new Switzerland_German_HomePage()
+		new Dist_Switzerland_German_HomePage()
 		.clickBranchenTab().verifyTelekommunikationLink(Branchen)
 		.clickProdukteTab().verifyArcGISPlattformLink(Produkte)
 		.clickServicesTab().verifySchulungLink(Services)
@@ -46,7 +46,7 @@ public class Dist_Switzerland_German_TC11 extends ESRIWrappers {
 		.verifyDeutschLink(Language);
 		
 		openbrowser(SwitzSupportURL);
-		new Switzerland_German_SupportPage()
+		new Dist_Switzerland_German_SupportPage()
 		.verifySupportlbl(Support);
 		
 		

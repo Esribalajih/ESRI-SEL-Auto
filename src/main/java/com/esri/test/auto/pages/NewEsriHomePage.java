@@ -11,7 +11,6 @@ public class NewEsriHomePage extends ESRIWrappers{
 	
 	
 	public NewEsriHomePage() throws Throwable{
-		waitForPageLoad(10);
 		if(!VerifyTitle("Esri - GIS Mapping Software, Solutions, Services, Map Apps, and Data"))
 		Reporter.reportStep("This is not a New Esri Home Page", "FAIL");
 	}
@@ -21,8 +20,19 @@ public class NewEsriHomePage extends ESRIWrappers{
 		return this;
 	}
 	
+	public NewEsriHomePage click2ndImage() throws Throwable{
+		clickByXpath(prop.getProperty("NewEsriHomePage.PortofLosAngelesimage1button.xpath"));
+		return this;
+	}
+	
+
 	public NewEsriHomePage verify2ndImageHeader(String Image2Header) throws Throwable{
 		VerifyTextByXpath(prop.getProperty("NewEsriHomePage.PortofLosAngelesimage1heading.xpath"), Image2Header);
+		return this;
+	}
+	
+	public NewEsriHomePage click3rdImage() throws Throwable{
+		clickByXpath(prop.getProperty("NewEsriHomePage.ArcGISImageryBasemapimage2button.xpath"));
 		return this;
 	}
 	
@@ -31,12 +41,23 @@ public class NewEsriHomePage extends ESRIWrappers{
 		return this;
 	}
 	
+	public NewEsriHomePage click4thImage() throws Throwable{
+		clickByXpath(prop.getProperty("NewEsriHomePage.PortofLosAngelesimage2button.xpath"));
+		return this;
+	}
+	
 	public NewEsriHomePage verify4thImageHeader (String Image4Header) throws Throwable{
 		VerifyTextByXpath(prop.getProperty("NewEsriHomePage.PortofLosAngelesimage2heading.xpath"), Image4Header);
 		return this;
 	}
 	
+	public NewEsriHomePage verifyQuoteText1(String Quote1) throws Throwable{
+		VerifyTextByXpath(prop.getProperty("NewEsriHomePage.QuoteText1.xpath"), Quote1);
+		return this;
+	}
+	
 	public NewEsriHomePage clickQuote1() throws Throwable{
+		//waitTillElementVisibleByXpath("NewEsriHomePage.Quote1.xpath");
 		clickByXpath(prop.getProperty("NewEsriHomePage.Quote1.xpath"));
 		return this;
 	}
@@ -46,13 +67,25 @@ public class NewEsriHomePage extends ESRIWrappers{
 		return this;
 	}
 	
+	public NewEsriHomePage verifyQuoteText2(String Quote2) throws Throwable{
+		waitForPageLoad(3);
+		VerifyTextByXpath(prop.getProperty("NewEsriHomePage.QuoteText1.xpath"), Quote2);
+		return this;
+	}
+	
 	public NewEsriHomePage clickQuote3() throws Throwable{
-		clickByXpath(prop.getProperty("NewEsriHomePage.Quote3.xpath"));
+     	clickByXpath(prop.getProperty("NewEsriHomePage.Quote3.xpath"));
+		return this;
+	}
+	
+	public NewEsriHomePage verifyQuoteText3(String Quote3) throws Throwable{
+		waitForPageLoad(3);
+		VerifyTextByXpath(prop.getProperty("NewEsriHomePage.QuoteText1.xpath"), Quote3);
 		return this;
 	}
 	
 	public EsriHomePage clickEsriHomelink() throws Throwable{
-		clickByXpath(prop.getProperty("NewEsriHomePage.Esrihome"));
+		clickByXpath(prop.getProperty("NewEsriHomePage.Esrihome.xpath"));
 		return new EsriHomePage();	
 	}
 	//----------------------
@@ -82,17 +115,18 @@ public class NewEsriHomePage extends ESRIWrappers{
 	}
 	
 	public EsriGooglePlusPage clickGoogleplus() throws Throwable{
-		clickByXpath(prop.getProperty("NewEsriHomePage.LinkedIn.xpath"));
+		clickByXpath(prop.getProperty("NewEsriHomePage.googleplus.xpath"));
 		return new EsriGooglePlusPage();	
 	}
 	
+	//This field has been removed
 	public EsriPinterestPage clickPinterest() throws Throwable{
-		clickByXpath(prop.getProperty("NewEsriHomePage.LinkedIn.xpath"));
+		clickByXpath(prop.getProperty("NewEsriHomePage.Pinterest.xpath"));
 		return new EsriPinterestPage();	
 	}
 	
 	public EsriRSSHomePage clickRSS() throws Throwable{
-		clickByXpath(prop.getProperty("NewEsriHomePage.LinkedIn.xpath"));
+		clickByXpath(prop.getProperty("NewEsriHomePage.RSS.xpath"));
 		return new EsriRSSHomePage();	
 	}
 	
@@ -112,12 +146,13 @@ public class NewEsriHomePage extends ESRIWrappers{
 	}
 	
 	public NewEsriHomePage clickImage4Link() throws Throwable{
-		clickByXpath(prop.getProperty("NewEsriHomePage.Image4sseehowtheydoit.xpaths"));
+		clickByXpath(prop.getProperty("NewEsriHomePage.Image4seehowtheydoit.xpath"));
 		return this;	
 	}
 	
 	public NewEsriHomePage clickArcGis() throws Throwable{
-		clickByLinkText(prop.getProperty("NewEsriHomePage.ArcGIS.linktext"));
+		waitForPageLoad(5);
+		clickByXpath(prop.getProperty("NewEsriHomePage.ArcGIS.xpath"));
 		return this;	
 	}
 	public NewEsriHomePage clickProductHighlightimage() throws Throwable{
@@ -130,7 +165,7 @@ public class NewEsriHomePage extends ESRIWrappers{
 	}
 	
 	public NewEsriHomePage clickIndustry() throws Throwable{
-		clickByLinkText(prop.getProperty("NewEsriHomePage.Industrylocation.linktext"));
+		clickByXpath(prop.getProperty("NewEsriHomePage.Industrylocation.xpath"));
 		return this;	
 	}
 	public NewEsriHomePage clickInitiativesmartcommunitiesimage() throws Throwable{
@@ -142,7 +177,7 @@ public class NewEsriHomePage extends ESRIWrappers{
 		return this;	
 	}	
 	public NewEsriHomePage clickInnovation() throws Throwable{
-		clickByLinkText(prop.getProperty("NewEsriHomePage.Innovationstories.linktext"));
+		clickByXpath(prop.getProperty("NewEsriHomePage.Innovationstories.xpath"));
 		return this;	
 	}
 	public NewEsriHomePage clickThoughtleadershipimage() throws Throwable{
@@ -167,7 +202,7 @@ public class NewEsriHomePage extends ESRIWrappers{
 	}
 	
 	public NewEsriHomePage clickEvents() throws Throwable{
-		clickByLinkText(prop.getProperty("NewEsriHomePage.Events.linktext"));
+		clickByXpath(prop.getProperty("NewEsriHomePage.Events.xpath"));
 		return this;	
 	}
 	public NewEsriHomePage clickEventspotlightimage() throws Throwable{
@@ -176,6 +211,19 @@ public class NewEsriHomePage extends ESRIWrappers{
 	}
 	public NewEsriHomePage clickEventspotlightlink() throws Throwable{
 		clickByXpath(prop.getProperty("NewEsriHomePage.Eventspotlight.xpath"));
+		return this;	
+	}
+	
+	public NewEsriHomePage clickGreatWorks() throws Throwable{
+		clickByXpath(prop.getProperty("NewEsriHomePage.Greatwork.xpath"));
+		return this;	
+	}
+	public NewEsriHomePage clickUserMadeContentimage() throws Throwable{
+		clickByXpath(prop.getProperty("NewEsriHomePage.UserMadeContent.xpath"));
+		return this;	
+	}
+	public NewEsriHomePage clickUserMadeContentlink() throws Throwable{
+		clickByXpath(prop.getProperty("NewEsriHomePage.UserMadeContent.xpath"));
 		return this;	
 	}
 

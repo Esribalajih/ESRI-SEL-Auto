@@ -3,7 +3,7 @@ package com.esri.test.auto.testcases;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import com.esri.test.auto.pages.Romania_HomePage;
+import com.esri.test.auto.pages.Dist_Romania_HomePage;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**
@@ -29,7 +29,7 @@ public class Dist_Romania_TC08 extends ESRIWrappers {
 			String Legal ) throws Throwable {
 		
 		openbrowser(RomaniaHomeURL);
-		new Romania_HomePage()
+		new Dist_Romania_HomePage()
 		.clickIndustriiTab()
 		.verifyMediuLink(Industrii)
 		.clickProduseTab()

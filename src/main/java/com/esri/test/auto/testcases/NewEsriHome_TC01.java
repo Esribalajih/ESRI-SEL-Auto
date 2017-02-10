@@ -21,15 +21,19 @@ public class NewEsriHome_TC01 extends ESRIWrappers {
 	}
 
 	@Test(dataProvider="fetchdata")
-	public void NewEsriHomePage(String NewEsriSiteCoreURL, String Image1Header, String Image2Header,String Image3Header, String Image4Header) throws Throwable{
+	public void NewEsriHomePage(String NewEsriSiteCoreURL, String Image1Header, String Image2Header,
+			String Image3Header, String Image4Header, String Quote1, String Quote2, String Quote3) throws Throwable{
 		openbrowser(NewEsriSiteCoreURL);
 		new NewEsriHomePage()
 		.verify1stImageHeader(Image1Header)
 		.clickImage1Link()
+		.click2ndImage()
 		.verify2ndImageHeader(Image2Header)
 		.clickImage2Link()
+		.click3rdImage()
 		.verify3rdImageHeader(Image3Header)
 		.clickImage3Link()
+		.click4thImage()
 		.verify4thImageHeader(Image4Header)
 		.clickImage4Link()
 		.clickArcGis()
@@ -47,11 +51,34 @@ public class NewEsriHome_TC01 extends ESRIWrappers {
 		.clickEvents()
 		.clickEventspotlightimage()
 		.clickEventspotlightlink()
+		.clickGreatWorks()
+		.clickUserMadeContentimage()
+		.clickUserMadeContentlink()
 		.clickQuote1()
+		.verifyQuoteText1(Quote1)
 		.clickQuote2()
+		//.verifyQuoteText2(Quote2)
 		.clickQuote3()
+		//.verifyQuoteText3(Quote3)
 		.clickAboutesri()
 		.clickWhatisGIS()
-		.clickEsriHomelink();				
+		.clickEsriHomelink()
+		.clickBrowserBcktoNewEsriHomePage()
+		.clickEmail()
+		.clickBrowserBcktoNewEsriHomePage()
+		.clickInstagram()
+		.clickBwrBckBtnNewHomePage()
+		.clickTwitter()
+		.clickBwrBckBtn()
+		.clickfacebook()
+		.clickBwrBckBtn()
+		.clickLinkedin()
+		.clickBwrBckBtn()
+		.clickGoogleplus()
+		.clickBwrBckBtntoNewEsriHomePage()
+		//.clickPinterest()
+		//.clickBwrBckBtn()
+		.clickRSS()
+		.clickBrowserBcktoNewEsriHomePage();				
 		}
 }

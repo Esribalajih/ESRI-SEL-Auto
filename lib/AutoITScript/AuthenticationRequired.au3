@@ -1,0 +1,5 @@
+WinWaitActive("Authentication Required")
+Send("cont_udha")
+send("{TAB}")
+Send("Udhaya$12345")
+send("{ENTER}")

@@ -3,8 +3,8 @@ package com.esri.test.auto.testcases;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import com.esri.test.auto.pages.UK_HomePage;
-import com.esri.test.auto.pages.UK_SupportPage;
+import com.esri.test.auto.pages.Dist_UK_HomePage;
+import com.esri.test.auto.pages.Dist_UK_SupportPage;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**
@@ -30,7 +30,7 @@ public class Dist_UK_TC12 extends ESRIWrappers {
 			String ArcGISDevelopers, String ArcGISSolutions, String Marketplace, String ContactUS, String Cookies, String Privacy, String Legal) throws Throwable {
 
 		openbrowser(UKHomeURL);
-		new UK_HomePage()
+		new Dist_UK_HomePage()
 		.clickIndustriesTab().verifyCommercialLink(Industries)
 		.clickProductsTab().verifyArcGISPlatformLink(Products)
 		.clickSupportServicesTab().verifyTrainingLink(SupportServices)
@@ -52,7 +52,7 @@ public class Dist_UK_TC12 extends ESRIWrappers {
 		
 		
 		openbrowser(UKSupportURL);
-		new UK_SupportPage().verifySupportlbl(Support);
+		new Dist_UK_SupportPage().verifySupportlbl(Support);
 		
 	}
 

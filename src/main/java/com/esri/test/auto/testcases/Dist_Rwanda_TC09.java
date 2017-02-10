@@ -3,8 +3,8 @@ package com.esri.test.auto.testcases;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import com.esri.test.auto.pages.Rwanda_HomePage;
-import com.esri.test.auto.pages.Rwanda_SupportServPage;
+import com.esri.test.auto.pages.Dist_Rwanda_HomePage;
+import com.esri.test.auto.pages.Dist_Rwanda_SupportServPage;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
 /**
@@ -29,7 +29,7 @@ public class Dist_Rwanda_TC09 extends ESRIWrappers {
 			String ArcGISServer, String ArcGISMobile,String ContactUs,String Privacy) throws Throwable {
 
 		openbrowser(RwandaHomeURL);
-		new Rwanda_HomePage()
+		new Dist_Rwanda_HomePage()
 		.clickSoftwareLink()
 		.verifySoftwarelbl(Software)
 		.clickbsrBackBtn()
@@ -48,7 +48,7 @@ public class Dist_Rwanda_TC09 extends ESRIWrappers {
 		
 		
 		openbrowser(RwandaSupportURL);
-		new Rwanda_SupportServPage()
+		new Dist_Rwanda_SupportServPage()
 		.verifySupportlbl(Support);
 	}
 
