@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests" verbose="1" thread-count="1">
+  
+   <test name="AEM Asset complete flow env 6.2 in Chrome ">
+     	 <parameter name="browser" value="chrome"> </parameter>
+   			 <classes>
+  				 <class name="com.esri.test.auto.testcases.AEM_ASSET_COMPLETE_FLOW_ENV2"/> 
+  				 <class name="com.esri.test.auto.testcases.AEM_PROJECT_FLOW_ENV6_2"/>
+   	  		 </classes>
+    </test> 
+  
+    <test name="AEM Asset complete flow env 6.2 in Firefox ">
+     	 <parameter name="browser" value="firefox"> </parameter>
+   			 <classes>
+  				 <class name="com.esri.test.auto.testcases.AEM_ASSET_COMPLETE_FLOW_ENV2"/>
+  				 <class name="com.esri.test.auto.testcases.AEM_PROJECT_FLOW_ENV6_2"/>
+   	  		 </classes>
+    </test>
+  
+    
+ <test name="AEM Asset complete flow in Firefox ">
+     	 <parameter name="browser" value="firefox"> </parameter>
+   			 <classes>
+  				 <class name="com.esri.test.auto.testcases.AEM_ASSET_COMPLETE_FLOW"/>
+  				  <class name="com.esri.test.auto.testcases.AEM_PROJECT_FLOW"/>
+   	  		 </classes>
+    </test>   	
+    
+     
+   <test name="AEM Asset complete flow in Chrome ">
+     	 <parameter name="browser" value="chrome"> </parameter>
+   			 <classes>
+  				 <class name="com.esri.test.auto.testcases.AEM_ASSET_COMPLETE_FLOW"/>
+  				  <class name="com.esri.test.auto.testcases.AEM_PROJECT_FLOW"/>
+   	  		 </classes>
+    </test>  
+    
+       
+     <test name="AEM Asset complete flow in Internet Explorer ">
+     	 <parameter name="browser" value="internet explorer"> </parameter>
+   			 <classes>
+  				 <class name="com.esri.test.auto.testcases.AEM_ASSET_COMPLETE_FLOW"/>
+  				  <class name="com.esri.test.auto.testcases.AEM_PROJECT_FLOW"/>
+   	  		 </classes>
+    </test>     	  
+   	 
+   	   
+ </suite> 

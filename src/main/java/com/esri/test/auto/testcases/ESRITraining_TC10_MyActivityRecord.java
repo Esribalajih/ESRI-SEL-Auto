@@ -29,10 +29,15 @@ public class ESRITraining_TC10_MyActivityRecord extends ESRIWrappers {
 			.password(password)
 			.signInHomepage()
 			.myLearningTab()
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 			.myLearningActivityEnterKeyWord(enterKeyWord)
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 			.myLearningActivityFilterCheck(enterText)
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 			.myLearningActivityDownloadTranscript(enterSortText)
-			.myLearningActivityEnterCourse(enterCourseCode);
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
+			.myLearningActivityEnterCourse(enterCourseCode)
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode();
 			
 	}	
 	

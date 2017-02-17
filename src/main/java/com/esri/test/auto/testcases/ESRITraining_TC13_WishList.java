@@ -32,7 +32,9 @@ public class ESRITraining_TC13_WishList extends ESRIWrappers {
 			.catalogTab()
 			.getCardTitle()
 			.myLearningTab()
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 			.wishList()
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 			.verifyCardTitle();	
 					
 	}

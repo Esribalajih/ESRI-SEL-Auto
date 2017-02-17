@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests" verbose="1" thread-count="1">
+
+<!-- <test name='Distributor_Firefox'>
+    <parameter name="browser" value="firefox"/>
+    <classes>
+			<class name="com.esri.test.auto.testcases.Dist_Brazil_TC01" /> 
+			<class name="com.esri.test.auto.testcases.Dist_Finland_TC02" /> 
+			<class name="com.esri.test.auto.testcases.Dist_Germany_TC03" />
+			<class name="com.esri.test.auto.testcases.Dist_India_TC04" />
+			<class name="com.esri.test.auto.testcases.Dist_Ireland_TC05" /> 
+			<class name="com.esri.test.auto.testcases.Dist_Mexico_TC06" /> 
+			<class name="com.esri.test.auto.testcases.Dist_Netherlands_TC07" /> 
+			<class name="com.esri.test.auto.testcases.Dist_Romania_TC08" /> 
+			<class name="com.esri.test.auto.testcases.Dist_Rwanda_TC09"  /> 
+			<class name="com.esri.test.auto.testcases.Dist_Sweden_TC10" /> 
+			<class name="com.esri.test.auto.testcases.Dist_Switzerland_German_TC11" />  
+			<class name="com.esri.test.auto.testcases.Dist_Switzerland_French_TC11" />
+			<class name="com.esri.test.auto.testcases.Dist_UK_TC12" /> 
+    </classes>
+    </test>   -->
+    <test name='Distributor_Chrome'>
+    <parameter name="browser" value="chrome"/>
+    <classes>
+			<class name="com.esri.test.auto.testcases.Dist_Brazil_TC01" /> 
+			<class name="com.esri.test.auto.testcases.Dist_Finland_TC02" /> 
+			<class name="com.esri.test.auto.testcases.Dist_Germany_TC03" />
+			<class name="com.esri.test.auto.testcases.Dist_India_TC04" />
+			<class name="com.esri.test.auto.testcases.Dist_Ireland_TC05" /> 
+			<class name="com.esri.test.auto.testcases.Dist_Mexico_TC06" /> 
+			<class name="com.esri.test.auto.testcases.Dist_Netherlands_TC07" /> 
+			<class name="com.esri.test.auto.testcases.Dist_Romania_TC08" /> 
+			<class name="com.esri.test.auto.testcases.Dist_Rwanda_TC09"  /> 
+			<class name="com.esri.test.auto.testcases.Dist_Sweden_TC10" /> 
+			<class name="com.esri.test.auto.testcases.Dist_Switzerland_German_TC11" />  
+			<class name="com.esri.test.auto.testcases.Dist_Switzerland_French_TC11" />
+			<class name="com.esri.test.auto.testcases.Dist_UK_TC12" />
+    </classes>
+    </test>
+    
+</suite> 

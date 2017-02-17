@@ -23,9 +23,10 @@ public class AEM_ASSET_COMPLETE_FLOW extends ESRIWrappers{
 	  }
 
 	  @Test(dataProvider="fetchdata")
-	  public void assetflow(String username,String password,String foldertitle,String foldername,String location,String assettitle,String description,String searchtagname,String searchtagdescname,String projecttitle,String wfname,String wfdesc,String cnum,String iuse) throws Throwable{
+	  public void assetflow(String username,String password,String foldertitle,String foldername,String location,String assettitle,String description,String searchtagname,String searchtagdescname,String projecttitle,String wfname,String wfdesc,String cnum,String iuse,String username1,String password1,String url,String path) throws Throwable{
+		  openbrowser(url);
 		  //Signin 
-		  new AEM_SIGNIN_PAGE()
+		   new AEM_SIGNIN_PAGE()
 		  .enterUserName(username)
 		  .enterPassword(password)
 		  .clickSignin();
@@ -72,20 +73,20 @@ public class AEM_ASSET_COMPLETE_FLOW extends ESRIWrappers{
 		  new AEM_HOMEPAGE()
 		  .clickOnAsset();
 		  new AEM_ASSET_PAGE()
-		  .searchForAssetTagByTag(searchtagname);
+		  .searchForAssetTagByTag(searchtagname)
+		  .closeSearch();
 		  
 		  //Search Asset by Description		 		  
 		  new AEM_HOMEPAGE()
 		  .clickOnAsset();
 		  new AEM_ASSET_PAGE()
-		  .closeSearch()
-		  .searchForAssetTagByDescription(searchtagdescname);
+		  .searchForAssetTagByDescription(searchtagdescname)
+		  .closeSearch();
 		   
 		  //Search Asset and Delete
 		  new AEM_HOMEPAGE()
 		  .clickOnAsset();
 		  new AEM_ASSET_PAGE()
-		  .closeSearch()
 		  .searchForAssetTagByTag(searchtagname)
 		  .deleteAsset()
 		  .closeSearch()
@@ -98,9 +99,6 @@ public class AEM_ASSET_COMPLETE_FLOW extends ESRIWrappers{
 		  new AEM_ASSET_PAGE()
 		  .deletetestfolder()
 		  .deselect();
-		   
-		  
-	  }
 	  
-}
-
+		  }
+	  }

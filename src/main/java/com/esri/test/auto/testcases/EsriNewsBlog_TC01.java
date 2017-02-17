@@ -3,7 +3,6 @@ package com.esri.test.auto.testcases;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
 import com.esri.test.auto.pages.ESRI_NEWS_OverviewPage;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
@@ -21,14 +20,14 @@ public class EsriNewsBlog_TC01 extends ESRIWrappers {
 	}
 	
 	@Test(dataProvider="fetchdata")
-	public void esriNewsBlog(String EsriNewsBlogURL, String mainHdr, String userOdata, String RHdr, 
+	public void esriNewsBlog(String EsriNewsBlogURL, String mainHdr, String userOdata, String SearchBtn, String RHdr, 
 			String userRdata, String FilterResult, String InNewsHdr, String userIdata, String FilterIResult,
 			String PubHdr, String EsriStoriesHdr, String BlogHdr, String MRHdr) throws Throwable{
 		openbrowser(EsriNewsBlogURL);
 		new ESRI_NEWS_OverviewPage()
 		.verifyMainHeader(mainHdr)
 		.enterSearchKey(userOdata)
-		.clickSearchBtn()
+		.clickSearchBtn(SearchBtn)
 		.clickReleasesPageMenuLink()
 		.verifyPageHeader(RHdr)
 		.enterSearchKey(userRdata)

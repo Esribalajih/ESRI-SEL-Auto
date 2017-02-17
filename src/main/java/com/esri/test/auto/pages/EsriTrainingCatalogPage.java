@@ -20,10 +20,10 @@ public class EsriTrainingCatalogPage extends ESRIWrappers {
 		}
 	}
 
-	public EsriSpotlightPage spotLightDetails() throws Throwable {
+	public EsriTrainingSpotlightPage spotLightDetails() throws Throwable {
 		waitForPageLoad(2);
 		clickByXpath(prop.getProperty("Training.catalogSpotlightDetails.xpath"));
-		return new EsriSpotlightPage();
+		return new EsriTrainingSpotlightPage();
 	}
 
 	public EsriTrainingCardPage clickCard() throws Throwable {
@@ -59,6 +59,7 @@ public class EsriTrainingCatalogPage extends ESRIWrappers {
 			System.out.println("Wishlist checkbox not identified");
 		}		
 		clickByXpath(prop.getProperty("Homepage.clickMain.xpath"));
+		//googleTagAnalytics_EsriTraining();
 		return new EsriTrainingHomePage();
 	}
 	
@@ -77,5 +78,25 @@ public class EsriTrainingCatalogPage extends ESRIWrappers {
 		return new EsriTrainingLocationPage();
 	}
 	
+	public EsriTrainingCatalogPage headerEmbedCode() throws Throwable{
+		verifyHeaderEmbedCode(prop.getProperty("Tag.HeaderEmbedCode.xpath"),prop.getProperty("Tag.HeaderEmbedCode.text"));
+		return this;
+	}
+	public EsriTrainingCatalogPage googleTagManagerForScript() throws Throwable{
+		verifyGoogleTagManagerForScript(prop.getProperty("Tag.GoogleTagManagerForScript.xpath"),prop.getProperty("Tag.GoogleTagManagerForScript.text"));
+		return this;
+	}	
+	public EsriTrainingCatalogPage googleTagManagerForNoScript() throws Throwable{
+		verifyGoogleTagManagerForNoScript(prop.getProperty("Tag.GoogleTagManagerForNoScript.xpath"),prop.getProperty("Tag.GoogleTagManagerForNoScript.text"));
+		return this;
+	}
+	public EsriTrainingCatalogPage footerEmbbedCode() throws Throwable{
+		verifyFooterEmbedCode(prop.getProperty("Tag.FooterEmbbedCode.xpath"),prop.getProperty("Tag.FooterEmbbedCode.text"));
+		return this;
+	}
+	public EsriTrainingCatalogPage pardotDataLayerCode() throws Throwable{
+		verifyPardotDataLayerCode(prop.getProperty("Tag.PardotDataLayerCode.xpath"),prop.getProperty("Tag.PardotDataLayerCode.text"));
+		return this;
+	}
 
 }

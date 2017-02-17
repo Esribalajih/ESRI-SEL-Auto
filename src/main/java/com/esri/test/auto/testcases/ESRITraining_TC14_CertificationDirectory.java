@@ -27,8 +27,11 @@ public class ESRITraining_TC14_CertificationDirectory extends ESRIWrappers {
 		new EsriTrainingCourseCertification()
 		.search(searchKeyword)
 		.clickSearch()
+		.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 		.filterSelect(filterValue)
+		.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 		.filterSelectCertificate(filterCertificate)
+		.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 		.results();
 	}
 

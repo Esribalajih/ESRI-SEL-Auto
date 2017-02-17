@@ -49,5 +49,25 @@ public class EsriTrainingWishList extends ESRIWrappers {
 		clickByXpath(prop.getProperty("Homepage.clickMain.xpath"));
 		return new EsriTrainingHomePage();
 	}
-
+	
+	public EsriTrainingWishList headerEmbedCode() throws Throwable{
+		verifyHeaderEmbedCode(prop.getProperty("Tag.HeaderEmbedCode.xpath"),prop.getProperty("Tag.HeaderEmbedCode.text"));
+		return this;
+	}
+	public EsriTrainingWishList googleTagManagerForScript() throws Throwable{
+		verifyGoogleTagManagerForScript(prop.getProperty("Tag.GoogleTagManagerForScript.xpath"),prop.getProperty("Tag.GoogleTagManagerForScript.text"));
+		return this;
+	}	
+	public EsriTrainingWishList googleTagManagerForNoScript() throws Throwable{
+		verifyGoogleTagManagerForNoScript(prop.getProperty("Tag.GoogleTagManagerForNoScript.xpath"),prop.getProperty("Tag.GoogleTagManagerForNoScript.text"));
+		return this;
+	}
+	public EsriTrainingWishList footerEmbbedCode() throws Throwable{
+		verifyFooterEmbedCode(prop.getProperty("Tag.FooterEmbbedCode.xpath"),prop.getProperty("Tag.FooterEmbbedCode.text"));
+		return this;
+	}
+	public EsriTrainingWishList pardotDataLayerCode() throws Throwable{
+		verifyPardotDataLayerCode(prop.getProperty("Tag.PardotDataLayerCode.xpath"),prop.getProperty("Tag.PardotDataLayerCode.text"));
+		return this;
+	}
 }

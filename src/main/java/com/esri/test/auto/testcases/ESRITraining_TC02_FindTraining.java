@@ -26,15 +26,20 @@ public class ESRITraining_TC02_FindTraining extends ESRIWrappers {
 		new EsriTrainingHomePage()
 			.catalogTab()
 			.clickFindTraining()
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 			.enterKeywords(keyword1)
 			.clickSearch()
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 			.resultsCount()
 			.clearSearch()
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 			.filterSelect()
 			.checkBox()
 			.resultsCount()
-			.listView();
-			
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
+			.listView()
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode();
 	}
+	
 
 }

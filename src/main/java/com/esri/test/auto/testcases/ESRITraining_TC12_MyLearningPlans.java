@@ -29,7 +29,8 @@ public class ESRITraining_TC12_MyLearningPlans extends ESRIWrappers {
 			.password(password)
 			.signInHomepage()
 			.myLearningTab()
-			.myLearningPlans();
+			.myLearningPlans()
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode();
 			
 	}	
 	

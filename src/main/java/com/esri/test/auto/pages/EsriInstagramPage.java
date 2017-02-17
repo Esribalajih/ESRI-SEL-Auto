@@ -10,7 +10,6 @@ import com.esri.test.auto.wrappers.ESRIWrappers;
 public class EsriInstagramPage extends ESRIWrappers{
 	
 	public EsriInstagramPage() throws Throwable{
-		waitForPageLoad(3);
 		if (!VerifyTitle("Esri (@esrigram) • Instagram photos and videos"))
 			Reporter.reportStep("This is not a Esri Instagram Page", "FAIL");
 	}

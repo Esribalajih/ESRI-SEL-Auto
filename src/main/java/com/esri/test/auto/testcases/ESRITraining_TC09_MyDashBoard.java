@@ -29,7 +29,9 @@ public class ESRITraining_TC09_MyDashBoard extends ESRIWrappers {
 			.password(password)
 			.signInHomepage()
 			.myLearningTab()
-			.dashBoard();
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
+			.dashBoard()
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode();
 		
 			
 		

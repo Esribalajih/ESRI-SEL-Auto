@@ -11,7 +11,6 @@ import com.esri.test.auto.wrappers.ESRIWrappers;
 public class EsriGooglePlusPage extends ESRIWrappers{
 	
 	public EsriGooglePlusPage() throws Throwable{
-		waitForPageLoad(3);
 		if (!VerifyTitle("Esri - Google+"))
 			Reporter.reportStep("This is not a Esri GooglePlus Page", "FAIL");
 	}

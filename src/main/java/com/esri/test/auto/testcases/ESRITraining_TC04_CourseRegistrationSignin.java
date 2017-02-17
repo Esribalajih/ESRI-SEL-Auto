@@ -22,9 +22,10 @@ public class ESRITraining_TC04_CourseRegistrationSignin extends ESRIWrappers{
 	  public void loginforSuccess(String url,String CourseTitle) throws Throwable{
 		  openbrowser(url);
 		  new EsriTrainingCourseRegistrationPage()
+		  .headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 		  .courseTitle(CourseTitle)
-		  .verifySignIn();
-
+		  .verifySignIn()
+		  .headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode();
 		  
 	  }
 	

@@ -29,17 +29,25 @@ public class ESRITraining_TC05_Registration extends ESRIWrappers {
 			.username(username)
 			.password(password)
 			.signIn()
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 			.navigateToUrl(URL)
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 			.clickNext()
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 			.enterOrganizationInfo(OrganizationName, Address, City, State, Country, Zipcode)
 			.billingInfo()
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 			.selectPayment(filterSelect)
 			.billingInfo(Notes)
 			.clickSummary()
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 			.clickTerms()
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 			.clickSubmit()
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 			.verifyTick()
-			.clickLink();
+			.clickLink()
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode();
 			
 			
 			

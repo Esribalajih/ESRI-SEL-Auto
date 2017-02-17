@@ -39,6 +39,12 @@ public class SigninPage extends ESRIWrappers {
 		return new Dist_HomePage();
 	}
 	
+	// Click Sign in for Esri Sitecore
+	public ESRINewHomePage clickSigninAccounts(String data) throws Throwable {
+		clickButtonById(prop.getProperty("Signin.Signinbtn.Id"),data);
+		return new ESRINewHomePage();
+	}
+	
 	// Click Sign in button positive scenario
 		public MyEsriPage clickSigninMyEsri() throws Throwable {
 			clickById(prop.getProperty("Signin.Signinbtn.Id"));

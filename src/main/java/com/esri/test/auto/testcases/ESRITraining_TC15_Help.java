@@ -23,14 +23,15 @@ public class ESRITraining_TC15_Help extends ESRIWrappers {
 	@Test(dataProvider="fetchdata")
 	public void loginforSuccess(String searchKeyword,String filterValue) throws Throwable {
 		openbrowser("https://www.esri.com/training/");
-		new EsriTrainingHomePage()
-			
+		new EsriTrainingHomePage()			
 			.helpTab()
 			.search(searchKeyword)
 			.clickSearch()
 			.filterSelect(filterValue)
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 			.results()
-			.clickHighlightedtext();						
+			.clickHighlightedtext()
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode();						
 	}
 
 }

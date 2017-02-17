@@ -10,7 +10,6 @@ import com.esri.test.auto.wrappers.ESRIWrappers;
 public class EsriPinterestPage extends ESRIWrappers{
 	
 	public EsriPinterestPage() throws Throwable{
-		waitForPageLoad(3);
 		if (!VerifyTitle("Esri on Pinterest"))
 			Reporter.reportStep("This is not a Esri Pinterest Page", "FAIL");
 	}

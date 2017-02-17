@@ -10,7 +10,6 @@ import com.esri.test.auto.wrappers.ESRIWrappers;
 public class EsriEmailPage extends ESRIWrappers {
 
 	public EsriEmailPage() throws Throwable{
-		waitForPageLoad(3);
 		if(!VerifyTitle("Esri News | ArcWatch | Subscribe")){
 			Reporter.reportStep("this is not a Esri News | ArcWatch | Subscribe", "FAIL");
 		}

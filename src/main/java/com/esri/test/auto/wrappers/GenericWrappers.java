@@ -24,13 +24,11 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.esri.test.auto.utils.Reporter;
 
 /**This is the Generic Wrapper Methods called with in Pages and Test cases for Handling WebElements from the WebBrowser.
@@ -38,13 +36,15 @@ import com.esri.test.auto.utils.Reporter;
  *
  */
 public class GenericWrappers implements WrappersInterface{
-//public class GenericWrappers{
 
 	protected static RemoteWebDriver driver;
 	protected static Properties prop;
 	public String sUrl,primaryWindowHandles,sHubUrl,sHubPort;
 	private String primaryWindowHandle;
 	private String ANY;
+	private List<WebElement> tagElements;
+	private List<String> tagContents;
+	private int tagContentsSize;
 	/**This Constructor is used to load the configuration properties for Selenium Grid 2.0 
 	 * 
 	 */
@@ -68,11 +68,13 @@ public class GenericWrappers implements WrappersInterface{
 	 * @param browser - name of the webelement
 	 * 
 	 */
-	public void invokeApp(String browser){
+	//public void invokeApp(String browser, String version){
+		public void invokeApp(String browser){
 		boolean bReturn=false;
 
 		DesiredCapabilities dc = new DesiredCapabilities();
 		dc.setBrowserName(browser);
+		//dc.setVersion(version);
 		dc.setPlatform(Platform.WINDOWS);
 		try {
 			killAllDrivers();
@@ -116,12 +118,7 @@ public class GenericWrappers implements WrappersInterface{
 		}
 	}
 	
-	/**This Method is to unload the used Objects from the Memory for efficient execution
-	 * @author balajih
-	 */
-	public void unloadObjects(){
-		prop = null;
-	}
+
 	
 	/**This method will enter the value as text field using Id attribute to locate
 	 * @author Balajih 
@@ -199,7 +196,7 @@ public class GenericWrappers implements WrappersInterface{
 		boolean bReturn = false;
 		try {
 			driver.findElement(By.cssSelector(cssValue)).clear();
-			driver.findElement(By.cssSelector(cssValue)).sendKeys(String.valueOf(data));
+			driver.findElement(By.cssSelector(cssValue)).sendKeys(data);
 			Reporter.reportStep("The data "+ data +" is entered successfully.", "PASS");
 			bReturn = true;
 		} catch (NoSuchElementException e){
@@ -412,15 +409,55 @@ public class GenericWrappers implements WrappersInterface{
 		try {
 			Reporter.reportStep("The Button is clicked successfully", "PASS");
 			driver.findElement(By.id(idValue)).click();
-			Reporter.reportStep("The Button is clicked successfully", "PASS");
+			
 			bReturn = true;
 		} catch (Exception e) {
 			Reporter.reportStep("The Button is not clicked successfully", "FAIL");
 		}	
 		return bReturn;
 	}
-
-	/**This method will check the click of the buttons or links using the Name attribute to locate
+	
+	/**This method will check the click of the buttons using the Id attribute to locate
+	 * @author balajih
+	 * @param idValue - name of the webelement
+	 * @param data - The Data to be displayed in the Report.
+	 * @return
+	 * @throws Throwable 
+	 */
+	public boolean clickButtonById(String idValue, String data) throws Throwable{
+		boolean bReturn = false;
+		try {
+			Reporter.reportStep("The Button "+ data +" is clicked successfully", "PASS");
+			driver.findElement(By.id(idValue)).click();
+			Reporter.reportStep("The Button "+ data +" is clicked successfully", "PASS");
+			bReturn = true;
+		} catch (Exception e) {
+			Reporter.reportStep("The Button "+ data +" is not clicked successfully", "FAIL");
+		}	
+		return bReturn;
+	}
+	
+	/**This method will check the click of the Links using the Id attribute to locate
+	 * @author balajih
+	 * @param idValue - name of the webelement
+	 * @param data - The Data to be displayed in the Report.
+	 * @return
+	 * @throws Throwable 
+	 */
+	public boolean clickLinkById(String idValue, String data) throws Throwable{
+		boolean bReturn = false;
+		try {
+			Reporter.reportStep("The Link "+ data +" is clicked successfully", "PASS");
+			driver.findElement(By.id(idValue)).click();
+			Reporter.reportStep("The Link "+ data +" is clicked successfully", "PASS");
+			bReturn = true;
+		} catch (Exception e) {
+			Reporter.reportStep("The Link "+ data +" is not clicked successfully", "FAIL");
+		}	
+		return bReturn;
+	}
+	
+	/**This method will check the click of the buttons using the Name attribute to locate
 	 * @author balajih
 	 * @param nameValue - name of the webelement
 	 * @return
@@ -431,7 +468,6 @@ public class GenericWrappers implements WrappersInterface{
 		try {
 			Reporter.reportStep("The Button is clicked successfully", "PASS");
 			driver.findElement(By.name(nameValue)).click();
-			Reporter.reportStep("The Button is clicked successfully", "PASS");
 			bReturn = true;
 		} catch (Exception e) {
 			Reporter.reportStep("The Button is not clicked successfully", "FAIL");
@@ -450,10 +486,27 @@ public class GenericWrappers implements WrappersInterface{
 		try {
 			Reporter.reportStep("The Button is clicked successfully", "PASS");
 			driver.findElement(By.className(cnameValue)).click();
-			Reporter.reportStep("The Button is clicked successfully", "PASS");
 			bReturn = true;
 		} catch (Exception e) {
 			Reporter.reportStep("The Button is not clicked successfully", "FAIL");
+		}	
+		return bReturn;
+	}
+	
+	/**This method will check the click of the buttons or links using the Class Name attribute to locate
+	 * @author balajih
+	 * @param cnameValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean clickButtonByClassName(String cnameValue, String data) throws Throwable{
+		boolean bReturn = false;
+		try {
+			Reporter.reportStep("The Button "+ data +" is clicked successfully", "PASS");
+			driver.findElement(By.className(cnameValue)).click();
+			bReturn = true;
+		} catch (Exception e) {
+			Reporter.reportStep("The Button "+ data +" is not clicked successfully", "FAIL");
 		}	
 		return bReturn;
 	}
@@ -469,10 +522,27 @@ public class GenericWrappers implements WrappersInterface{
 		try {
 			Reporter.reportStep("The Button is clicked successfully", "PASS");
 			driver.findElement(By.cssSelector(cssValue)).click();
-			Reporter.reportStep("The Button is clicked successfully", "PASS");
 			bReturn = true;
 		} catch (Exception e) {
 			Reporter.reportStep("The Button is not clicked successfully", "FAIL");
+		}	
+		return bReturn;
+	}
+	
+	/**This method will check the click of the buttons using the CSS Selector attribute to locate
+	 * @author balajih
+	 * @param cssValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean clickButtonByCssSelector(String cssValue, String data) throws Throwable{
+		boolean bReturn = false;
+		try {
+			Reporter.reportStep("The Button "+ data +" is clicked successfully", "PASS");
+			driver.findElement(By.cssSelector(cssValue)).click();
+			bReturn = true;
+		} catch (Exception e) {
+			Reporter.reportStep("The Button  "+ data +" is not clicked successfully", "FAIL");
 		}	
 		return bReturn;
 	}
@@ -488,10 +558,67 @@ public class GenericWrappers implements WrappersInterface{
 		try {
 			Reporter.reportStep("The Button is clicked successfully", "PASS");
 			driver.findElement(By.xpath(xpathValue)).click();
-			Reporter.reportStep("The Button is clicked successfully", "PASS");
 			bReturn = true;
 		} catch (Exception e) {
 			Reporter.reportStep("The Button is not clicked successfully", "FAIL");
+		}	
+		return bReturn;
+	}
+	
+
+	/**This method will check the click of the buttons using the Xpath attribute to locate
+	 * @author balajih
+	 * @param xpathValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean clickButtonByXpath(String xpathValue, String data) throws Throwable{
+		boolean bReturn = false;
+		try {
+			Reporter.reportStep("The Button "+ data +" is clicked successfully", "PASS");
+			driver.findElement(By.xpath(xpathValue)).click();
+			//Reporter.reportStep("The Button "+ data +" is clicked successfully", "PASS");
+			bReturn = true;
+		} catch (Exception e) {
+			Reporter.reportStep("The Button "+ data +" is not clicked successfully", "FAIL");
+		}	
+		return bReturn;
+	}
+	
+	/**This method will check the click of the buttons using the Xpath attribute to locate
+	 * @author balajih
+	 * @param xpathValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean clickImageByXpath(String xpathValue, String data) throws Throwable{
+		boolean bReturn = false;
+		try {
+			Reporter.reportStep("The Image "+ data +" is clicked successfully", "PASS");
+			driver.findElement(By.xpath(xpathValue)).click();
+			//Reporter.reportStep("The Image "+ data +" is clicked successfully", "PASS");
+			bReturn = true;
+		} catch (Exception e) {
+			Reporter.reportStep("The Image "+ data +" is not clicked successfully", "FAIL");
+		}	
+		return bReturn;
+	}
+	
+	/**This method will check the click of the links using the Xpath attribute to locate
+	 * @author balajih
+	 * @param xpathValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean clickLinkByXpath(String xpathValue, String data) throws Throwable{
+		boolean bReturn = false;
+		try {
+			Reporter.reportStep("The Link "+ data +" is clicked successfully", "PASS");
+			driver.findElement(By.xpath(xpathValue)).click();
+			//Reporter.reportStep("The Link "+ data +" is clicked successfully", "PASS");
+			bReturn = true;
+		} catch (Exception e) {
+			Reporter.reportStep("The Link "+ data +" is not clicked successfully", "FAIL");
 		}	
 		return bReturn;
 	}
@@ -993,7 +1120,7 @@ public class GenericWrappers implements WrappersInterface{
 		}
 		return bReturn;
 	}
-	
+		
 	/**This method is to Switch to Default Content from nested windows
 	 * @author balajih
 	 * @return
@@ -1148,8 +1275,7 @@ public class GenericWrappers implements WrappersInterface{
 	public boolean enterkeysByXpath(String xpathValue, String data) throws Throwable {
 		boolean bReturn = false;
 		try {
-	  //	driver.findElement(By.className(xpathValue)).sendKeys(Keys.ENTER);
-		    driver.findElement(By.xpath(xpathValue)).sendKeys(data+Keys.ENTER);
+			driver.findElement(By.xpath(xpathValue)).sendKeys(data+Keys.ENTER);
 			Reporter.reportStep("The data "+ data +" is entered successfully.", "PASS");
 			bReturn = true;
 		} catch (Exception e) {
@@ -1484,75 +1610,6 @@ public class GenericWrappers implements WrappersInterface{
 			Select dropdown = new Select(driver.findElement(By.id(idValue)));
 			dropdown.selectByIndex(data);
 			Reporter.reportStep("The element with " + idValue + " is selected with value" + data + " successfully",
-					"PASS");
-			bReturn = true;
-		} catch (Exception e) {
-			Reporter.reportStep("The value " + data + " is not selected", "FAIL");
-		}
-		return bReturn;
-	}
-	
-	/**
-	 * This method is used to fetch the data from dropdown using select By Xpath
-	 * attribute to locate 
-	 * @author Balajih
-	 * @param xpathValue - name of the webelement
-	 * @param data - The Data to be sent to the WebElement
-	 * @return
-	 * @throws Throwable
-	 */
-	public boolean selectByXpathWithindex(String xpathValue, int data) throws Throwable {
-		boolean bReturn = false;
-		try {
-			Select dropdown = new Select(driver.findElement(By.xpath(xpathValue)));
-			dropdown.selectByIndex(data);
-			Reporter.reportStep("The element with " + xpathValue + " is selected with value" + data + " successfully",
-					"PASS");
-			bReturn = true;
-		} catch (Exception e) {
-			Reporter.reportStep("The value " + data + " is not selected", "FAIL");
-		}
-		return bReturn;
-	}
-	
-	/**
-	 * This method is used to fetch the data from dropdown using select By CSS Selector
-	 * attribute to locate 
-	 * @author Balajih
-	 * @param CSSValue - name of the webelement
-	 * @param data - The Data to be sent to the WebElement
-	 * @return
-	 * @throws Throwable
-	 */
-	public boolean selectByCSSselectorWithindex(String CSSValue, int data) throws Throwable {
-		boolean bReturn = false;
-		try {
-			Select dropdown = new Select(driver.findElement(By.xpath(CSSValue)));
-			dropdown.selectByIndex(data);
-			Reporter.reportStep("The element with " + CSSValue + " is selected with value" + data + " successfully",
-					"PASS");
-			bReturn = true;
-		} catch (Exception e) {
-			Reporter.reportStep("The value " + data + " is not selected", "FAIL");
-		}
-		return bReturn;
-	}
-	
-	/**
-	 * This method is used to fetch the data from dropdown using select By Class Name
-	 * attribute to locate 
-	 * @author Balajih
-	 * @param classnameValue - name of the webelement
-	 * @param data - The Data to be sent to the WebElement
-	 * @return
-	 * @throws Throwable
-	 */
-	public boolean selectByClassnameWithindex(String classnameValue, int data) throws Throwable {
-		boolean bReturn = false;
-		try {
-			Select dropdown = new Select(driver.findElement(By.className(classnameValue)));
-			dropdown.selectByIndex(data);
-			Reporter.reportStep("The element with " + classnameValue + " is selected with value" + data + " successfully",
 					"PASS");
 			bReturn = true;
 		} catch (Exception e) {
@@ -2090,7 +2147,7 @@ public class GenericWrappers implements WrappersInterface{
 		return textValue;
 	}
 
-	/** This method is used to click the element using Java script using xpath
+	/** This method is used to click the element using Java script
 	 * @author Balajih
 	 * @param xpathValue - name of the webelement
 	 * @return
@@ -2269,7 +2326,6 @@ public class GenericWrappers implements WrappersInterface{
 	public boolean checkElementIsDisplayedByXpath(String xpathValue) throws Throwable {
 		boolean bReturn = false;
 		try {
-
 			driver.findElement(By.xpath(xpathValue)).isDisplayed();
 			Reporter.reportStep("Element is present and displayed on the screen", "PASS");
 			bReturn = true;
@@ -2363,116 +2419,15 @@ public class GenericWrappers implements WrappersInterface{
 	 * @return
 	 * @throws Throwable
 	 */
-	public void waitTillElementVisibleByXpath(String xpathValue) throws Throwable {
+	public void waitTillElementVisibleByXpath(String xpathValue) {
 		try {
-			// waiting 30 seconds to detect the visibility of the element
+			// waiting 20 seconds to detect the visibility of the element
 			WebDriverWait wait = new WebDriverWait(driver, 30);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathValue)));
-			Reporter.reportStep("Element is present and displayed on the screen", "PASS");
 
 		} catch (Throwable e) {
 			e.printStackTrace();
 			System.err.println("Error while waiting for the element to be visible: " + e.getMessage());
-			Reporter.reportStep("Element is not present and not displayed on the screen", "FAIL");
-		}
-	}
-	
-	/**This method is used to wait till element is clickable for a given time.
-	 * @author Balajih
-	 * @param xpathValue
-	 * @return
-	 * @throws Throwable
-	 */
-	public void waitTillElementclickableByXpath(String xpathValue) throws Throwable {
-		try {
-			// waiting 20 seconds to detect the visibility of the element
-			WebDriverWait wait = new WebDriverWait(driver, 30);
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpathValue)));
-			Reporter.reportStep("Element is present and clickable successfully", "PASS");
-
-		} catch (Throwable e) {
-			e.printStackTrace();
-			System.err.println("Error while waiting for the element to be clickable: " + e.getMessage());
-			Reporter.reportStep("Element is not present and not clickable successfully", "FAIL");
-		}
-	}
-	
-	/**This method is used to wait till element is clickable for a given time.
-	 * @author Balajih
-	 * @param idValue
-	 * @return
-	 * @throws Throwable
-	 */
-	public void waitTillElementclickableById(String idValue) throws Throwable {
-		try {
-			// waiting 20 seconds to detect the visibility of the element
-			WebDriverWait wait = new WebDriverWait(driver, 30);
-			wait.until(ExpectedConditions.elementToBeClickable(By.id(idValue)));
-			Reporter.reportStep("Element is present and clickable successfully", "PASS");
-
-		} catch (Throwable e) {
-			e.printStackTrace();
-			System.err.println("Error while waiting for the element to be clickable: " + e.getMessage());
-			Reporter.reportStep("Element is not present and not clickable successfully", "FAIL");
-		}
-	}
-	
-	/**This method is used to wait till element is visible for a given time.
-	 * @author Balajih
-	 * @param cssValue
-	 * @return
-	 * @throws Throwable
-	 */
-	public void waitTillElementVisibleByCssSelector(String cssValue) throws Throwable {
-		try {
-			// waiting 20 seconds to detect the visibility of the element
-			WebDriverWait wait = new WebDriverWait(driver, 30);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(cssValue)));
-			Reporter.reportStep("Element is present and displayed on the screen", "PASS");
-
-		} catch (Throwable e) {
-			e.printStackTrace();
-			System.err.println("Error while waiting for the element to be visible: " + e.getMessage());
-			Reporter.reportStep("Element is not present and not displayed on the screen", "FAIL");
-		}
-	}
-	
-	/**This method is used to wait till element is clickable for a given time.
-	 * @author Balajih
-	 * @param cssValue
-	 * @return
-	 * @throws Throwable
-	 */
-	public void waitTillElementclickableByCssSelector(String cssValue) throws Throwable {
-		try {
-			// waiting 20 seconds to detect the visibility of the element
-			WebDriverWait wait = new WebDriverWait(driver, 30);
-			wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(cssValue)));
-
-		} catch (Throwable e) {
-			e.printStackTrace();
-			System.err.println("Error while waiting for the element to be clickable: " + e.getMessage());
-			Reporter.reportStep("Element is not present and not clickable successfully", "FAIL");
-		}
-	}
-	
-	/**This method is used to wait till element is visible for a given time.
-	 * @author Balajih
-	 * @param xpathValue
-	 * @return
-	 * @throws Throwable
-	 */
-	public void waitTillTitleVisible(String title) throws Throwable {
-		try {
-			// waiting 20 seconds to detect the visibility of the element
-			WebDriverWait wait = new WebDriverWait(driver, 30);
-			wait.until(ExpectedConditions.titleContains(title));
-			Reporter.reportStep("Element is present and displayed on the screen", "PASS");
-
-		} catch (Throwable e) {
-			e.printStackTrace();
-			System.err.println("Error while waiting for the element to be visible: " + e.getMessage());
-			Reporter.reportStep("Element is not present and not displayed on the screen", "FAIL");
 		}
 	}
 	
@@ -2563,4 +2518,209 @@ public class GenericWrappers implements WrappersInterface{
 			e.printStackTrace();
 		}
 	}
+	
+	/**This method is to reloads the page
+	 * @author thenmozhi
+	 * @throws Throwable
+	 */
+	public void pageRefresh() {
+		try {
+			driver.navigate().refresh();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**This method will check whether Header Embed Code is present in the webpage.
+	 * @author Thenmozhi
+	 * @param xpath
+	 * @return
+	 * @throws Throwable
+	 */
+	public void verifyHeaderEmbedCode(String xpath,String expResult) throws Throwable{
+		try{
+			tagContentsSize=0;
+			tagElements=driver.findElements(By.xpath(xpath));
+			tagContents = new ArrayList<String>();
+			
+			for(WebElement tagElement:tagElements){
+				String gooTagContent=tagElement.getAttribute("src");
+				tagContents.add(gooTagContent);
+			}
+			
+			for(String tagContent:tagContents){
+				tagContentsSize++;
+				if(tagContent.contains(expResult)){
+					Reporter.reportStep("Header Embed Code ->> "+expResult+" is present in the page", "INFO");
+					break;
+				}else{
+					if(tagContentsSize==tagContents.size()){
+						Reporter.reportStep("Header Embed Code ->> "+expResult+" is not present in the page", "INFO");
+						break;
+					}else{
+						continue;
+					}		
+				}
+			}
+		}catch (Throwable e) {
+			Reporter.reportStep("Header Embed Code is not present in the page", "INFO");
+			e.printStackTrace();
+		}
+	}
+	/**This method will check whether Google Tag Manager Script code is present in the webpage.
+	 * @author Thenmozhi
+	 * @param xpath
+	 * @return
+	 * @throws Throwable
+	 */
+	public void  verifyGoogleTagManagerForScript(String xpath,String expResult) throws Throwable{
+		try{
+			tagContentsSize=0;
+			tagElements=driver.findElements(By.xpath(xpath));
+			tagContents = new ArrayList<String>();
+			
+			for(WebElement tagElement:tagElements){
+				String gooTagContent=tagElement.getAttribute("innerText");
+				tagContents.add(gooTagContent);
+			}
+
+			for(String tagContent:tagContents){
+				tagContentsSize++;
+				if(tagContent.contains(expResult)){
+					Reporter.reportStep("Google Tag Manager script code ->> "+expResult+" is present in the page", "INFO");
+					break;
+				}else{
+					if(tagContentsSize==tagContents.size()){
+						Reporter.reportStep("Google Tag Manager script code->>"+expResult+" is not present in the page", "INFO");
+						break;
+					}else{
+						continue;
+					}		
+				}
+			}
+		}catch (Throwable e) {
+			Reporter.reportStep("Google Tag Manager script code is not present in the page", "INFO");
+			e.printStackTrace();
+		}
+		
+	}
+	/**This method will check whether Google Tag Manager NoScript code is present in the webpage.
+	 * @author Thenmozhi
+	 * @param xpath
+	 * @return
+	 * @throws Throwable
+	 */
+	public void verifyGoogleTagManagerForNoScript(String xpath,String expResult) throws Throwable{
+		try{
+			tagContentsSize=0;
+			tagElements=driver.findElements(By.xpath(xpath));
+			tagContents = new ArrayList<String>();
+			
+			for(WebElement tagElement:tagElements){
+				String gooTagContent=tagElement.getAttribute("innerText");
+				tagContents.add(gooTagContent);
+			}
+			
+			for(String tagContent:tagContents){
+				tagContentsSize++;
+				if(tagContent.contains(expResult)){
+					Reporter.reportStep("Google Tag Manager noscript code ->>  www.googletagmanager.com/ns.html?id=GTM-WFJ52X is present in the page", "INFO");
+					break;
+				}else{
+					if(tagContentsSize==tagContents.size()){
+						Reporter.reportStep("Google Tag Manager noscript code ->> www.googletagmanager.com/ns.html?id=GTM-WFJ52X is not present in the page", "INFO");
+						break;
+					}else{
+						continue;
+					}		
+				}
+			}
+		}catch (Throwable e) {
+			Reporter.reportStep("Google Tag Manager noscript code is not present in the page", "INFO");
+			e.printStackTrace();
+		}
+	}
+	/**This method will check whether Footer Embed Code is present in the webpage.
+	 * @author Thenmozhi
+	 * @param xpath
+	 * @return
+	 * @throws Throwable
+	 */
+	public void verifyFooterEmbedCode(String xpath,String expResult) throws Throwable{
+		try{
+			tagContentsSize=0;
+			tagElements=driver.findElements(By.xpath(xpath));
+			tagContents = new ArrayList<String>();
+			
+			for(WebElement tagElement:tagElements){
+				String gooTagContent=tagElement.getAttribute("src");
+				tagContents.add(gooTagContent);
+			}
+
+			for(String tagContent:tagContents){
+				tagContentsSize++;
+				if(tagContent.contains(expResult)){
+					Reporter.reportStep("Footer Embed Code ->> "+expResult+" is present in the page", "INFO");
+					break;
+				}else{
+					if(tagContentsSize==tagContents.size()){
+						Reporter.reportStep("Footer Embed Code ->> "+expResult+" is not present in the page", "INFO");
+						break;
+					}else{
+						continue;
+					}		
+				}
+			}
+		}catch (Throwable e) {
+			Reporter.reportStep("Footer Embed Code is not present in the page", "INFO");
+			e.printStackTrace();
+		}
+	}
+	/**This method will check whether Pardot Data Layer Code is present in the webpage.
+	 * @author Thenmozhi
+	 * @param xpath
+	 * @return
+	 * @throws Throwable
+	 */
+	public void verifyPardotDataLayerCode(String xpath,String expResult) throws Throwable{
+			try{
+				tagContentsSize=0;
+				tagElements=driver.findElements(By.xpath(xpath));
+				tagContents = new ArrayList<String>();
+				
+				for(WebElement tagElement:tagElements){
+					String gooTagContent=tagElement.getAttribute("src");
+					tagContents.add(gooTagContent);
+				}
+
+				for(String tagContent:tagContents){
+					tagContentsSize++;
+					if(tagContent.contains(expResult)){
+						Reporter.reportStep("Pardot Data Layer Code ->> "+ expResult +" is present in the page", "INFO");
+						break;
+					}else{
+						if(tagContentsSize==tagContents.size()){
+							Reporter.reportStep("Pardot Data Layer Code ->> "+ expResult +" is not present in the page", "INFO");
+							break;
+						}else{
+							continue;
+						}		
+					}
+				}
+			}catch (Throwable e) {
+				Reporter.reportStep("Pardot Data Layer Code is not present in the page", "INFO");
+				e.printStackTrace();
+			}
+		}
+
+	/**This Method is to unload the used Objects from the Memory for efficient execution
+	 * @author balajih
+	 */
+	public void unloadObjects() {
+		
+		prop = null;
+		
+	}
+		
+		
 }

@@ -164,6 +164,24 @@ public interface WrappersInterface {
 	 */
 	public boolean clickById(String idValue) throws Throwable;
 	
+	/**This method will check the click of the buttons using the Id attribute to locate
+	 * @author balajih
+	 * @param idValue - name of the webelement
+	 * @param data - The Data to be displayed in the Report.
+	 * @return
+	 * @throws Throwable 
+	 */
+	public boolean clickButtonById(String idValue, String data) throws Throwable;
+	
+	/**This method will check the click of the Links using the Id attribute to locate
+	 * @author balajih
+	 * @param idValue - name of the webelement
+	 * @param data - The Data to be displayed in the Report.
+	 * @return
+	 * @throws Throwable 
+	 */
+	public boolean clickLinkById(String idValue, String data) throws Throwable;
+	
 	/**This method will check the click of the buttons or links using the Name attribute to locate
 	 * @author balajih
 	 * @param nameValue - name of the webelement
@@ -188,6 +206,14 @@ public interface WrappersInterface {
 	 */
 	public boolean clickByCssSelector(String cssValue) throws Throwable;
 	
+	/**This method will check the click of the buttons using the CSS Selector attribute to locate
+	 * @author balajih
+	 * @param cssValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean clickButtonByCssSelector(String cssValue, String data) throws Throwable;
+	
 	/**This method will check the click of the buttons or links using the Xpath attribute to locate
 	 * @author balajih
 	 * @param xpathValue - name of the webelement
@@ -195,6 +221,30 @@ public interface WrappersInterface {
 	 * @throws Throwable
 	 */
 	public boolean clickByXpath(String xpathValue) throws Throwable;
+	
+	/**This method will check the click of the buttons using the Xpath attribute to locate
+	 * @author balajih
+	 * @param xpathValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean clickButtonByXpath(String xpathValue, String data) throws Throwable;
+	
+	/**This method will check the click of the buttons using the Xpath attribute to locate
+	 * @author balajih
+	 * @param xpathValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean clickImageByXpath(String xpathValue, String data) throws Throwable;
+	
+	/**This method will check the click of the links using the Xpath attribute to locate
+	 * @author balajih
+	 * @param xpathValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean clickLinkByXpath(String xpathValue, String data) throws Throwable;
 	
 	/**This method will check the click of the link text attribute to locate
 	 * @author balajih
@@ -974,4 +1024,98 @@ public interface WrappersInterface {
 	 * @throws Throwable
 	 */
 	public boolean checkElementIsDisplayedByClassName(String className) throws Throwable;
+	
+	/**This method will check whether element is displayed.
+	 * @author Balajih
+	 * @param id
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean checkElementIsDisplayedById(String id) throws Throwable;
+	
+	/**This method will check whether element is displayed.
+	 * @author Balajih
+	 * @param linkText
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean checkElementIsDisplayedByLinkText(String linkText) throws Throwable;
+	
+	/**This method is used to wait till element is visible for a given time.
+	 * @author Balajih
+	 * @param xpathValue
+	 * @return
+	 * @throws Throwable
+	 */
+	public void waitTillElementVisibleByXpath(String xpathValue);
+	
+	/**This method will return the web element Text
+	 * @author Balajih
+	 * @param linkText
+	 * @return
+	 * @throws Throwable
+	 */
+	public String getTextByLinkText(String linkText) throws Throwable;
+	
+	/** This method will return the web element Text 
+	 * @author Balajih
+	 * @param tagName
+	 * @return
+	 * @throws Throwable
+	 */
+	public String getTextByTagName(String tagName) throws Throwable;
+	
+	/** This method is used to click the element using Java script
+	 * @author Balajih
+	 * @param id
+	 * @return
+	 * @throws Throwable
+	 */
+	public void clickByJavaScriptId(String id) throws Throwable;
+	
+	/**This method is to reloads the page
+	 * @author thenmozhi
+	 * @throws Throwable
+	 */
+	public void pageRefresh();
+	
+	/**This method will check whether Header Embed Code is present in the webpage.
+	 * @author Thenmozhi
+	 * @param xpath
+	 * @return
+	 * @throws Throwable
+	 */
+	public void verifyHeaderEmbedCode(String xpath,String expResult) throws Throwable;
+	
+	/**This method will check whether Google Tag Manager Script code is present in the webpage.
+	 * @author Thenmozhi
+	 * @param xpath
+	 * @return
+	 * @throws Throwable
+	 */
+	public void  verifyGoogleTagManagerForScript(String xpath,String expResult) throws Throwable;
+	
+	/**This method will check whether Google Tag Manager NoScript code is present in the webpage.
+	 * @author Thenmozhi
+	 * @param xpath
+	 * @return
+	 * @throws Throwable
+	 */
+	public void verifyGoogleTagManagerForNoScript(String xpath,String expResult) throws Throwable;
+	
+	/**This method will check whether Footer Embed Code is present in the webpage.
+	 * @author Thenmozhi
+	 * @param xpath
+	 * @return
+	 * @throws Throwable
+	 */
+	public void verifyFooterEmbedCode(String xpath,String expResult) throws Throwable;
+	
+	/**This method will check whether Pardot Data Layer Code is present in the webpage.
+	 * @author Thenmozhi
+	 * @param xpath
+	 * @return
+	 * @throws Throwable
+	 */
+	public void verifyPardotDataLayerCode(String xpath,String expResult) throws Throwable;
 }

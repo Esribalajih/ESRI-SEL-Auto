@@ -4,6 +4,7 @@ import org.testng.annotations.BeforeClass;
 
 import org.testng.annotations.Test;
 
+import com.esri.test.auto.pages.AEM_ASSET_PAGE;
 import com.esri.test.auto.pages.AEM_HOMEPAGE;
 import com.esri.test.auto.pages.AEM_PROJECTPAGE;
 import com.esri.test.auto.pages.AEM_SIGNIN_PAGE;
@@ -23,8 +24,9 @@ public class AEM_PROJECT_FLOW extends ESRIWrappers{
 	  }
 	 @Test(dataProvider="fetchdata")
 	  public void ProjectFlow(String username,String password,String foldertitle,String foldername,String location,String assettitle,String description,String searchtagname,String searchtagdescname,String projecttitle,String wfname,String wfdesc,String cnum,String iuse,String username1,String password1,String url,String path) throws Throwable{
-		  //Signin 
-		 new AEM_SIGNIN_PAGE()
+		 openbrowser(url); 
+		 //Signin 
+		   new AEM_SIGNIN_PAGE()
 		  .enterUserName(username)
 		  .enterPassword(password)
 		  .clickSignin();
@@ -53,4 +55,4 @@ public class AEM_PROJECT_FLOW extends ESRIWrappers{
 		  .viewWfStepDetails()
 		  .showStatisticView();
 	   }
-	   }
+	 }

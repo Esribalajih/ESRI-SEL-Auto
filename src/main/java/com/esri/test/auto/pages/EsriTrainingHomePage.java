@@ -1,5 +1,9 @@
 package com.esri.test.auto.pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+
 import com.esri.test.auto.utils.Reporter;
 import com.esri.test.auto.wrappers.ESRIWrappers;
 
@@ -14,6 +18,7 @@ public class EsriTrainingHomePage extends ESRIWrappers {
 		if (!VerifyTitle("Esri Training | Your Location for Lifelong Learning")) {
 			Reporter.reportStep("Title of the Homepage page did not match", "FAIL");
 		}
+		
 	}
 	
 	public EsriTrainingMainPage mainTab()throws Throwable{
@@ -41,7 +46,7 @@ public class EsriTrainingHomePage extends ESRIWrappers {
 	}
 	
 	public EsriTrainingLoginPage login() throws Throwable{
-		clickById(prop.getProperty("Homepage.clickLogin.id"));		
+		clickById(prop.getProperty("Homepage.clickLogin.id"));	
 		return new EsriTrainingLoginPage();
 	}
 	
@@ -56,5 +61,25 @@ public class EsriTrainingHomePage extends ESRIWrappers {
 		clickByLinkText(prop.getProperty("Homepage.clickSignout.linkText"));
 		return this;
 	}
-		
+	
+	public EsriTrainingHomePage headerEmbedCode() throws Throwable{
+		verifyHeaderEmbedCode(prop.getProperty("Tag.HeaderEmbedCode.xpath"),prop.getProperty("Tag.HeaderEmbedCode.text"));
+		return this;
+	}
+	public EsriTrainingHomePage googleTagManagerForScript() throws Throwable{
+		verifyGoogleTagManagerForScript(prop.getProperty("Tag.GoogleTagManagerForScript.xpath"),prop.getProperty("Tag.GoogleTagManagerForScript.text"));
+		return this;
+	}	
+	public EsriTrainingHomePage googleTagManagerForNoScript() throws Throwable{
+		verifyGoogleTagManagerForNoScript(prop.getProperty("Tag.GoogleTagManagerForNoScript.xpath"),prop.getProperty("Tag.GoogleTagManagerForNoScript.text"));
+		return this;
+	}
+	public EsriTrainingHomePage footerEmbbedCode() throws Throwable{
+		verifyFooterEmbedCode(prop.getProperty("Tag.FooterEmbbedCode.xpath"),prop.getProperty("Tag.FooterEmbbedCode.text"));
+		return this;
+	}
+	public EsriTrainingHomePage pardotDataLayerCode() throws Throwable{
+		verifyPardotDataLayerCode(prop.getProperty("Tag.PardotDataLayerCode.xpath"),prop.getProperty("Tag.PardotDataLayerCode.text"));
+		return this;
+	}
 }

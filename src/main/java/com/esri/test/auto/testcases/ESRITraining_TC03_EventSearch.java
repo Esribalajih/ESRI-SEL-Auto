@@ -27,26 +27,35 @@ public class ESRITraining_TC03_EventSearch extends ESRIWrappers {
 			
 			.catalogTab()
 			.clickEventSearch()
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 			.search(keyword)
 			.click()
 			.results()
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 			.clearSearch()
 			.startDatePicker()
 			.startDateSelect()
 			.endDatePicker()
 			.endDateSelect()
 			.results()
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 			.filterClick()
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 			.filterSelectInstructorLed()
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 			.cardButtonInstructorLed()
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 			.filterClick()
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 			.filterDeselectInstructorLed()
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 			.filterSelectMooc()
 			.cardButtonClickMooc()
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 			.filterSelectMooc()
 			.filterSelectTrainingSeminar()
-			.cardButtonClickTrainingSeminar();
-			
+			.cardButtonClickTrainingSeminar()
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode();
 					
 	}
 

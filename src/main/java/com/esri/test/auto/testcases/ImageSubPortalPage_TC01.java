@@ -17,6 +17,7 @@ public class ImageSubPortalPage_TC01 extends ESRIWrappers {
 	@Parameters({"browser"})
 	@BeforeClass
 	public void startTestCase() {
+		// browserName="chrome";
 		dataSheetName="ImageSubPortal";
 		testCaseName="Image submission Portal Page_TC01";
 		testDescription="This is the Image Submission Portal module - Positive Test scenario";

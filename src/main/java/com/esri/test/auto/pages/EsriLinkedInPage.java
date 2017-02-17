@@ -10,8 +10,7 @@ import com.esri.test.auto.wrappers.ESRIWrappers;
 public class EsriLinkedInPage extends ESRIWrappers{
 	
 	public EsriLinkedInPage() throws Throwable{
-		waitForPageLoad(3);
-		if(!VerifyTitle("Esri | LinkedIn"))
+		if(!VerifyTitle("Esri | LinkedIn "))
 			Reporter.reportStep("This is not a Esri LinkedIn Page", "FAIL");
 	}
 

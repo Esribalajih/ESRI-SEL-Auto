@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" name="Suite" verbose="5" parallel="classes">
+  <test name="EsriNewsBlog_chrome">
+  <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.esri.test.auto.testcases.EsriNewsBlog_TC01"/>
+    </classes>
+  </test> <!-- EsriNewsBlog_chrome -->
+  
+  <test name="EsriNewsBlog_Firefox">
+  <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="com.esri.test.auto.testcases.EsriNewsBlog_TC01"/>
+    </classes>
+    
+  </test> <!-- EsriNewsBlog_Firefox -->
+  <test name="EsriNewsBlog_internet explorer">
+  <parameter name="browser" value="internet explorer"/>
+    <classes>
+      <class name="com.esri.test.auto.testcases.EsriNewsBlog_TC01"/>
+    </classes>    
+  </test> <!-- EsriNewsBlog_internet explorer -->
+  
+   <test name="InsightsApp_MicrosoftEdge">
+   <parameter name="browser" value="MicrosoftEdge"/>
+    <classes>
+      <class name="com.esri.test.auto.testcases.TestYourInsightApp_TC01"/>
+    </classes>
+  </test>
+  
+</suite> <!-- Suite -->

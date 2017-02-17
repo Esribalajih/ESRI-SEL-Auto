@@ -29,7 +29,8 @@ public class ESRITraining_TC11_MySchedule extends ESRIWrappers {
 			.password(password)
 			.signInHomepage()
 			.myLearningTab()
-			.mySchedule(data);
+			.mySchedule(data)
+			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode();
 	}	
 	
 }

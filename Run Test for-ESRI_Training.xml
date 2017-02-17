@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="classes" verbose="1" thread-count="1">
+
+ 	<!-- <test name='Distributor_Internet Explorer'>
+    <parameter name="browser" value="internet explorer"/>
+   <classes>
+			<class name="com.esri.test.auto.testcases.ESRITraining_TC01_Catalog" />			
+    </classes>
+    </test>  -->
+  
+    <test name='Distributor_Chrome'>
+    <parameter name="browser" value="chrome"/>
+    <classes>
+			<class name="com.esri.test.auto.testcases.ESRITraining_TC01_Catalog" />			
+    </classes>
+    </test> 
+    
+	 <!-- 
+	<test name='Distributor_Firefox'>
+    <parameter name="browser" value="firefox"/>
+    
+    <test name='Distributor_Chrome'>
+    <parameter name="browser" value="chrome"/>
+    
+    <test name='Distributor_Internet Explorer'>
+    <parameter name="browser" value="internet explorer"/> 
+    -->
+    
+</suite> 

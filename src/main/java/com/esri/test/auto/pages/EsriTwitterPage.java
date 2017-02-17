@@ -10,7 +10,6 @@ import com.esri.test.auto.wrappers.ESRIWrappers;
 public class EsriTwitterPage extends ESRIWrappers{
 	
 	public EsriTwitterPage() throws Throwable{
-		waitForPageLoad(3);
 		if (!VerifyTitle("Esri (@Esri) | Twitter"))
 			Reporter.reportStep("This is not a Esri Twitter Page", "FAIL");
 	}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" name="Suite" verbose="5" parallel="classes">
+  <!-- <test name="EsriCareers_Firefox">
+   <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="com.esri.test.auto.testcases.EsriCareerHome_TC01"/>
+    </classes>
+  </test> --> <!-- Firefox -->
+   <test name="EsriCareers_chrome">
+   <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.esri.test.auto.testcases.EsriCareerHome_TC01"/>
+    </classes>
+  </test> <!-- Chrome -->
+  <!--  <test name="EsriCareers_Internet Explorer">
+   <parameter name="browser" value="internet explorer"/>
+    <classes>
+      <class name="com.esri.test.auto.testcases.EsriCareerHome_TC01"/>
+    </classes>
+  </test> --> <!-- Internet Explorer -->
+</suite> <!-- Suite -->

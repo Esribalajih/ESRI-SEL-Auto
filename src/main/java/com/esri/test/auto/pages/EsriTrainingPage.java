@@ -16,10 +16,10 @@ public class EsriTrainingPage extends ESRIWrappers {
 		}
 	}
 
-	public EsriSpotlightPage spotLightDetails() throws Throwable {
+	public EsriTrainingSpotlightPage spotLightDetails() throws Throwable {
 		waitForPageLoad(3);
 		clickByCssSelector(prop.getProperty("Training.catalogSpotlightDetails.css"));
-		return new EsriSpotlightPage();
+		return new EsriTrainingSpotlightPage();
 	}
 
 	public EsriTrainingCardPage VerifyCard() throws Throwable {
@@ -27,5 +27,25 @@ public class EsriTrainingPage extends ESRIWrappers {
 		clickByXpath(prop.getProperty("Training.catalogFirstCardDetails.xpath"));
 		return new EsriTrainingCardPage();
 	}
-
+	
+	public EsriTrainingPage headerEmbedCode() throws Throwable{
+		verifyHeaderEmbedCode(prop.getProperty("Tag.HeaderEmbedCode.xpath"),prop.getProperty("Tag.HeaderEmbedCode.text"));
+		return this;
+	}
+	public EsriTrainingPage googleTagManagerForScript() throws Throwable{
+		verifyGoogleTagManagerForScript(prop.getProperty("Tag.GoogleTagManagerForScript.xpath"),prop.getProperty("Tag.GoogleTagManagerForScript.text"));
+		return this;
+	}	
+	public EsriTrainingPage googleTagManagerForNoScript() throws Throwable{
+		verifyGoogleTagManagerForNoScript(prop.getProperty("Tag.GoogleTagManagerForNoScript.xpath"),prop.getProperty("Tag.GoogleTagManagerForNoScript.text"));
+		return this;
+	}
+	public EsriTrainingPage footerEmbbedCode() throws Throwable{
+		verifyFooterEmbedCode(prop.getProperty("Tag.FooterEmbbedCode.xpath"),prop.getProperty("Tag.FooterEmbbedCode.text"));
+		return this;
+	}
+	public EsriTrainingPage pardotDataLayerCode() throws Throwable{
+		verifyPardotDataLayerCode(prop.getProperty("Tag.PardotDataLayerCode.xpath"),prop.getProperty("Tag.PardotDataLayerCode.text"));
+		return this;
+	}
 }
