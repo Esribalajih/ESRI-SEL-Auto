@@ -33,24 +33,24 @@ public class ESRINewHome_DevSummitPage extends ESRIWrappers {
 	
 	//Verifying Google Tag and Abobe Analytics	
 	
-	public ESRINewHome_DevSummitPage headerEmbedCode() throws Throwable{
-		verifyHeaderEmbedCode(prop.getProperty("Tag.HeaderEmbedCode.xpath"),prop.getProperty("Tag.HeaderEmbedCode.text"));
+	public ESRINewHome_DevSummitPage headerEmbedCode(String HeaderEmbedCode) throws Throwable{
+		verifyHeaderEmbedCode(prop.getProperty("Tag.HeaderEmbedCode.xpath"),HeaderEmbedCode);
 		return this;
 	}
-	public ESRINewHome_DevSummitPage googleTagManagerForScript() throws Throwable{
-		verifyGoogleTagManagerForScript(prop.getProperty("Tag.GoogleTagManagerForScript.xpath"),prop.getProperty("Tag.GoogleTagManagerForScript.text"));
+	public ESRINewHome_DevSummitPage googleTagManagerForScript(String GoogleTagManagerScript) throws Throwable{
+		verifyGoogleTagManagerForScript(prop.getProperty("Tag.GoogleTagManagerForScript.xpath"),GoogleTagManagerScript);
 		return this;
 	}	
-	public ESRINewHome_DevSummitPage googleTagManagerForNoScript() throws Throwable{
-		verifyGoogleTagManagerForNoScript(prop.getProperty("Tag.GoogleTagManagerForNoScript.xpath"),prop.getProperty("Tag.GoogleTagManagerForNoScript.text"));
+	public ESRINewHome_DevSummitPage googleTagManagerForNoScript(String GoogleTagManagerNoScript) throws Throwable{
+		verifyGoogleTagManagerForNoScript(prop.getProperty("Tag.GoogleTagManagerForNoScript.xpath"),GoogleTagManagerNoScript);
 		return this;
 	}
-	public ESRINewHome_DevSummitPage footerEmbbedCode() throws Throwable{
-		verifyFooterEmbedCode(prop.getProperty("Tag.FooterEmbbedCode.xpath"),prop.getProperty("Tag.FooterEmbbedCode.text"));
+	public ESRINewHome_DevSummitPage footerEmbbedCode(String FooterEmbedCode) throws Throwable{
+		verifyFooterEmbedCode(prop.getProperty("Tag.FooterEmbbedCode.xpath"),FooterEmbedCode);
 		return this;
 	}
-	public ESRINewHome_DevSummitPage pardotDataLayerCode() throws Throwable{
-		verifyPardotDataLayerCode(prop.getProperty("Tag.PardotDataLayerCode.xpath"),prop.getProperty("Tag.PardotDataLayerCode.text"));
+	public ESRINewHome_DevSummitPage pardotDataLayerCode(String PardotLayerCode) throws Throwable{
+		verifyPardotDataLayerCode(prop.getProperty("Tag.PardotDataLayerCode.xpath"),PardotLayerCode);
 		return this;
 	}
 }

@@ -21,18 +21,18 @@ public class ESRI_NEWS_PublicationsPage extends ESRIWrappers{
 		return this;
 	}
 	
-	public ESRI_NEWS_PublicationsArcNewsPage clickArcNewsLink(String data) throws Throwable{
-		clickButtonByCssSelector(prop.getProperty("NewsPublicationsPage.clickArcNewsCurrentIssue.cssselector"), data);
+	public ESRI_NEWS_PublicationsArcNewsPage clickArcNewsLink() throws Throwable{
+		clickByCssSelector(prop.getProperty("NewsPublicationsPage.clickArcNewsCurrentIssue.cssselector"));
 		return new ESRI_NEWS_PublicationsArcNewsPage();
 	}
 	
-	public ESRI_NEWS_PublicationsArcUserPage clickArcUserLink(String data) throws Throwable{
-		clickButtonByCssSelector(prop.getProperty("NewsPublicationsPage.clickArcUserCurrentIssue.cssselector"), data);
+	public ESRI_NEWS_PublicationsArcUserPage clickArcUserLink() throws Throwable{
+		clickByCssSelector(prop.getProperty("NewsPublicationsPage.clickArcUserCurrentIssue.cssselector"));
 		return new ESRI_NEWS_PublicationsArcUserPage();
 	}
 	
-	public ESRI_NEWS_PublicationsArcWatchPage clickArcWatchLink(String data) throws Throwable{
-		clickButtonByCssSelector(prop.getProperty("NewsPublicationsPage.clickArcWatchCurrentIssue.cssselector"), data);
+	public ESRI_NEWS_PublicationsArcWatchPage clickArcWatchLink() throws Throwable{
+		clickByCssSelector(prop.getProperty("NewsPublicationsPage.clickArcWatchCurrentIssue.cssselector"));
 		return new ESRI_NEWS_PublicationsArcWatchPage();
 	}
 	

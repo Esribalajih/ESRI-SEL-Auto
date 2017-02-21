@@ -23,6 +23,7 @@ public class SigninPage extends ESRIWrappers {
 	// Enter the UserName
 	public SigninPage enterUserName(String userdata) throws Throwable {
 		switchToFrameByIndex(0);
+		waitForPageLoad(5);
 		enterById(prop.getProperty("Signin.username.Id"), userdata);
 		return this;
 	}

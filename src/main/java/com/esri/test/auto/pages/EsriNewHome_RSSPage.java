@@ -11,11 +11,11 @@ public class EsriNewHome_RSSPage extends ESRIWrappers {
 
 	public EsriNewHome_RSSPage() throws Throwable{
 		waitForPageLoad(3);
-		//If Chrome Browser Execute Enable this
+		//If you are executing in Chrome Browser, enable the below if block
 		if(!VerifyTitle("Esri News Feed - powered by FeedBurner")){
 			Reporter.reportStep("This is not a Esri RSSHomePage Page", "FAIL");
 		}
-		//Firefox or Internet Browser Execute Enable this		
+		//If you are executing in Firefox or Internet Browser, enable the below if block
 		/*if(!VerifyTitle("Esri News Feed")){
 					Reporter.reportStep("This is not a Esri RSSHomePage Page", "FAIL");
 		}*/

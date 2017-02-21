@@ -20,14 +20,14 @@ public class EsriNewsBlog_TC01 extends ESRIWrappers {
 	}
 	
 	@Test(dataProvider="fetchdata")
-	public void esriNewsBlog(String EsriNewsBlogURL, String mainHdr, String userOdata, String SearchBtn, String RHdr, 
+	public void esriNewsBlog(String EsriNewsBlogURL, String mainHdr, String userOdata, String RHdr, 
 			String userRdata, String FilterResult, String InNewsHdr, String userIdata, String FilterIResult,
 			String PubHdr, String EsriStoriesHdr, String BlogHdr, String MRHdr) throws Throwable{
 		openbrowser(EsriNewsBlogURL);
 		new ESRI_NEWS_OverviewPage()
 		.verifyMainHeader(mainHdr)
 		.enterSearchKey(userOdata)
-		.clickSearchBtn(SearchBtn)
+		.clickSearchBtn()
 		.clickReleasesPageMenuLink()
 		.verifyPageHeader(RHdr)
 		.enterSearchKey(userRdata)

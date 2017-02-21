@@ -877,6 +877,16 @@ public interface WrappersInterface {
 	 */
 	public boolean verifyValueWithNewLineByXpath(String xpathValue, String data) throws Throwable;
 	
+	/**This method is used to compare the value between the element and input data
+	 * if Special Character exist then replace it with space
+	 * @author Balajih
+	 * @param xpathValue - name of the webelement
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean verifyValueWithSpecialCharacterByXpath(String xpathValue, String data) throws Throwable;
+	
 	/**
 	 * This method is used to compare the value between the element and input data
 	 * if new line exist then it replace with space

@@ -17,8 +17,8 @@ public class EsriRSSHomePage extends ESRIWrappers {
 
 	//Click back to New Esri Home Page
 
-	public NewEsriHomePage clickBrowserBcktoNewEsriHomePage() throws Throwable{
+	public ESRINewHomePage clickBrowserBcktoNewEsriHomePage() throws Throwable{
 		clickBrowserBackButton();
-		return new NewEsriHomePage();
+		return new ESRINewHomePage();
 	}
 }

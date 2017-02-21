@@ -2653,7 +2653,7 @@ public class GenericWrappers implements WrappersInterface{
 			tagContents = new ArrayList<String>();
 			
 			for(WebElement tagElement:tagElements){
-				String gooTagContent=tagElement.getAttribute("src");
+				String gooTagContent=tagElement.getAttribute("innerText");
 				tagContents.add(gooTagContent);
 			}
 

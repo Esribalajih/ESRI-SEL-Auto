@@ -7,17 +7,16 @@ import com.esri.test.auto.wrappers.ESRIWrappers;
  * @author balajih
  *
  */
-public class EsriNewHome_FacebookPage extends ESRIWrappers{
+public class EsriJDFacebookPage extends ESRIWrappers{
 	
-	public EsriNewHome_FacebookPage() throws Throwable{
-		waitForPageLoad(3);
-		if (!VerifyTitle("Security Check Required"))
+	public EsriJDFacebookPage() throws Throwable{
+		if (!VerifyTitle("Esri | Facebook"))
 			Reporter.reportStep("This is not a Esri Facebook Page", "FAIL");
 	}
 	
-	public ESRINewHomePage clickBrowserBcktoNewEsriHomePage() throws Throwable{
+	public EsriCareerJobDetailsPage clickBwrBckBtn() throws Throwable{
 		clickBrowserBackButton();
-		return new ESRINewHomePage();
+		return new EsriCareerJobDetailsPage();
 	}
 
 }

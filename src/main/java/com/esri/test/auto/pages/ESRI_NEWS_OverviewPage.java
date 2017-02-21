@@ -25,8 +25,8 @@ public class ESRI_NEWS_OverviewPage extends ESRIWrappers{
 		return this;
 	}
 	
-	public ESRI_NEWS_OverviewPage clickSearchBtn(String data) throws Throwable{
-		clickButtonByClassName(prop.getProperty("NewsOverviewPage.SearchButton.classname"), data);
+	public ESRI_NEWS_OverviewPage clickSearchBtn() throws Throwable{
+		clickByClassName(prop.getProperty("NewsOverviewPage.SearchButton.classname"));
 		return this;
 	}
 	

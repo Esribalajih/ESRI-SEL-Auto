@@ -14,10 +14,10 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  *
  */
 public class DataInputProvider  extends com.esri.test.auto.wrappers.GenericWrappers{
-	
+
 	public static String[][] getSheet(String dataSheetName) throws IOException{
 		String[][] data=null;
-		
+
 		try {
 			FileInputStream fis = new FileInputStream(new File("./data/"+dataSheetName+".xlsx"));
 			XSSFWorkbook workbook = new XSSFWorkbook(fis);

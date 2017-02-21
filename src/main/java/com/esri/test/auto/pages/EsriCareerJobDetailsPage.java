@@ -106,7 +106,7 @@ public class EsriCareerJobDetailsPage extends ESRIWrappers{
 	
 	public EsriCareerMoreAboutEsriPage clickMoreAboutEsrilink() throws Throwable{
 		clickByLinkText(prop.getProperty("CareerJobDetailsPage.moreaboutEsri.linktext"));
-		return new EsriCareerMoreAboutEsriPage();
+		return new EsriCareerMoreAboutEsriPage(); 
 	}
 	
 	public EsriCareerBlogPage clickFooterBlogButton() throws Throwable{
@@ -114,29 +114,29 @@ public class EsriCareerJobDetailsPage extends ESRIWrappers{
 		return new EsriCareerBlogPage();
 	}
 	
-	public EsriInstagramPage clickFooterInstagramButton() throws Throwable{
+	public EsriJDInstagramPage clickFooterInstagramButton() throws Throwable{
 		clickByXpath(prop.getProperty("CareerJobDetailsPage.footerinstagramlink.xpath"));
-		return new EsriInstagramPage();
+		return new EsriJDInstagramPage();
 	}
 
-	public EsriFacebookPage clickFooterFacebookButton() throws Throwable{
+	public EsriJDFacebookPage clickFooterFacebookButton() throws Throwable{
 		clickByXpath(prop.getProperty("CareerJobDetailsPage.footerfblink.xpath"));
-		return new EsriFacebookPage();
+		return new EsriJDFacebookPage();
 	}
 
-	public EsriTwitterPage clickFooterTwitterButton() throws Throwable{
+	public EsriJDTwitterPage clickFooterTwitterButton() throws Throwable{
 		clickByXpath(prop.getProperty("CareerJobDetailsPage.footertwitterlink.xpath"));
-		return new EsriTwitterPage();
+		return new EsriJDTwitterPage();
 	}
 
-	public EsriLinkedInPage clickFooterLinkedInButton() throws Throwable{
+	public EsriJDLinkedInPage clickFooterLinkedInButton() throws Throwable{
 		clickByXpath(prop.getProperty("CareerJobDetailsPage.footerlinkedinlink.xpath"));
-		return new EsriLinkedInPage();
+		return new EsriJDLinkedInPage();
 	}
 	
-	public EsriGlassDoorPage clickFooterGlassDoorButton() throws Throwable{
+	public EsriJDGlassDoorPage clickFooterGlassDoorButton() throws Throwable{
 		clickByXpath(prop.getProperty("CareerJobDetailsPage.footerglassdoorlink.xpath"));
-		return new EsriGlassDoorPage();
+		return new EsriJDGlassDoorPage();
 	}
 	
 	public EsriCareerHomePage clickBwrBckBtn() throws Throwable{
