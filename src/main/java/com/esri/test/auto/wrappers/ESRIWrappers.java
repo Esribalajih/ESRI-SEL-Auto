@@ -20,6 +20,7 @@ public class ESRIWrappers extends GenericWrappers{
 	protected String browserName;
 	protected String dataSheetName;
 	protected static String testCaseName;
+	protected static String Category;
 	protected static String testDescription;
 
 	@BeforeSuite
@@ -46,6 +47,7 @@ public class ESRIWrappers extends GenericWrappers{
 	@AfterMethod
 	public void afterMethod() throws Throwable {
 		Reporter.endResult();
+		unloadObjects();
 		quitBrowser();
 	}
 

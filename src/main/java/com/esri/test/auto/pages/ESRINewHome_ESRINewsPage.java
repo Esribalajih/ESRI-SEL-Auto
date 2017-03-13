@@ -26,7 +26,6 @@ public class ESRINewHome_ESRINewsPage extends ESRIWrappers {
 
 	public ESRINewHomePage clickBrowserBcktoNewEsriHomePage() throws Throwable{
 		clickBrowserBackButton();
-		//Enable this if you are executing in IE
 		//clickBrowserBackButton();
 		return new ESRINewHomePage();
 	}

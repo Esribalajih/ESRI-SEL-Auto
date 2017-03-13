@@ -278,14 +278,6 @@ public interface WrappersInterface {
 	 */
 	public boolean clickChkBoxByXpath(String xpathValue) throws Throwable;
 	
-	/**This method will check the click of the check box using the Xpath attribute to locate
-	 * @author balajih
-	 * @param xpathValue - name of the webelement
-	 * @return
-	 * @throws Throwable
-	 */
-	public boolean clickRadioBtnByXpath(String xpathValue) throws Throwable;
-	
 	/**This method is used to fetch the data from dropdown using select By Id attribute to locate
 	 * @author balajih
 	 * @param idValue - name of the webelement
@@ -1128,4 +1120,35 @@ public interface WrappersInterface {
 	 * @throws Throwable
 	 */
 	public void verifyPardotDataLayerCode(String xpath,String expResult) throws Throwable;
+	
+	/**This Method is to login through the windows popup for IE
+	 * @author 
+	 * @throws Throwable 
+	 */
+	
+	public void alertAuthentication(String Username,String Password) throws Throwable;
+	
+	/**This method will check the click of the buttons or links using the Class Name attribute to locate
+	 * @author balajih
+	 * @param cnameValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean clickButtonByClassName(String cnameValue, String data) throws Throwable;
+	
+	/**This method will check the click of the check box using the Xpath attribute to locate
+	 * @author balajih
+	 * @param xpathValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean clickRadioBtnByXpath(String xpathValue,String data) throws Throwable;
+	
+	/** This method is used to click the element for dynamic webtable
+	 * @author Balajih
+	 * @param xpath
+	 * @return
+	 * @throws Throwable
+	 */
+	public void clickDynamicWebTableByxpath(String xpath, String data) throws Throwable;
 }

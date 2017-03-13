@@ -26,6 +26,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.security.UserAndPassword;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -45,6 +46,8 @@ public class GenericWrappers implements WrappersInterface{
 	private List<WebElement> tagElements;
 	private List<String> tagContents;
 	private int tagContentsSize;
+	protected static String browserName;
+	
 	/**This Constructor is used to load the configuration properties for Selenium Grid 2.0 
 	 * 
 	 */
@@ -71,7 +74,8 @@ public class GenericWrappers implements WrappersInterface{
 	//public void invokeApp(String browser, String version){
 		public void invokeApp(String browser){
 		boolean bReturn=false;
-
+		browserName=browser;
+		//System.out.println("1"+browserName);
 		DesiredCapabilities dc = new DesiredCapabilities();
 		dc.setBrowserName(browser);
 		//dc.setVersion(version);
@@ -82,6 +86,7 @@ public class GenericWrappers implements WrappersInterface{
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			driver.get(sUrl);
+			clearCookies(browser, dc);
 
 			primaryWindowHandle = driver.getWindowHandle();
 
@@ -504,6 +509,7 @@ public class GenericWrappers implements WrappersInterface{
 		try {
 			Reporter.reportStep("The Button "+ data +" is clicked successfully", "PASS");
 			driver.findElement(By.className(cnameValue)).click();
+			Reporter.reportStep("The Button "+ data +" is clicked successfully", "PASS");
 			bReturn = true;
 		} catch (Exception e) {
 			Reporter.reportStep("The Button "+ data +" is not clicked successfully", "FAIL");
@@ -540,6 +546,7 @@ public class GenericWrappers implements WrappersInterface{
 		try {
 			Reporter.reportStep("The Button "+ data +" is clicked successfully", "PASS");
 			driver.findElement(By.cssSelector(cssValue)).click();
+			Reporter.reportStep("The Button "+ data +" is clicked successfully", "PASS");
 			bReturn = true;
 		} catch (Exception e) {
 			Reporter.reportStep("The Button  "+ data +" is not clicked successfully", "FAIL");
@@ -577,7 +584,7 @@ public class GenericWrappers implements WrappersInterface{
 		try {
 			Reporter.reportStep("The Button "+ data +" is clicked successfully", "PASS");
 			driver.findElement(By.xpath(xpathValue)).click();
-			//Reporter.reportStep("The Button "+ data +" is clicked successfully", "PASS");
+			Reporter.reportStep("The Button "+ data +" is clicked successfully", "PASS");
 			bReturn = true;
 		} catch (Exception e) {
 			Reporter.reportStep("The Button "+ data +" is not clicked successfully", "FAIL");
@@ -596,7 +603,7 @@ public class GenericWrappers implements WrappersInterface{
 		try {
 			Reporter.reportStep("The Image "+ data +" is clicked successfully", "PASS");
 			driver.findElement(By.xpath(xpathValue)).click();
-			//Reporter.reportStep("The Image "+ data +" is clicked successfully", "PASS");
+			Reporter.reportStep("The Image "+ data +" is clicked successfully", "PASS");
 			bReturn = true;
 		} catch (Exception e) {
 			Reporter.reportStep("The Image "+ data +" is not clicked successfully", "FAIL");
@@ -615,7 +622,7 @@ public class GenericWrappers implements WrappersInterface{
 		try {
 			Reporter.reportStep("The Link "+ data +" is clicked successfully", "PASS");
 			driver.findElement(By.xpath(xpathValue)).click();
-			//Reporter.reportStep("The Link "+ data +" is clicked successfully", "PASS");
+			Reporter. reportStep("The Link "+ data +" is clicked successfully", "PASS");
 			bReturn = true;
 		} catch (Exception e) {
 			Reporter.reportStep("The Link "+ data +" is not clicked successfully", "FAIL");
@@ -701,17 +708,18 @@ public class GenericWrappers implements WrappersInterface{
 	 * @return
 	 * @throws Throwable
 	 */
-	public boolean clickRadioBtnByXpath(String xpathValue) throws Throwable{
+	public boolean clickRadioBtnByXpath(String xpathValue,String data) throws Throwable{
 		boolean bReturn = false;
 		try {
-			Reporter.reportStep("The Radio Button is clicked successfully", "PASS");
+			Reporter.reportStep("The Radio Button "+data+" is clicked successfully", "PASS");
 			driver.findElement(By.xpath(xpathValue)).click();
 			bReturn = true;
 		} catch (Exception e) {
-			Reporter.reportStep("The Radio Button is not clicked successfully", "FAIL");
+			Reporter.reportStep("The Radio Button "+data+" is not clicked successfully", "PASS");
 		}	
 		return bReturn;
 	}
+
 	
 	/**This method is used to fetch the data from dropdown using select By Id attribute to locate
 	 * @author balajih
@@ -925,6 +933,26 @@ public class GenericWrappers implements WrappersInterface{
 		try {
 			Select dropdown = new Select(driver.findElement(By.tagName(tagNameValue)));
 			dropdown.selectByVisibleText(data);
+			Reporter.reportStep("The element is selected with value"+ data+" successfully", "PASS");
+			bReturn = true;
+		} catch (Exception e) {
+			Reporter.reportStep("The value "+ data +" is not selected", "FAIL");
+		}
+		return bReturn;
+	}
+	
+	/**This method is used to fetch the data from dropdown using select Option By Index attribute to locate
+	 * @author balajih
+	 * @param xpathValue - name of the webelement
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean selectOptionByIndex(String xpathValue, String data) throws Throwable {
+		boolean bReturn = false;
+		try {
+			Select dropdown = new Select(driver.findElement(By.xpath(xpathValue)));
+			dropdown.selectByIndex(0);
 			Reporter.reportStep("The element is selected with value"+ data+" successfully", "PASS");
 			bReturn = true;
 		} catch (Exception e) {
@@ -1185,9 +1213,10 @@ public class GenericWrappers implements WrappersInterface{
 
 	  String currentWindow = driver.getWindowHandle();
       List<String> availableWindows = new ArrayList<String>(driver.getWindowHandles());
-
+      
       for(String w : availableWindows)
       {
+    	  System.out.println("***"+w);
         if (w != currentWindow)
         {
           driver.switchTo().window(w);
@@ -1314,6 +1343,7 @@ public class GenericWrappers implements WrappersInterface{
 	 * @throws Throwable
 	 */
 	public void handlingBAuthUsingRobo(String uName, String pwd) {
+		System.out.println("->"+uName+"**"+pwd);
 		try{
 			//wait - increase this wait period if required
 			waitForPageLoad(5);
@@ -1348,7 +1378,7 @@ public class GenericWrappers implements WrappersInterface{
 
 			//wait
 			waitForPageLoad(2);
-
+			System.err.println("handlingBAuthUsingRobo");
 		}
 		catch(Exception ex){
 			ex.printStackTrace();
@@ -2653,7 +2683,7 @@ public class GenericWrappers implements WrappersInterface{
 			tagContents = new ArrayList<String>();
 			
 			for(WebElement tagElement:tagElements){
-				String gooTagContent=tagElement.getAttribute("innerText");
+				String gooTagContent=tagElement.getAttribute("src");
 				tagContents.add(gooTagContent);
 			}
 
@@ -2721,6 +2751,66 @@ public class GenericWrappers implements WrappersInterface{
 		prop = null;
 		
 	}
+	
+	/**This Method is to login through the windows popup for IE
+	 * @author 
+	 * @throws Throwable 
+	 */
+	
+	public void alertAuthentication(String Username,String Password) throws Throwable{
+		try {
+			if(browserName.equalsIgnoreCase("internet explorer") || browserName.equalsIgnoreCase("firefox") ){
+				System.out.println("alertAuth");
+				System.out.println("3");
+				System.out.println(driver.getCurrentUrl());
+				System.out.println(driver.getTitle());
+				WebDriverWait wait = new WebDriverWait(driver, 10);
+				Alert alert=wait.until(ExpectedConditions.alertIsPresent());
+				alert.authenticateUsing(new UserAndPassword(Username,Password));
+				Reporter.reportStep("The Alert Authentication is passed successfully.", "PASS");
+			}
+			else
+			{
+				System.out.println("else");
+				clickBrowserBackButton();
+				openbrowser("http://"+Username+":"+Password+"@"+"servicedeskbeta.esri.com/CherwellPortal/SelfService");
+				Reporter.reportStep("The Alert Authentication is passed successfully.", "PASS");
+			}
+		} 
+		catch (Exception e) {
+				Reporter.reportStep("The Alert Authentication has been failed.", "FAIL");
+		}
 		
-		
+	}
+	/** This method is used to click the element for dynamic webtable
+	 * @author Balajih
+	 * @param xpath
+	 * @return
+	 * @throws Throwable
+	 */
+	public void clickDynamicWebTableByxpath(String xpath, String data) throws Throwable {
+
+		try {
+			WebElement htmlTable = driver.findElement(By.xpath(xpath));
+			List<WebElement> rows = htmlTable.findElements(By.tagName("tr"));
+			for(int rownum=0;rownum<rows.size();rownum++)
+			{
+				List<WebElement> columns = rows.get(rownum).findElements(By.tagName("td"));
+				for(int colnum=0;colnum<columns.size();colnum++)
+				{
+					columns.get(colnum).sendKeys(data);
+					Reporter.reportStep("The data:"+ data+" entered Successfully in the Web table.", "PASS");
+				}
+			}
+			
+			
+		} catch (Throwable e) {
+			e.printStackTrace();
+			Reporter.reportStep("The data:"+ data+" not entered Successfully in the Web table.", "FAIL");
+		}
+
+	}
+	
+	
+
 }

@@ -55,14 +55,14 @@ public class ImageSubPortalPage extends ESRIWrappers {
 		return this;
 	}
 
-	public ImageSubPortalPage clickradioOption1 () throws Throwable {
-		clickRadioBtnByXpath(prop.getProperty("imagesub.RadioOption1.xpath"));
+	public ImageSubPortalPage clickradioOption1 (String radOptBtn1) throws Throwable {
+		clickRadioBtnByXpath(prop.getProperty("imagesub.RadioOption1.xpath"),radOptBtn1);
 		System.out.println("The Images option clicked successfully");
 		return this;
 	}
 
-	public ImageSubPortalPage clickradioOption2 () throws Throwable{
-		clickRadioBtnByXpath(prop.getProperty("imagesub.RadioOption2.xpath"));
+	public ImageSubPortalPage clickradioOption2 (String radOptBtn2) throws Throwable{
+		clickRadioBtnByXpath(prop.getProperty("imagesub.RadioOption2.xpath"), radOptBtn2);
 		System.out.println("The Video option clicked successfully");
 		return this;
 	}
@@ -73,14 +73,14 @@ public class ImageSubPortalPage extends ESRIWrappers {
 		return this;
 	}
 
-	public ImageSubPortalPage clickradio2Option1 () throws Throwable {
-		clickRadioBtnByXpath(prop.getProperty("imagesub.Radiobutton1.xpath"));
+	public ImageSubPortalPage clickradio2Option1 (String rad2OptBtn1) throws Throwable {
+		clickRadioBtnByXpath(prop.getProperty("imagesub.Radiobutton1.xpath"),rad2OptBtn1);
 		System.out.println("The Yes option clicked successfully");
 		return this;
 	}
 
-	public ImageSubPortalPage clickradio2Option2 () throws Throwable{
-		clickRadioBtnByXpath(prop.getProperty("imagesub.Radiobutton2.xpath"));
+	public ImageSubPortalPage clickradio2Option2 (String rad2OptBtn2) throws Throwable{
+		clickRadioBtnByXpath(prop.getProperty("imagesub.Radiobutton2.xpath"), rad2OptBtn2);
 		System.out.println("The No option clicked successfully");
 		return this;
 	}

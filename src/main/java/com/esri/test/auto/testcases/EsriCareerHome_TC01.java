@@ -24,7 +24,7 @@ public class EsriCareerHome_TC01 extends ESRIWrappers {
 	public void esriCareerHome(String EsriCareerURL, String careerMHdr, String JDHdr, String Inputdata, 
 			String jobCategory, String Location, String LHdr, String REHeader, String StuHdr,
 			String JCitemdata, String LifeHdr, String CHeader, String BText, String FName, String LName, 
-			String EmailID, String PhoneNo, String VConfNotific) throws Throwable{
+			String EmailID, String PhoneNo, String VConfNotific, String RadioBtn) throws Throwable{
 		openbrowser(EsriCareerURL);
 		new EsriCareerHomePage()
 		.verifyCareerMainHdr(careerMHdr)
@@ -103,7 +103,7 @@ public class EsriCareerHome_TC01 extends ESRIWrappers {
 		.clickBwrBckBtnLifePage()
 		.clickContactusSubMenulink()
 		.verifyContactUsHeader(CHeader)
-		.clickMyAppRadiobtn()
+		.clickMyAppRadiobtn(RadioBtn)
 		.enterBriefText(BText)
 		.enterFirstName(FName)
 		.enterLastName(LName)

@@ -19,8 +19,8 @@ public class EsriCareerContactUsPage extends ESRIWrappers{
 		return this;
 	}
 	
-	public EsriCareerContactUsPage clickMyAppRadiobtn() throws Throwable{
-		clickRadioBtnByXpath(prop.getProperty("CareerContactUsPage.MyAppRadiobutton.xpath"));
+	public EsriCareerContactUsPage clickMyAppRadiobtn(String RadioBtn) throws Throwable{
+		clickRadioBtnByXpath(prop.getProperty("CareerContactUsPage.MyAppRadiobutton.xpath"), RadioBtn);
 		return this;
 	}
 	

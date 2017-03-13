@@ -42,6 +42,7 @@ public class ESRINewHomePage extends ESRIWrappers{
 			
 	public ESRINewHome_LocationStrategyPage clickImage2Link(String data) throws Throwable{
 		waitForPageLoad(3);
+		//clickByXpath(prop.getProperty("NewEsriHomePage.Image2seehowtheydoit.xpath"));
 		clickLinkByXpath(prop.getProperty("NewEsriUATHomePage.Uncoveractionableinsights.xpath"),data);
 		return new ESRINewHome_LocationStrategyPage();
 	}

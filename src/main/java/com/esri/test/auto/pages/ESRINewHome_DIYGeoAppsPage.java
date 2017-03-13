@@ -20,6 +20,7 @@ public class ESRINewHome_DIYGeoAppsPage extends ESRIWrappers {
 	
 	public ESRINewHome_DIYGeoAppsPage VerifyGeoAppsHeader(String GeoAppsHeader) throws Throwable{
 		VerifyTextByXpath(prop.getProperty("NewEsriUATHomePage.GeoAppsHeader.xpath"), GeoAppsHeader);
+		//System.out.println(driver.findElement(By.xpath("NewEsriUATHomePage.GeoAppsHeader.xpath")).getAttribute("innerText"));
 		return this;
 	}
 

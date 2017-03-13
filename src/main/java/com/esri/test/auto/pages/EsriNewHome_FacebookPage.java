@@ -11,7 +11,7 @@ public class EsriNewHome_FacebookPage extends ESRIWrappers{
 	
 	public EsriNewHome_FacebookPage() throws Throwable{
 		waitForPageLoad(3);
-		if (!VerifyTitle("Security Check Required"))
+		if (!VerifyTitle("Esri | Facebook"))
 			Reporter.reportStep("This is not a Esri Facebook Page", "FAIL");
 	}
 	

@@ -24,7 +24,7 @@ public class ImageSubPortalPage_TC01 extends ESRIWrappers {
 	}
 
 	@Test(dataProvider="fetchdata")
-	public void imageSubmissionPortal(String ISPUrl, String pagetitle, String sectionTitle,String imgLabel, String secEvent, String rblbl, String rblbl2, String p2Title, String p3Title) throws Throwable{
+	public void imageSubmissionPortal(String ISPUrl, String radOptBtn1, String rad2OptBtn2, String pagetitle, String sectionTitle,String imgLabel, String secEvent, String rblbl, String rblbl2, String p2Title, String p3Title) throws Throwable{
 		openbrowser(ISPUrl);
 		new ImageSubPortalPage()
 		.verifyPageTitle(pagetitle)
@@ -32,9 +32,9 @@ public class ImageSubPortalPage_TC01 extends ESRIWrappers {
 		.verifyConferenceLabel(imgLabel)
 		.selectEvent(secEvent)
 		.radioBtn1Label(rblbl)
-		.clickradioOption1()
+		.clickradioOption1(radOptBtn1)
 		.radioBtn2Label(rblbl2)
-		.clickradio2Option2()
+		.clickradio2Option2(rad2OptBtn2)
 		.getStartedBtn()		
 		.verifyPermissiontitle(p2Title)
 		.clickAgreementchkbox()

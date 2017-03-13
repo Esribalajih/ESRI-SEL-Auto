@@ -19,7 +19,8 @@ public class ESRINewHome_AboutESRIPage extends ESRIWrappers {
 	}
 	
 	public ESRINewHome_AboutESRIPage VerifyAboutESRIHeader(String AboutESRIHeader) throws Throwable{
-		waitForPageLoad(3);
+		//waitForPageLoad(5);
+		//VerifyTextByXpath(prop.getProperty("NewEsriUATHomePage.SeeHowwithTheScienceofWherePageHeader.xpath"),AboutESRIHeader);
 		VerifyTextByClassName(prop.getProperty("NewEsriUATHomePage.SeeHowwithTheScienceofWherePageHeader.className"),AboutESRIHeader);
 		return this;
 	}

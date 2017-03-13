@@ -9,14 +9,15 @@
     </classes>
     </test>
     
-    <!--<test name='NewESRI_Home_Firefox'>
+    <!-- 
+    <test name='NewESRI_Home_Firefox'>
     <parameter name="browser" value="firefox"/>
     <classes>
    	 		<class name="com.esri.test.auto.testcases.ESRINewHome_TC01" />  
     </classes>
-    </test> -->
+    </test>
     
-    <!-- <test name='NewESRI_Home_Internet explorer'>
+    <test name='NewESRI_Home_Internet explorer'>
     <parameter name="browser" value="internet explorer"/>
     <classes>
    	 		<class name="com.esri.test.auto.testcases.ESRINewHome_TC01" />  
