@@ -57,5 +57,12 @@ public class ETCDashboardPage extends ESRIWrappers{
 			}
 		}
 	}
-
+	public ETCTimeCardExemptViewPage verifyETCTimeCardHeader(String displayName) throws Throwable{
+		switchToWindow();
+		clickOkAlertBox();
+		waitForPageLoad(10);
+		System.out.println("Esri Dev");
+		VerifyTextByXpath(prop.getProperty("ETCTimeCardExemptViewPage.TimecardHeader.xpath"), displayName);
+		return new ETCTimeCardExemptViewPage();
+	}
 }

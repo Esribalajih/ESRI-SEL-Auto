@@ -27,6 +27,7 @@ public class ETCOKTAPage extends ESRIWrappers {
 	
 	public ETCDashboardPage clickSigninBtn(String signInBtn) throws Throwable{
 		clickButtonByXpath(prop.getProperty("ETCOKTAPage.Signinbutton.xpath"), signInBtn);
+		waitForPageLoad(10);
 		return new ETCDashboardPage();
 	}
 	
