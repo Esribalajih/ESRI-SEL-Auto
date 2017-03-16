@@ -17,12 +17,14 @@ import com.esri.test.auto.wrappers.ESRIWrappers;
 public class ETCDashboardPage extends ESRIWrappers{
 	
 	public ETCDashboardPage() throws Throwable{
-		if(!VerifyTitle("Esri Dev - Sign In")){
+		waitForPageLoad(3);
+		if(!VerifyTitle("Esri Dev - My Applications")){
 			Reporter.reportStep("Esri Dev - My Applications", "FAIL");
 		}
 	}
 	
 	public ETCDashboardPage verifyETCDashboardSigninDisplayName(String displayName) throws Throwable{
+		waitForPageLoad(5);
 		VerifyTextByXpath(prop.getProperty("ETCDashboardPage.DisplayName.xpath"), displayName);
 		return this;
 	}
@@ -31,15 +33,15 @@ public class ETCDashboardPage extends ESRIWrappers{
 	 * 
 	 * @throws Throwable
 	 */
-	public void verifyandClickETCTimeCardChicklet() throws Throwable{
+	public ETCDashboardPage verifyandClickETCTimeCardChicklet() throws Throwable{
 		int ListSize=0;
 		List<WebElement> elements=driver.findElements(By.xpath("//ul[@class='app-buttons-list clearfix ui-sortable']/li"));
 		List<String> litext = new ArrayList<String>();
 		for(WebElement element:elements){
-			Thread.sleep(5000);
+			Thread.sleep(2000);
 			WebElement ele=element.findElement(By.tagName("p"));
 			String licontent=ele.getAttribute("innerText");
-			System.out.println("--------> "+licontent+" Total-elements Size "+elements.size());
+			System.out.println("--------> "+licontent+" Total-elements Size ");
 			litext.add(licontent);
 		}
 		
@@ -48,7 +50,7 @@ public class ETCDashboardPage extends ESRIWrappers{
 			Thread.sleep(1000);
 			if(text.equalsIgnoreCase("Esri Timecard Dev")){
 				try {
-					Thread.sleep(5000);
+					Thread.sleep(2000);
 					driver.findElement(By.xpath("//ul[@class='app-buttons-list clearfix ui-sortable']/li["+ListSize+"]/a")).click();
 				} catch (StaleElementReferenceException e) {
 					e.printStackTrace();
@@ -56,6 +58,7 @@ public class ETCDashboardPage extends ESRIWrappers{
 				break;
 			}
 		}
+		return this;
 	}
 	public ETCTimeCardExemptViewPage verifyETCTimeCardHeader(String displayName) throws Throwable{
 		switchToWindow();

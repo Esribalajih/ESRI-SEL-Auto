@@ -10,11 +10,20 @@ import com.esri.test.auto.wrappers.ESRIWrappers;
 public class ETCTimeCardExemptViewPage extends ESRIWrappers{
 	
 	public ETCTimeCardExemptViewPage() throws Throwable{
+		System.out.println("ETCTimeCardViewPage");
+		waitForPageLoad(10);
 		if(!VerifyTitle("Esri Timecard")){
-			Reporter.reportStep("Esri Timecard", "FAIL");
+			Reporter.reportStep("Esri Timecard Page is not launched successfully", "FAIL");
 		}
 		else
 			System.out.println("Esri Timecard Page is launched successfully");
+	}
+	
+	public ETCTimeCardExemptViewPage verifyETCTimeCardHeader(String displayName) throws Throwable{
+		waitForPageLoad(10);
+		System.out.println("verifyETCTimeCardView");
+		VerifyTextByXpath(prop.getProperty("ETCTimeCardExemptViewPage.TimecardHeader.xpath"), displayName);
+		return this;
 	}
 	
 	public ETCTimeCardExemptViewPage verifyETCUsername(String displayName) throws Throwable{
