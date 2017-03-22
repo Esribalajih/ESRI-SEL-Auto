@@ -60,6 +60,7 @@ public class ETCDashboardPage extends ESRIWrappers{
 		}
 		return this;
 	}
+	
 	public ETCTimeCardExemptViewPage verifyETCTimeCardHeader(String displayName) throws Throwable{
 		switchToWindow();
 		clickOkAlertBox();
@@ -68,4 +69,5 @@ public class ETCDashboardPage extends ESRIWrappers{
 		VerifyTextByXpath(prop.getProperty("ETCTimeCardExemptViewPage.TimecardHeader.xpath"), displayName);
 		return new ETCTimeCardExemptViewPage();
 	}
+
 }

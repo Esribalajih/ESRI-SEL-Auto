@@ -21,16 +21,19 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.Platform;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.security.UserAndPassword;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.esri.test.auto.utils.Reporter;
+import com.google.common.base.Predicate;
 
 /**This is the Generic Wrapper Methods called with in Pages and Test cases for Handling WebElements from the WebBrowser.
  * @author balajih
@@ -587,7 +590,26 @@ public class GenericWrappers implements WrappersInterface{
 			Reporter.reportStep("The Button "+ data +" is clicked successfully", "PASS");
 			bReturn = true;
 		} catch (Exception e) {
-			Reporter.reportStep("The Button "+ data +" is not clicked successfully", "FAIL");
+			Reporter.reportStep("The Button '"+ data +"' is not clicked successfully", "FAIL");
+		}	
+		return bReturn;
+	}
+	
+	/**This method will check the click of the buttons using the Xpath attribute to locate
+	 * @author balajih
+	 * @param xpathValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean clickTabByXpath(String xpathValue, String data) throws Throwable{
+		boolean bReturn = false;
+		try {
+			Reporter.reportStep("The Tab '"+ data +"' is clicked successfully", "PASS");
+			driver.findElement(By.xpath(xpathValue)).click();
+			Reporter.reportStep("The Tab '"+ data +"' is clicked successfully", "PASS");
+			bReturn = true;
+		} catch (Exception e) {
+			Reporter.reportStep("The Tab '"+ data +"' is not clicked successfully", "FAIL");
 		}	
 		return bReturn;
 	}
@@ -978,7 +1000,27 @@ public class GenericWrappers implements WrappersInterface{
 		}
 		return bReturn;
 	}
-	
+	/**This method is used to click OK button in Alert box
+	 * @author balajih
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean clickOkAlertBox(String data) throws Throwable {
+		boolean bReturn = false;
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+			Alert alert=wait.until(ExpectedConditions.alertIsPresent());
+			alert = driver.switchTo().alert();
+			alert.getText();
+			alert.accept();
+			
+			Reporter.reportStep("The Alert "+data+" button is clicked successfully", "PASS");
+			bReturn = true;
+		} catch (Exception e) {
+			Reporter.reportStep("The Alert "+data+" button has not been clicked", "FAIL");
+		}
+		return bReturn;
+	}
 	/**This method is used to click CANCEL button in Alert box
 	 * @author balajih
 	 * @return
@@ -1163,6 +1205,46 @@ public class GenericWrappers implements WrappersInterface{
 			e.printStackTrace();
 		}
 		return bReturn;
+	}
+
+	/**This method is used to wait for loading page js elements.
+	 * @author balajih
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public void waitForJsPageLoad(long seconds) {
+		try {
+			WebDriverWait wait=new WebDriverWait(driver,seconds);
+			wait.until( new Predicate<WebDriver>() {
+	            public boolean apply(WebDriver driver) {
+	                return ((JavascriptExecutor)driver).executeScript("return document.readyState").equals("complete");
+	            }
+	        }
+	    );
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**This method is used to sleep for the given seconds
+	 * @author balajih
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public void waitForJqueryPageLoad(long seconds) {
+		try {
+			WebDriverWait wait=new WebDriverWait(driver,seconds);
+			wait.until( new Predicate<WebDriver>() {
+	            public boolean apply(WebDriver driver) {
+	                return ((JavascriptExecutor)driver).executeScript("return jQuery.active").equals("0");
+	            }
+	        }
+	    );
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**This method is used to sleep for the given seconds
@@ -2443,7 +2525,7 @@ public class GenericWrappers implements WrappersInterface{
 		}
 		return bReturn;
 	}
-	/**This method is used to wait till element is visible for a given time.
+	/**This method is used to wait till element is visible for a given time using Ajax control.
 	 * @author Balajih
 	 * @param xpathValue
 	 * @return
@@ -2451,9 +2533,45 @@ public class GenericWrappers implements WrappersInterface{
 	 */
 	public void waitTillElementVisibleByXpath(String xpathValue) {
 		try {
-			// waiting 20 seconds to detect the visibility of the element
+			// waiting 30 seconds to detect the visibility of the element
 			WebDriverWait wait = new WebDriverWait(driver, 30);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathValue)));
+
+		} catch (Throwable e) {
+			e.printStackTrace();
+			System.err.println("Error while waiting for the element to be visible: " + e.getMessage());
+		}
+	}
+	
+	/**This method is used to wait till Invisible element is visible for a given time using Ajax control.
+	 * @author Balajih
+	 * @param xpathValue
+	 * @return
+	 * @throws Throwable
+	 */
+	public void waitTillInvisibilityOfElementLocatedByXpath(String xpathValue) {
+		try {
+			// waiting 30 seconds to detect the visibility of the element
+			WebDriverWait wait = new WebDriverWait(driver, 30);
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(xpathValue)));
+
+		} catch (Throwable e) {
+			e.printStackTrace();
+			System.err.println("Error while waiting for the element to be visible: " + e.getMessage());
+		}
+	}
+	
+	/**This method is used to wait till presence of element located for a given time using Ajax control.
+	 * @author Balajih
+	 * @param xpathValue
+	 * @return
+	 * @throws Throwable
+	 */
+	public void waitTillPresenceOfElementLocatedByXpath(String xpathValue) {
+		try {
+			// waiting 30 seconds to detect the visibility of the element
+			WebDriverWait wait = new WebDriverWait(driver, 30);
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpathValue)));
 
 		} catch (Throwable e) {
 			e.printStackTrace();

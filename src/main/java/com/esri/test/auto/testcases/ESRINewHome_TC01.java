@@ -31,15 +31,16 @@ public class ESRINewHome_TC01 extends ESRIWrappers {
 			String EsriAccountsUrl,String Username,String Password,String SignInBtn,String NewEsriSiteCoreURL,
 			String Image1Header, String Image1Link,String Image2Btn,String Image2Header, String Image2Link,
 			String Image3Btn, String Image3Header, String Image3Link, String Image4Btn, String Image4Header,
-			String Image4Link, String Quote1Btn, String Quote1, String Quote2Btn,String Quote2,
-			String Quote3Btn,String Quote3,String AboutESRIHeader, String LocationStrategyHeader,String DevSummitHeader,
-			String GeoAppsHeader,String ArcGISLink,String ProdHignLigImg,String ProdHignLigLink,String IndustryLink,
-			String IndIniImg,String IndIniLink,String NewsLink,String LatNewsImg,String LatNewsLink,
-			String EventsLink,String UpEventsImg,String UpEventsLink,String MapWeLoveLink,String FeaturedMapImg,
-			String FeaturedMapLink,String AboutESRILink,String WhatsGISLink,String EsriHomeLink,String EventsHeader,
-			String userconferenceHeader,String MapsWeLoveHeader,String MinneapolisSolarHeader,String EmailBtn,String InstaBtn,
-			String TwitterBtn,String FbBtn,String LinkedInBtn,String GooglePlusBtn,String RssBtn,
-			String IndustriesHeader,String OperationalIntelligenceHeader,String ESRINewsHeader,String GIS_IONHeader,String ArcGISWhatsNewHeader,
+			String Image4Link, String Quote1Btn, String Quote1, String Quote2Btn,String Quote2,String Quote3Btn,String Quote3, 
+			String AboutESRIHeader, String LocationStrategyHeader,String DevSummitHeader, String GeoAppsHeader,
+			String ArcGISLink,String ProdHignLigImg,String ProdHignLigLink,
+			String IndustryLink,String IndIniImg,String IndIniLink,String NewsLink,String LatNewsImg,
+			String LatNewsLink,String EventsLink,String UpEventsImg,String UpEventsLink,String MapWeLoveLink,
+			String FeaturedMapImg,String FeaturedMapLink,String AboutESRILink,String WhatsGISLink,String EsriHomeLink,
+			String EventsHeader,String userconferenceHeader,String MapsWeLoveHeader,String MinneapolisSolarHeader,String EmailBtn,
+			String InstaBtn,String TwitterBtn,String FbBtn,String LinkedInBtn,String GooglePlusBtn,
+			String RssBtn,String IndustriesHeader,String OperationalIntelligenceHeader,String ESRINewsHeader,String GIS_IONHeader
+			,String ArcGISWhatsNewHeader,
 			String GoogleTagManagerNoScript,String GoogleTagManagerScript,String HeaderEmbedCode,String FooterEmbedCode,String PardotLayerCode) throws Throwable{
 		openbrowser(EsriAccountsUrl);
 		new SigninPage()

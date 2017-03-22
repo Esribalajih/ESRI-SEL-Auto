@@ -235,6 +235,28 @@ public class Dist_Finland_HomePage extends ESRIWrappers {
 		}
 		return new Dist_Finland_YhteystiedotPage();
 	}
-
+	
+	//Verifying Google Tag and Abobe Analytics
+	
+	public Dist_Finland_HomePage headerEmbedCode(String HeaderEmbedCode) throws Throwable{
+		verifyHeaderEmbedCode(prop.getProperty("Tag.HeaderEmbedCode.xpath"),HeaderEmbedCode);
+		return this;
+	}
+	public Dist_Finland_HomePage googleTagManagerForScript(String GoogleTagManagerScript) throws Throwable{
+		verifyGoogleTagManagerForScript(prop.getProperty("Tag.GoogleTagManagerForScript.xpath"),GoogleTagManagerScript);
+		return this;
+	}	
+	public Dist_Finland_HomePage googleTagManagerForNoScript(String GoogleTagManagerNoScript) throws Throwable{
+		verifyGoogleTagManagerForNoScript(prop.getProperty("Tag.GoogleTagManagerForNoScript.xpath"),GoogleTagManagerNoScript);
+		return this;
+	}
+	public Dist_Finland_HomePage footerEmbbedCode(String FooterEmbedCode) throws Throwable{
+		verifyFooterEmbedCode(prop.getProperty("Tag.FooterEmbbedCode.xpath"),FooterEmbedCode);
+		return this;
+	}
+	public Dist_Finland_HomePage pardotDataLayerCode(String PardotLayerCode) throws Throwable{
+		verifyPardotDataLayerCode(prop.getProperty("Tag.PardotDataLayerCode.xpath"),PardotLayerCode);
+		return this;
+	}
 		
 }

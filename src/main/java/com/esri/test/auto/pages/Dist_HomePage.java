@@ -114,26 +114,50 @@ public class Dist_HomePage extends ESRIWrappers {
 	}
 
 	// Verify ArcGIS Platform label - Distributor Test
-		public Dist_HomePage verifyArcGISPlatformLabel(String data) throws Throwable {
-			try {
-				WebDriverWait wait = new WebDriverWait(driver, 10);
-				wait.until(ExpectedConditions
-						.presenceOfElementLocated(By.xpath(prop.getProperty("homePage.arcGISPlatformLabel.xpath"))));
-				verifyValueByXpath(prop.getProperty("homePage.arcGISPlatformLabel.xpath"), data);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			return this;
-		}
-		
-		// click back button in browser
-		public Dist_Mexico_HomePage clickbsrBackBtn_MexicoHomePage() throws Throwable {
-			try {
-				clickBrowserBackButton();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			return new Dist_Mexico_HomePage();
-		}
 	
+	public Dist_HomePage verifyArcGISPlatformLabel(String data) throws Throwable {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+			wait.until(ExpectedConditions
+					.presenceOfElementLocated(By.xpath(prop.getProperty("homePage.arcGISPlatformLabel.xpath"))));
+			verifyValueByXpath(prop.getProperty("homePage.arcGISPlatformLabel.xpath"), data);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return this;
+	}
+		
+	// click back button in browser
+	public Dist_Mexico_HomePage clickbsrBackBtn_MexicoHomePage() throws Throwable {
+		try {
+			clickBrowserBackButton();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return new Dist_Mexico_HomePage();
+	}
+	
+
+	//Verifying Google Tag and Abobe Analytics
+	
+	public Dist_HomePage headerEmbedCode(String HeaderEmbedCode) throws Throwable{
+		verifyHeaderEmbedCode(prop.getProperty("Tag.HeaderEmbedCode.xpath"),HeaderEmbedCode);
+		return this;
+	}
+	public Dist_HomePage googleTagManagerForScript(String GoogleTagManagerScript) throws Throwable{
+		verifyGoogleTagManagerForScript(prop.getProperty("Tag.GoogleTagManagerForScript.xpath"),GoogleTagManagerScript);
+		return this;
+	}	
+	public Dist_HomePage googleTagManagerForNoScript(String GoogleTagManagerNoScript) throws Throwable{
+		verifyGoogleTagManagerForNoScript(prop.getProperty("Tag.GoogleTagManagerForNoScript.xpath"),GoogleTagManagerNoScript);
+		return this;
+	}
+	public Dist_HomePage footerEmbbedCode(String FooterEmbedCode) throws Throwable{
+		verifyFooterEmbedCode(prop.getProperty("Tag.FooterEmbbedCode.xpath"),FooterEmbedCode);
+		return this;
+	}
+	public Dist_HomePage pardotDataLayerCode(String PardotLayerCode) throws Throwable{
+		verifyPardotDataLayerCode(prop.getProperty("Tag.PardotDataLayerCode.xpath"),PardotLayerCode);
+		return this;
+	}	
 }

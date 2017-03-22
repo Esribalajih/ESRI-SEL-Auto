@@ -384,6 +384,13 @@ public interface WrappersInterface {
 	 */
 	public boolean clickOkAlertBox() throws Throwable;
 	
+	/**This method is used to click the button in Alert box
+	 * @author balajih
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean clickOkAlertBox(String data) throws Throwable;
+	
 	/**This method is used to click CANCEL button in Alert box
 	 * @author balajih
 	 * @return
@@ -556,6 +563,14 @@ public interface WrappersInterface {
 	 * @throws Throwable
 	 */
 	public void handlingBAuthUsingRobo(String uName, String pwd);
+	
+	/**This method will check the click of the buttons using the Xpath attribute to locate
+	 * @author balajih
+	 * @param xpathValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean clickTabByXpath(String xpathValue, String data) throws Throwable;
 	
 	/**
 	 * This method will verify the Web Table using Xpath
@@ -1151,4 +1166,29 @@ public interface WrappersInterface {
 	 * @throws Throwable
 	 */
 	public void clickDynamicWebTableByxpath(String xpath, String data) throws Throwable;
+	
+	/**This method is used to sleep for the given seconds
+	 * @author balajih
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public void waitForJqueryPageLoad(long seconds);
+	
+	/**This method is used to fetch the data from dropdown using select Option By Index attribute to locate
+	 * @author balajih
+	 * @param xpathValue - name of the webelement
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean selectOptionByIndex(String xpathValue, String data) throws Throwable;
+	
+	/**This method is used to wait for loading page js elements.
+	 * @author balajih
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public void waitForJsPageLoad(long seconds);
 }

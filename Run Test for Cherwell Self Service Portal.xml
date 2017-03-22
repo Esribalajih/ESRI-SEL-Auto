@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="classes" verbose="5" thread-count="1">
+  
+    <test name='Esri_Cherwell_SelfServicePortal_Chrome'>
+    <parameter name="browser" value="chrome"/>
+    <classes>
+			<class name="com.esri.test.auto.testcases.Cherwell_SelfServicePortal_TC_01" />
+			
+    </classes>
+    </test> 
+    
+	<!-- <test name='Esri_Cherwell_SelfServicePortal_Firefox'>
+    <parameter name="browser" value="firefox"/>
+    <classes>
+			<class name="com.esri.test.auto.testcases.Esri_Cherwell_SelfServicePortal_TC_01" />		
+    </classes>
+    </test> -->
+    
+   <!--  <test name='Esri_Cherwell_SelfServicePortal_Internet Explorer'>
+    <parameter name="browser" value="internet explorer"/>
+    <classes>
+			<class name="com.esri.test.auto.testcases.Esri_Cherwell_SelfServicePortal_TC_01" />
+    </classes>
+    </test>  -->
+    
+</suite> 
