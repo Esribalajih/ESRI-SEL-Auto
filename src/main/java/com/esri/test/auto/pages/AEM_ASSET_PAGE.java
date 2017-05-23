@@ -552,8 +552,8 @@ public class AEM_ASSET_PAGE extends ESRIWrappers {
 							By.xpath("//div[@class='foundation-layout-panel-content']/coral-masonry/coral-masonry-item["
 							+count+"]/coral-card/div/coral-card-content/coral-card-title")).getText();
 					if (folderName.equalsIgnoreCase(JpegName)) {
-						mouseHoverByXpath("//div[@class='foundation-layout-panel-content']/coral-masonry/coral-masonry-item["+count+"]/coral-card/div/coral-card-content/coral-card-title");
-						mouseHoverByXpath("//div[@class='foundation-layout-panel-content']/coral-masonry/coral-masonry-item["+count+"]/coral-quickactions/button[1]");
+					//	mouseHoverByXpath("//div[@class='foundation-layout-panel-content']/coral-masonry/coral-masonry-item["+count+"]/coral-card/div/coral-card-content/coral-card-title");
+						//mouseHoverByXpath("//div[@class='foundation-layout-panel-content']/coral-masonry/coral-masonry-item["+count+"]/coral-quickactions/button[1]");
 						System.out.println("mouse hovered");
 						clickByJavaScript("//div[@class='foundation-layout-panel-content']/coral-masonry/coral-masonry-item["+count+"]/coral-quickactions/button[1]/coral-button-label");
 						Reporter.reportStep("Assert is clicked", "PASS");
@@ -620,10 +620,10 @@ public class AEM_ASSET_PAGE extends ESRIWrappers {
 							.getText();
 					if (folderName.equalsIgnoreCase(fName)) {
 						System.out.println(folderName);
-						mouseHoverByXpath("//div[@class='foundation-layout-panel-content']/coral-masonry/coral-masonry-item["
+						/*mouseHoverByXpath("//div[@class='foundation-layout-panel-content']/coral-masonry/coral-masonry-item["
 								+ count + "]/coral-card/div/coral-card-content/coral-card-title");
 						mouseHoverByXpath("//div[@class='foundation-layout-panel-content']/coral-masonry/coral-masonry-item["
-								+ count + "]//coral-quickactions/button[1]");
+								+ count + "]//coral-quickactions/button[1]");*/
 						clickByJavaScript("//div[@class='foundation-layout-panel-content']/coral-masonry/coral-masonry-item["
 								+ count + "]//coral-quickactions/button[1]");
 						waitForPageLoad(3);

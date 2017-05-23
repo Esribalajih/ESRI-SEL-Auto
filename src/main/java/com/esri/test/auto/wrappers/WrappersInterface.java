@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.esri.test.auto.wrappers;
 
 import java.io.FileNotFoundException;
@@ -91,6 +88,14 @@ public interface WrappersInterface {
 	 * @throws Throwable
 	 */
 	public boolean VerifyTitle(String title) throws Throwable;
+	
+	/**This method will verify the fetched Window title is displayed or not.
+	 * @author balajih
+	 * @param idValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean VerifyWindowTitleById(String idValue, String WinTitle) throws Throwable;
 	
 	/**This method will verify the entered value in text field using Id attribute to locate
 	 * @author balajih
@@ -230,6 +235,24 @@ public interface WrappersInterface {
 	 */
 	public boolean clickButtonByXpath(String xpathValue, String data) throws Throwable;
 	
+	/**This method will check the click of the Drop-down list Option using the Xpath attribute to locate
+	 * This is mainly used for Kendo-UI Drop down list
+	 * @author balajih
+	 * @param xpathValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean clickOptionByXpath(String xpathValue, String data) throws Throwable;
+	
+	/**This method will check the click of the Drop-down list Option using the CSS Selector attribute to locate
+	 * This is mainly used for Kendo-UI Drop down list
+	 * @author balajih
+	 * @param CssValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean clickOptionByCssSelector(String CssValue, String data) throws Throwable;
+	
 	/**This method will check the click of the buttons using the Xpath attribute to locate
 	 * @author balajih
 	 * @param xpathValue - name of the webelement
@@ -253,6 +276,14 @@ public interface WrappersInterface {
 	 * @throws Throwable
 	 */
 	public boolean clickByLinkText(String linkTextValue) throws Throwable;
+	
+	/**This method will check the click of the link text attribute to locate
+	 * @author balajih
+	 * @param linkTextValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean clickButtonByLinkText(String linkTextValue, String data) throws Throwable;
 	
 	/**This method will check the click of the partial link text attribute to locate
 	 * @author balajih
@@ -572,6 +603,14 @@ public interface WrappersInterface {
 	 */
 	public boolean clickTabByXpath(String xpathValue, String data) throws Throwable;
 	
+	/**This method will check the click of the buttons using the Xpath attribute to locate
+	 * @author balajih
+	 * @param xpathValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean clickTabByClassname(String CValue, String data) throws Throwable;
+	
 	/**
 	 * This method will verify the Web Table using Xpath
 	 * @author balajih
@@ -629,7 +668,7 @@ public interface WrappersInterface {
 	 * @return
 	 * @throws Throwable
 	 */
-	public boolean mouseHoverByXpath(String xpathValue) throws Throwable;
+	public boolean mouseHoverByXpath(String xpathValue, String data) throws Throwable;
 	
 	/**
 	 * This method is used to Mouse hover on the element using CSS element.
@@ -639,7 +678,7 @@ public interface WrappersInterface {
 	 * @return
 	 * @throws Throwable
 	 */
-	public boolean mouseHoverByCSS(String cssValue) throws Throwable;
+	public boolean mouseHoverByCSS(String cssValue, String data) throws Throwable;
 	
 	/**
 	 * This method is used to Mouse hover on the element using class name element.
@@ -649,7 +688,7 @@ public interface WrappersInterface {
 	 * @return
 	 * @throws Throwable
 	 */
-	public boolean mouseHoverByClassName(String classNameValue) throws Throwable;
+	public boolean mouseHoverByClassName(String classNameValue, String data) throws Throwable;
 	
 	/**
 	 * This method is used to Mouse hover on the element using name element.
@@ -659,7 +698,7 @@ public interface WrappersInterface {
 	 * @return
 	 * @throws Throwable
 	 */
-	public boolean mouseHoverByName(String nameValue) throws Throwable;
+	public boolean mouseHoverByName(String nameValue, String data) throws Throwable;
 	
 	/**
 	 * This method is used to Mouse hover on the element using LinkText element.
@@ -669,7 +708,7 @@ public interface WrappersInterface {
 	 * @return
 	 * @throws Throwable
 	 */
-	public boolean mouseHoverByLinkText(String linkTextValue) throws Throwable;
+	public boolean mouseHoverByLinkText(String linkTextValue, String data) throws Throwable;
 	
 	/**
 	 * This method is used to Mouse hover on the element using Partial Link Text element.
@@ -679,7 +718,7 @@ public interface WrappersInterface {
 	 * @return
 	 * @throws Throwable
 	 */
-	public boolean mouseHoverByPLinkText(String pLinkTextValue) throws Throwable; 
+	public boolean mouseHoverByPLinkText(String pLinkTextValue, String data) throws Throwable; 
 	
 	/**
 	 * This method is used to fetch the data from dropdown using select By Id

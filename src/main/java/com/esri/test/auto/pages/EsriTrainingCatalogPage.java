@@ -67,8 +67,8 @@ public class EsriTrainingCatalogPage extends ESRIWrappers {
 		clickByXpath(prop.getProperty("Training.catalogEventSearch.xpath"));
 		return new EsriTrainingCatalogEventSearchPage();
 	}
-	public EsriTrainingCatalogSearchPage clickFindTraining() throws Throwable{
-		mouseHoverByXpath(prop.getProperty("Training.catalogMouseHover.xpath"));
+	public EsriTrainingCatalogSearchPage clickFindTraining(String data) throws Throwable{
+		mouseHoverByXpath(prop.getProperty("Training.catalogMouseHover.xpath"),data);
 		clickByXpath(prop.getProperty("Training.catalogClickFindTraining.xpath"));
 		return new EsriTrainingCatalogSearchPage();
 	}

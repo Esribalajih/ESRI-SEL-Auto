@@ -28,12 +28,13 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.security.UserAndPassword;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import com.esri.test.auto.utils.Reporter;
+
+import com.gargoylesoftware.htmlunit.javascript.background.JavaScriptExecutor;
 import com.google.common.base.Predicate;
+import com.esri.test.auto.utils.Reporter;
 
 /**This is the Generic Wrapper Methods called with in Pages and Test cases for Handling WebElements from the WebBrowser.
  * @author balajih
@@ -225,7 +226,7 @@ public class GenericWrappers implements WrappersInterface{
 	public boolean enterByXpath(String xpathValue,String data) throws Throwable{
 		boolean bReturn = false;
 		try {
-			driver.findElement(By.xpath(xpathValue)).clear();
+			//driver.findElement(By.xpath(xpathValue)).clear();
 			driver.findElement(By.xpath(xpathValue)).sendKeys(data);
 			Reporter.reportStep("The data "+ data +" is entered successfully.", "PASS");
 			bReturn = true;
@@ -277,6 +278,27 @@ public class GenericWrappers implements WrappersInterface{
 				bReturn=false;
 			}
 		}
+		return bReturn;
+	}
+	
+	/**This method will verify the fetched Window title is displayed or not.
+	 * @author balajih
+	 * @param idValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean VerifyWindowTitleById(String idValue, String WinTitle) throws Throwable {
+		boolean bReturn=false;
+		try{
+		if(driver.findElement(By.id(idValue)).getText().equalsIgnoreCase(WinTitle)){
+				Reporter.reportStep("The title of the Window "+ WinTitle+" is displayed successfully.", "PASS");
+				bReturn=true;
+			}
+			} catch (NoSuchElementException e){
+				Reporter.reportStep("The title of the Window "+ WinTitle+" is not available to check.", "FAIL");
+			}	catch (Exception e) {
+				Reporter.reportStep("The title of the Window "+ WinTitle+" is not displayed successfully.", "FAIL");
+			}
 		return bReturn;
 	}
 
@@ -585,12 +607,52 @@ public class GenericWrappers implements WrappersInterface{
 	public boolean clickButtonByXpath(String xpathValue, String data) throws Throwable{
 		boolean bReturn = false;
 		try {
-			Reporter.reportStep("The Button "+ data +" is clicked successfully", "PASS");
+			Reporter.reportStep("The "+ data +" button is clicked successfully", "PASS");
 			driver.findElement(By.xpath(xpathValue)).click();
-			Reporter.reportStep("The Button "+ data +" is clicked successfully", "PASS");
+			Reporter.reportStep("The "+ data +" button is clicked successfully", "PASS");
 			bReturn = true;
 		} catch (Exception e) {
-			Reporter.reportStep("The Button '"+ data +"' is not clicked successfully", "FAIL");
+			Reporter.reportStep("The "+ data +" button is not clicked successfully", "FAIL");
+		}	
+		return bReturn;
+	}
+	
+	/**This method will check the click of the Drop-down list Option using the Xpath attribute to locate
+	 * This is mainly used for Kendo-UI Drop down list
+	 * @author balajih
+	 * @param xpathValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean clickOptionByXpath(String xpathValue, String data) throws Throwable{
+		boolean bReturn = false;
+		try {
+			Reporter.reportStep("The "+ data +" option is selected successfully", "PASS");
+			driver.findElement(By.xpath(xpathValue)).click();
+			Reporter.reportStep("The "+ data +" option is selected successfully", "PASS");
+			bReturn = true;
+		} catch (Exception e) {
+			Reporter.reportStep("The "+ data +" option is not selected successfully", "FAIL");
+		}	
+		return bReturn;
+	}
+	
+	/**This method will check the click of the Drop-down list Option using the CSS Selector attribute to locate
+	 * This is mainly used for Kendo-UI Drop down list
+	 * @author balajih
+	 * @param CssValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean clickOptionByCssSelector(String CssValue, String data) throws Throwable{
+		boolean bReturn = false;
+		try {
+			Reporter.reportStep("The "+ data +" option is selected successfully", "PASS");
+			driver.findElement(By.cssSelector(CssValue)).click();
+			Reporter.reportStep("The "+ data +" option is selected successfully", "PASS");
+			bReturn = true;
+		} catch (Exception e) {
+			Reporter.reportStep("The "+ data +" option is not selected successfully", "FAIL");
 		}	
 		return bReturn;
 	}
@@ -604,12 +666,31 @@ public class GenericWrappers implements WrappersInterface{
 	public boolean clickTabByXpath(String xpathValue, String data) throws Throwable{
 		boolean bReturn = false;
 		try {
-			Reporter.reportStep("The Tab '"+ data +"' is clicked successfully", "PASS");
+			Reporter.reportStep("The "+ data +" tab is clicked successfully", "PASS");
 			driver.findElement(By.xpath(xpathValue)).click();
-			Reporter.reportStep("The Tab '"+ data +"' is clicked successfully", "PASS");
+			Reporter.reportStep("The "+ data +" tab is clicked successfully", "PASS");
 			bReturn = true;
 		} catch (Exception e) {
-			Reporter.reportStep("The Tab '"+ data +"' is not clicked successfully", "FAIL");
+			Reporter.reportStep("The "+ data +" tab is not clicked successfully", "FAIL");
+		}	
+		return bReturn;
+	}
+	
+	/**This method will check the click of the buttons using the Xpath attribute to locate
+	 * @author balajih
+	 * @param xpathValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean clickTabByClassname(String CValue, String data) throws Throwable{
+		boolean bReturn = false;
+		try {
+			Reporter.reportStep("The "+ data +" tab is clicked successfully", "PASS");
+			driver.findElement(By.className(CValue)).click();
+			Reporter.reportStep("The "+ data +" tab is clicked successfully", "PASS");
+			bReturn = true;
+		} catch (Exception e) {
+			Reporter.reportStep("The "+ data +" tab is not clicked successfully", "FAIL");
 		}	
 		return bReturn;
 	}
@@ -666,6 +747,25 @@ public class GenericWrappers implements WrappersInterface{
 			bReturn = true;
 		} catch (Exception e) {
 			Reporter.reportStep("The Link is not clicked successfully", "FAIL");
+		}	
+		return bReturn;
+	}
+	
+	/**This method will check the click of the link text attribute to locate
+	 * @author balajih
+	 * @param linkTextValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean clickButtonByLinkText(String linkTextValue, String data) throws Throwable{
+		boolean bReturn = false;
+		try {
+			Reporter.reportStep("The Link "+ data +" is clicked successfully", "PASS");
+			driver.findElement(By.linkText(linkTextValue)).click();
+			Reporter.reportStep("The Link "+ data +" is clicked successfully", "PASS");
+			bReturn = true;
+		} catch (Exception e) {
+			Reporter.reportStep("The Link "+ data +" is not clicked successfully", "FAIL");
 		}	
 		return bReturn;
 	}
@@ -935,10 +1035,10 @@ public class GenericWrappers implements WrappersInterface{
 		try {
 			Select dropdown = new Select(driver.findElement(By.xpath(xpathValue)));
 			dropdown.selectByVisibleText(data);
-			Reporter.reportStep("The element is selected with value"+ data+" successfully", "PASS");
+			Reporter.reportStep("The "+ data+" value is selected successfully", "PASS");
 			bReturn = true;
 		} catch (Exception e) {
-			Reporter.reportStep("The value "+ data +" is not selected", "FAIL");
+			Reporter.reportStep("The "+ data +" value is not selected", "FAIL");
 		}
 		return bReturn;
 	}
@@ -955,10 +1055,10 @@ public class GenericWrappers implements WrappersInterface{
 		try {
 			Select dropdown = new Select(driver.findElement(By.tagName(tagNameValue)));
 			dropdown.selectByVisibleText(data);
-			Reporter.reportStep("The element is selected with value"+ data+" successfully", "PASS");
+			Reporter.reportStep("The "+ data+" value is selected successfully", "PASS");
 			bReturn = true;
 		} catch (Exception e) {
-			Reporter.reportStep("The value "+ data +" is not selected", "FAIL");
+			Reporter.reportStep("The "+ data +" value is not selected", "FAIL");
 		}
 		return bReturn;
 	}
@@ -1088,11 +1188,11 @@ public class GenericWrappers implements WrappersInterface{
 		boolean bReturn=false;
 		new Actions(driver).moveToElement(driver.findElement(By.id(idValue))).build().perform();
 		try {
-			Reporter.reportStep("The mouse hover to the element is successful", "PASS");
+			Reporter.reportStep("The mouse hover to the element is successfull", "PASS");
 			bReturn = true;
 
 		} catch (Throwable e) {
-			Reporter.reportStep("The mouse hover to the element is not successful", "FAIL");
+			Reporter.reportStep("The mouse hover to the element is not successfull", "FAIL");
 		}
 		return bReturn;
 	}
@@ -1593,15 +1693,15 @@ public class GenericWrappers implements WrappersInterface{
 	 * @return
 	 * @throws Throwable
 	 */
-	public boolean mouseHoverByXpath(String xpathValue) throws Throwable {
+	public boolean mouseHoverByXpath(String xpathValue, String data) throws Throwable {
 		boolean bReturn = false;
 		try {
 			new Actions(driver).moveToElement(driver.findElement(By.xpath(xpathValue))).build().perform();
-			Reporter.reportStep("The mouse hover to the" + xpathValue + " element is successful", "PASS");
+			Reporter.reportStep("The mouse hover to the" + data + " element is successful", "PASS");
 			bReturn = true;
 
 		} catch (Throwable e) {
-			Reporter.reportStep("The mouse hover to the" + xpathValue + " element is not successful", "FAIL");
+			Reporter.reportStep("The mouse hover to the" + data + " element is not successful", "FAIL");
 		}
 		return bReturn;
 	}
@@ -1613,15 +1713,15 @@ public class GenericWrappers implements WrappersInterface{
 	 * @return
 	 * @throws Throwable
 	 */
-	public boolean mouseHoverByCSS(String cssValue) throws Throwable {
+	public boolean mouseHoverByCSS(String cssValue, String data) throws Throwable {
 		boolean bReturn = false;
 		try {
 			new Actions(driver).moveToElement(driver.findElement(By.cssSelector(cssValue))).build().perform();
-			Reporter.reportStep("The mouse hover to the" + cssValue + " element is successful", "PASS");
+			Reporter.reportStep("The mouse hover to the" + data + " element is successful", "PASS");
 			bReturn = true;
 
 		} catch (Throwable e) {
-			Reporter.reportStep("The mouse hover to the" + cssValue + " element is not successful", "FAIL");
+			Reporter.reportStep("The mouse hover to the" + data + " element is not successful", "FAIL");
 		}
 		return bReturn;
 	}
@@ -1633,15 +1733,15 @@ public class GenericWrappers implements WrappersInterface{
 	 * @return
 	 * @throws Throwable
 	 */
-	public boolean mouseHoverByClassName(String classNameValue) throws Throwable {
+	public boolean mouseHoverByClassName(String classNameValue, String data) throws Throwable {
 		boolean bReturn = false;
 		try {
 			new Actions(driver).moveToElement(driver.findElement(By.className(classNameValue))).build().perform();
-			Reporter.reportStep("The mouse hover to the" + classNameValue + " element is successful", "PASS");
+			Reporter.reportStep("The mouse hover to the" + data + " element is successful", "PASS");
 			bReturn = true;
 
 		} catch (Throwable e) {
-			Reporter.reportStep("The mouse hover to the" + classNameValue + " element is not successful", "FAIL");
+			Reporter.reportStep("The mouse hover to the" + data + " element is not successful", "FAIL");
 		}
 		return bReturn;
 	}
@@ -1653,15 +1753,15 @@ public class GenericWrappers implements WrappersInterface{
 	 * @return
 	 * @throws Throwable
 	 */
-	public boolean mouseHoverByName(String nameValue) throws Throwable {
+	public boolean mouseHoverByName(String nameValue, String data) throws Throwable {
 		boolean bReturn = false;
 		try {
 			new Actions(driver).moveToElement(driver.findElement(By.name(nameValue))).build().perform();
-			Reporter.reportStep("The mouse hover to the" + nameValue + " element is successful", "PASS");
+			Reporter.reportStep("The mouse hover to the" + data + " element is successful", "PASS");
 			bReturn = true;
 
 		} catch (Throwable e) {
-			Reporter.reportStep("The mouse hover to the" + nameValue + " element is not successful", "FAIL");
+			Reporter.reportStep("The mouse hover to the" + data + " element is not successful", "FAIL");
 		}
 		return bReturn;
 	}
@@ -1673,15 +1773,15 @@ public class GenericWrappers implements WrappersInterface{
 	 * @return
 	 * @throws Throwable
 	 */
-	public boolean mouseHoverByLinkText(String linkTextValue) throws Throwable {
+	public boolean mouseHoverByLinkText(String linkTextValue, String data) throws Throwable {
 		boolean bReturn = false;
 		try {
 			new Actions(driver).moveToElement(driver.findElement(By.linkText(linkTextValue))).build().perform();
-			Reporter.reportStep("The mouse hover to the" + linkTextValue + " element is successful", "PASS");
+			Reporter.reportStep("The mouse hover to the" + data + " element is successful", "PASS");
 			bReturn = true;
 
 		} catch (Throwable e) {
-			Reporter.reportStep("The mouse hover to the" + linkTextValue + " element is not successful", "FAIL");
+			Reporter.reportStep("The mouse hover to the" + data + " element is not successful", "FAIL");
 		}
 		return bReturn;
 	}
@@ -1693,15 +1793,15 @@ public class GenericWrappers implements WrappersInterface{
 	 * @return
 	 * @throws Throwable
 	 */
-	public boolean mouseHoverByPLinkText(String pLinkTextValue) throws Throwable {
+	public boolean mouseHoverByPLinkText(String pLinkTextValue, String data) throws Throwable {
 		boolean bReturn = false;
 		try {
 			new Actions(driver).moveToElement(driver.findElement(By.partialLinkText(pLinkTextValue))).build().perform();
-			Reporter.reportStep("The mouse hover to the" + pLinkTextValue + " element is successful", "PASS");
+			Reporter.reportStep("The mouse hover to the" + data + " element is successful", "PASS");
 			bReturn = true;
 
 		} catch (Throwable e) {
-			Reporter.reportStep("The mouse hover to the" + pLinkTextValue + " element is not successful", "FAIL");
+			Reporter.reportStep("The mouse hover to the" + data + " element is not successful", "FAIL");
 		}
 		return bReturn;
 	}

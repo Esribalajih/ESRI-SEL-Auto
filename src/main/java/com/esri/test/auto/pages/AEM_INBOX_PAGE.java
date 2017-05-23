@@ -90,7 +90,7 @@ public class AEM_INBOX_PAGE extends ESRIWrappers {
 				String style=driver.findElement(By.xpath("//div[@id='mod-guid-"+i+"']")).getAttribute("style");
 				System.out.println(style);
 				if(!style.equalsIgnoreCase("margin-left: 0px; margin-top: 0px; display: none;")){
-					mouseHoverByXpath("//div[@id='mod-guid-"+i+"']/div[1]/button[1]/i");
+				//	mouseHoverByXpath("//div[@id='mod-guid-"+i+"']/div[1]/button[1]/i");
 					clickByXpath("//div[@id='mod-guid-"+i+"']/div[1]/button[1]/i");
 					break;
 				}	

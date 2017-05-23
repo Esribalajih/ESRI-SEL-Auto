@@ -9,11 +9,13 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import com.esri.test.auto.wrappers.GenericWrappers;
+
 /**This is to read the test data from the workbook
  * @author balajih
  *
  */
-public class DataInputProvider  extends com.esri.test.auto.wrappers.GenericWrappers{
+public class DataInputProvider  extends GenericWrappers{
 
 	public static String[][] getSheet(String dataSheetName) throws IOException{
 		String[][] data=null;

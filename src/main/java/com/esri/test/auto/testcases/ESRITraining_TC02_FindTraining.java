@@ -21,11 +21,11 @@ public class ESRITraining_TC02_FindTraining extends ESRIWrappers {
 	}
 
 	@Test(dataProvider="fetchdata")
-	public void loginforSuccess(String keyword1) throws Throwable {
+	public void loginforSuccess(String keyword1, String data) throws Throwable {
 		openbrowser("https://www.esri.com/training/");
 		new EsriTrainingHomePage()
 			.catalogTab()
-			.clickFindTraining()
+			.clickFindTraining(data)
 			.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 			.enterKeywords(keyword1)
 			.clickSearch()
