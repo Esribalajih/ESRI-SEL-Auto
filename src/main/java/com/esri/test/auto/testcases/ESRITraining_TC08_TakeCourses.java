@@ -21,7 +21,7 @@ public class ESRITraining_TC08_TakeCourses extends ESRIWrappers {
 	}
 
 	@Test(dataProvider="fetchdata")
-	public void loginforSuccess(String username,String password) throws Throwable {
+	public void loginforSuccess(String username,String password,String data) throws Throwable {
 		
 		openbrowser("https://www.esri.com/training/");
 		new EsriTrainingHomePage()
@@ -30,7 +30,7 @@ public class ESRITraining_TC08_TakeCourses extends ESRIWrappers {
 		.password(password)
 		.signInHomepage()
 		.catalogTab()
-		.clickFindTraining()
+		.clickFindTraining(data)
 		.selectTakeCoursesFilterInstructorLed()
 		.headerEmbedCode().googleTagManagerForNoScript().googleTagManagerForScript().footerEmbbedCode().pardotDataLayerCode()
 		.selectTakeCoursesFilterWebCourses()
