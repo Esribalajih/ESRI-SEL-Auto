@@ -10,8 +10,11 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 
-import com.traqtion.test.auto.utils.DataInputProvider;
-import com.traqtion.test.auto.utils.Reporter;
+import com.esri.test.auto.utils.DataInputProvider;
+import com.esri.test.auto.utils.Reporter;
+
+//import com.traqtion.test.auto.utils.DataInputProvider;
+//import com.traqtion.test.auto.utils.Reporter;
 
 
 
