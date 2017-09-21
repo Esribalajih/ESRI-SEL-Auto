@@ -1,0 +1,20 @@
+{
+"uRL" : "https://qa-web.traqtion.com/TraQtionR2/#/login",
+"uName" : "autoclient01",
+"password" : "Auto@123",
+"loginBtn" : "Login",
+"menubar" : "Menu",
+"sUsersMenu" : "Users",
+"sSearchUserSubMenu" : "Search",
+"sSearchUserHdrTxt" : "User Search",
+"sSearchCompanyType" : "Client",
+"sSearchFirstName" : "Jimmy",
+"sSearchLastName" : "Stock",
+"clkViewMoreBtn" : "VIEW MORE",
+"clkSearchBtn" : "Search",
+"verifySearchresultCountTxt" : "",
+"selmanageColumn" : "Manage Columns",
+"setNavItmPerPageValue" : "100",
+"clkExportToExcelBtn" : "Export to Excel",
+"clkUserNameLink" : "Jimmy"
+}

@@ -19,6 +19,7 @@ public class ESRIWrappers extends GenericWrappers{
 
 	protected String browserName;
 	protected String dataSheetName;
+	protected String txtData;
 	protected static String testCaseName;
 	protected static String Category;
 	protected static String testDescription;
@@ -39,7 +40,8 @@ public class ESRIWrappers extends GenericWrappers{
 
 	@DataProvider(name="fetchdata")
 	public Object[][] getdata() throws Throwable {
-		return DataInputProvider.getSheet(dataSheetName);
+		//return DataInputProvider.getSheet(dataSheetName);
+				return DataInputProvider.getSheet(txtData);
 
 	}
 
@@ -54,6 +56,7 @@ public class ESRIWrappers extends GenericWrappers{
 	@AfterSuite
 	public void afterSuite() throws Throwable {
 		Reporter.endSuite();
+		
 
 	}
 

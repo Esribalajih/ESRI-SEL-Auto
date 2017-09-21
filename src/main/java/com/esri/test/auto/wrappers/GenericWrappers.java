@@ -15,6 +15,8 @@ import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -28,6 +30,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.security.UserAndPassword;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -120,6 +123,22 @@ public class GenericWrappers implements WrappersInterface{
 		prop =new Properties();
 		try {
 			prop.load(new FileInputStream(new File("./src/test/resources/object.properties")));
+		} catch (FileNotFoundException e) {
+				e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**This Method is to load test data from the Object Property file
+	 * @author balajih
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
+	public void loadTestdata() {
+		prop =new Properties();
+		try {
+			prop.load(new FileInputStream(new File("./src/test/resources/testdata.properties")));
 		} catch (FileNotFoundException e) {
 				e.printStackTrace();
 		} catch (IOException e) {
@@ -226,7 +245,7 @@ public class GenericWrappers implements WrappersInterface{
 	public boolean enterByXpath(String xpathValue,String data) throws Throwable{
 		boolean bReturn = false;
 		try {
-			//driver.findElement(By.xpath(xpathValue)).clear();
+			driver.findElement(By.xpath(xpathValue)).clear();
 			driver.findElement(By.xpath(xpathValue)).sendKeys(data);
 			Reporter.reportStep("The data "+ data +" is entered successfully.", "PASS");
 			bReturn = true;
@@ -291,6 +310,27 @@ public class GenericWrappers implements WrappersInterface{
 		boolean bReturn=false;
 		try{
 		if(driver.findElement(By.id(idValue)).getText().equalsIgnoreCase(WinTitle)){
+				Reporter.reportStep("The title of the Window "+ WinTitle+" is displayed successfully.", "PASS");
+				bReturn=true;
+			}
+			} catch (NoSuchElementException e){
+				Reporter.reportStep("The title of the Window "+ WinTitle+" is not available to check.", "FAIL");
+			}	catch (Exception e) {
+				Reporter.reportStep("The title of the Window "+ WinTitle+" is not displayed successfully.", "FAIL");
+			}
+		return bReturn;
+	}
+	
+	/**This method will verify the fetched Window title is displayed or not.
+	 * @author balajih
+	 * @param xpathValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean VerifyWindowTitleByXpath(String xpathValue, String WinTitle) throws Throwable {
+		boolean bReturn=false;
+		try{
+		if(driver.findElement(By.xpath(xpathValue)).getText().equalsIgnoreCase(WinTitle)){
 				Reporter.reportStep("The title of the Window "+ WinTitle+" is displayed successfully.", "PASS");
 				bReturn=true;
 			}
@@ -396,7 +436,7 @@ public class GenericWrappers implements WrappersInterface{
 	public boolean VerifyTextByXpath(String xpathValue,String data) throws Throwable{
 		boolean bReturn = false;
 		try {
-			if(driver.findElement(By.xpath(xpathValue)).getText().equalsIgnoreCase(data)){
+			if(driver.findElement(By.xpath(xpathValue)).getText().trim().equalsIgnoreCase(data)){
 				Reporter.reportStep("The data "+ data +" is Read successfully.", "PASS");
 				bReturn = true;
 			}
@@ -569,7 +609,7 @@ public class GenericWrappers implements WrappersInterface{
 	public boolean clickButtonByCssSelector(String cssValue, String data) throws Throwable{
 		boolean bReturn = false;
 		try {
-			Reporter.reportStep("The Button "+ data +" is clicked successfully", "PASS");
+			//Reporter.reportStep("The Button "+ data +" is clicked successfully", "PASS");
 			driver.findElement(By.cssSelector(cssValue)).click();
 			Reporter.reportStep("The Button "+ data +" is clicked successfully", "PASS");
 			bReturn = true;
@@ -627,7 +667,7 @@ public class GenericWrappers implements WrappersInterface{
 	public boolean clickOptionByXpath(String xpathValue, String data) throws Throwable{
 		boolean bReturn = false;
 		try {
-			Reporter.reportStep("The "+ data +" option is selected successfully", "PASS");
+			//Reporter.reportStep("The "+ data +" option is selected successfully", "PASS");
 			driver.findElement(By.xpath(xpathValue)).click();
 			Reporter.reportStep("The "+ data +" option is selected successfully", "PASS");
 			bReturn = true;
@@ -647,7 +687,7 @@ public class GenericWrappers implements WrappersInterface{
 	public boolean clickOptionByCssSelector(String CssValue, String data) throws Throwable{
 		boolean bReturn = false;
 		try {
-			Reporter.reportStep("The "+ data +" option is selected successfully", "PASS");
+			//Reporter.reportStep("The "+ data +" option is selected successfully", "PASS");
 			driver.findElement(By.cssSelector(CssValue)).click();
 			Reporter.reportStep("The "+ data +" option is selected successfully", "PASS");
 			bReturn = true;
@@ -812,14 +852,16 @@ public class GenericWrappers implements WrappersInterface{
 	 * @return
 	 * @throws Throwable
 	 */
-	public boolean clickChkBoxByXpath(String xpathValue) throws Throwable{
+	public boolean clickChkBoxByXpath(String xpathValue, String data) throws Throwable{
 		boolean bReturn = false;
 		try {
-			Reporter.reportStep("The Checkbox is clicked successfully", "PASS");
+			//Reporter.reportStep("The Checkbox "+ data+" is clicked successfully", "PASS");
 			driver.findElement(By.xpath(xpathValue)).click();
+			//waitForPageLoad(1);
+			Reporter.reportStep("The Checkbox "+ data+" is clicked successfully", "PASS");
 			bReturn = true;
 		} catch (Exception e) {
-			Reporter.reportStep("The Checkbox is not clicked successfully", "FAIL");
+			Reporter.reportStep("The Checkbox "+ data+" is not clicked successfully", "FAIL");
 		}	
 		return bReturn;
 	}
@@ -1083,6 +1125,29 @@ public class GenericWrappers implements WrappersInterface{
 		return bReturn;
 	}
 	
+	/**This method is used to fetch the data from dropdown using select Option By Index attribute to locate
+	 * @author balajih
+	 * @param xpathValue - name of the webelement
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean selectAllOption(String xpathValue) throws Throwable {
+		boolean bReturn = false;
+		try {
+			Select dropdown = new Select(driver.findElement(By.xpath(xpathValue)));
+			List<WebElement> options = dropdown.getOptions();
+			for(WebElement item:options){
+				item.click();
+			}
+			Reporter.reportStep("All Dropdown items are selected successfully", "PASS");
+			bReturn = true;
+		} catch (Exception e) {
+			Reporter.reportStep("All Dropdown items are not selected", "FAIL");
+		}
+		return bReturn;
+	}
+	
 	/**This method is used to click OK button in Alert box
 	 * @author balajih
 	 * @return
@@ -1187,6 +1252,25 @@ public class GenericWrappers implements WrappersInterface{
 	public boolean mouseHoverById(String idValue) throws Throwable{
 		boolean bReturn=false;
 		new Actions(driver).moveToElement(driver.findElement(By.id(idValue))).build().perform();
+		try {
+			Reporter.reportStep("The mouse hover to the element is successfull", "PASS");
+			bReturn = true;
+
+		} catch (Throwable e) {
+			Reporter.reportStep("The mouse hover to the element is not successfull", "FAIL");
+		}
+		return bReturn;
+	}
+	
+	/**This method is used to Mouse hover on the element using ID element.
+	 * @author balajih
+	 * @param xpathValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean mouseHoverByXpath(String xpathValue) throws Throwable{
+		boolean bReturn=false;
+		new Actions(driver).moveToElement(driver.findElement(By.xpath(xpathValue))).build().perform();
 		try {
 			Reporter.reportStep("The mouse hover to the element is successfull", "PASS");
 			bReturn = true;
@@ -1316,8 +1400,10 @@ public class GenericWrappers implements WrappersInterface{
 	public void waitForJsPageLoad(long seconds) {
 		try {
 			WebDriverWait wait=new WebDriverWait(driver,seconds);
-			wait.until( new Predicate<WebDriver>() {
-	            public boolean apply(WebDriver driver) {
+			/*wait.until( new ExpectedCondition<Boolean>() {
+	            public Boolean apply(WebDriver driver) {*/
+	            	wait.until( new Predicate<WebDriver>() {
+	    	            public boolean apply(WebDriver driver) {
 	                return ((JavascriptExecutor)driver).executeScript("return document.readyState").equals("complete");
 	            }
 	        }
@@ -1336,8 +1422,8 @@ public class GenericWrappers implements WrappersInterface{
 	public void waitForJqueryPageLoad(long seconds) {
 		try {
 			WebDriverWait wait=new WebDriverWait(driver,seconds);
-			wait.until( new Predicate<WebDriver>() {
-	            public boolean apply(WebDriver driver) {
+			wait.until( new ExpectedCondition<Boolean>() {
+	            public Boolean apply(WebDriver driver) {
 	                return ((JavascriptExecutor)driver).executeScript("return jQuery.active").equals("0");
 	            }
 	        }
@@ -1356,6 +1442,20 @@ public class GenericWrappers implements WrappersInterface{
 	public void waitForPageLoad(long seconds) {
 		try {
 			Thread.sleep(seconds * 1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**This method is used to sleep for the given minutes
+	 * @author balajih
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public void waitForRegURLLoadinMins(long seconds) {
+		try {
+			Thread.sleep(seconds * 100000);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -1424,10 +1524,29 @@ public class GenericWrappers implements WrappersInterface{
 		boolean bReturn = false;
 		try {
 			driver.get(URL);
-			waitForPageLoad(10);
+			waitForPageLoad(5);
 			bReturn = true;
 		} catch (Exception e) {
 			Reporter.reportStep(URL+" : not launched successfully", "FAIL");
+		}
+		return bReturn;
+	}
+	
+	/**
+	 * This method is used to open a new URL
+	 * @author balajih
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean copyRegistrationURL(String cURL) throws Throwable {
+		boolean bReturn = false;
+		try {
+			driver.get(cURL);
+			waitForPageLoad(5);
+			bReturn = true;
+		} catch (Exception e) {
+			Reporter.reportStep(cURL+" : not launched successfully", "FAIL");
 		}
 		return bReturn;
 	}
@@ -2767,6 +2886,20 @@ public class GenericWrappers implements WrappersInterface{
 		}
 	}
 	
+	/**This method is to close the current Browser opened for testing
+	 * @author balajih
+	 * @throws Throwable
+	 */
+	public void closeBrowser() throws Throwable{
+
+		try {
+			driver.close();
+		} catch (Throwable e) {
+			Reporter.reportStep("The Browser" + driver.getCapabilities().getBrowserName()+ "could not be closed", "FAIL");
+			e.printStackTrace();
+		}
+	}
+	
 	/**This method is to reloads the page
 	 * @author thenmozhi
 	 * @throws Throwable
@@ -2779,187 +2912,7 @@ public class GenericWrappers implements WrappersInterface{
 		}
 	}
 	
-	/**This method will check whether Header Embed Code is present in the webpage.
-	 * @author Thenmozhi
-	 * @param xpath
-	 * @return
-	 * @throws Throwable
-	 */
-	public void verifyHeaderEmbedCode(String xpath,String expResult) throws Throwable{
-		try{
-			tagContentsSize=0;
-			tagElements=driver.findElements(By.xpath(xpath));
-			tagContents = new ArrayList<String>();
-			
-			for(WebElement tagElement:tagElements){
-				String gooTagContent=tagElement.getAttribute("src");
-				tagContents.add(gooTagContent);
-			}
-			
-			for(String tagContent:tagContents){
-				tagContentsSize++;
-				if(tagContent.contains(expResult)){
-					Reporter.reportStep("Header Embed Code ->> "+expResult+" is present in the page", "INFO");
-					break;
-				}else{
-					if(tagContentsSize==tagContents.size()){
-						Reporter.reportStep("Header Embed Code ->> "+expResult+" is not present in the page", "INFO");
-						break;
-					}else{
-						continue;
-					}		
-				}
-			}
-		}catch (Throwable e) {
-			Reporter.reportStep("Header Embed Code is not present in the page", "INFO");
-			e.printStackTrace();
-		}
-	}
-	/**This method will check whether Google Tag Manager Script code is present in the webpage.
-	 * @author Thenmozhi
-	 * @param xpath
-	 * @return
-	 * @throws Throwable
-	 */
-	public void  verifyGoogleTagManagerForScript(String xpath,String expResult) throws Throwable{
-		try{
-			tagContentsSize=0;
-			tagElements=driver.findElements(By.xpath(xpath));
-			tagContents = new ArrayList<String>();
-			
-			for(WebElement tagElement:tagElements){
-				String gooTagContent=tagElement.getAttribute("innerText");
-				tagContents.add(gooTagContent);
-			}
-
-			for(String tagContent:tagContents){
-				tagContentsSize++;
-				if(tagContent.contains(expResult)){
-					Reporter.reportStep("Google Tag Manager script code ->> "+expResult+" is present in the page", "INFO");
-					break;
-				}else{
-					if(tagContentsSize==tagContents.size()){
-						Reporter.reportStep("Google Tag Manager script code->>"+expResult+" is not present in the page", "INFO");
-						break;
-					}else{
-						continue;
-					}		
-				}
-			}
-		}catch (Throwable e) {
-			Reporter.reportStep("Google Tag Manager script code is not present in the page", "INFO");
-			e.printStackTrace();
-		}
-		
-	}
-	/**This method will check whether Google Tag Manager NoScript code is present in the webpage.
-	 * @author Thenmozhi
-	 * @param xpath
-	 * @return
-	 * @throws Throwable
-	 */
-	public void verifyGoogleTagManagerForNoScript(String xpath,String expResult) throws Throwable{
-		try{
-			tagContentsSize=0;
-			tagElements=driver.findElements(By.xpath(xpath));
-			tagContents = new ArrayList<String>();
-			
-			for(WebElement tagElement:tagElements){
-				String gooTagContent=tagElement.getAttribute("innerText");
-				tagContents.add(gooTagContent);
-			}
-			
-			for(String tagContent:tagContents){
-				tagContentsSize++;
-				if(tagContent.contains(expResult)){
-					Reporter.reportStep("Google Tag Manager noscript code ->>  www.googletagmanager.com/ns.html?id=GTM-WFJ52X is present in the page", "INFO");
-					break;
-				}else{
-					if(tagContentsSize==tagContents.size()){
-						Reporter.reportStep("Google Tag Manager noscript code ->> www.googletagmanager.com/ns.html?id=GTM-WFJ52X is not present in the page", "INFO");
-						break;
-					}else{
-						continue;
-					}		
-				}
-			}
-		}catch (Throwable e) {
-			Reporter.reportStep("Google Tag Manager noscript code is not present in the page", "INFO");
-			e.printStackTrace();
-		}
-	}
-	/**This method will check whether Footer Embed Code is present in the webpage.
-	 * @author Thenmozhi
-	 * @param xpath
-	 * @return
-	 * @throws Throwable
-	 */
-	public void verifyFooterEmbedCode(String xpath,String expResult) throws Throwable{
-		try{
-			tagContentsSize=0;
-			tagElements=driver.findElements(By.xpath(xpath));
-			tagContents = new ArrayList<String>();
-			
-			for(WebElement tagElement:tagElements){
-				String gooTagContent=tagElement.getAttribute("src");
-				tagContents.add(gooTagContent);
-			}
-
-			for(String tagContent:tagContents){
-				tagContentsSize++;
-				if(tagContent.contains(expResult)){
-					Reporter.reportStep("Footer Embed Code ->> "+expResult+" is present in the page", "INFO");
-					break;
-				}else{
-					if(tagContentsSize==tagContents.size()){
-						Reporter.reportStep("Footer Embed Code ->> "+expResult+" is not present in the page", "INFO");
-						break;
-					}else{
-						continue;
-					}		
-				}
-			}
-		}catch (Throwable e) {
-			Reporter.reportStep("Footer Embed Code is not present in the page", "INFO");
-			e.printStackTrace();
-		}
-	}
-	/**This method will check whether Pardot Data Layer Code is present in the webpage.
-	 * @author Thenmozhi
-	 * @param xpath
-	 * @return
-	 * @throws Throwable
-	 */
-	public void verifyPardotDataLayerCode(String xpath,String expResult) throws Throwable{
-			try{
-				tagContentsSize=0;
-				tagElements=driver.findElements(By.xpath(xpath));
-				tagContents = new ArrayList<String>();
-				
-				for(WebElement tagElement:tagElements){
-					String gooTagContent=tagElement.getAttribute("src");
-					tagContents.add(gooTagContent);
-				}
-
-				for(String tagContent:tagContents){
-					tagContentsSize++;
-					if(tagContent.contains(expResult)){
-						Reporter.reportStep("Pardot Data Layer Code ->> "+ expResult +" is present in the page", "INFO");
-						break;
-					}else{
-						if(tagContentsSize==tagContents.size()){
-							Reporter.reportStep("Pardot Data Layer Code ->> "+ expResult +" is not present in the page", "INFO");
-							break;
-						}else{
-							continue;
-						}		
-					}
-				}
-			}catch (Throwable e) {
-				Reporter.reportStep("Pardot Data Layer Code is not present in the page", "INFO");
-				e.printStackTrace();
-			}
-		}
+	
 
 	/**This Method is to unload the used Objects from the Memory for efficient execution
 	 * @author balajih
@@ -3028,7 +2981,6 @@ public class GenericWrappers implements WrappersInterface{
 		}
 
 	}
-	
-	
-
 }
+
+

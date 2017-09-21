@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests" verbose="10" thread-count="1">
+    
+     <test name='TraQtionTraq_GlosryMgmt_CSG_CGG_Page_TC1_Chrome'>
+    <parameter name="browser" value="chrome"/>   
+    <classes>
+   	 		<class name="com.traqtion.test.auto.testcases.GlossaryMgmtCSGPage_TC1" />  
+   	 		<class name="com.traqtion.test.auto.testcases.GlossaryMgmtCGGPage_TC1" />  
+    </classes>
+    </test> 
+        
+  <!-- <test name='TraQtionCreate_Product_Spec_Firefox'>
+    <parameter name="browser" value="firefox"/>   
+    <classes>
+   	 		<class name="com.traqtion.test.auto.testcases.GlosryMgmtCSGPage_TC1" />  
+    </classes>
+    </test>-->
+    
+   <!--  <test name='TraQtionCreate_Product_Spec_Internet Explorer'>
+    <parameter name="browser" value="internet explorer"/>   
+    <classes>
+   	 		<class name="com.traqtion.test.auto.testcases.GlosryMgmtCSGPage_TC1" />  
+    </classes>
+    </test>  -->
+      
+</suite> 

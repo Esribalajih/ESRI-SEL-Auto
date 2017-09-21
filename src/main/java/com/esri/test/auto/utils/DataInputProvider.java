@@ -1,9 +1,12 @@
 package com.esri.test.auto.utils;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.util.HashMap;
 
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -16,6 +19,7 @@ import com.esri.test.auto.wrappers.GenericWrappers;
  *
  */
 public class DataInputProvider  extends GenericWrappers{
+	private String fileLocation;
 
 	public static String[][] getSheet(String dataSheetName) throws IOException{
 		String[][] data=null;
@@ -54,5 +58,36 @@ public class DataInputProvider  extends GenericWrappers{
 		}
 		return data;
 	}
+	
+	/*public DataInputProvider(String fileLocation) {
+        this.fileLocation = fileLocation;
+    }
+
+
+
+    public HashMap<String,String[]> getData(String txtData){
+        FileInputStream fs;
+        HashMap<String,String[]> keyValuePair=new HashMap<String,String[]>();
+        try (BufferedReader br = new BufferedReader(new FileReader("./src/test/resources/"+txtData+".txt"))){
+            String stringLine;
+            //Read File Line By Line
+            while ((stringLine = br.readLine()) != null)   {
+                // Print the content on the console
+                String[] keyValue=stringLine.split("=");
+                keyValuePair.put(keyValue[0],keyValue[1].split(","));
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        return keyValuePair;
+
+
+    }*/
 
 }
+
+

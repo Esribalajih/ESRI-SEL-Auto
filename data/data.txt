@@ -1,0 +1,4 @@
+uRL https://qa-web.traqtion.com/TraQtionR2/#/login
+uName AutoclientAdm
+password Test@321
+loginBtn Login 

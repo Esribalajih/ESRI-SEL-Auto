@@ -1,0 +1,1 @@
+Java –cp target;lib/* org.testng.TestNG Run Test for Search Orginization.xml

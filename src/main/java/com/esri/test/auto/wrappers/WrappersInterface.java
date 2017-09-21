@@ -22,6 +22,13 @@ public interface WrappersInterface {
 	 */
 	public void loadObjects();
 	
+	/**This Method is to load test data from the Object Property file
+	 * @author balajih
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
+	public void loadTestdata();
+	
 	/**This Method is to unload the used Objects from the Memory for efficient execution
 	 * @author balajih
 	 */
@@ -96,6 +103,14 @@ public interface WrappersInterface {
 	 * @throws Throwable
 	 */
 	public boolean VerifyWindowTitleById(String idValue, String WinTitle) throws Throwable;
+	
+	/**This method will verify the fetched Window title is displayed or not.
+	 * @author balajih
+	 * @param xpathValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean VerifyWindowTitleByXpath(String xpathValue, String WinTitle) throws Throwable;
 	
 	/**This method will verify the entered value in text field using Id attribute to locate
 	 * @author balajih
@@ -307,7 +322,7 @@ public interface WrappersInterface {
 	 * @return
 	 * @throws Throwable
 	 */
-	public boolean clickChkBoxByXpath(String xpathValue) throws Throwable;
+	public boolean clickChkBoxByXpath(String xpathValue, String data) throws Throwable;
 	
 	/**This method is used to fetch the data from dropdown using select By Id attribute to locate
 	 * @author balajih
@@ -453,6 +468,14 @@ public interface WrappersInterface {
 	 */
 	public boolean mouseHoverById(String idValue) throws Throwable;
 	
+	/**This method is used to Mouse hover on the element using ID element.
+	 * @author balajih
+	 * @param xpathValue - name of the webelement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean mouseHoverByXpath(String xpathValue) throws Throwable;
+	
 	/**
 	 * This method is used to switch the frame with id
 	 *
@@ -517,6 +540,14 @@ public interface WrappersInterface {
 	 */
 	public void waitForPageLoad(long seconds);
 	
+	/**This method is used to sleep for the given minutes
+	 * @author balajih
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public void waitForRegURLLoadinMins(long seconds);
+	
 	/**
 	 * This method is used to switch the frame with id
 	 *
@@ -543,6 +574,15 @@ public interface WrappersInterface {
 	 * @throws Throwable
 	 */
 	public boolean openbrowser(String URL) throws Throwable;
+	
+	/**
+	 * This method is used to open a new URL
+	 * @author balajih
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean copyRegistrationURL(String cURL) throws Throwable;
 	
 	/**
 	 * This method will verify the fetched title is matching or not using the partial title.
@@ -1135,46 +1175,6 @@ public interface WrappersInterface {
 	 */
 	public void pageRefresh();
 	
-	/**This method will check whether Header Embed Code is present in the webpage.
-	 * @author Thenmozhi
-	 * @param xpath
-	 * @return
-	 * @throws Throwable
-	 */
-	public void verifyHeaderEmbedCode(String xpath,String expResult) throws Throwable;
-	
-	/**This method will check whether Google Tag Manager Script code is present in the webpage.
-	 * @author Thenmozhi
-	 * @param xpath
-	 * @return
-	 * @throws Throwable
-	 */
-	public void  verifyGoogleTagManagerForScript(String xpath,String expResult) throws Throwable;
-	
-	/**This method will check whether Google Tag Manager NoScript code is present in the webpage.
-	 * @author Thenmozhi
-	 * @param xpath
-	 * @return
-	 * @throws Throwable
-	 */
-	public void verifyGoogleTagManagerForNoScript(String xpath,String expResult) throws Throwable;
-	
-	/**This method will check whether Footer Embed Code is present in the webpage.
-	 * @author Thenmozhi
-	 * @param xpath
-	 * @return
-	 * @throws Throwable
-	 */
-	public void verifyFooterEmbedCode(String xpath,String expResult) throws Throwable;
-	
-	/**This method will check whether Pardot Data Layer Code is present in the webpage.
-	 * @author Thenmozhi
-	 * @param xpath
-	 * @return
-	 * @throws Throwable
-	 */
-	public void verifyPardotDataLayerCode(String xpath,String expResult) throws Throwable;
-	
 	/**This Method is to login through the windows popup for IE
 	 * @author 
 	 * @throws Throwable 
@@ -1230,4 +1230,19 @@ public interface WrappersInterface {
 	 * @throws Throwable
 	 */
 	public void waitForJsPageLoad(long seconds);
+	
+	/**This method is to close the current Browser opened for testing
+	 * @author balajih
+	 * @throws Throwable
+	 */
+	public void closeBrowser() throws Throwable;
+	
+	/**This method is used to fetch the data from dropdown using select Option By Index attribute to locate
+	 * @author balajih
+	 * @param xpathValue - name of the webelement
+	 * @param data - The Data to be sent to the WebElement
+	 * @return
+	 * @throws Throwable
+	 */
+	public boolean selectAllOption(String xpathValue) throws Throwable;
 }
