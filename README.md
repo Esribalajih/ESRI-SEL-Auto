@@ -1,4 +1,4 @@
-# ESRI-SEL-Auto
-ESRI POM framework
+# SEL-Auto
+POM framework
 
-This project is all about automating the www.esri.com website application using Selenium Web Driver integrated with TestNG and Maven. This project uses the Page Object Model Framework.
+This project is all about automating the website application using Selenium Web Driver integrated with TestNG and Maven. This project uses the Page Object Model Framework.
